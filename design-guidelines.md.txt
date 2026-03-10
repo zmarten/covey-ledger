@@ -1,0 +1,308 @@
+design-guidelines.md
+Emotional Thesis
+
+Feels like a durable field ledger — structured, grounded, and trustworthy under scrutiny.
+
+Clarity over decoration. Structure over softness. Feedback over flair.
+
+This app should feel like equipment — not software.
+
+Visual & Emotional System
+1. Typography
+
+Industrial. Legible. Authoritative.
+
+Type Personality
+
+Primary: Condensed bold sans-serif (headlines feel documented)
+
+Secondary: Neutral sans-serif (UI clarity)
+
+Tables: Slightly tighter tracking, high contrast
+
+No decorative type. No rounded playfulness.
+
+Typographic Scale (8pt Grid Aligned)
+Level	Size	Weight	Usage
+H1	32px	700 Condensed	Page titles
+H2	24px	600	Section headers
+H3	20px	600	Subsections
+H4	18px	600	Card headers
+Body	16–18px	400	Default content
+Caption	14px	500	Table labels / metadata
+
+Rules:
+
+Line height ≥ 1.6 for body
+
+Numeric data uses tabular figures
+
+Numbers visually emphasized over labels
+
+Example:
+
+“Kansas Possession: 9 of 12”
+Not: “You currently have nine birds…”
+
+2. Color System
+
+Earth + authority palette.
+
+Warnings feel serious — not dramatic.
+
+Primary Palette
+Role	Hex	RGB	Purpose
+Deep Olive	#3A4A2A	58,74,42	Primary UI elements
+Burnt Orange	#C05621	192,86,33	Accent actions
+Canvas	#F4F1EA	244,241,234	App background
+Khaki	#E8E3D8	232,227,216	Surface blocks
+Semantic Colors
+State	Hex	Usage
+Success (Forest)	#2F5D3A	Confirmed entries
+Warning (Amber)	#B7791F	80% limit threshold
+Limit Reached (Deep Rust)	#8B2E1E	Hard block state
+
+Contrast Rules:
+
+All text contrast ≥ 4.5:1
+
+Warning backgrounds paired with dark text
+
+Red never used casually
+
+3. Spacing & Layout
+Grid System
+
+8pt base grid
+
+16px default padding
+
+24px section spacing
+
+32px page separation
+
+Medium density. No airy startup spacing.
+
+Component Rules
+
+Border thickness: 1–2px solid
+
+Radius: 4px max
+
+Table rows: 44px minimum height
+
+Tap targets ≥ 44px
+
+Breakpoints
+
+Mobile-first:
+
+Mobile: Single-column stack
+
+Tablet: Two-column dashboard blocks
+
+Desktop: 3–4 grid summary layout
+
+Field-usable in glare and gloves.
+
+Whitespace = functional separation, not aesthetic flourish.
+
+4. Motion & Interaction
+
+Motion confirms. It never entertains.
+
+Timing
+
+Standard transition: 200ms
+
+Alert fade-in: 150ms
+
+No bounce
+
+No elastic easing
+
+Interaction Tone
+
+Entry saved:
+
+Subtle 200ms highlight in Forest
+
+Limit alert:
+
+Direct fade-in with Rust border
+
+No shaking animations
+
+Inventory update:
+
+Numeric tick animation (brief, restrained)
+
+Microinteraction adjectives:
+
+Firm
+
+Quiet
+
+Decisive
+
+5. Voice & Tone
+
+Direct. Practical. Field-ready.
+
+Personality Keywords
+
+Confident
+
+Steady
+
+Legally aware
+
+Unemotional
+
+Microcopy Examples
+
+On save:
+
+Entry recorded.
+
+At warning:
+
+Kansas pheasant possession: 2 remaining.
+
+At limit:
+
+Daily limit reached.
+
+Inventory action:
+
+Freezer updated.
+
+Error:
+
+Kansas possession limit: 12. You may log 1 more.
+
+No emojis. No exclamation points. No jokes.
+
+6. System Consistency
+
+Recurring Patterns:
+
+State always visible in header
+
+Species always paired with state
+
+Numbers precede explanations
+
+Warning colors consistent across pages
+
+All math visible on request
+
+Style Anchors:
+
+Structured clarity similar to Linear
+
+Industrial restraint inspired by Apple HIG (without softness)
+
+Component discipline aligned with shadcn/ui
+
+No gradients.
+No glassmorphism.
+No playful icons.
+
+7. Accessibility
+Structural
+
+Semantic headings (H1–H4)
+
+Table headers properly scoped
+
+Landmark regions (nav, main, alerts)
+
+Interaction
+
+Keyboard navigable tables
+
+Focus-visible outlines (2px high contrast)
+
+Icons always paired with labels
+
+Visual
+
+16px body minimum
+
+High contrast warnings
+
+Avoid reliance on color alone (include text status)
+
+8. Emotional Audit Checklist
+
+Before release, ask:
+
+Does this screen feel durable?
+
+Would a wildlife officer trust these numbers?
+
+Are warnings calm and precise?
+
+Is any element decorative without purpose?
+
+Does the math feel transparent?
+
+If unsure → remove ornament first.
+
+9. Technical QA Checklist
+
+Typography adheres to 8pt rhythm
+
+Contrast ratios meet WCAG AA+
+
+All interactive states visually distinct
+
+Motion durations 150–300ms
+
+No state calculations performed client-side
+
+Design Snapshot
+Color Palette Preview
+Deep Olive:     #3A4A2A
+Burnt Orange:   #C05621
+Canvas:         #F4F1EA
+Khaki:          #E8E3D8
+Forest:         #2F5D3A
+Amber:          #B7791F
+Deep Rust:      #8B2E1E
+Typography Summary
+Level	Size	Weight
+H1	32px	700
+H2	24px	600
+H3	20px	600
+H4	18px	600
+Body	16–18px	400
+Caption	14px	500
+Layout System Summary
+
+8pt grid
+
+16px padding
+
+24px section spacing
+
+4px radius
+
+1–2px borders
+
+44px tap targets
+
+One-Sentence Emotional Thesis
+
+Covey Ledger feels like a regulation-grade field ledger you’d trust in a game warden’s truck.
+
+Design Integrity Review
+
+Emotional intent and technical structure align well.
+The earth-tone authority palette reinforces compliance seriousness.
+Industrial typography supports documented trust.
+
+One improvement opportunity:
+
+Introduce a subtle textured surface option (very low-contrast grain) to enhance the “field ledger” feel — without compromising clarity.

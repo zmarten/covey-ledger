@@ -1,0 +1,448 @@
+masterplan.md
+30-Second Elevator Pitch
+
+Covey Ledger is a rugged personal hunting log for serious upland sportsmen.
+It tracks harvested birds, freezer inventory, and state-specific daily and possession limits — with hard server-side enforcement so nothing slips through.
+
+Think: field ledger meets compliance engine.
+
+Problem & Mission
+The Problem
+
+Upland hunters who travel across states must:
+
+Track daily limits (per state, per species)
+
+Track possession limits (multi-day, state-specific)
+
+Manage freezer inventory
+
+Avoid accidental violations
+
+Most rely on memory, notes apps, or spreadsheets.
+
+That’s risky.
+
+The Mission
+
+Deliver a dependable compliance-first hunting ledger that:
+
+Prevents violations before they happen
+
+Separates possession by state
+
+Maintains accurate freezer accounting
+
+Feels structured and authoritative
+
+No ambiguity. No soft warnings.
+
+Target Audience
+Primary User
+
+Solo upland hunter who:
+
+Travels across multiple states
+
+Self-processes birds
+
+Freezes and consumes over time
+
+Cares deeply about legal compliance
+
+Secondary (Future)
+
+Multi-state seasonal hunters
+
+Conservation-minded sportsmen
+
+Hunters auditing long-term harvest trends
+
+Core Features
+1. Dashboard — “Today in the Field”
+
+Immediate situational awareness:
+
+Active state selector
+
+Today’s harvest (by species)
+
+Remaining daily limit
+
+Remaining possession capacity
+
+Freezer totals (grouped by state of origin)
+
+Warning tiers:
+
+80% → Amber
+
+100% → Red + hard block
+
+Primary action: Log Birds
+
+2. Harvest Entry Log
+
+Fields:
+
+Species
+
+Quantity
+
+State
+
+Date (auto-filled)
+
+Notes (optional)
+
+On Save → Server-side compliance engine runs:
+
+Step 1 — Daily Limit Check
+
+Per species
+
+Per state
+
+Per calendar day
+
+Step 2 — Possession Check
+
+Possession formula (state-specific):
+
+Total Harvested (state)
+– Distributed (state)
+– Consumed (state)
+= Current Possession (state)
+
+If exceeded:
+
+Save blocked
+
+Clear explanation shown
+
+Exact remaining capacity displayed
+
+3. State Regulations Page
+
+Editable regulation table:
+
+State
+
+Species
+
+Daily limit
+
+Possession limit
+
+Optional season dates
+
+Each state maintains independent possession accounting.
+
+Future:
+
+Wildlife agency API auto-sync
+
+4. End-of-Day Split Tool
+
+Purpose: Allocate your retained birds from a group hunt.
+
+Workflow:
+
+View today’s harvest
+
+Enter number of hunters
+
+Adjust your retained share
+
+System recalculates:
+
+State-specific possession
+
+Freezer totals
+
+Only your retained birds affect your ledger.
+
+5. Freezer Inventory
+
+Structured table:
+
+| Species | State | In Possession | In Freezer | Consumed | Net |
+
+Top summary:
+
+Kansas Possession Total
+
+South Dakota Possession Total
+
+Total Birds in Freezer
+
+Actions:
+
+Mark consumed
+
+Transfer to gifted
+
+Manual adjustment (auditable)
+
+Clear separation:
+
+Possession = legal ownership
+
+Freezer = physical storage
+
+6. Season & Trip History
+
+Grouped by:
+
+State
+
+Species
+
+Date
+
+Metrics:
+
+Harvested
+
+Distributed
+
+Kept
+
+Consumed
+
+Season summary per state available.
+
+7. Optional AI — “Compliance Sentinel”
+
+Monitors:
+
+Approaching possession caps
+
+Uneven freezer aging
+
+Seasonal patterns
+
+Tone: Calm field advisor.
+
+Examples:
+
+“Kansas pheasant possession at 83% capacity.”
+
+“Oldest South Dakota grouse harvested Oct 9.”
+
+High-Level Tech Stack
+Frontend
+
+Vite + TypeScript + React
+
+Fast iteration
+
+Strong typing for compliance logic
+
+shadcn/ui
+
+Structured, serious UI components
+
+Tailwind CSS
+
+Controlled density
+
+Strong border system
+
+Why it fits:
+
+Clean structure
+
+Predictable UI
+
+High control over hierarchy
+
+Backend
+
+Lovable Cloud
+
+Secure server-side compliance logic
+
+Centralized possession calculation
+
+Persistent state-ledger integrity
+
+Compliance must never rely on client logic.
+
+Auth
+
+Email/password
+
+Single-user model (MVP)
+
+Conceptual Data Model (ERD in Words)
+
+User
+
+id
+
+email
+
+password hash
+
+State
+
+id
+
+name
+
+Species
+
+id
+
+name
+
+Regulation
+
+state_id
+
+species_id
+
+daily_limit
+
+possession_limit
+
+season_start
+
+season_end
+
+HarvestEntry
+
+user_id
+
+state_id
+
+species_id
+
+quantity
+
+date
+
+notes
+
+Distribution
+
+harvest_entry_id
+
+quantity_distributed
+
+Consumption
+
+state_id
+
+species_id
+
+quantity
+
+date
+
+Possession is calculated — never stored as a static number.
+
+UI Design Principles (Krug-Aligned)
+
+State always visible
+
+Limits always visible
+
+No hidden calculations
+
+Numbers before explanations
+
+Warnings are explicit, not dramatic
+
+Save actions confirm clearly
+
+Three-mindless-click rule:
+
+Tap Log Birds
+
+Enter quantity
+
+Save
+
+Done.
+
+Security & Compliance Notes
+
+Compliance logic runs server-side only
+
+No client-side override paths
+
+Immutable audit trail of harvest entries
+
+All possession calculations derived from ledger events
+
+Prepared for future legal review scrutiny
+
+Phased Roadmap
+MVP
+
+Single-user
+
+Manual regulation entry
+
+Harvest log
+
+Compliance engine
+
+Freezer inventory
+
+Split tool
+
+V1
+
+Season summaries
+
+AI Compliance Sentinel
+
+Regulation templates by state
+
+V2
+
+Wildlife agency API integration
+
+Multi-device sync improvements
+
+Exportable compliance reports (PDF)
+
+Risks & Mitigations
+Risk: State regulation complexity
+
+Mitigation:
+
+Editable regulation table
+
+Clear versioning of regulation changes
+
+Risk: Edge-case possession math
+
+Mitigation:
+
+Centralized compliance engine
+
+Strict test suite per state
+
+Risk: User distrust of calculations
+
+Mitigation:
+
+Transparent math display
+
+Show formula inline
+
+Future Expansion Ideas
+
+Trip mode with offline sync
+
+Photo attachment per harvest
+
+Bird aging alerts in freezer
+
+Multi-user shared trip (independent possession ledgers)
+
+Conservation analytics dashboard
