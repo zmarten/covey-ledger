@@ -135,8 +135,8 @@ export default function FreezerInventory() {
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse text-sm">
+      <div className="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0">
+        <table className="w-full min-w-[640px] border-collapse text-sm">
           <thead>
             <tr className="border-b-2 border-khaki">
               {['Species', 'State', 'Harvested', 'Distributed', 'Consumed', 'Possession', 'Limit', 'Status', ''].map(h => (

@@ -136,23 +136,23 @@ export default function StateRegulations() {
 
   return (
     <div className="page-container section-gap">
-      <div className="flex items-center justify-between gap-4 flex-wrap">
+      <div className="flex items-start justify-between gap-4 flex-wrap">
         <h1 className="text-[32px] font-bold text-olive">Regulations</h1>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 w-full md:w-auto">
           <Select
             options={[{ value: '', label: 'All states' }, ...states.map(s => ({ value: s.id, label: s.name }))]}
             value={filterState}
             onChange={(e) => setFilterState(e.target.value)}
-            className="w-40"
+            className="flex-1 md:w-40"
           />
-          <Button onClick={openAdd} size="md">
-            <Plus size={15} /> Add Regulation
+          <Button onClick={openAdd} size="md" className="shrink-0">
+            <Plus size={15} /> Add
           </Button>
         </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse text-sm">
+      <div className="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0">
+        <table className="w-full min-w-[560px] border-collapse text-sm">
           <thead>
             <tr className="border-b-2 border-khaki">
               <th className="text-left py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">State</th>

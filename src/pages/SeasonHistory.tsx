@@ -58,52 +58,41 @@ export default function SeasonHistory() {
       <h1 className="text-[32px] font-bold text-olive">Season History</h1>
 
       {/* Filters */}
-      <div className="flex flex-wrap gap-3 items-end">
-        <div className="w-40">
-          <Select
-            label="State"
-            options={[{ value: '', label: 'All states' }, ...states.map(s => ({ value: s.id, label: s.name }))]}
-            value={filterState}
-            onChange={(e) => setFilterState(e.target.value)}
-          />
+      <div className="grid grid-cols-2 md:flex md:flex-wrap gap-3 items-end">
+        <Select
+          label="State"
+          options={[{ value: '', label: 'All states' }, ...states.map(s => ({ value: s.id, label: s.name }))]}
+          value={filterState}
+          onChange={(e) => setFilterState(e.target.value)}
+        />
+        <Select
+          label="Species"
+          options={[{ value: '', label: 'All species' }, ...species.map(s => ({ value: s.id, label: s.name }))]}
+          value={filterSpecies}
+          onChange={(e) => setFilterSpecies(e.target.value)}
+        />
+        <Input
+          label="From"
+          type="date"
+          value={dateFrom}
+          onChange={(e) => setDateFrom(e.target.value)}
+        />
+        <Input
+          label="To"
+          type="date"
+          value={dateTo}
+          onChange={(e) => setDateTo(e.target.value)}
+        />
+        <div className="col-span-2 md:col-span-1 flex gap-2">
+          <Button onClick={fetchEntries} variant="outline" size="md" className="flex-1 md:flex-none">Apply</Button>
+          <Button
+            onClick={() => { setFilterState(''); setFilterSpecies(''); setDateFrom(''); setDateTo('') }}
+            variant="ghost"
+            size="md"
+          >
+            Clear
+          </Button>
         </div>
-        <div className="w-40">
-          <Select
-            label="Species"
-            options={[{ value: '', label: 'All species' }, ...species.map(s => ({ value: s.id, label: s.name }))]}
-            value={filterSpecies}
-            onChange={(e) => setFilterSpecies(e.target.value)}
-          />
-        </div>
-        <div className="w-36">
-          <Input
-            label="From"
-            type="date"
-            value={dateFrom}
-            onChange={(e) => setDateFrom(e.target.value)}
-          />
-        </div>
-        <div className="w-36">
-          <Input
-            label="To"
-            type="date"
-            value={dateTo}
-            onChange={(e) => setDateTo(e.target.value)}
-          />
-        </div>
-        <Button onClick={fetchEntries} variant="outline" size="md">Apply</Button>
-        <Button
-          onClick={() => {
-            setFilterState('')
-            setFilterSpecies('')
-            setDateFrom('')
-            setDateTo('')
-          }}
-          variant="ghost"
-          size="md"
-        >
-          Clear
-        </Button>
       </div>
 
       {/* Summary */}
@@ -123,8 +112,8 @@ export default function SeasonHistory() {
       )}
 
       {/* Table */}
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse text-sm">
+      <div className="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0">
+        <table className="w-full min-w-[480px] border-collapse text-sm">
           <thead>
             <tr className="border-b-2 border-khaki">
               <th className="text-left py-3 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wide">Date</th>
