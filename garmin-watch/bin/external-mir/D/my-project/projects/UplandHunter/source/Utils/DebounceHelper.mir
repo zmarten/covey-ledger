@@ -1,0 +1,106 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [System,1,14,20]; ]
+import Toybox.System;
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 24; @symbol_classdef = [DebounceHelper,24,6,20]; ]
+class DebounceHelper {
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 24; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 24; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 28; @position = 8; @symbol_vardef = [_lastEventTime,28,8,22]; @symbol_type<0> = [Number,28,26,32]; ]
+    var _lastEventTime as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 32; @position = 8; @symbol_vardef = [_debounceMs,32,8,19]; @symbol_type<0> = [Number,32,23,29]; ]
+    var _debounceMs as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 40; @symbol_functiondef = [initialize,40,13,23]; @symbol_param<0> = [debounceMs,40,24,34]; @symbol_param<0>_type<0> = [Number,40,38,44]; ]
+    function initialize(debounceMs as Number or Null) as Void {
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_40_47_46_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc" 41 8 ]
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_41_8_45_8_if_stmt:
+        %tmp.1 = lgetv %debounceMs;
+        symbol [ debounceMs %tmp.1 41 12 22 ];
+        %tmp.2 = null;
+        %tmp.3 = ne %tmp.1 %tmp.2;
+        bf %tmp.3 @D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_41_8_45_8_if_else_false;
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_41_8_45_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_41_32_43_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc" 42 12 ]
+        %tmp.4 = lgetv %debounceMs;
+        symbol [ debounceMs %tmp.4 42 26 36 ];
+        %tmp.5 = as %tmp.4 { (!Null) };
+        symbol [ _debounceMs ? 42 12 23 ];
+        putv self :_debounceMs %tmp.5;
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_41_32_43_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_41_8_45_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_41_8_45_8_if_else_false:
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_43_15_45_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc" 44 12 ]
+        symbol [ Constants %tmp.7 44 26 35 ];
+        %tmp.7 = getv ? :Constants;
+        symbol [ DEBOUNCE_MS %tmp.8 44 36 47 ];
+        %tmp.8 = getv %tmp.7 :DEBOUNCE_MS;
+        symbol [ _debounceMs ? 44 12 23 ];
+        putv self :_debounceMs %tmp.8;
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_43_15_45_8_stop:
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_41_8_45_8_if_end:
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_40_47_46_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 57; @symbol_functiondef = [canProcess,57,13,23]; @symbol_return<0> = [Boolean,57,29,36]; ]
+    function canProcess() as Boolean {
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_57_37_69_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc" 58 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_57_37_69_4_start" "D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_57_37_69_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 58 12 15 ];
+        symbol [ System %tmp.1 58 18 24 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.2 58 25 33 ];
+        %tmp.2 = getv function %tmp.1 :getTimer;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %now.1 %tmp.3;
+        symbol [ now %now.1 58 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc" 61 8 ]
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_61_8_64_8_if_stmt:
+        %tmp.4 = lgetv %now.1;
+        symbol [ now %tmp.4 61 12 15 ];
+        symbol [ _lastEventTime %tmp.6 61 18 32 ];
+        %tmp.6 = getv ? :_lastEventTime;
+        %tmp.7 = sub %tmp.4 %tmp.6;
+        symbol [ _debounceMs %tmp.9 61 35 46 ];
+        %tmp.9 = getv ? :_debounceMs;
+        %tmp.10 = lt %tmp.7 %tmp.9;
+        bf %tmp.10 @D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_61_8_64_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_61_8_64_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_61_48_64_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc" 63 12 ]
+        %tmp.11 = false;
+        ret %tmp.11;
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_61_48_64_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_61_8_64_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_61_8_64_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc" 67 8 ]
+        %tmp.12 = lgetv %now.1;
+        symbol [ now %tmp.12 67 25 28 ];
+        symbol [ _lastEventTime ? 67 8 22 ];
+        putv self :_lastEventTime %tmp.12;
+[ "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc" 68 8 ]
+        %tmp.13 = true;
+        ret %tmp.13;
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_57_37_69_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 79; @symbol_functiondef = [reset,79,13,18]; ]
+    function reset() as Void {
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_79_29_81_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc" 80 8 ]
+        %tmp.1 = 0;
+        symbol [ _lastEventTime ? 80 8 22 ];
+        putv self :_lastEventTime %tmp.1;
+D__my_project_projects_UplandHunter_source_Utils_DebounceHelper_mc_79_29_81_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\DebounceHelper.mc"; @line = 1; ]
+<init> {
+}

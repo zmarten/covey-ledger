@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+    manifest.xml — Upland Hunter Connect IQ App
+    Defines app identity, permissions, target devices, and required capabilities.
+    This is the root configuration file that the Connect IQ build system reads first.
+-->
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="5">
+
+    <!-- Unique application identifier — registered with Garmin Connect IQ store -->
+    <iq:application id="a3421bee-d4b4-4c7e-9e5b-1a2b3c4d5e6f"
+                    type="watch-app"
+                    name="@Strings.AppName"
+                    entry="UplandHunterApp"
+                    launcherIcon="@Drawables.LauncherIcon"
+                    minApiLevel="5.0.1">
+
+        <!-- Products — each device we support gets an entry here.
+             fenix8solar51mm is our primary target (51mm AMOLED, 454x454px). -->
+        <!-- Products — all supported Garmin watches.
+             Primary: Fenix 8 Solar 51mm (AMOLED 454x454).
+             Secondary: Fenix 8 family, Fenix 7 Pro series, Epix 2 Pro, Forerunner 965.
+             All require ANT+ Generic Channel support and minimum API 5.0.1. -->
+        <iq:products>
+            <!-- Fenix 8 family — primary targets (System 8, AMOLED) -->
+            <iq:product id="fenix8solar51mm"/>
+            <iq:product id="fenix8solar47mm"/>
+            <iq:product id="fenix847mm"/>
+            <iq:product id="fenix843mm"/>
+            <!-- Fenix 7 Pro series — previous gen, large screen, popular for outdoor sports -->
+            <iq:product id="fenix7pro"/>
+            <iq:product id="fenix7xpro"/>
+            <!-- Epix 2 Pro — AMOLED, same capabilities as Fenix 8 -->
+            <iq:product id="epix2pro42mm"/>
+            <iq:product id="epix2pro47mm"/>
+            <iq:product id="epix2pro51mm"/>
+            <!-- Forerunner 965 — AMOLED, capable multisport watch -->
+            <iq:product id="fr965"/>
+        </iq:products>
+
+        <!-- Permissions — what hardware/APIs we need access to.
+             Each permission unlocks specific Monkey C modules. -->
+        <iq:permissions>
+            <!-- GPS position tracking for waypoints and navigation -->
+            <iq:uses-permission id="Positioning"/>
+            <!-- Compass/magnetometer for bearing calculation, plus sensor access -->
+            <iq:uses-permission id="Sensor"/>
+            <!-- ANT+ Generic Channels for Alpha/Astro dog tracker communication -->
+            <iq:uses-permission id="Ant"/>
+            <!-- FIT activity recording (start/stop/save activities) -->
+            <iq:uses-permission id="Fit"/>
+            <!-- Write custom fields into FIT activity files for Garmin Connect -->
+            <iq:uses-permission id="FitContributor"/>
+        </iq:permissions>
+
+        <!-- Languages supported -->
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+
+        <!-- Barrels (libraries) — none for now, may add later -->
+        <iq:barrels/>
+
+    </iq:application>
+
+</iq:manifest>

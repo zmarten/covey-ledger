@@ -1,0 +1,19 @@
+<properties>
+    <!--
+        Properties — default values for user-configurable settings.
+        These get overwritten when the user changes settings via Garmin Connect Mobile.
+        The @Properties.keyName syntax in settings.xml references these keys.
+    -->
+
+    <!-- 0 = yards, 1 = meters. Default yards for US hunters. -->
+    <property id="unitSystem" type="number">0</property>
+
+    <!-- GPS poll rate: 0 = battery saver (5s), 1 = standard (2s), 2 = high accuracy (1s) -->
+    <property id="gpsPollRate" type="number">1</property>
+
+    <!-- Haptic/vibration alerts enabled by default -->
+    <property id="hapticEnabled" type="boolean">true</property>
+
+    <!-- High contrast mode off by default -->
+    <property id="highContrast" type="boolean">false</property>
+</properties>

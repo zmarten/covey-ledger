@@ -1,0 +1,480 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [System,2,14,20]; ]
+import Toybox.System;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Application,3,14,25]; ]
+import Toybox.Application;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Lang,4,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 25; @symbol_classdef = [MainDelegate,25,6,18]; @symbol_extends<0> = [WatchUi,25,27,34]; @symbol_extends<1> = [BehaviorDelegate,25,35,51]; ]
+class MainDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 25; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 25; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 28; @position = 8; @symbol_vardef = [_debouncer,28,8,18]; @symbol_type<0> = [DebounceHelper,28,22,36]; ]
+    var _debouncer as DebounceHelper;
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 33; @symbol_functiondef = [initialize,33,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_33_26_36_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 34 8 ]
+        symbol [ BehaviorDelegate %tmp.2 34 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 34 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 35 8 ]
+        symbol [ DebounceHelper %tmp.7 35 25 39 ];
+        %tmp.7 = getv ? :DebounceHelper;
+        %tmp.8 = null;
+        %tmp.4 = newc %tmp.7 (%tmp.8);
+        symbol [ _debouncer ? 35 8 18 ];
+        putv self :_debouncer %tmp.4;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_33_26_36_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 50; @symbol_functiondef = [onSelect,50,13,21]; @symbol_return<0> = [Boolean,50,27,34]; ]
+    function onSelect() as Boolean {
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_50_35_75_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 52 8 ]
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_52_8_54_8_if_stmt:
+        symbol [ _debouncer %tmp.2 52 13 23 ];
+        %tmp.2 = getv ? :_debouncer;
+        symbol [ canProcess %tmp.3 52 24 34 ];
+        %tmp.3 = getv function %tmp.2 :canProcess;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = not %tmp.4;
+        bf %tmp.5 @D__my_project_projects_UplandHunter_source_MainDelegate_mc_52_8_54_8_if_end;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_52_8_54_8_if_true:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_52_38_54_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 53 12 ]
+        %tmp.6 = true;
+        ret %tmp.6;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_52_38_54_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainDelegate_mc_52_8_54_8_if_end;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_52_8_54_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 56 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainDelegate_mc_50_35_75_4_start" "D__my_project_projects_UplandHunter_source_MainDelegate_mc_50_35_75_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 56 12 15 ];
+        symbol [ Application %tmp.7 56 18 29 ];
+        %tmp.7 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.8 56 30 36 ];
+        %tmp.8 = getv function %tmp.7 :getApp;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        %tmp.10 = as %tmp.9 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.10 56 42 57 ];
+        lputv %app.1 %tmp.10;
+        symbol [ app %app.1 56 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 58 8 ]
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_58_8_72_8_if_stmt:
+        %tmp.11 = lgetv %app.1;
+        symbol [ app %tmp.11 58 12 15 ];
+        symbol [ isHuntActive %tmp.12 58 16 28 ];
+        %tmp.12 = getv function %tmp.11 :isHuntActive;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        bf %tmp.13 @D__my_project_projects_UplandHunter_source_MainDelegate_mc_58_8_72_8_if_else_false;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_58_8_72_8_if_true:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_58_32_68_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 63 12 ]
+        symbol [ WatchUi %tmp.14 63 12 19 ];
+        %tmp.14 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.15 63 20 28 ];
+        %tmp.15 = getv function %tmp.14 :pushView;
+        symbol [ SpeciesSelectView %tmp.19 64 20 37 ];
+        %tmp.19 = getv ? :SpeciesSelectView;
+        %tmp.16 = newc %tmp.19 ();
+        symbol [ SpeciesSelectDelegate %tmp.23 65 20 41 ];
+        %tmp.23 = getv ? :SpeciesSelectDelegate;
+        %tmp.20 = newc %tmp.23 ();
+        symbol [ WatchUi %tmp.24 66 16 23 ];
+        %tmp.24 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.25 66 24 32 ];
+        %tmp.25 = getv %tmp.24 :SLIDE_UP;
+        invoke %tmp.14 %tmp.15(%tmp.16, %tmp.20, %tmp.25);
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_58_32_68_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainDelegate_mc_58_8_72_8_if_end;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_58_8_72_8_if_else_false:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_68_15_72_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 70 12 ]
+        %tmp.26 = lgetv %app.1;
+        symbol [ app %tmp.26 70 12 15 ];
+        symbol [ startHuntActivity %tmp.27 70 16 33 ];
+        %tmp.27 = getv function %tmp.26 :startHuntActivity;
+        invoke %tmp.26 %tmp.27();
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 71 12 ]
+        symbol [ WatchUi %tmp.28 71 12 19 ];
+        %tmp.28 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.29 71 20 33 ];
+        %tmp.29 = getv function %tmp.28 :requestUpdate;
+        invoke %tmp.28 %tmp.29();
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_68_15_72_8_stop:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_58_8_72_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 74 8 ]
+        %tmp.30 = true;
+        ret %tmp.30;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_50_35_75_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 85; @symbol_functiondef = [onMenu,85,13,19]; @symbol_return<0> = [Boolean,85,25,32]; ]
+    function onMenu() as Boolean {
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_85_33_103_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 86 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainDelegate_mc_85_33_103_4_start" "D__my_project_projects_UplandHunter_source_MainDelegate_mc_85_33_103_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 86 12 15 ];
+        symbol [ Application %tmp.1 86 18 29 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.2 86 30 36 ];
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = as %tmp.3 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.4 86 42 57 ];
+        lputv %app.1 %tmp.4;
+        symbol [ app %app.1 86 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 89 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainDelegate_mc_85_33_103_4_start" "D__my_project_projects_UplandHunter_source_MainDelegate_mc_85_33_103_4_stop" ]
+        %menu.2 = local;
+        symbol [ menu %menu.2 89 12 16 ];
+        symbol [ WatchUi %tmp.7 89 23 30 ];
+        %tmp.7 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.8 89 31 36 ];
+        %tmp.8 = getv function ? %tmp.7 :Menu2;
+        %tmp.9 = newd 1;
+        %tmp.11 = const :title;
+        symbol [ title %tmp.11 89 39 44 const ];
+        %tmp.12 = "Upland Hunter";
+        %tmp.13 = dup %tmp.9;
+        %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+        %tmp.5 = newc %tmp.8 (%tmp.14);
+        lputv %menu.2 %tmp.5;
+        symbol [ menu %menu.2 89 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 91 8 ]
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_91_8_99_8_if_stmt:
+        %tmp.15 = lgetv %app.1;
+        symbol [ app %tmp.15 91 12 15 ];
+        symbol [ isHuntActive %tmp.16 91 16 28 ];
+        %tmp.16 = getv function %tmp.15 :isHuntActive;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        bf %tmp.17 @D__my_project_projects_UplandHunter_source_MainDelegate_mc_91_8_99_8_if_else_false;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_91_8_99_8_if_true:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_91_32_96_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 93 12 ]
+        %tmp.18 = lgetv %menu.2;
+        symbol [ menu %tmp.18 93 12 16 ];
+        symbol [ addItem %tmp.19 93 17 24 ];
+        %tmp.19 = getv function %tmp.18 :addItem;
+        symbol [ WatchUi %tmp.22 93 29 36 ];
+        %tmp.22 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.23 93 37 45 ];
+        %tmp.23 = getv function ? %tmp.22 :MenuItem;
+        %tmp.24 = "Session Stats";
+        %tmp.25 = "View hunt stats";
+        %tmp.26 = "MenuStats";
+        %tmp.27 = null;
+        %tmp.20 = newc %tmp.23 (%tmp.24, %tmp.25, %tmp.26, %tmp.27);
+        invoke %tmp.18 %tmp.19(%tmp.20);
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 94 12 ]
+        %tmp.28 = lgetv %menu.2;
+        symbol [ menu %tmp.28 94 12 16 ];
+        symbol [ addItem %tmp.29 94 17 24 ];
+        %tmp.29 = getv function %tmp.28 :addItem;
+        symbol [ WatchUi %tmp.32 94 29 36 ];
+        %tmp.32 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.33 94 37 45 ];
+        %tmp.33 = getv function ? %tmp.32 :MenuItem;
+        %tmp.34 = "Map View";
+        %tmp.35 = "View hunt map";
+        %tmp.36 = "MenuMap";
+        %tmp.37 = null;
+        %tmp.30 = newc %tmp.33 (%tmp.34, %tmp.35, %tmp.36, %tmp.37);
+        invoke %tmp.28 %tmp.29(%tmp.30);
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 95 12 ]
+        %tmp.38 = lgetv %menu.2;
+        symbol [ menu %tmp.38 95 12 16 ];
+        symbol [ addItem %tmp.39 95 17 24 ];
+        %tmp.39 = getv function %tmp.38 :addItem;
+        symbol [ WatchUi %tmp.42 95 29 36 ];
+        %tmp.42 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.43 95 37 45 ];
+        %tmp.43 = getv function ? %tmp.42 :MenuItem;
+        %tmp.44 = "End Hunt";
+        %tmp.45 = "Stop and save";
+        %tmp.46 = "MenuEndHunt";
+        %tmp.47 = null;
+        %tmp.40 = newc %tmp.43 (%tmp.44, %tmp.45, %tmp.46, %tmp.47);
+        invoke %tmp.38 %tmp.39(%tmp.40);
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_91_32_96_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainDelegate_mc_91_8_99_8_if_end;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_91_8_99_8_if_else_false:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_96_15_99_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 98 12 ]
+        %tmp.48 = lgetv %menu.2;
+        symbol [ menu %tmp.48 98 12 16 ];
+        symbol [ addItem %tmp.49 98 17 24 ];
+        %tmp.49 = getv function %tmp.48 :addItem;
+        symbol [ WatchUi %tmp.52 98 29 36 ];
+        %tmp.52 = getm $.Toybox.WatchUi;
+        symbol [ MenuItem %tmp.53 98 37 45 ];
+        %tmp.53 = getv function ? %tmp.52 :MenuItem;
+        %tmp.54 = "Start Hunt";
+        %tmp.55 = "Begin recording";
+        %tmp.56 = "MenuStartHunt";
+        %tmp.57 = null;
+        %tmp.50 = newc %tmp.53 (%tmp.54, %tmp.55, %tmp.56, %tmp.57);
+        invoke %tmp.48 %tmp.49(%tmp.50);
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_96_15_99_8_stop:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_91_8_99_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 101 8 ]
+        symbol [ WatchUi %tmp.58 101 8 15 ];
+        %tmp.58 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.59 101 16 24 ];
+        %tmp.59 = getv function %tmp.58 :pushView;
+        %tmp.60 = lgetv %menu.2;
+        symbol [ menu %tmp.60 101 25 29 ];
+        symbol [ MainMenuDelegate %tmp.64 101 35 51 ];
+        %tmp.64 = getv ? :MainMenuDelegate;
+        %tmp.61 = newc %tmp.64 ();
+        symbol [ WatchUi %tmp.65 101 55 62 ];
+        %tmp.65 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.66 101 63 71 ];
+        %tmp.66 = getv %tmp.65 :SLIDE_UP;
+        invoke %tmp.58 %tmp.59(%tmp.60, %tmp.61, %tmp.66);
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 102 8 ]
+        %tmp.67 = true;
+        ret %tmp.67;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_85_33_103_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 113; @symbol_functiondef = [onBack,113,13,19]; @symbol_return<0> = [Boolean,113,25,32]; ]
+    function onBack() as Boolean {
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_113_33_115_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 114 8 ]
+        %tmp.1 = false;
+        ret %tmp.1;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_113_33_115_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 123; @symbol_classdef = [MainMenuDelegate,123,6,22]; @symbol_extends<0> = [WatchUi,123,31,38]; @symbol_extends<1> = [Menu2InputDelegate,123,39,57]; ]
+class MainMenuDelegate extends WatchUi.Menu2InputDelegate {
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 123; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 123; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 128; @symbol_functiondef = [initialize,128,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_128_26_130_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 129 8 ]
+        symbol [ Menu2InputDelegate %tmp.2 129 8 26 ];
+        %tmp.2 = getv ? :Menu2InputDelegate;
+        symbol [ initialize %tmp.3 129 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_128_26_130_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 139; @symbol_functiondef = [onSelect,139,13,21]; @symbol_param<0> = [item,139,22,26]; @symbol_param<0>_type<0> = [WatchUi,139,30,37]; @symbol_param<0>_type<1> = [MenuItem,139,38,46]; ]
+    function onSelect(item as WatchUi.MenuItem) as Void {
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_139_56_177_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 140 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainDelegate_mc_139_56_177_4_start" "D__my_project_projects_UplandHunter_source_MainDelegate_mc_139_56_177_4_stop" ]
+        %id.1 = local;
+        symbol [ id %id.1 140 12 14 ];
+        %tmp.1 = lgetv %item;
+        symbol [ item %tmp.1 140 17 21 ];
+        symbol [ getId %tmp.2 140 22 27 ];
+        %tmp.2 = getv function %tmp.1 :getId;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = as %tmp.3 String;
+        symbol [ String %tmp.4 140 33 39 ];
+        lputv %id.1 %tmp.4;
+        symbol [ id %id.1 140 12 14 ];
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 141 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainDelegate_mc_139_56_177_4_start" "D__my_project_projects_UplandHunter_source_MainDelegate_mc_139_56_177_4_stop" ]
+        %app.2 = local;
+        symbol [ app %app.2 141 12 15 ];
+        symbol [ Application %tmp.5 141 18 29 ];
+        %tmp.5 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.6 141 30 36 ];
+        %tmp.6 = getv function %tmp.5 :getApp;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = as %tmp.7 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.8 141 42 57 ];
+        lputv %app.2 %tmp.8;
+        symbol [ app %app.2 141 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 143 8 ]
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_143_8_176_8_if_stmt:
+        %tmp.9 = lgetv %id.1;
+        symbol [ id %tmp.9 143 12 14 ];
+        symbol [ equals %tmp.10 143 15 21 ];
+        %tmp.10 = getv function %tmp.9 :equals;
+        %tmp.11 = "MenuStartHunt";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        bf %tmp.12 @D__my_project_projects_UplandHunter_source_MainDelegate_mc_143_8_176_8_if_false;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_143_8_176_8_if_true:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_143_40_148_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 145 12 ]
+        %tmp.13 = lgetv %app.2;
+        symbol [ app %tmp.13 145 12 15 ];
+        symbol [ startHuntActivity %tmp.14 145 16 33 ];
+        %tmp.14 = getv function %tmp.13 :startHuntActivity;
+        invoke %tmp.13 %tmp.14();
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 146 12 ]
+        symbol [ WatchUi %tmp.15 146 12 19 ];
+        %tmp.15 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.16 146 20 27 ];
+        %tmp.16 = getv function %tmp.15 :popView;
+        symbol [ WatchUi %tmp.17 146 28 35 ];
+        %tmp.17 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.18 146 36 46 ];
+        %tmp.18 = getv %tmp.17 :SLIDE_DOWN;
+        invoke %tmp.15 %tmp.16(%tmp.18);
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_143_40_148_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainDelegate_mc_143_8_176_8_if_end;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_143_8_176_8_if_false:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 148 15 ]
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_148_15_176_8_if_stmt:
+        %tmp.19 = lgetv %id.1;
+        symbol [ id %tmp.19 148 19 21 ];
+        symbol [ equals %tmp.20 148 22 28 ];
+        %tmp.20 = getv function %tmp.19 :equals;
+        %tmp.21 = "MenuEndHunt";
+        %tmp.22 = invoke %tmp.19 %tmp.20(%tmp.21);
+        bf %tmp.22 @D__my_project_projects_UplandHunter_source_MainDelegate_mc_148_15_176_8_if_false;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_148_15_176_8_if_true:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_148_45_159_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 152 12 ]
+        symbol [ WatchUi %tmp.23 152 12 19 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.24 152 20 27 ];
+        %tmp.24 = getv function %tmp.23 :popView;
+        symbol [ WatchUi %tmp.25 152 28 35 ];
+        %tmp.25 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.26 152 36 51 ];
+        %tmp.26 = getv %tmp.25 :SLIDE_IMMEDIATE;
+        invoke %tmp.23 %tmp.24(%tmp.26);
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 153 12 ]
+        symbol [ WatchUi %tmp.27 153 12 19 ];
+        %tmp.27 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.28 153 20 28 ];
+        %tmp.28 = getv function %tmp.27 :pushView;
+        symbol [ PostHuntSummaryView %tmp.32 154 20 39 ];
+        %tmp.32 = getv ? :PostHuntSummaryView;
+        %tmp.29 = newc %tmp.32 ();
+        symbol [ PostHuntSummaryDelegate %tmp.36 155 20 43 ];
+        %tmp.36 = getv ? :PostHuntSummaryDelegate;
+        %tmp.33 = newc %tmp.36 ();
+        symbol [ WatchUi %tmp.37 156 16 23 ];
+        %tmp.37 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.38 156 24 32 ];
+        %tmp.38 = getv %tmp.37 :SLIDE_UP;
+        invoke %tmp.27 %tmp.28(%tmp.29, %tmp.33, %tmp.38);
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_148_45_159_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainDelegate_mc_148_15_176_8_if_end;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_148_15_176_8_if_false:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 159 15 ]
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_159_15_176_8_if_stmt:
+        %tmp.39 = lgetv %id.1;
+        symbol [ id %tmp.39 159 19 21 ];
+        symbol [ equals %tmp.40 159 22 28 ];
+        %tmp.40 = getv function %tmp.39 :equals;
+        %tmp.41 = "MenuStats";
+        %tmp.42 = invoke %tmp.39 %tmp.40(%tmp.41);
+        bf %tmp.42 @D__my_project_projects_UplandHunter_source_MainDelegate_mc_159_15_176_8_if_false;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_159_15_176_8_if_true:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_159_43_168_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 161 12 ]
+        symbol [ WatchUi %tmp.43 161 12 19 ];
+        %tmp.43 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.44 161 20 27 ];
+        %tmp.44 = getv function %tmp.43 :popView;
+        symbol [ WatchUi %tmp.45 161 28 35 ];
+        %tmp.45 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.46 161 36 51 ];
+        %tmp.46 = getv %tmp.45 :SLIDE_IMMEDIATE;
+        invoke %tmp.43 %tmp.44(%tmp.46);
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 162 12 ]
+        symbol [ WatchUi %tmp.47 162 12 19 ];
+        %tmp.47 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.48 162 20 28 ];
+        %tmp.48 = getv function %tmp.47 :pushView;
+        symbol [ SessionStatsView %tmp.52 163 20 36 ];
+        %tmp.52 = getv ? :SessionStatsView;
+        %tmp.49 = newc %tmp.52 ();
+        symbol [ SessionStatsDelegate %tmp.56 164 20 40 ];
+        %tmp.56 = getv ? :SessionStatsDelegate;
+        %tmp.53 = newc %tmp.56 ();
+        symbol [ WatchUi %tmp.57 165 16 23 ];
+        %tmp.57 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.58 165 24 32 ];
+        %tmp.58 = getv %tmp.57 :SLIDE_UP;
+        invoke %tmp.47 %tmp.48(%tmp.49, %tmp.53, %tmp.58);
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_159_43_168_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainDelegate_mc_159_15_176_8_if_end;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_159_15_176_8_if_false:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 168 15 ]
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_168_15_176_8_if_stmt:
+        %tmp.59 = lgetv %id.1;
+        symbol [ id %tmp.59 168 19 21 ];
+        symbol [ equals %tmp.60 168 22 28 ];
+        %tmp.60 = getv function %tmp.59 :equals;
+        %tmp.61 = "MenuMap";
+        %tmp.62 = invoke %tmp.59 %tmp.60(%tmp.61);
+        bf %tmp.62 @D__my_project_projects_UplandHunter_source_MainDelegate_mc_168_15_176_8_if_end;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_168_15_176_8_if_true:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_168_41_176_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 170 12 ]
+        symbol [ WatchUi %tmp.63 170 12 19 ];
+        %tmp.63 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.64 170 20 27 ];
+        %tmp.64 = getv function %tmp.63 :popView;
+        symbol [ WatchUi %tmp.65 170 28 35 ];
+        %tmp.65 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.66 170 36 51 ];
+        %tmp.66 = getv %tmp.65 :SLIDE_IMMEDIATE;
+        invoke %tmp.63 %tmp.64(%tmp.66);
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 171 12 ]
+        symbol [ WatchUi %tmp.67 171 12 19 ];
+        %tmp.67 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.68 171 20 28 ];
+        %tmp.68 = getv function %tmp.67 :pushView;
+        symbol [ HuntMapView %tmp.72 172 20 31 ];
+        %tmp.72 = getv ? :HuntMapView;
+        %tmp.69 = newc %tmp.72 ();
+        symbol [ HuntMapDelegate %tmp.76 173 20 35 ];
+        %tmp.76 = getv ? :HuntMapDelegate;
+        %tmp.73 = newc %tmp.76 ();
+        symbol [ WatchUi %tmp.77 174 16 23 ];
+        %tmp.77 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.78 174 24 32 ];
+        %tmp.78 = getv %tmp.77 :SLIDE_UP;
+        invoke %tmp.67 %tmp.68(%tmp.69, %tmp.73, %tmp.78);
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_168_41_176_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainDelegate_mc_168_15_176_8_if_end;
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_168_15_176_8_if_end:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_159_15_176_8_if_end:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_148_15_176_8_if_end:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_143_8_176_8_if_end:
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_139_56_177_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 183; @symbol_functiondef = [onBack,183,13,19]; ]
+    function onBack() as Void {
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_183_30_185_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainDelegate.mc" 184 8 ]
+        symbol [ WatchUi %tmp.1 184 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 184 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 184 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.4 184 32 42 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+D__my_project_projects_UplandHunter_source_MainDelegate_mc_183_30_185_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\MainDelegate.mc"; @line = 1; ]
+<init> {
+}

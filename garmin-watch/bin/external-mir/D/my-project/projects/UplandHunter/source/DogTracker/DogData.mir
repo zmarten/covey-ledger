@@ -1,0 +1,93 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Time,2,14,18]; ]
+import Toybox.Time;
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 25; @symbol_classdef = [DogData,25,6,13]; ]
+class DogData {
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 25; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 25; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 28; @position = 8; @symbol_vardef = [name,28,8,12]; @symbol_type<0> = [String,28,16,22]; ]
+    var name as String;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 31; @position = 8; @symbol_vardef = [id,31,8,10]; @symbol_type<0> = [Number,31,14,20]; ]
+    var id as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 36; @position = 8; @symbol_vardef = [distanceYards,36,8,21]; @symbol_type<0> = [Number,36,25,31]; ]
+    var distanceYards as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 40; @position = 8; @symbol_vardef = [direction,40,8,17]; @symbol_type<0> = [Double,40,21,27]; ]
+    var direction as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 45; @position = 8; @symbol_vardef = [status,45,8,14]; @symbol_type<0> = [Number,45,18,24]; ]
+    var status as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 49; @position = 8; @symbol_vardef = [batteryPercent,49,8,22]; @symbol_type<0> = [Number,49,26,32]; ]
+    var batteryPercent as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 53; @position = 8; @symbol_vardef = [signalQuality,53,8,21]; @symbol_type<0> = [Number,53,25,31]; ]
+    var signalQuality as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 57; @position = 8; @symbol_vardef = [lastUpdateTime,57,8,22]; @symbol_type<0> = [Number,57,26,32]; ]
+    var lastUpdateTime as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 61; @position = 8; @symbol_vardef = [color,61,8,13]; @symbol_type<0> = [Number,61,17,23]; ]
+    var color as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 67; @position = 8; @symbol_vardef = [latitude,67,8,16]; @symbol_type<0> = [Double,67,20,26]; ]
+    var latitude as Double or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 68; @position = 8; @symbol_vardef = [longitude,68,8,17]; @symbol_type<0> = [Double,68,21,27]; ]
+    var longitude as Double or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 80; @symbol_functiondef = [initialize,80,13,23]; @symbol_param<0> = [dogName,80,24,31]; @symbol_param<0>_type<0> = [String,80,35,41]; @symbol_param<1> = [dogId,80,43,48]; @symbol_param<1>_type<0> = [Number,80,52,58]; ]
+    function initialize(dogName as String, dogId as Number) as Void {
+D__my_project_projects_UplandHunter_source_DogTracker_DogData_mc_80_60_92_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 81 8 ]
+        %tmp.1 = lgetv %dogName;
+        symbol [ dogName %tmp.1 81 15 22 ];
+        symbol [ name ? 81 8 12 ];
+        putv self :name %tmp.1;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 82 8 ]
+        %tmp.2 = lgetv %dogId;
+        symbol [ dogId %tmp.2 82 13 18 ];
+        symbol [ id ? 82 8 10 ];
+        putv self :id %tmp.2;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 83 8 ]
+        %tmp.3 = 0;
+        symbol [ distanceYards ? 83 8 21 ];
+        putv self :distanceYards %tmp.3;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 84 8 ]
+        %tmp.4 = 0.0d;
+        symbol [ direction ? 84 8 17 ];
+        putv self :direction %tmp.4;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 85 8 ]
+        symbol [ Constants %tmp.6 85 17 26 ];
+        %tmp.6 = getv ? :Constants;
+        symbol [ DOG_STATUS_COMM_LOST %tmp.7 85 27 47 ];
+        %tmp.7 = getv %tmp.6 :DOG_STATUS_COMM_LOST;
+        symbol [ status ? 85 8 14 ];
+        putv self :status %tmp.7;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 86 8 ]
+        %tmp.8 = 100;
+        symbol [ batteryPercent ? 86 8 22 ];
+        putv self :batteryPercent %tmp.8;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 87 8 ]
+        %tmp.9 = 0;
+        symbol [ signalQuality ? 87 8 21 ];
+        putv self :signalQuality %tmp.9;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 88 8 ]
+        %tmp.10 = 0;
+        symbol [ lastUpdateTime ? 88 8 22 ];
+        putv self :lastUpdateTime %tmp.10;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 89 8 ]
+        %tmp.11 = 0;
+        symbol [ color ? 89 8 13 ];
+        putv self :color %tmp.11;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 90 8 ]
+        %tmp.12 = null;
+        symbol [ latitude ? 90 8 16 ];
+        putv self :latitude %tmp.12;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc" 91 8 ]
+        %tmp.13 = null;
+        symbol [ longitude ? 91 8 17 ];
+        putv self :longitude %tmp.13;
+D__my_project_projects_UplandHunter_source_DogTracker_DogData_mc_80_60_92_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogData.mc"; @line = 1; ]
+<init> {
+}

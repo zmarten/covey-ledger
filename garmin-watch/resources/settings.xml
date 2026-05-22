@@ -1,0 +1,36 @@
+<settings>
+    <!--
+        Settings — configurable via Garmin Connect Mobile app on the phone.
+        These show up in the app's settings page when the user taps the
+        gear icon in the Garmin Connect IQ app.
+    -->
+
+    <!-- Unit preference: 0 = yards (default for US hunters), 1 = meters -->
+    <setting propertyKey="@Properties.unitSystem" title="Distance Units">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.Yards</listEntry>
+            <listEntry value="1">@Strings.Meters</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- GPS polling frequency: how often we sample GPS position.
+         Lower = more battery, higher = more accuracy.
+         0 = battery saver (5s), 1 = standard (2s), 2 = high accuracy (1s) -->
+    <setting propertyKey="@Properties.gpsPollRate" title="GPS Update Rate">
+        <settingConfig type="list">
+            <listEntry value="0">Battery Saver (5s)</listEntry>
+            <listEntry value="1">Standard (2s)</listEntry>
+            <listEntry value="2">High Accuracy (1s)</listEntry>
+        </settingConfig>
+    </setting>
+
+    <!-- Haptic feedback on/off — some hunters prefer silent operation -->
+    <setting propertyKey="@Properties.hapticEnabled" title="Vibration Alerts">
+        <settingConfig type="boolean"/>
+    </setting>
+
+    <!-- High contrast mode for bright sunlight -->
+    <setting propertyKey="@Properties.highContrast" title="High Contrast Mode">
+        <settingConfig type="boolean"/>
+    </setting>
+</settings>

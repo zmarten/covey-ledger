@@ -1,0 +1,1728 @@
+[ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [WatchUi,3,13,20]; @symbol_usingAlias = [Ui,3,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Graphics,4,13,21]; ]
+using Toybox.Graphics;
+[ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Graphics,5,13,21]; @symbol_usingAlias = [Gfx,5,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 7; @symbol_moduledef = [Rez,7,7,10]; ]
+module Rez {
+    [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 8; @symbol_moduledef = [Drawables,8,11,20]; ]
+    module Drawables {
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 9; @position = 27; initialized = true; @symbol_vardef = [LauncherIcon,9,27,39]; @symbol_type<0> = [ResourceId,9,43,53]; ]
+        var LauncherIcon as ResourceId;
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 12; @symbol_moduledef = [Menus,12,11,16]; ]
+    module Menus {
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 12; ]
+        <init> {
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 13; @symbol_classdef = [MainMenu,13,14,22]; @symbol_extends<0> = [WatchUi,13,31,38]; @symbol_extends<1> = [Menu,13,39,43]; ]
+        class MainMenu extends WatchUi.Menu {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 13; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 13; ]
+            static
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 14; @symbol_functiondef = [initialize,14,21,31]; ]
+            function initialize() as Void {
+D__my_project_projects_UplandHunter_bin_gen_006_B4533_00_source_Rez_mcgen_14_34_20_12_start:
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 15 16 ]
+                symbol [ Menu %tmp.2 15 16 20 ];
+                %tmp.2 = getv ? :Menu;
+                symbol [ initialize %tmp.3 15 21 31 ];
+                %tmp.3 = getv function %tmp.2 :initialize;
+                invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 16 16 ]
+                symbol [ Menu %tmp.5 16 16 20 ];
+                %tmp.5 = getv ? :Menu;
+                symbol [ setTitle %tmp.6 16 21 29 ];
+                %tmp.6 = getv function %tmp.5 :setTitle;
+                symbol [ WatchUi %tmp.7 16 31 38 ];
+                %tmp.7 = getm $.Toybox.WatchUi;
+                symbol [ loadResource %tmp.8 16 39 51 ];
+                %tmp.8 = getv function %tmp.7 :loadResource;
+                symbol [ $ %tmp.9 16 52 53 ];
+                %tmp.9 = getm $;
+                symbol [ Rez %tmp.10 16 54 57 ];
+                %tmp.10 = getv %tmp.9 :Rez;
+                symbol [ Strings %tmp.11 16 58 65 ];
+                %tmp.11 = getv %tmp.10 :Strings;
+                symbol [ AppName %tmp.12 16 66 73 ];
+                %tmp.12 = getv %tmp.11 :AppName;
+                %tmp.13 = invoke %tmp.7 %tmp.8(%tmp.12);
+                %tmp.14 = as %tmp.13 String;
+                symbol [ String %tmp.14 16 78 84 ];
+                invoke %tmp.5 %tmp.6(%tmp.14);
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 17 16 ]
+                %tmp.15 = self;
+                symbol [ addItem %tmp.16 17 16 23 ];
+                %tmp.16 = getv function %tmp.15 :addItem;
+                symbol [ WatchUi %tmp.17 17 25 32 ];
+                %tmp.17 = getm $.Toybox.WatchUi;
+                symbol [ loadResource %tmp.18 17 33 45 ];
+                %tmp.18 = getv function %tmp.17 :loadResource;
+                symbol [ $ %tmp.19 17 46 47 ];
+                %tmp.19 = getm $;
+                symbol [ Rez %tmp.20 17 48 51 ];
+                %tmp.20 = getv %tmp.19 :Rez;
+                symbol [ Strings %tmp.21 17 52 59 ];
+                %tmp.21 = getv %tmp.20 :Strings;
+                symbol [ StartHunt %tmp.22 17 60 69 ];
+                %tmp.22 = getv %tmp.21 :StartHunt;
+                %tmp.23 = invoke %tmp.17 %tmp.18(%tmp.22);
+                %tmp.24 = as %tmp.23 String;
+                symbol [ String %tmp.24 17 74 80 ];
+                %tmp.26 = const :MenuStartHunt;
+                symbol [ MenuStartHunt %tmp.26 17 84 97 const ];
+                invoke %tmp.15 %tmp.16(%tmp.24, %tmp.26);
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 18 16 ]
+                %tmp.27 = self;
+                symbol [ addItem %tmp.28 18 16 23 ];
+                %tmp.28 = getv function %tmp.27 :addItem;
+                symbol [ WatchUi %tmp.29 18 25 32 ];
+                %tmp.29 = getm $.Toybox.WatchUi;
+                symbol [ loadResource %tmp.30 18 33 45 ];
+                %tmp.30 = getv function %tmp.29 :loadResource;
+                symbol [ $ %tmp.31 18 46 47 ];
+                %tmp.31 = getm $;
+                symbol [ Rez %tmp.32 18 48 51 ];
+                %tmp.32 = getv %tmp.31 :Rez;
+                symbol [ Strings %tmp.33 18 52 59 ];
+                %tmp.33 = getv %tmp.32 :Strings;
+                symbol [ Stats %tmp.34 18 60 65 ];
+                %tmp.34 = getv %tmp.33 :Stats;
+                %tmp.35 = invoke %tmp.29 %tmp.30(%tmp.34);
+                %tmp.36 = as %tmp.35 String;
+                symbol [ String %tmp.36 18 70 76 ];
+                %tmp.38 = const :MenuStats;
+                symbol [ MenuStats %tmp.38 18 80 89 const ];
+                invoke %tmp.27 %tmp.28(%tmp.36, %tmp.38);
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 19 16 ]
+                %tmp.39 = self;
+                symbol [ addItem %tmp.40 19 16 23 ];
+                %tmp.40 = getv function %tmp.39 :addItem;
+                symbol [ WatchUi %tmp.41 19 25 32 ];
+                %tmp.41 = getm $.Toybox.WatchUi;
+                symbol [ loadResource %tmp.42 19 33 45 ];
+                %tmp.42 = getv function %tmp.41 :loadResource;
+                symbol [ $ %tmp.43 19 46 47 ];
+                %tmp.43 = getm $;
+                symbol [ Rez %tmp.44 19 48 51 ];
+                %tmp.44 = getv %tmp.43 :Rez;
+                symbol [ Strings %tmp.45 19 52 59 ];
+                %tmp.45 = getv %tmp.44 :Strings;
+                symbol [ EndHunt %tmp.46 19 60 67 ];
+                %tmp.46 = getv %tmp.45 :EndHunt;
+                %tmp.47 = invoke %tmp.41 %tmp.42(%tmp.46);
+                %tmp.48 = as %tmp.47 String;
+                symbol [ String %tmp.48 19 72 78 ];
+                %tmp.50 = const :MenuEndHunt;
+                symbol [ MenuEndHunt %tmp.50 19 82 93 const ];
+                invoke %tmp.39 %tmp.40(%tmp.48, %tmp.50);
+D__my_project_projects_UplandHunter_bin_gen_006_B4533_00_source_Rez_mcgen_14_34_20_12_stop:
+            }
+        }
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 24; @symbol_moduledef = [Strings,24,11,18]; ]
+    module Strings {
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 24; ]
+        <init> {
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 25; @position = 27; initialized = true; @symbol_vardef = [GrouseRuffed,25,27,39]; @symbol_type<0> = [ResourceId,25,43,53]; ]
+        var GrouseRuffed as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 26; @position = 27; initialized = true; @symbol_vardef = [PrairieChicken,26,27,41]; @symbol_type<0> = [ResourceId,26,45,55]; ]
+        var PrairieChicken as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 27; @position = 27; initialized = true; @symbol_vardef = [Meters,27,27,33]; @symbol_type<0> = [ResourceId,27,37,47]; ]
+        var Meters as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 28; @position = 27; initialized = true; @symbol_vardef = [FlushSaved,28,27,37]; @symbol_type<0> = [ResourceId,28,41,51]; ]
+        var FlushSaved as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 29; @position = 27; initialized = true; @symbol_vardef = [PressNext,29,27,36]; @symbol_type<0> = [ResourceId,29,40,50]; ]
+        var PressNext as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 30; @position = 27; initialized = true; @symbol_vardef = [Pheasant,30,27,35]; @symbol_type<0> = [ResourceId,30,39,49]; ]
+        var Pheasant as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 31; @position = 27; initialized = true; @symbol_vardef = [MarkFlush,31,27,36]; @symbol_type<0> = [ResourceId,31,40,50]; ]
+        var MarkFlush as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 32; @position = 27; initialized = true; @symbol_vardef = [SelectSpecies,32,27,40]; @symbol_type<0> = [ResourceId,32,44,54]; ]
+        var SelectSpecies as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 33; @position = 27; initialized = true; @symbol_vardef = [EndHunt,33,27,34]; @symbol_type<0> = [ResourceId,33,38,48]; ]
+        var EndHunt as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 34; @position = 27; initialized = true; @symbol_vardef = [EnterDistance,34,27,40]; @symbol_type<0> = [ResourceId,34,44,54]; ]
+        var EnterDistance as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 35; @position = 27; initialized = true; @symbol_vardef = [Chukar,35,27,33]; @symbol_type<0> = [ResourceId,35,37,47]; ]
+        var Chukar as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 36; @position = 27; initialized = true; @symbol_vardef = [SaveWaypoint,36,27,39]; @symbol_type<0> = [ResourceId,36,43,53]; ]
+        var SaveWaypoint as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 37; @position = 27; initialized = true; @symbol_vardef = [MetersAbbr,37,27,37]; @symbol_type<0> = [ResourceId,37,41,51]; ]
+        var MetersAbbr as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 38; @position = 27; initialized = true; @symbol_vardef = [OnPoint,38,27,34]; @symbol_type<0> = [ResourceId,38,38,48]; ]
+        var OnPoint as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 39; @position = 27; initialized = true; @symbol_vardef = [BirdRetrieved,39,27,40]; @symbol_type<0> = [ResourceId,39,44,54]; ]
+        var BirdRetrieved as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 40; @position = 27; initialized = true; @symbol_vardef = [YardsAbbr,40,27,36]; @symbol_type<0> = [ResourceId,40,40,50]; ]
+        var YardsAbbr as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 41; @position = 27; initialized = true; @symbol_vardef = [GrouseSharptail,41,27,42]; @symbol_type<0> = [ResourceId,41,46,56]; ]
+        var GrouseSharptail as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 42; @position = 27; initialized = true; @symbol_vardef = [ShotResult,42,27,37]; @symbol_type<0> = [ResourceId,42,41,51]; ]
+        var ShotResult as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 43; @position = 27; initialized = true; @symbol_vardef = [Back,43,27,31]; @symbol_type<0> = [ResourceId,43,35,45]; ]
+        var Back as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 44; @position = 27; initialized = true; @symbol_vardef = [Distance,44,27,35]; @symbol_type<0> = [ResourceId,44,39,49]; ]
+        var Distance as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 45; @position = 27; initialized = true; @symbol_vardef = [GpsReady,45,27,35]; @symbol_type<0> = [ResourceId,45,39,49]; ]
+        var GpsReady as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 46; @position = 27; initialized = true; @symbol_vardef = [MarkBirdLocation,46,27,43]; @symbol_type<0> = [ResourceId,46,47,57]; ]
+        var MarkBirdLocation as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 47; @position = 27; initialized = true; @symbol_vardef = [NoShot,47,27,33]; @symbol_type<0> = [ResourceId,47,37,47]; ]
+        var NoShot as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 48; @position = 27; initialized = true; @symbol_vardef = [PointTowardBird,48,27,42]; @symbol_type<0> = [ResourceId,48,46,56]; ]
+        var PointTowardBird as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 49; @position = 27; initialized = true; @symbol_vardef = [GrouseSage,49,27,37]; @symbol_type<0> = [ResourceId,49,41,51]; ]
+        var GrouseSage as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 50; @position = 27; initialized = true; @symbol_vardef = [Quail,50,27,32]; @symbol_type<0> = [ResourceId,50,36,46]; ]
+        var Quail as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 51; @position = 27; initialized = true; @symbol_vardef = [SuccessRate,51,27,38]; @symbol_type<0> = [ResourceId,51,42,52]; ]
+        var SuccessRate as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 52; @position = 27; initialized = true; @symbol_vardef = [ShotsTaken,52,27,37]; @symbol_type<0> = [ResourceId,52,41,51]; ]
+        var ShotsTaken as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 53; @position = 27; initialized = true; @symbol_vardef = [Treed,53,27,32]; @symbol_type<0> = [ResourceId,53,36,46]; ]
+        var Treed as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 54; @position = 27; initialized = true; @symbol_vardef = [Stats,54,27,32]; @symbol_type<0> = [ResourceId,54,36,46]; ]
+        var Stats as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 55; @position = 27; initialized = true; @symbol_vardef = [Dove,55,27,31]; @symbol_type<0> = [ResourceId,55,35,45]; ]
+        var Dove as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 56; @position = 27; initialized = true; @symbol_vardef = [Map,56,27,30]; @symbol_type<0> = [ResourceId,56,34,44]; ]
+        var Map as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 57; @position = 27; initialized = true; @symbol_vardef = [Shot,57,27,31]; @symbol_type<0> = [ResourceId,57,35,45]; ]
+        var Shot as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 58; @position = 27; initialized = true; @symbol_vardef = [Cancel,58,27,33]; @symbol_type<0> = [ResourceId,58,37,47]; ]
+        var Cancel as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 59; @position = 27; initialized = true; @symbol_vardef = [Confirm,59,27,34]; @symbol_type<0> = [ResourceId,59,38,48]; ]
+        var Confirm as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 60; @position = 27; initialized = true; @symbol_vardef = [Yards,60,27,32]; @symbol_type<0> = [ResourceId,60,36,46]; ]
+        var Yards as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 61; @position = 27; initialized = true; @symbol_vardef = [AppName,61,27,34]; @symbol_type<0> = [ResourceId,61,38,48]; ]
+        var AppName as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 62; @position = 27; initialized = true; @symbol_vardef = [Woodcock,62,27,35]; @symbol_type<0> = [ResourceId,62,39,49]; ]
+        var Woodcock as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 63; @position = 27; initialized = true; @symbol_vardef = [BirdsDowned,63,27,38]; @symbol_type<0> = [ResourceId,63,42,52]; ]
+        var BirdsDowned as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 64; @position = 27; initialized = true; @symbol_vardef = [BackToHunt,64,27,37]; @symbol_type<0> = [ResourceId,64,41,51]; ]
+        var BackToHunt as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 65; @position = 27; initialized = true; @symbol_vardef = [Missed,65,27,33]; @symbol_type<0> = [ResourceId,65,37,47]; ]
+        var Missed as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 66; @position = 27; initialized = true; @symbol_vardef = [Partridge,66,27,36]; @symbol_type<0> = [ResourceId,66,40,50]; ]
+        var Partridge as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 67; @position = 27; initialized = true; @symbol_vardef = [BirdsDown,67,27,36]; @symbol_type<0> = [ResourceId,67,40,50]; ]
+        var BirdsDown as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 68; @position = 27; initialized = true; @symbol_vardef = [TotalFlushes,68,27,39]; @symbol_type<0> = [ResourceId,68,43,53]; ]
+        var TotalFlushes as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 69; @position = 27; initialized = true; @symbol_vardef = [HuntTime,69,27,35]; @symbol_type<0> = [ResourceId,69,39,49]; ]
+        var HuntTime as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 70; @position = 27; initialized = true; @symbol_vardef = [NoDogs,70,27,33]; @symbol_type<0> = [ResourceId,70,37,47]; ]
+        var NoDogs as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 71; @position = 27; initialized = true; @symbol_vardef = [HowMany,71,27,34]; @symbol_type<0> = [ResourceId,71,38,48]; ]
+        var HowMany as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 72; @position = 27; initialized = true; @symbol_vardef = [Searching,72,27,36]; @symbol_type<0> = [ResourceId,72,40,50]; ]
+        var Searching as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 73; @position = 27; initialized = true; @symbol_vardef = [StartHunt,73,27,36]; @symbol_type<0> = [ResourceId,73,40,50]; ]
+        var StartHunt as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 74; @position = 27; initialized = true; @symbol_vardef = [NoGps,74,27,32]; @symbol_type<0> = [ResourceId,74,36,46]; ]
+        var NoGps as ResourceId;
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 75; @position = 27; initialized = true; @symbol_vardef = [Other,75,27,32]; @symbol_type<0> = [ResourceId,75,36,46]; ]
+        var Other as ResourceId;
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 78; @symbol_moduledef = [Styles,78,11,17]; ]
+    module Styles {
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 78; ]
+        <init> {
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 79; @symbol_moduledef = [prompt_font_enhanced_readability__body_with_title,79,15,64]; ]
+        module prompt_font_enhanced_readability__body_with_title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 79; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 80 18 ]
+                symbol [ Graphics %tmp.51 80 34 42 ];
+                %tmp.51 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.52 80 43 62 ];
+                %tmp.52 = getv %tmp.51 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.53 80 63 71 ];
+                %tmp.53 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.54 80 72 92 ];
+                %tmp.54 = getv %tmp.53 :TEXT_JUSTIFY_VCENTER;
+                %tmp.55 = bitor %tmp.52 %tmp.54;
+                putv self :justification %tmp.55;
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 81 18 ]
+                symbol [ Graphics %tmp.56 81 25 33 ];
+                %tmp.56 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.57 81 34 43 ];
+                %tmp.57 = getv %tmp.56 :FONT_TINY;
+                putv self :font %tmp.57;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 80; @position = 18; @symbol_constdef = [justification,80,18,31]; ]
+            const justification;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 81; @position = 18; @symbol_constdef = [font,81,18,22]; ]
+            const font;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 84; @symbol_moduledef = [system_size__menu_header,84,15,39]; ]
+        module system_size__menu_header {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 84; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 85; @position = 18; @symbol_constdef = [width,85,18,23]; @symbol_type<0> = [Number,85,27,33]; ]
+            const width as Number = 280;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 86; @position = 18; @symbol_constdef = [height,86,18,24]; @symbol_type<0> = [Number,86,28,34]; ]
+            const height as Number = 95;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 89; @symbol_moduledef = [system_loc__hint_button_left_bottom,89,15,50]; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 89; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 90; @position = 18; @symbol_constdef = [x,90,18,19]; @symbol_type<0> = [Number,90,23,29]; ]
+            const x as Number = 7;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 91; @position = 18; @symbol_constdef = [y,91,18,19]; @symbol_type<0> = [Number,91,23,29]; ]
+            const y as Number = 179;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 94; @symbol_moduledef = [prompt_font_enhanced_readability__body_no_title,94,15,62]; ]
+        module prompt_font_enhanced_readability__body_no_title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 94; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 95 18 ]
+                symbol [ Graphics %tmp.58 95 34 42 ];
+                %tmp.58 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.59 95 43 62 ];
+                %tmp.59 = getv %tmp.58 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.60 95 63 71 ];
+                %tmp.60 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.61 95 72 92 ];
+                %tmp.61 = getv %tmp.60 :TEXT_JUSTIFY_VCENTER;
+                %tmp.62 = bitor %tmp.59 %tmp.61;
+                putv self :justification %tmp.62;
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 96 18 ]
+                symbol [ Graphics %tmp.63 96 25 33 ];
+                %tmp.63 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.64 96 34 43 ];
+                %tmp.64 = getv %tmp.63 :FONT_TINY;
+                putv self :font %tmp.64;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 95; @position = 18; @symbol_constdef = [justification,95,18,31]; ]
+            const justification;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 96; @position = 18; @symbol_constdef = [font,96,18,22]; ]
+            const font;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 99; @symbol_moduledef = [prompt_loc__body_no_title,99,15,40]; ]
+        module prompt_loc__body_no_title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 99; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 100; @position = 18; @symbol_constdef = [x,100,18,19]; @symbol_type<0> = [Number,100,23,29]; ]
+            const x as Number = 28;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 101; @position = 18; @symbol_constdef = [y,101,18,19]; @symbol_type<0> = [Number,101,23,29]; ]
+            const y as Number = 28;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 104; @symbol_moduledef = [system_icon_dark__about,104,15,38]; ]
+        module system_icon_dark__about {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 104; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 105; @position = 18; @symbol_constdef = [filename,105,18,26]; @symbol_type<0> = [String,105,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__about.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 106; @position = 18; @symbol_constdef = [compress,106,18,26]; @symbol_type<0> = [String,106,30,36]; ]
+            const compress as String = "true";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 107; @position = 18; @symbol_constdef = [dithering,107,18,27]; @symbol_type<0> = [String,107,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 108; @position = 18; @symbol_constdef = [automaticPalette,108,18,34]; @symbol_type<0> = [String,108,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 111; @symbol_moduledef = [system_icon_light__question,111,15,42]; ]
+        module system_icon_light__question {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 111; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 112; @position = 18; @symbol_constdef = [filename,112,18,26]; @symbol_type<0> = [String,112,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__question.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 113; @position = 18; @symbol_constdef = [dithering,113,18,27]; @symbol_type<0> = [String,113,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 116; @symbol_moduledef = [system_loc__hint_button_left_top,116,15,47]; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 116; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 117; @position = 18; @symbol_constdef = [exclude,117,18,25]; @symbol_type<0> = [Boolean,117,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 120; @symbol_moduledef = [prompt_font__title,120,15,33]; ]
+        module prompt_font__title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 120; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 121 18 ]
+                symbol [ Graphics %tmp.65 121 34 42 ];
+                %tmp.65 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.66 121 43 62 ];
+                %tmp.66 = getv %tmp.65 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.67 121 63 71 ];
+                %tmp.67 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.68 121 72 92 ];
+                %tmp.68 = getv %tmp.67 :TEXT_JUSTIFY_VCENTER;
+                %tmp.69 = bitor %tmp.66 %tmp.68;
+                putv self :justification %tmp.69;
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 122 18 ]
+                symbol [ Graphics %tmp.70 122 25 33 ];
+                %tmp.70 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.71 122 34 43 ];
+                %tmp.71 = getv %tmp.70 :FONT_TINY;
+                putv self :font %tmp.71;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 121; @position = 18; @symbol_constdef = [justification,121,18,31]; ]
+            const justification;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 122; @position = 18; @symbol_constdef = [font,122,18,22]; ]
+            const font;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 125; @symbol_moduledef = [system_icon_dark__discard,125,15,40]; ]
+        module system_icon_dark__discard {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 125; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 126; @position = 18; @symbol_constdef = [filename,126,18,26]; @symbol_type<0> = [String,126,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__discard.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 127; @position = 18; @symbol_constdef = [compress,127,18,26]; @symbol_type<0> = [String,127,30,36]; ]
+            const compress as String = "true";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 128; @position = 18; @symbol_constdef = [dithering,128,18,27]; @symbol_type<0> = [String,128,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 129; @position = 18; @symbol_constdef = [automaticPalette,129,18,34]; @symbol_type<0> = [String,129,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 132; @symbol_moduledef = [system_size__menu_item,132,15,37]; ]
+        module system_size__menu_item {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 132; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 133; @position = 18; @symbol_constdef = [width,133,18,23]; @symbol_type<0> = [Number,133,27,33]; ]
+            const width as Number = 280;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 134; @position = 18; @symbol_constdef = [height,134,18,24]; @symbol_type<0> = [Number,134,28,34]; ]
+            const height as Number = 89;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 137; @symbol_moduledef = [system_color_dark__text,137,15,38]; ]
+        module system_color_dark__text {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 137; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 139 18 ]
+                symbol [ Graphics %tmp.72 139 31 39 ];
+                %tmp.72 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.73 139 40 57 ];
+                %tmp.73 = getv %tmp.72 :COLOR_TRANSPARENT;
+                putv self :background %tmp.73;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 138; @position = 18; @symbol_constdef = [color,138,18,23]; @symbol_type<0> = [Number,138,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 139; @position = 18; @symbol_constdef = [background,139,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 142; @symbol_moduledef = [system_icon_destructive__discard,142,15,47]; ]
+        module system_icon_destructive__discard {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 142; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 143; @position = 18; @symbol_constdef = [filename,143,18,26]; @symbol_type<0> = [String,143,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_destructive__discard.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 144; @position = 18; @symbol_constdef = [dithering,144,18,27]; @symbol_type<0> = [String,144,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 147; @symbol_moduledef = [system_icon_dark__hint_action_menu,147,15,49]; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 147; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 148; @position = 18; @symbol_constdef = [filename,148,18,26]; @symbol_type<0> = [String,148,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__hint_button_right_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 149; @position = 18; @symbol_constdef = [dithering,149,18,27]; @symbol_type<0> = [String,149,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 152; @symbol_moduledef = [prompt_size__title,152,15,33]; ]
+        module prompt_size__title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 152; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 153; @position = 18; @symbol_constdef = [width,153,18,23]; @symbol_type<0> = [Number,153,27,33]; ]
+            const width as Number = 224;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 154; @position = 18; @symbol_constdef = [height,154,18,24]; @symbol_type<0> = [Number,154,28,34]; ]
+            const height as Number = 42;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 157; @symbol_moduledef = [confirmation_font__body,157,15,38]; ]
+        module confirmation_font__body {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 157; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 158 18 ]
+                symbol [ Graphics %tmp.74 158 34 42 ];
+                %tmp.74 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.75 158 43 62 ];
+                %tmp.75 = getv %tmp.74 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.76 158 63 71 ];
+                %tmp.76 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.77 158 72 92 ];
+                %tmp.77 = getv %tmp.76 :TEXT_JUSTIFY_VCENTER;
+                %tmp.78 = bitor %tmp.75 %tmp.77;
+                putv self :justification %tmp.78;
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 159 18 ]
+                symbol [ Graphics %tmp.79 159 25 33 ];
+                %tmp.79 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.80 159 34 43 ];
+                %tmp.80 = getv %tmp.79 :FONT_TINY;
+                putv self :font %tmp.80;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 158; @position = 18; @symbol_constdef = [justification,158,18,31]; ]
+            const justification;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 159; @position = 18; @symbol_constdef = [font,159,18,22]; ]
+            const font;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 162; @symbol_moduledef = [system_color_dark__background,162,15,44]; ]
+        module system_color_dark__background {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 162; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 163; @position = 18; @symbol_constdef = [color,163,18,23]; @symbol_type<0> = [Number,163,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 164; @position = 18; @symbol_constdef = [background,164,18,28]; @symbol_type<0> = [Number,164,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 167; @symbol_moduledef = [system_icon_destructive__hint_button_left_top,167,15,60]; ]
+        module system_icon_destructive__hint_button_left_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 167; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 168; @position = 18; @symbol_constdef = [filename,168,18,26]; @symbol_type<0> = [String,168,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_destructive__hint_button_left_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 169; @position = 18; @symbol_constdef = [dithering,169,18,27]; @symbol_type<0> = [String,169,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 172; @symbol_moduledef = [system_size__launch_icon,172,15,39]; ]
+        module system_size__launch_icon {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 172; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 173; @position = 18; @symbol_constdef = [scaleX,173,18,24]; @symbol_type<0> = [Number,173,28,34]; ]
+            const scaleX as Number = 40;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 174; @position = 18; @symbol_constdef = [scaleY,174,18,24]; @symbol_type<0> = [Number,174,28,34]; ]
+            const scaleY as Number = 40;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 175; @position = 18; @symbol_constdef = [scaleRelativeTo,175,18,33]; @symbol_type<0> = [String,175,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 178; @symbol_moduledef = [confirmation_input__confirm,178,15,42]; ]
+        module confirmation_input__confirm {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 178; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 179 18 ]
+                symbol [ WatchUi %tmp.81 179 27 34 ];
+                %tmp.81 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.82 179 35 44 ];
+                %tmp.82 = getv %tmp.81 :KEY_ENTER;
+                putv self :button %tmp.82;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 179; @position = 18; @symbol_constdef = [button,179,18,24]; ]
+            const button;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 182; @symbol_moduledef = [prompt_font__body_with_title,182,15,43]; ]
+        module prompt_font__body_with_title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 182; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 183 18 ]
+                symbol [ Graphics %tmp.83 183 34 42 ];
+                %tmp.83 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.84 183 43 62 ];
+                %tmp.84 = getv %tmp.83 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.84;
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 184 18 ]
+                symbol [ Graphics %tmp.85 184 25 33 ];
+                %tmp.85 = getm $.Toybox.Graphics;
+                symbol [ FONT_GLANCE %tmp.86 184 34 45 ];
+                %tmp.86 = getv %tmp.85 :FONT_GLANCE;
+                putv self :font %tmp.86;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 183; @position = 18; @symbol_constdef = [justification,183,18,31]; ]
+            const justification;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 184; @position = 18; @symbol_constdef = [font,184,18,22]; ]
+            const font;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 187; @symbol_moduledef = [confirmation_loc__body,187,15,37]; ]
+        module confirmation_loc__body {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 187; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 188; @position = 18; @symbol_constdef = [x,188,18,19]; @symbol_type<0> = [Number,188,23,29]; ]
+            const x as Number = 56;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 189; @position = 18; @symbol_constdef = [y,189,18,19]; @symbol_type<0> = [Number,189,23,29]; ]
+            const y as Number = 56;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 192; @symbol_moduledef = [system_icon_destructive__hint_button_left_bottom,192,15,63]; ]
+        module system_icon_destructive__hint_button_left_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 192; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 193; @position = 18; @symbol_constdef = [filename,193,18,26]; @symbol_type<0> = [String,193,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_destructive__hint_button_left_bottom.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 194; @position = 18; @symbol_constdef = [dithering,194,18,27]; @symbol_type<0> = [String,194,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 197; @symbol_moduledef = [prompt_color_dark__background,197,15,44]; ]
+        module prompt_color_dark__background {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 197; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 198; @position = 18; @symbol_constdef = [color,198,18,23]; @symbol_type<0> = [Number,198,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 199; @position = 18; @symbol_constdef = [background,199,18,28]; @symbol_type<0> = [Number,199,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 202; @symbol_moduledef = [system_icon_destructive__hint_action_menu,202,15,56]; ]
+        module system_icon_destructive__hint_action_menu {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 202; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 203; @position = 18; @symbol_constdef = [filename,203,18,26]; @symbol_type<0> = [String,203,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 204; @position = 18; @symbol_constdef = [dithering,204,18,27]; @symbol_type<0> = [String,204,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 207; @symbol_moduledef = [system_loc__hint_action_menu,207,15,43]; ]
+        module system_loc__hint_action_menu {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 207; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 208; @position = 18; @symbol_constdef = [x,208,18,19]; @symbol_type<0> = [Number,208,23,29]; ]
+            const x as Number = 222;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 209; @position = 18; @symbol_constdef = [y,209,18,19]; @symbol_type<0> = [Number,209,23,29]; ]
+            const y as Number = 44;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 212; @symbol_moduledef = [confirmation_icon__hint_confirm,212,15,46]; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 212; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 213; @position = 18; @symbol_constdef = [filename,213,18,26]; @symbol_type<0> = [String,213,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_completion.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 214; @position = 18; @symbol_constdef = [dithering,214,18,27]; @symbol_type<0> = [String,214,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 217; @symbol_moduledef = [system_loc__hint_button_left_middle,217,15,50]; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 217; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 218; @position = 18; @symbol_constdef = [x,218,18,19]; @symbol_type<0> = [Number,218,23,29]; ]
+            const x as Number = 0;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 219; @position = 18; @symbol_constdef = [y,219,18,19]; @symbol_type<0> = [Number,219,23,29]; ]
+            const y as Number = 110;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 222; @symbol_moduledef = [prompt_size__body_no_title,222,15,41]; ]
+        module prompt_size__body_no_title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 222; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 223; @position = 18; @symbol_constdef = [width,223,18,23]; @symbol_type<0> = [Number,223,27,33]; ]
+            const width as Number = 224;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 224; @position = 18; @symbol_constdef = [height,224,18,24]; @symbol_type<0> = [Number,224,28,34]; ]
+            const height as Number = 224;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 227; @symbol_moduledef = [system_icon_light__hint_button_left_top,227,15,54]; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 227; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 228; @position = 18; @symbol_constdef = [filename,228,18,26]; @symbol_type<0> = [String,228,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__hint_button_left_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 229; @position = 18; @symbol_constdef = [dithering,229,18,27]; @symbol_type<0> = [String,229,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 232; @symbol_moduledef = [prompt_color_light__background,232,15,45]; ]
+        module prompt_color_light__background {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 232; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 233; @position = 18; @symbol_constdef = [color,233,18,23]; @symbol_type<0> = [Number,233,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 234; @position = 18; @symbol_constdef = [background,234,18,28]; @symbol_type<0> = [Number,234,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 237; @symbol_moduledef = [confirmation_input__delete,237,15,41]; ]
+        module confirmation_input__delete {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 237; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 238 18 ]
+                symbol [ WatchUi %tmp.87 238 27 34 ];
+                %tmp.87 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.88 238 35 44 ];
+                %tmp.88 = getv %tmp.87 :KEY_ENTER;
+                putv self :button %tmp.88;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 238; @position = 18; @symbol_constdef = [button,238,18,24]; ]
+            const button;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 241; @symbol_moduledef = [system_icon_dark__hint_button_left_top,241,15,53]; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 241; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 242; @position = 18; @symbol_constdef = [filename,242,18,26]; @symbol_type<0> = [String,242,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__hint_button_left_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 243; @position = 18; @symbol_constdef = [dithering,243,18,27]; @symbol_type<0> = [String,243,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 246; @symbol_moduledef = [system_input__action_menu,246,15,40]; ]
+        module system_input__action_menu {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 246; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 247 18 ]
+                symbol [ WatchUi %tmp.89 247 27 34 ];
+                %tmp.89 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.90 247 35 44 ];
+                %tmp.90 = getv %tmp.89 :KEY_ENTER;
+                putv self :button %tmp.90;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 247; @position = 18; @symbol_constdef = [button,247,18,24]; ]
+            const button;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 250; @symbol_moduledef = [system_icon_light__save,250,15,38]; ]
+        module system_icon_light__save {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 250; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 251; @position = 18; @symbol_constdef = [filename,251,18,26]; @symbol_type<0> = [String,251,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__save.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 252; @position = 18; @symbol_constdef = [dithering,252,18,27]; @symbol_type<0> = [String,252,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 255; @symbol_moduledef = [prompt_color_light__body,255,15,39]; ]
+        module prompt_color_light__body {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 255; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 257 18 ]
+                symbol [ Graphics %tmp.91 257 31 39 ];
+                %tmp.91 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.92 257 40 57 ];
+                %tmp.92 = getv %tmp.91 :COLOR_TRANSPARENT;
+                putv self :background %tmp.92;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 256; @position = 18; @symbol_constdef = [color,256,18,23]; @symbol_type<0> = [Number,256,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 257; @position = 18; @symbol_constdef = [background,257,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 260; @symbol_moduledef = [system_loc__subwindow,260,15,36]; ]
+        module system_loc__subwindow {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 260; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 261; @position = 18; @symbol_constdef = [exclude,261,18,25]; @symbol_type<0> = [Boolean,261,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 264; @symbol_moduledef = [system_icon_light__warning,264,15,41]; ]
+        module system_icon_light__warning {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 264; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 265; @position = 18; @symbol_constdef = [filename,265,18,26]; @symbol_type<0> = [String,265,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__warning.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 266; @position = 18; @symbol_constdef = [dithering,266,18,27]; @symbol_type<0> = [String,266,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 269; @symbol_moduledef = [confirmation_color_light__body,269,15,45]; ]
+        module confirmation_color_light__body {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 269; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 271 18 ]
+                symbol [ Graphics %tmp.93 271 31 39 ];
+                %tmp.93 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.94 271 40 57 ];
+                %tmp.94 = getv %tmp.93 :COLOR_TRANSPARENT;
+                putv self :background %tmp.94;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 270; @position = 18; @symbol_constdef = [color,270,18,23]; @symbol_type<0> = [Number,270,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 271; @position = 18; @symbol_constdef = [background,271,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 274; @symbol_moduledef = [confirmation_icon_light__hint_keep,274,15,49]; ]
+        module confirmation_icon_light__hint_keep {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 274; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 275; @position = 18; @symbol_constdef = [filename,275,18,26]; @symbol_type<0> = [String,275,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_keep.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 276; @position = 18; @symbol_constdef = [dithering,276,18,27]; @symbol_type<0> = [String,276,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 279; @symbol_moduledef = [activity_color_light__background,279,15,47]; ]
+        module activity_color_light__background {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 279; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 280; @position = 18; @symbol_constdef = [color,280,18,23]; @symbol_type<0> = [Number,280,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 281; @position = 18; @symbol_constdef = [background,281,18,28]; @symbol_type<0> = [Number,281,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 284; @symbol_moduledef = [system_icon_positive__hint_button_right_top,284,15,58]; ]
+        module system_icon_positive__hint_button_right_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 284; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 285; @position = 18; @symbol_constdef = [filename,285,18,26]; @symbol_type<0> = [String,285,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_positive__hint_button_right_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 286; @position = 18; @symbol_constdef = [dithering,286,18,27]; @symbol_type<0> = [String,286,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 289; @symbol_moduledef = [system_size__screen,289,15,34]; ]
+        module system_size__screen {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 289; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 290; @position = 18; @symbol_constdef = [width,290,18,23]; @symbol_type<0> = [Number,290,27,33]; ]
+            const width as Number = 280;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 291; @position = 18; @symbol_constdef = [height,291,18,24]; @symbol_type<0> = [Number,291,28,34]; ]
+            const height as Number = 280;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 294; @symbol_moduledef = [system_icon_destructive__hint_button_right_bottom,294,15,64]; ]
+        module system_icon_destructive__hint_button_right_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 294; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 295; @position = 18; @symbol_constdef = [filename,295,18,26]; @symbol_type<0> = [String,295,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_destructive__hint_button_right_bottom.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 296; @position = 18; @symbol_constdef = [dithering,296,18,27]; @symbol_type<0> = [String,296,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 299; @symbol_moduledef = [system_color_light__background,299,15,45]; ]
+        module system_color_light__background {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 299; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 300; @position = 18; @symbol_constdef = [color,300,18,23]; @symbol_type<0> = [Number,300,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 301; @position = 18; @symbol_constdef = [background,301,18,28]; @symbol_type<0> = [Number,301,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 304; @symbol_moduledef = [system_icon_destructive__hint_button_right_top,304,15,61]; ]
+        module system_icon_destructive__hint_button_right_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 304; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 305; @position = 18; @symbol_constdef = [filename,305,18,26]; @symbol_type<0> = [String,305,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 306; @position = 18; @symbol_constdef = [dithering,306,18,27]; @symbol_type<0> = [String,306,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 309; @symbol_moduledef = [confirmation_loc__hint_confirm,309,15,45]; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 309; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 310; @position = 18; @symbol_constdef = [x,310,18,19]; @symbol_type<0> = [Number,310,23,29]; ]
+            const x as Number = 222;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 311; @position = 18; @symbol_constdef = [y,311,18,19]; @symbol_type<0> = [Number,311,23,29]; ]
+            const y as Number = 44;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 314; @symbol_moduledef = [activity_color_dark__text,314,15,40]; ]
+        module activity_color_dark__text {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 314; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 316 18 ]
+                symbol [ Graphics %tmp.95 316 31 39 ];
+                %tmp.95 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.96 316 40 57 ];
+                %tmp.96 = getv %tmp.95 :COLOR_TRANSPARENT;
+                putv self :background %tmp.96;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 315; @position = 18; @symbol_constdef = [color,315,18,23]; @symbol_type<0> = [Number,315,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 316; @position = 18; @symbol_constdef = [background,316,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 319; @symbol_moduledef = [confirmation_input__keep,319,15,39]; ]
+        module confirmation_input__keep {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 319; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 320 18 ]
+                symbol [ WatchUi %tmp.97 320 27 34 ];
+                %tmp.97 = getm $.Toybox.WatchUi;
+                symbol [ KEY_DOWN %tmp.98 320 35 43 ];
+                %tmp.98 = getv %tmp.97 :KEY_DOWN;
+                putv self :button %tmp.98;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 320; @position = 18; @symbol_constdef = [button,320,18,24]; ]
+            const button;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 323; @symbol_moduledef = [prompt_loc__body_with_title,323,15,42]; ]
+        module prompt_loc__body_with_title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 323; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 324; @position = 18; @symbol_constdef = [x,324,18,19]; @symbol_type<0> = [Number,324,23,29]; ]
+            const x as Number = 28;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 325; @position = 18; @symbol_constdef = [y,325,18,19]; @symbol_type<0> = [Number,325,23,29]; ]
+            const y as Number = 84;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 328; @symbol_moduledef = [system_icon_dark__search,328,15,39]; ]
+        module system_icon_dark__search {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 328; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 329; @position = 18; @symbol_constdef = [filename,329,18,26]; @symbol_type<0> = [String,329,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__search.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 330; @position = 18; @symbol_constdef = [compress,330,18,26]; @symbol_type<0> = [String,330,30,36]; ]
+            const compress as String = "true";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 331; @position = 18; @symbol_constdef = [dithering,331,18,27]; @symbol_type<0> = [String,331,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 332; @position = 18; @symbol_constdef = [automaticPalette,332,18,34]; @symbol_type<0> = [String,332,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 335; @symbol_moduledef = [activity_color_light__text,335,15,41]; ]
+        module activity_color_light__text {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 335; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 337 18 ]
+                symbol [ Graphics %tmp.99 337 31 39 ];
+                %tmp.99 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.100 337 40 57 ];
+                %tmp.100 = getv %tmp.99 :COLOR_TRANSPARENT;
+                putv self :background %tmp.100;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 336; @position = 18; @symbol_constdef = [color,336,18,23]; @symbol_type<0> = [Number,336,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 337; @position = 18; @symbol_constdef = [background,337,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 340; @symbol_moduledef = [confirmation_icon__hint_keep,340,15,43]; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 340; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 341; @position = 18; @symbol_constdef = [filename,341,18,26]; @symbol_type<0> = [String,341,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_keep.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 342; @position = 18; @symbol_constdef = [dithering,342,18,27]; @symbol_type<0> = [String,342,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 345; @symbol_moduledef = [system_icon_dark__save,345,15,37]; ]
+        module system_icon_dark__save {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 345; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 346; @position = 18; @symbol_constdef = [filename,346,18,26]; @symbol_type<0> = [String,346,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__save.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 347; @position = 18; @symbol_constdef = [compress,347,18,26]; @symbol_type<0> = [String,347,30,36]; ]
+            const compress as String = "true";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 348; @position = 18; @symbol_constdef = [dithering,348,18,27]; @symbol_type<0> = [String,348,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 349; @position = 18; @symbol_constdef = [automaticPalette,349,18,34]; @symbol_type<0> = [String,349,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 352; @symbol_moduledef = [system_icon_destructive__hint_button_left_middle,352,15,63]; ]
+        module system_icon_destructive__hint_button_left_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 352; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 353; @position = 18; @symbol_constdef = [filename,353,18,26]; @symbol_type<0> = [String,353,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_destructive__hint_button_left_middle.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 354; @position = 18; @symbol_constdef = [dithering,354,18,27]; @symbol_type<0> = [String,354,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 357; @symbol_moduledef = [system_icon_light__search,357,15,40]; ]
+        module system_icon_light__search {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 357; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 358; @position = 18; @symbol_constdef = [filename,358,18,26]; @symbol_type<0> = [String,358,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__search.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 359; @position = 18; @symbol_constdef = [dithering,359,18,27]; @symbol_type<0> = [String,359,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 362; @symbol_moduledef = [system_icon_dark__hint_button_left_bottom,362,15,56]; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 362; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 363; @position = 18; @symbol_constdef = [filename,363,18,26]; @symbol_type<0> = [String,363,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__hint_button_left_bottom.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 364; @position = 18; @symbol_constdef = [dithering,364,18,27]; @symbol_type<0> = [String,364,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 367; @symbol_moduledef = [system_icon_positive__hint_button_left_top,367,15,57]; ]
+        module system_icon_positive__hint_button_left_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 367; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 368; @position = 18; @symbol_constdef = [filename,368,18,26]; @symbol_type<0> = [String,368,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_positive__hint_button_left_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 369; @position = 18; @symbol_constdef = [dithering,369,18,27]; @symbol_type<0> = [String,369,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 372; @symbol_moduledef = [system_loc__hint_button_right_bottom,372,15,51]; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 372; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 373; @position = 18; @symbol_constdef = [x,373,18,19]; @symbol_type<0> = [Number,373,23,29]; ]
+            const x as Number = 222;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 374; @position = 18; @symbol_constdef = [y,374,18,19]; @symbol_type<0> = [Number,374,23,29]; ]
+            const y as Number = 178;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 377; @symbol_moduledef = [confirmation_icon_dark__hint_reject,377,15,50]; ]
+        module confirmation_icon_dark__hint_reject {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 377; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 378; @position = 18; @symbol_constdef = [filename,378,18,26]; @symbol_type<0> = [String,378,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_reject.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 379; @position = 18; @symbol_constdef = [dithering,379,18,27]; @symbol_type<0> = [String,379,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 382; @symbol_moduledef = [confirmation_color_dark__body,382,15,44]; ]
+        module confirmation_color_dark__body {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 382; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 384 18 ]
+                symbol [ Graphics %tmp.101 384 31 39 ];
+                %tmp.101 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.102 384 40 57 ];
+                %tmp.102 = getv %tmp.101 :COLOR_TRANSPARENT;
+                putv self :background %tmp.102;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 383; @position = 18; @symbol_constdef = [color,383,18,23]; @symbol_type<0> = [Number,383,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 384; @position = 18; @symbol_constdef = [background,384,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 387; @symbol_moduledef = [confirmation_icon_light__hint_confirm,387,15,52]; ]
+        module confirmation_icon_light__hint_confirm {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 387; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 388; @position = 18; @symbol_constdef = [filename,388,18,26]; @symbol_type<0> = [String,388,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_completion.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 389; @position = 18; @symbol_constdef = [dithering,389,18,27]; @symbol_type<0> = [String,389,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 392; @symbol_moduledef = [prompt_color_dark__title,392,15,39]; ]
+        module prompt_color_dark__title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 392; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 394 18 ]
+                symbol [ Graphics %tmp.103 394 31 39 ];
+                %tmp.103 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.104 394 40 57 ];
+                %tmp.104 = getv %tmp.103 :COLOR_TRANSPARENT;
+                putv self :background %tmp.104;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 393; @position = 18; @symbol_constdef = [color,393,18,23]; @symbol_type<0> = [Number,393,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 394; @position = 18; @symbol_constdef = [background,394,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 397; @symbol_moduledef = [system_icon_destructive__cancel,397,15,46]; ]
+        module system_icon_destructive__cancel {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 397; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 398; @position = 18; @symbol_constdef = [filename,398,18,26]; @symbol_type<0> = [String,398,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_destructive__cancel.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 399; @position = 18; @symbol_constdef = [dithering,399,18,27]; @symbol_type<0> = [String,399,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 402; @symbol_moduledef = [system_icon_light__hint_button_right_bottom,402,15,58]; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 402; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 403; @position = 18; @symbol_constdef = [filename,403,18,26]; @symbol_type<0> = [String,403,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__hint_button_right_bottom.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 404; @position = 18; @symbol_constdef = [dithering,404,18,27]; @symbol_type<0> = [String,404,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 407; @symbol_moduledef = [prompt_loc__title,407,15,32]; ]
+        module prompt_loc__title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 407; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 408; @position = 18; @symbol_constdef = [x,408,18,19]; @symbol_type<0> = [Number,408,23,29]; ]
+            const x as Number = 28;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 409; @position = 18; @symbol_constdef = [y,409,18,19]; @symbol_type<0> = [Number,409,23,29]; ]
+            const y as Number = 21;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 412; @symbol_moduledef = [confirmation_font_enhanced_readability__body,412,15,59]; ]
+        module confirmation_font_enhanced_readability__body {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 412; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 413 18 ]
+                symbol [ Graphics %tmp.105 413 34 42 ];
+                %tmp.105 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.106 413 43 62 ];
+                %tmp.106 = getv %tmp.105 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.107 413 63 71 ];
+                %tmp.107 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.108 413 72 92 ];
+                %tmp.108 = getv %tmp.107 :TEXT_JUSTIFY_VCENTER;
+                %tmp.109 = bitor %tmp.106 %tmp.108;
+                putv self :justification %tmp.109;
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 414 18 ]
+                symbol [ Graphics %tmp.110 414 25 33 ];
+                %tmp.110 = getm $.Toybox.Graphics;
+                symbol [ FONT_SMALL %tmp.111 414 34 44 ];
+                %tmp.111 = getv %tmp.110 :FONT_SMALL;
+                putv self :font %tmp.111;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 413; @position = 18; @symbol_constdef = [justification,413,18,31]; ]
+            const justification;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 414; @position = 18; @symbol_constdef = [font,414,18,22]; ]
+            const font;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 417; @symbol_moduledef = [prompt_color_light__title,417,15,40]; ]
+        module prompt_color_light__title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 417; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 419 18 ]
+                symbol [ Graphics %tmp.112 419 31 39 ];
+                %tmp.112 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.113 419 40 57 ];
+                %tmp.113 = getv %tmp.112 :COLOR_TRANSPARENT;
+                putv self :background %tmp.113;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 418; @position = 18; @symbol_constdef = [color,418,18,23]; @symbol_type<0> = [Number,418,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 419; @position = 18; @symbol_constdef = [background,419,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 422; @symbol_moduledef = [system_icon_dark__hint_button_right_top,422,15,54]; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 422; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 423; @position = 18; @symbol_constdef = [filename,423,18,26]; @symbol_type<0> = [String,423,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__hint_button_right_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 424; @position = 18; @symbol_constdef = [dithering,424,18,27]; @symbol_type<0> = [String,424,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 427; @symbol_moduledef = [system_icon_dark__hint_button_left_middle,427,15,56]; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 427; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 428; @position = 18; @symbol_constdef = [filename,428,18,26]; @symbol_type<0> = [String,428,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__hint_button_left_middle.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 429; @position = 18; @symbol_constdef = [dithering,429,18,27]; @symbol_type<0> = [String,429,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 432; @symbol_moduledef = [confirmation_icon_dark__hint_keep,432,15,48]; ]
+        module confirmation_icon_dark__hint_keep {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 432; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 433; @position = 18; @symbol_constdef = [filename,433,18,26]; @symbol_type<0> = [String,433,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_keep.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 434; @position = 18; @symbol_constdef = [dithering,434,18,27]; @symbol_type<0> = [String,434,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 437; @symbol_moduledef = [system_icon_light__cancel,437,15,40]; ]
+        module system_icon_light__cancel {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 437; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 438; @position = 18; @symbol_constdef = [filename,438,18,26]; @symbol_type<0> = [String,438,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__cancel.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 439; @position = 18; @symbol_constdef = [dithering,439,18,27]; @symbol_type<0> = [String,439,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 442; @symbol_moduledef = [confirmation_icon_light__hint_reject,442,15,51]; ]
+        module confirmation_icon_light__hint_reject {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 442; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 443; @position = 18; @symbol_constdef = [filename,443,18,26]; @symbol_type<0> = [String,443,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_reject.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 444; @position = 18; @symbol_constdef = [dithering,444,18,27]; @symbol_type<0> = [String,444,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 447; @symbol_moduledef = [system_icon_light__about,447,15,39]; ]
+        module system_icon_light__about {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 447; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 448; @position = 18; @symbol_constdef = [filename,448,18,26]; @symbol_type<0> = [String,448,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__about.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 449; @position = 18; @symbol_constdef = [dithering,449,18,27]; @symbol_type<0> = [String,449,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 452; @symbol_moduledef = [system_size__toast_icon,452,15,38]; ]
+        module system_size__toast_icon {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 452; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 453; @position = 18; @symbol_constdef = [scaleX,453,18,24]; @symbol_type<0> = [Number,453,28,34]; ]
+            const scaleX as Number = 40;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 454; @position = 18; @symbol_constdef = [scaleY,454,18,24]; @symbol_type<0> = [Number,454,28,34]; ]
+            const scaleY as Number = 40;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 455; @position = 18; @symbol_constdef = [scaleRelativeTo,455,18,33]; @symbol_type<0> = [String,455,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 458; @symbol_moduledef = [system_icon_dark__hint_button_right_middle,458,15,57]; ]
+        module system_icon_dark__hint_button_right_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 458; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 459; @position = 18; @symbol_constdef = [exclude,459,18,25]; @symbol_type<0> = [Boolean,459,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 462; @symbol_moduledef = [confirmation_icon__hint_reject,462,15,45]; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 462; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 463; @position = 18; @symbol_constdef = [filename,463,18,26]; @symbol_type<0> = [String,463,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_reject.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 464; @position = 18; @symbol_constdef = [dithering,464,18,27]; @symbol_type<0> = [String,464,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 467; @symbol_moduledef = [system_icon_light__hint_action_menu,467,15,50]; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 467; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 468; @position = 18; @symbol_constdef = [filename,468,18,26]; @symbol_type<0> = [String,468,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__hint_button_right_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 469; @position = 18; @symbol_constdef = [dithering,469,18,27]; @symbol_type<0> = [String,469,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 472; @symbol_moduledef = [system_icon_light__hint_button_right_middle,472,15,58]; ]
+        module system_icon_light__hint_button_right_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 472; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 473; @position = 18; @symbol_constdef = [exclude,473,18,25]; @symbol_type<0> = [Boolean,473,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 476; @symbol_moduledef = [system_icon_destructive__hint_button_right_middle,476,15,64]; ]
+        module system_icon_destructive__hint_button_right_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 476; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 477; @position = 18; @symbol_constdef = [exclude,477,18,25]; @symbol_type<0> = [Boolean,477,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 480; @symbol_moduledef = [confirmation_loc__hint_reject,480,15,44]; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 480; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 481; @position = 18; @symbol_constdef = [x,481,18,19]; @symbol_type<0> = [Number,481,23,29]; ]
+            const x as Number = 7;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 482; @position = 18; @symbol_constdef = [y,482,18,19]; @symbol_type<0> = [Number,482,23,29]; ]
+            const y as Number = 179;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 483; @position = 18; @symbol_constdef = [horizontalJustification,483,18,41]; @symbol_type<0> = [String,483,45,51]; ]
+            const horizontalJustification as String = "left";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 486; @symbol_moduledef = [confirmation_icon_dark__hint_delete,486,15,50]; ]
+        module confirmation_icon_dark__hint_delete {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 486; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 487; @position = 18; @symbol_constdef = [filename,487,18,26]; @symbol_type<0> = [String,487,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_delete.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 488; @position = 18; @symbol_constdef = [dithering,488,18,27]; @symbol_type<0> = [String,488,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 491; @symbol_moduledef = [activity_color_dark__background,491,15,46]; ]
+        module activity_color_dark__background {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 491; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 492; @position = 18; @symbol_constdef = [color,492,18,23]; @symbol_type<0> = [Number,492,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 493; @position = 18; @symbol_constdef = [background,493,18,28]; @symbol_type<0> = [Number,493,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 496; @symbol_moduledef = [system_icon_light__hint_button_left_bottom,496,15,57]; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 496; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 497; @position = 18; @symbol_constdef = [filename,497,18,26]; @symbol_type<0> = [String,497,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__hint_button_left_bottom.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 498; @position = 18; @symbol_constdef = [dithering,498,18,27]; @symbol_type<0> = [String,498,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 501; @symbol_moduledef = [system_icon_positive__hint_button_left_middle,501,15,60]; ]
+        module system_icon_positive__hint_button_left_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 501; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 502; @position = 18; @symbol_constdef = [filename,502,18,26]; @symbol_type<0> = [String,502,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_positive__hint_button_left_middle.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 503; @position = 18; @symbol_constdef = [dithering,503,18,27]; @symbol_type<0> = [String,503,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 506; @symbol_moduledef = [system_size__menu_icon,506,15,37]; ]
+        module system_size__menu_icon {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 506; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 507; @position = 18; @symbol_constdef = [scaleX,507,18,24]; @symbol_type<0> = [Number,507,28,34]; ]
+            const scaleX as Number = 45;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 508; @position = 18; @symbol_constdef = [scaleY,508,18,24]; @symbol_type<0> = [Number,508,28,34]; ]
+            const scaleY as Number = 76;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 509; @position = 18; @symbol_constdef = [scaleRelativeTo,509,18,33]; @symbol_type<0> = [String,509,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 512; @symbol_moduledef = [system_icon_destructive__warning,512,15,47]; ]
+        module system_icon_destructive__warning {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 512; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 513; @position = 18; @symbol_constdef = [filename,513,18,26]; @symbol_type<0> = [String,513,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_destructive__warning.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 514; @position = 18; @symbol_constdef = [dithering,514,18,27]; @symbol_type<0> = [String,514,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 517; @symbol_moduledef = [system_loc__hint_button_right_middle,517,15,51]; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 517; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 518; @position = 18; @symbol_constdef = [exclude,518,18,25]; @symbol_type<0> = [Boolean,518,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 521; @symbol_moduledef = [system_icon_dark__cancel,521,15,39]; ]
+        module system_icon_dark__cancel {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 521; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 522; @position = 18; @symbol_constdef = [filename,522,18,26]; @symbol_type<0> = [String,522,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__cancel.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 523; @position = 18; @symbol_constdef = [compress,523,18,26]; @symbol_type<0> = [String,523,30,36]; ]
+            const compress as String = "true";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 524; @position = 18; @symbol_constdef = [dithering,524,18,27]; @symbol_type<0> = [String,524,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 525; @position = 18; @symbol_constdef = [automaticPalette,525,18,34]; @symbol_type<0> = [String,525,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 528; @symbol_moduledef = [prompt_size__body_with_title,528,15,43]; ]
+        module prompt_size__body_with_title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 528; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 529; @position = 18; @symbol_constdef = [width,529,18,23]; @symbol_type<0> = [Number,529,27,33]; ]
+            const width as Number = 224;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 530; @position = 18; @symbol_constdef = [height,530,18,24]; @symbol_type<0> = [Number,530,28,34]; ]
+            const height as Number = 168;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 533; @symbol_moduledef = [system_loc__hint_button_right_top,533,15,48]; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 533; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 534; @position = 18; @symbol_constdef = [x,534,18,19]; @symbol_type<0> = [Number,534,23,29]; ]
+            const x as Number = 222;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 535; @position = 18; @symbol_constdef = [y,535,18,19]; @symbol_type<0> = [Number,535,23,29]; ]
+            const y as Number = 44;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 538; @symbol_moduledef = [system_color_light__text,538,15,39]; ]
+        module system_color_light__text {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 538; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 540 18 ]
+                symbol [ Graphics %tmp.114 540 31 39 ];
+                %tmp.114 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.115 540 40 57 ];
+                %tmp.115 = getv %tmp.114 :COLOR_TRANSPARENT;
+                putv self :background %tmp.115;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 539; @position = 18; @symbol_constdef = [color,539,18,23]; @symbol_type<0> = [Number,539,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 540; @position = 18; @symbol_constdef = [background,540,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 543; @symbol_moduledef = [system_icon_light__check,543,15,39]; ]
+        module system_icon_light__check {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 543; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 544; @position = 18; @symbol_constdef = [filename,544,18,26]; @symbol_type<0> = [String,544,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__check.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 545; @position = 18; @symbol_constdef = [dithering,545,18,27]; @symbol_type<0> = [String,545,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 548; @symbol_moduledef = [confirmation_input__reject,548,15,41]; ]
+        module confirmation_input__reject {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 548; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 549 18 ]
+                symbol [ WatchUi %tmp.116 549 27 34 ];
+                %tmp.116 = getm $.Toybox.WatchUi;
+                symbol [ KEY_DOWN %tmp.117 549 35 43 ];
+                %tmp.117 = getv %tmp.116 :KEY_DOWN;
+                putv self :button %tmp.117;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 549; @position = 18; @symbol_constdef = [button,549,18,24]; ]
+            const button;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 552; @symbol_moduledef = [system_icon_light__revert,552,15,40]; ]
+        module system_icon_light__revert {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 552; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 553; @position = 18; @symbol_constdef = [filename,553,18,26]; @symbol_type<0> = [String,553,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__revert.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 554; @position = 18; @symbol_constdef = [dithering,554,18,27]; @symbol_type<0> = [String,554,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 557; @symbol_moduledef = [system_size__subwindow,557,15,37]; ]
+        module system_size__subwindow {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 557; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 558; @position = 18; @symbol_constdef = [exclude,558,18,25]; @symbol_type<0> = [Boolean,558,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 561; @symbol_moduledef = [system_icon_positive__hint_button_left_bottom,561,15,60]; ]
+        module system_icon_positive__hint_button_left_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 561; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 562; @position = 18; @symbol_constdef = [filename,562,18,26]; @symbol_type<0> = [String,562,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_positive__hint_button_left_bottom.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 563; @position = 18; @symbol_constdef = [dithering,563,18,27]; @symbol_type<0> = [String,563,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 566; @symbol_moduledef = [system_icon_dark__check,566,15,38]; ]
+        module system_icon_dark__check {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 566; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 567; @position = 18; @symbol_constdef = [filename,567,18,26]; @symbol_type<0> = [String,567,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__check.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 568; @position = 18; @symbol_constdef = [compress,568,18,26]; @symbol_type<0> = [String,568,30,36]; ]
+            const compress as String = "true";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 569; @position = 18; @symbol_constdef = [dithering,569,18,27]; @symbol_type<0> = [String,569,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 570; @position = 18; @symbol_constdef = [automaticPalette,570,18,34]; @symbol_type<0> = [String,570,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 573; @symbol_moduledef = [confirmation_loc__hint_keep,573,15,42]; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 573; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 574; @position = 18; @symbol_constdef = [x,574,18,19]; @symbol_type<0> = [Number,574,23,29]; ]
+            const x as Number = 7;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 575; @position = 18; @symbol_constdef = [y,575,18,19]; @symbol_type<0> = [Number,575,23,29]; ]
+            const y as Number = 179;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 576; @position = 18; @symbol_constdef = [horizontalJustification,576,18,41]; @symbol_type<0> = [String,576,45,51]; ]
+            const horizontalJustification as String = "left";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 579; @symbol_moduledef = [confirmation_loc__hint_delete,579,15,44]; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 579; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 580; @position = 18; @symbol_constdef = [x,580,18,19]; @symbol_type<0> = [Number,580,23,29]; ]
+            const x as Number = 222;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 581; @position = 18; @symbol_constdef = [y,581,18,19]; @symbol_type<0> = [Number,581,23,29]; ]
+            const y as Number = 44;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 584; @symbol_moduledef = [system_icon_positive__hint_action_menu,584,15,53]; ]
+        module system_icon_positive__hint_action_menu {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 584; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 585; @position = 18; @symbol_constdef = [filename,585,18,26]; @symbol_type<0> = [String,585,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_positive__hint_button_right_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 586; @position = 18; @symbol_constdef = [dithering,586,18,27]; @symbol_type<0> = [String,586,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 589; @symbol_moduledef = [system_icon_positive__hint_button_right_middle,589,15,61]; ]
+        module system_icon_positive__hint_button_right_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 589; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 590; @position = 18; @symbol_constdef = [exclude,590,18,25]; @symbol_type<0> = [Boolean,590,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 593; @symbol_moduledef = [system_icon_light__hint_button_left_middle,593,15,57]; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 593; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 594; @position = 18; @symbol_constdef = [filename,594,18,26]; @symbol_type<0> = [String,594,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__hint_button_left_middle.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 595; @position = 18; @symbol_constdef = [dithering,595,18,27]; @symbol_type<0> = [String,595,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 598; @symbol_moduledef = [system_icon_dark__hint_button_right_bottom,598,15,57]; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 598; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 599; @position = 18; @symbol_constdef = [filename,599,18,26]; @symbol_type<0> = [String,599,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__hint_button_right_bottom.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 600; @position = 18; @symbol_constdef = [dithering,600,18,27]; @symbol_type<0> = [String,600,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 603; @symbol_moduledef = [system_icon_positive__hint_button_right_bottom,603,15,61]; ]
+        module system_icon_positive__hint_button_right_bottom {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 603; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 604; @position = 18; @symbol_constdef = [filename,604,18,26]; @symbol_type<0> = [String,604,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_positive__hint_button_right_bottom.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 605; @position = 18; @symbol_constdef = [dithering,605,18,27]; @symbol_type<0> = [String,605,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 608; @symbol_moduledef = [system_icon_dark__revert,608,15,39]; ]
+        module system_icon_dark__revert {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 608; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 609; @position = 18; @symbol_constdef = [filename,609,18,26]; @symbol_type<0> = [String,609,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__revert.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 610; @position = 18; @symbol_constdef = [compress,610,18,26]; @symbol_type<0> = [String,610,30,36]; ]
+            const compress as String = "true";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 611; @position = 18; @symbol_constdef = [dithering,611,18,27]; @symbol_type<0> = [String,611,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 612; @position = 18; @symbol_constdef = [automaticPalette,612,18,34]; @symbol_type<0> = [String,612,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 615; @symbol_moduledef = [confirmation_icon_light__hint_delete,615,15,51]; ]
+        module confirmation_icon_light__hint_delete {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 615; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 616; @position = 18; @symbol_constdef = [filename,616,18,26]; @symbol_type<0> = [String,616,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_delete.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 617; @position = 18; @symbol_constdef = [dithering,617,18,27]; @symbol_type<0> = [String,617,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 620; @symbol_moduledef = [system_icon_dark__question,620,15,41]; ]
+        module system_icon_dark__question {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 620; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 621; @position = 18; @symbol_constdef = [filename,621,18,26]; @symbol_type<0> = [String,621,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__question.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 622; @position = 18; @symbol_constdef = [compress,622,18,26]; @symbol_type<0> = [String,622,30,36]; ]
+            const compress as String = "true";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 623; @position = 18; @symbol_constdef = [dithering,623,18,27]; @symbol_type<0> = [String,623,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 624; @position = 18; @symbol_constdef = [automaticPalette,624,18,34]; @symbol_type<0> = [String,624,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 627; @symbol_moduledef = [system_icon_light__discard,627,15,41]; ]
+        module system_icon_light__discard {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 627; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 628; @position = 18; @symbol_constdef = [filename,628,18,26]; @symbol_type<0> = [String,628,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__discard.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 629; @position = 18; @symbol_constdef = [dithering,629,18,27]; @symbol_type<0> = [String,629,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 632; @symbol_moduledef = [device_info,632,15,26]; ]
+        module device_info {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 632; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 634 18 ]
+                symbol [ Toybox %tmp.119 634 32 38 ];
+                %tmp.119 = getv ? :Toybox;
+                symbol [ System %tmp.120 634 39 45 ];
+                %tmp.120 = getv %tmp.119 :System;
+                symbol [ SCREEN_SHAPE_ROUND %tmp.121 634 46 64 ];
+                %tmp.121 = getv %tmp.120 :SCREEN_SHAPE_ROUND;
+                putv self :screenShape %tmp.121;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 633; @position = 18; @symbol_constdef = [screenWidth,633,18,29]; @symbol_type<0> = [Number,633,33,39]; ]
+            const screenWidth as Number = 280;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 634; @position = 18; @symbol_constdef = [screenShape,634,18,29]; ]
+            const screenShape;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 635; @position = 18; @symbol_constdef = [hasNightMode,635,18,30]; @symbol_type<0> = [Boolean,635,34,41]; ]
+            const hasNightMode as Boolean = false;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 636; @position = 18; @symbol_constdef = [hasGpu,636,18,24]; @symbol_type<0> = [Boolean,636,28,35]; ]
+            const hasGpu as Boolean = true;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 637; @position = 18; @symbol_constdef = [screenHeight,637,18,30]; @symbol_type<0> = [Number,637,34,40]; ]
+            const screenHeight as Number = 280;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 638; @position = 18; @symbol_constdef = [hasTouchScreen,638,18,32]; @symbol_type<0> = [Boolean,638,36,43]; ]
+            const hasTouchScreen as Boolean = true;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 639; @position = 18; @symbol_constdef = [hasEnhancedReadabilityMode,639,18,44]; @symbol_type<0> = [Boolean,639,48,55]; ]
+            const hasEnhancedReadabilityMode as Boolean = false;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 642; @symbol_moduledef = [confirmation_icon_dark__hint_confirm,642,15,51]; ]
+        module confirmation_icon_dark__hint_confirm {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 642; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 643; @position = 18; @symbol_constdef = [filename,643,18,26]; @symbol_type<0> = [String,643,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_completion.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 644; @position = 18; @symbol_constdef = [dithering,644,18,27]; @symbol_type<0> = [String,644,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 647; @symbol_moduledef = [prompt_font__body_no_title,647,15,41]; ]
+        module prompt_font__body_no_title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 647; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 648 18 ]
+                symbol [ Graphics %tmp.122 648 34 42 ];
+                %tmp.122 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.123 648 43 62 ];
+                %tmp.123 = getv %tmp.122 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.124 648 63 71 ];
+                %tmp.124 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.125 648 72 92 ];
+                %tmp.125 = getv %tmp.124 :TEXT_JUSTIFY_VCENTER;
+                %tmp.126 = bitor %tmp.123 %tmp.125;
+                putv self :justification %tmp.126;
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 649 18 ]
+                symbol [ Graphics %tmp.127 649 25 33 ];
+                %tmp.127 = getm $.Toybox.Graphics;
+                symbol [ FONT_GLANCE %tmp.128 649 34 45 ];
+                %tmp.128 = getv %tmp.127 :FONT_GLANCE;
+                putv self :font %tmp.128;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 648; @position = 18; @symbol_constdef = [justification,648,18,31]; ]
+            const justification;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 649; @position = 18; @symbol_constdef = [font,649,18,22]; ]
+            const font;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 652; @symbol_moduledef = [prompt_size__title_icon,652,15,38]; ]
+        module prompt_size__title_icon {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 652; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 653; @position = 18; @symbol_constdef = [scaleX,653,18,24]; @symbol_type<0> = [Float,653,28,33]; ]
+            const scaleX as Float = 0.15;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 654; @position = 18; @symbol_constdef = [scaleRelativeTo,654,18,33]; @symbol_type<0> = [String,654,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 657; @symbol_moduledef = [system_icon_dark__warning,657,15,40]; ]
+        module system_icon_dark__warning {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 657; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 658; @position = 18; @symbol_constdef = [filename,658,18,26]; @symbol_type<0> = [String,658,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_dark__warning.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 659; @position = 18; @symbol_constdef = [compress,659,18,26]; @symbol_type<0> = [String,659,30,36]; ]
+            const compress as String = "true";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 660; @position = 18; @symbol_constdef = [dithering,660,18,27]; @symbol_type<0> = [String,660,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 661; @position = 18; @symbol_constdef = [automaticPalette,661,18,34]; @symbol_type<0> = [String,661,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 664; @symbol_moduledef = [prompt_loc__title_icon,664,15,37]; ]
+        module prompt_loc__title_icon {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 664; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 665; @position = 18; @symbol_constdef = [x,665,18,19]; @symbol_type<0> = [Number,665,23,29]; ]
+            const x as Number = 140;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 666; @position = 18; @symbol_constdef = [y,666,18,19]; @symbol_type<0> = [Number,666,23,29]; ]
+            const y as Number = 42;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 667; @position = 18; @symbol_constdef = [horizontalJustification,667,18,41]; @symbol_type<0> = [String,667,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 668; @position = 18; @symbol_constdef = [verticalJustification,668,18,39]; @symbol_type<0> = [String,668,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 671; @symbol_moduledef = [prompt_font_enhanced_readability__title,671,15,54]; ]
+        module prompt_font_enhanced_readability__title {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 671; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 672 18 ]
+                symbol [ Graphics %tmp.129 672 34 42 ];
+                %tmp.129 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.130 672 43 62 ];
+                %tmp.130 = getv %tmp.129 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.131 672 63 71 ];
+                %tmp.131 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.132 672 72 92 ];
+                %tmp.132 = getv %tmp.131 :TEXT_JUSTIFY_VCENTER;
+                %tmp.133 = bitor %tmp.130 %tmp.132;
+                putv self :justification %tmp.133;
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 673 18 ]
+                symbol [ Graphics %tmp.134 673 25 33 ];
+                %tmp.134 = getm $.Toybox.Graphics;
+                symbol [ FONT_SMALL %tmp.135 673 34 44 ];
+                %tmp.135 = getv %tmp.134 :FONT_SMALL;
+                putv self :font %tmp.135;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 672; @position = 18; @symbol_constdef = [justification,672,18,31]; ]
+            const justification;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 673; @position = 18; @symbol_constdef = [font,673,18,22]; ]
+            const font;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 676; @symbol_moduledef = [prompt_color_dark__body,676,15,38]; ]
+        module prompt_color_dark__body {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 676; ]
+            <init> {
+[ "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen" 678 18 ]
+                symbol [ Graphics %tmp.136 678 31 39 ];
+                %tmp.136 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.137 678 40 57 ];
+                %tmp.137 = getv %tmp.136 :COLOR_TRANSPARENT;
+                putv self :background %tmp.137;
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 677; @position = 18; @symbol_constdef = [color,677,18,23]; @symbol_type<0> = [Number,677,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 678; @position = 18; @symbol_constdef = [background,678,18,28]; ]
+            const background;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 681; @symbol_moduledef = [confirmation_icon__hint_delete,681,15,45]; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 681; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 682; @position = 18; @symbol_constdef = [filename,682,18,26]; @symbol_type<0> = [String,682,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\confirmation_icon__hint_delete.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 683; @position = 18; @symbol_constdef = [dithering,683,18,27]; @symbol_type<0> = [String,683,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 686; @symbol_moduledef = [system_icon_light__hint_button_right_top,686,15,55]; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 686; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 687; @position = 18; @symbol_constdef = [filename,687,18,26]; @symbol_type<0> = [String,687,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_light__hint_button_right_top.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 688; @position = 18; @symbol_constdef = [dithering,688,18,27]; @symbol_type<0> = [String,688,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 691; @symbol_moduledef = [confirmation_size__body,691,15,38]; ]
+        module confirmation_size__body {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 691; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 692; @position = 18; @symbol_constdef = [width,692,18,23]; @symbol_type<0> = [Number,692,27,33]; ]
+            const width as Number = 168;
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 693; @position = 18; @symbol_constdef = [height,693,18,24]; @symbol_type<0> = [Number,693,28,34]; ]
+            const height as Number = 168;
+        }
+        [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 696; @symbol_moduledef = [system_icon_positive__check,696,15,42]; ]
+        module system_icon_positive__check {
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 696; ]
+            <init> {
+            }
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 697; @position = 18; @symbol_constdef = [filename,697,18,26]; @symbol_type<0> = [String,697,30,36]; ]
+            const filename as String = "C:\\Users\\Zach Martens\\AppData\\Roaming\\Garmin\\ConnectIQ\\Devices\\fenix8solar51mm\\system_icon_positive__check.svg";
+            [ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 698; @position = 18; @symbol_constdef = [dithering,698,18,27]; @symbol_type<0> = [String,698,31,37]; ]
+            const dithering as String = "none";
+        }
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\bin\gen\006-B4533-00\source\Rez.mcgen"; @line = 1; ]
+<init> {
+}

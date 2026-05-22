@@ -1,0 +1,1566 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [System,3,14,20]; ]
+import Toybox.System;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Timer,4,14,19]; ]
+import Toybox.Timer;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Application,5,14,25]; ]
+import Toybox.Application;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Lang,6,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Attention,7,14,23]; ]
+import Toybox.Attention;
+[ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 32; @symbol_classdef = [MainView,32,6,14]; @symbol_extends<0> = [WatchUi,32,23,30]; @symbol_extends<1> = [View,32,31,35]; ]
+class MainView extends WatchUi.View {
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 32; ]
+    <init> {
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 41 8 ]
+        %tmp.1 = newd Dictionary 0;
+        symbol [ Dictionary %tmp.1 41 47 57 ];
+        putv self :_prevDogStatuses %tmp.1;
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 32; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 36; @position = 8; @symbol_vardef = [_refreshTimer,36,8,21]; @symbol_type<0> = [Timer,36,25,30]; @symbol_type<1> = [Timer,36,31,36]; ]
+    var _refreshTimer as Timer.Timer or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 41; @position = 8; @symbol_vardef = [_prevDogStatuses,41,8,24]; @symbol_type<0> = [Dictionary,41,28,38]; ]
+    var _prevDogStatuses as Dictionary;
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 46; @symbol_functiondef = [initialize,46,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_46_26_49_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 47 8 ]
+        symbol [ View %tmp.2 47 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 47 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 48 8 ]
+        %tmp.4 = null;
+        symbol [ _refreshTimer ? 48 8 21 ];
+        putv self :_refreshTimer %tmp.4;
+D__my_project_projects_UplandHunter_source_MainView_mc_46_26_49_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 55; @symbol_functiondef = [onLayout,55,13,21]; @symbol_param<0> = [dc,55,22,24]; @symbol_param<0>_type<0> = [Graphics,55,28,36]; @symbol_param<0>_type<1> = [Dc,55,37,39]; ]
+    function onLayout(dc as Graphics.Dc) as Void {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 65; @symbol_functiondef = [onShow,65,13,19]; ]
+    function onShow() as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_65_30_68_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 67 8 ]
+        %tmp.1 = self;
+        symbol [ startRefreshTimer %tmp.2 67 8 25 ];
+        %tmp.2 = getv function %tmp.1 :startRefreshTimer;
+        invoke %tmp.1 %tmp.2();
+D__my_project_projects_UplandHunter_source_MainView_mc_65_30_68_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 80; @symbol_functiondef = [onUpdate,80,13,21]; @symbol_param<0> = [dc,80,22,24]; @symbol_param<0>_type<0> = [Graphics,80,28,36]; @symbol_param<0>_type<1> = [Dc,80,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 81 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_stop" ]
+        %screenW.1 = local;
+        symbol [ screenW %screenW.1 81 12 19 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 81 22 24 ];
+        symbol [ getWidth %tmp.2 81 25 33 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %screenW.1 %tmp.3;
+        symbol [ screenW %screenW.1 81 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 82 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_stop" ]
+        %screenH.2 = local;
+        symbol [ screenH %screenH.2 82 12 19 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 82 22 24 ];
+        symbol [ getHeight %tmp.5 82 25 34 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %screenH.2 %tmp.6;
+        symbol [ screenH %screenH.2 82 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 83 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_stop" ]
+        %centerX.3 = local;
+        symbol [ centerX %centerX.3 83 12 19 ];
+        %tmp.7 = lgetv %screenW.1;
+        symbol [ screenW %tmp.7 83 22 29 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %centerX.3 %tmp.9;
+        symbol [ centerX %centerX.3 83 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 84 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_stop" ]
+        %app.4 = local;
+        symbol [ app %app.4 84 12 15 ];
+        symbol [ Application %tmp.10 84 18 29 ];
+        %tmp.10 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.11 84 30 36 ];
+        %tmp.11 = getv function %tmp.10 :getApp;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        %tmp.13 = as %tmp.12 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.13 84 42 57 ];
+        lputv %app.4 %tmp.13;
+        symbol [ app %app.4 84 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 88 8 ]
+        %tmp.14 = lgetv %dc;
+        symbol [ dc %tmp.14 88 8 10 ];
+        symbol [ setColor %tmp.15 88 11 19 ];
+        %tmp.15 = getv function %tmp.14 :setColor;
+        symbol [ Constants %tmp.17 88 20 29 ];
+        %tmp.17 = getv ? :Constants;
+        symbol [ getTextColor %tmp.18 88 30 42 ];
+        %tmp.18 = getv function %tmp.17 :getTextColor;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        symbol [ Constants %tmp.21 88 46 55 ];
+        %tmp.21 = getv ? :Constants;
+        symbol [ getBgColor %tmp.22 88 56 66 ];
+        %tmp.22 = getv function %tmp.21 :getBgColor;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        invoke %tmp.14 %tmp.15(%tmp.19, %tmp.23);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 89 8 ]
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 89 8 10 ];
+        symbol [ clear %tmp.25 89 11 16 ];
+        %tmp.25 = getv function %tmp.24 :clear;
+        invoke %tmp.24 %tmp.25();
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 92 8 ]
+        %tmp.26 = lgetv %dc;
+        symbol [ dc %tmp.26 92 8 10 ];
+        symbol [ setColor %tmp.27 92 11 19 ];
+        %tmp.27 = getv function %tmp.26 :setColor;
+        symbol [ Constants %tmp.29 92 20 29 ];
+        %tmp.29 = getv ? :Constants;
+        symbol [ COLOR_PRIMARY %tmp.30 92 30 43 ];
+        %tmp.30 = getv %tmp.29 :COLOR_PRIMARY;
+        symbol [ Graphics %tmp.31 92 45 53 ];
+        %tmp.31 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.32 92 54 71 ];
+        %tmp.32 = getv %tmp.31 :COLOR_TRANSPARENT;
+        invoke %tmp.26 %tmp.27(%tmp.30, %tmp.32);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 93 8 ]
+        %tmp.33 = lgetv %dc;
+        symbol [ dc %tmp.33 93 8 10 ];
+        symbol [ drawText %tmp.34 93 11 19 ];
+        %tmp.34 = getv function %tmp.33 :drawText;
+        %tmp.35 = lgetv %centerX.3;
+        symbol [ centerX %tmp.35 93 20 27 ];
+        %tmp.36 = 30;
+        symbol [ Graphics %tmp.37 93 33 41 ];
+        %tmp.37 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.38 93 42 52 ];
+        %tmp.38 = getv %tmp.37 :FONT_SMALL;
+        %tmp.39 = "UPLAND HUNTER";
+        symbol [ Graphics %tmp.40 94 29 37 ];
+        %tmp.40 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.41 94 38 57 ];
+        %tmp.41 = getv %tmp.40 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.33 %tmp.34(%tmp.35, %tmp.36, %tmp.38, %tmp.39, %tmp.41);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 97 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_stop" ]
+        %gpsText.5 = local;
+        symbol [ gpsText %gpsText.5 97 12 19 ];
+        %tmp.42 = "Waiting for GPS...";
+        lputv %gpsText.5 %tmp.42;
+        symbol [ gpsText %gpsText.5 97 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 98 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_stop" ]
+        %gpsColor.6 = local;
+        symbol [ gpsColor %gpsColor.6 98 12 20 ];
+        symbol [ Constants %tmp.44 98 23 32 ];
+        %tmp.44 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.45 98 33 44 ];
+        %tmp.45 = getv %tmp.44 :COLOR_MUTED;
+        lputv %gpsColor.6 %tmp.45;
+        symbol [ gpsColor %gpsColor.6 98 12 20 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 99 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_99_8_102_8_if_stmt:
+        %tmp.46 = lgetv %app.4;
+        symbol [ app %tmp.46 99 12 15 ];
+        symbol [ _hasGpsFix %tmp.47 99 16 26 ];
+        %tmp.47 = getv %tmp.46 :_hasGpsFix;
+        bf %tmp.47 @D__my_project_projects_UplandHunter_source_MainView_mc_99_8_102_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_99_8_102_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_99_28_102_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 100 12 ]
+        %tmp.48 = "GPS Ready";
+        lputv %gpsText.5 %tmp.48;
+        symbol [ gpsText %gpsText.5 100 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 101 12 ]
+        symbol [ Constants %tmp.50 101 23 32 ];
+        %tmp.50 = getv ? :Constants;
+        symbol [ COLOR_SUCCESS %tmp.51 101 33 46 ];
+        %tmp.51 = getv %tmp.50 :COLOR_SUCCESS;
+        lputv %gpsColor.6 %tmp.51;
+        symbol [ gpsColor %gpsColor.6 101 12 20 ];
+D__my_project_projects_UplandHunter_source_MainView_mc_99_28_102_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_99_8_102_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_99_8_102_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 103 8 ]
+        %tmp.52 = lgetv %dc;
+        symbol [ dc %tmp.52 103 8 10 ];
+        symbol [ setColor %tmp.53 103 11 19 ];
+        %tmp.53 = getv function %tmp.52 :setColor;
+        %tmp.54 = lgetv %gpsColor.6;
+        symbol [ gpsColor %tmp.54 103 20 28 ];
+        symbol [ Graphics %tmp.55 103 30 38 ];
+        %tmp.55 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.56 103 39 56 ];
+        %tmp.56 = getv %tmp.55 :COLOR_TRANSPARENT;
+        invoke %tmp.52 %tmp.53(%tmp.54, %tmp.56);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 104 8 ]
+        %tmp.57 = lgetv %dc;
+        symbol [ dc %tmp.57 104 8 10 ];
+        symbol [ drawText %tmp.58 104 11 19 ];
+        %tmp.58 = getv function %tmp.57 :drawText;
+        %tmp.59 = lgetv %centerX.3;
+        symbol [ centerX %tmp.59 104 20 27 ];
+        %tmp.60 = 55;
+        symbol [ Graphics %tmp.61 104 33 41 ];
+        %tmp.61 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.62 104 42 52 ];
+        %tmp.62 = getv %tmp.61 :FONT_XTINY;
+        %tmp.63 = lgetv %gpsText.5;
+        symbol [ gpsText %tmp.63 105 12 19 ];
+        symbol [ Graphics %tmp.64 105 21 29 ];
+        %tmp.64 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.65 105 30 49 ];
+        %tmp.65 = getv %tmp.64 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.57 %tmp.58(%tmp.59, %tmp.60, %tmp.62, %tmp.63, %tmp.65);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 108 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_108_8_115_8_if_stmt:
+        %tmp.66 = lgetv %app.4;
+        symbol [ app %tmp.66 108 12 15 ];
+        symbol [ isHuntActive %tmp.67 108 16 28 ];
+        %tmp.67 = getv function %tmp.66 :isHuntActive;
+        %tmp.68 = invoke %tmp.66 %tmp.67();
+        bf %tmp.68 @D__my_project_projects_UplandHunter_source_MainView_mc_108_8_115_8_if_else_false;
+D__my_project_projects_UplandHunter_source_MainView_mc_108_8_115_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_108_32_112_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 110 12 ]
+        %tmp.69 = self;
+        symbol [ drawHuntTimer %tmp.70 110 12 25 ];
+        %tmp.70 = getv function %tmp.69 :drawHuntTimer;
+        %tmp.71 = lgetv %dc;
+        symbol [ dc %tmp.71 110 26 28 ];
+        %tmp.72 = lgetv %centerX.3;
+        symbol [ centerX %tmp.72 110 30 37 ];
+        %tmp.73 = lgetv %screenH.2;
+        symbol [ screenH %tmp.73 110 39 46 ];
+        %tmp.74 = lgetv %app.4;
+        symbol [ app %tmp.74 110 48 51 ];
+        invoke %tmp.69 %tmp.70(%tmp.71, %tmp.72, %tmp.73, %tmp.74);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 111 12 ]
+        %tmp.75 = self;
+        symbol [ drawDogList %tmp.76 111 12 23 ];
+        %tmp.76 = getv function %tmp.75 :drawDogList;
+        %tmp.77 = lgetv %dc;
+        symbol [ dc %tmp.77 111 24 26 ];
+        %tmp.78 = lgetv %centerX.3;
+        symbol [ centerX %tmp.78 111 28 35 ];
+        %tmp.79 = lgetv %screenW.1;
+        symbol [ screenW %tmp.79 111 37 44 ];
+        %tmp.80 = lgetv %screenH.2;
+        symbol [ screenH %tmp.80 111 46 53 ];
+        invoke %tmp.75 %tmp.76(%tmp.77, %tmp.78, %tmp.79, %tmp.80);
+D__my_project_projects_UplandHunter_source_MainView_mc_108_32_112_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_108_8_115_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_108_8_115_8_if_else_false:
+D__my_project_projects_UplandHunter_source_MainView_mc_112_15_115_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 114 12 ]
+        %tmp.81 = self;
+        symbol [ drawStartPrompt %tmp.82 114 12 27 ];
+        %tmp.82 = getv function %tmp.81 :drawStartPrompt;
+        %tmp.83 = lgetv %dc;
+        symbol [ dc %tmp.83 114 28 30 ];
+        %tmp.84 = lgetv %centerX.3;
+        symbol [ centerX %tmp.84 114 32 39 ];
+        %tmp.85 = lgetv %screenH.2;
+        symbol [ screenH %tmp.85 114 41 48 ];
+        invoke %tmp.81 %tmp.82(%tmp.83, %tmp.84, %tmp.85);
+D__my_project_projects_UplandHunter_source_MainView_mc_112_15_115_8_stop:
+D__my_project_projects_UplandHunter_source_MainView_mc_108_8_115_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 118 8 ]
+        %tmp.86 = lgetv %dc;
+        symbol [ dc %tmp.86 118 8 10 ];
+        symbol [ setColor %tmp.87 118 11 19 ];
+        %tmp.87 = getv function %tmp.86 :setColor;
+        symbol [ Constants %tmp.89 118 20 29 ];
+        %tmp.89 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.90 118 30 41 ];
+        %tmp.90 = getv %tmp.89 :COLOR_MUTED;
+        symbol [ Graphics %tmp.91 118 43 51 ];
+        %tmp.91 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.92 118 52 69 ];
+        %tmp.92 = getv %tmp.91 :COLOR_TRANSPARENT;
+        invoke %tmp.86 %tmp.87(%tmp.90, %tmp.92);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 119 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_119_8_125_8_if_stmt:
+        %tmp.93 = lgetv %app.4;
+        symbol [ app %tmp.93 119 12 15 ];
+        symbol [ isHuntActive %tmp.94 119 16 28 ];
+        %tmp.94 = getv function %tmp.93 :isHuntActive;
+        %tmp.95 = invoke %tmp.93 %tmp.94();
+        bf %tmp.95 @D__my_project_projects_UplandHunter_source_MainView_mc_119_8_125_8_if_else_false;
+D__my_project_projects_UplandHunter_source_MainView_mc_119_8_125_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_119_32_122_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 120 12 ]
+        %tmp.96 = lgetv %dc;
+        symbol [ dc %tmp.96 120 12 14 ];
+        symbol [ drawText %tmp.97 120 15 23 ];
+        %tmp.97 = getv function %tmp.96 :drawText;
+        %tmp.98 = lgetv %centerX.3;
+        symbol [ centerX %tmp.98 120 24 31 ];
+        %tmp.99 = lgetv %screenH.2;
+        symbol [ screenH %tmp.99 120 33 40 ];
+        %tmp.100 = 45;
+        %tmp.101 = sub %tmp.99 %tmp.100;
+        symbol [ Graphics %tmp.102 120 47 55 ];
+        %tmp.102 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.103 120 56 66 ];
+        %tmp.103 = getv %tmp.102 :FONT_XTINY;
+        %tmp.104 = "SELECT: Flush";
+        symbol [ Graphics %tmp.105 121 33 41 ];
+        %tmp.105 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.106 121 42 61 ];
+        %tmp.106 = getv %tmp.105 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.96 %tmp.97(%tmp.98, %tmp.101, %tmp.103, %tmp.104, %tmp.106);
+D__my_project_projects_UplandHunter_source_MainView_mc_119_32_122_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_119_8_125_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_119_8_125_8_if_else_false:
+D__my_project_projects_UplandHunter_source_MainView_mc_122_15_125_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 123 12 ]
+        %tmp.107 = lgetv %dc;
+        symbol [ dc %tmp.107 123 12 14 ];
+        symbol [ drawText %tmp.108 123 15 23 ];
+        %tmp.108 = getv function %tmp.107 :drawText;
+        %tmp.109 = lgetv %centerX.3;
+        symbol [ centerX %tmp.109 123 24 31 ];
+        %tmp.110 = lgetv %screenH.2;
+        symbol [ screenH %tmp.110 123 33 40 ];
+        %tmp.111 = 45;
+        %tmp.112 = sub %tmp.110 %tmp.111;
+        symbol [ Graphics %tmp.113 123 47 55 ];
+        %tmp.113 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.114 123 56 66 ];
+        %tmp.114 = getv %tmp.113 :FONT_XTINY;
+        %tmp.115 = "SELECT: Start Hunt";
+        symbol [ Graphics %tmp.116 124 38 46 ];
+        %tmp.116 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.117 124 47 66 ];
+        %tmp.117 = getv %tmp.116 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.107 %tmp.108(%tmp.109, %tmp.112, %tmp.114, %tmp.115, %tmp.117);
+D__my_project_projects_UplandHunter_source_MainView_mc_122_15_125_8_stop:
+D__my_project_projects_UplandHunter_source_MainView_mc_119_8_125_8_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_80_49_126_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 134; @symbol_functiondef = [drawHuntTimer,134,13,26]; @symbol_param<0> = [dc,134,27,29]; @symbol_param<0>_type<0> = [Graphics,134,33,41]; @symbol_param<0>_type<1> = [Dc,134,42,44]; @symbol_param<1> = [centerX,134,46,53]; @symbol_param<1>_type<0> = [Number,134,57,63]; @symbol_param<2> = [screenH,135,28,35]; @symbol_param<2>_type<0> = [Number,135,39,45]; @symbol_param<3> = [app,135,47,50]; @symbol_param<3>_type<0> = [UplandHunterApp,135,54,69]; ]
+    function drawHuntTimer(dc as Graphics.Dc, centerX as Number, screenH as Number, app as UplandHunterApp) as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 136 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_stop" ]
+        %duration.1 = local;
+        symbol [ duration %duration.1 136 12 20 ];
+        %tmp.1 = lgetv %app;
+        symbol [ app %tmp.1 136 23 26 ];
+        symbol [ getHuntDuration %tmp.2 136 27 42 ];
+        %tmp.2 = getv function %tmp.1 :getHuntDuration;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %duration.1 %tmp.3;
+        symbol [ duration %duration.1 136 12 20 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 137 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_stop" ]
+        %hours.2 = local;
+        symbol [ hours %hours.2 137 12 17 ];
+        %tmp.4 = lgetv %duration.1;
+        symbol [ duration %tmp.4 137 20 28 ];
+        %tmp.5 = 3600;
+        %tmp.6 = div %tmp.4 %tmp.5;
+        lputv %hours.2 %tmp.6;
+        symbol [ hours %hours.2 137 12 17 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 138 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_stop" ]
+        %minutes.3 = local;
+        symbol [ minutes %minutes.3 138 12 19 ];
+        %tmp.7 = lgetv %duration.1;
+        symbol [ duration %tmp.7 138 23 31 ];
+        %tmp.8 = 3600;
+        %tmp.9 = mod %tmp.7 %tmp.8;
+        %tmp.10 = 60;
+        %tmp.11 = div %tmp.9 %tmp.10;
+        lputv %minutes.3 %tmp.11;
+        symbol [ minutes %minutes.3 138 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 139 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_stop" ]
+        %seconds.4 = local;
+        symbol [ seconds %seconds.4 139 12 19 ];
+        %tmp.12 = lgetv %duration.1;
+        symbol [ duration %tmp.12 139 22 30 ];
+        %tmp.13 = 60;
+        %tmp.14 = mod %tmp.12 %tmp.13;
+        lputv %seconds.4 %tmp.14;
+        symbol [ seconds %seconds.4 139 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 142 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_stop" ]
+        %timeStr.5 = local;
+        symbol [ timeStr %timeStr.5 142 12 19 ];
+        %tmp.15 = lgetv %hours.2;
+        symbol [ hours %tmp.15 142 22 27 ];
+        symbol [ format %tmp.16 142 28 34 ];
+        %tmp.16 = getv function %tmp.15 :format;
+        %tmp.17 = "%02d";
+        %tmp.18 = invoke %tmp.15 %tmp.16(%tmp.17);
+        %tmp.19 = ":";
+        %tmp.20 = add %tmp.18 %tmp.19;
+        %tmp.21 = lgetv %minutes.3;
+        symbol [ minutes %tmp.21 143 22 29 ];
+        symbol [ format %tmp.22 143 30 36 ];
+        %tmp.22 = getv function %tmp.21 :format;
+        %tmp.23 = "%02d";
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        %tmp.25 = add %tmp.20 %tmp.24;
+        %tmp.26 = ":";
+        %tmp.27 = add %tmp.25 %tmp.26;
+        %tmp.28 = lgetv %seconds.4;
+        symbol [ seconds %tmp.28 144 22 29 ];
+        symbol [ format %tmp.29 144 30 36 ];
+        %tmp.29 = getv function %tmp.28 :format;
+        %tmp.30 = "%02d";
+        %tmp.31 = invoke %tmp.28 %tmp.29(%tmp.30);
+        %tmp.32 = add %tmp.27 %tmp.31;
+        lputv %timeStr.5 %tmp.32;
+        symbol [ timeStr %timeStr.5 142 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 146 8 ]
+        %tmp.33 = lgetv %dc;
+        symbol [ dc %tmp.33 146 8 10 ];
+        symbol [ setColor %tmp.34 146 11 19 ];
+        %tmp.34 = getv function %tmp.33 :setColor;
+        symbol [ Constants %tmp.36 146 20 29 ];
+        %tmp.36 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.37 146 30 40 ];
+        %tmp.37 = getv %tmp.36 :COLOR_TEXT;
+        symbol [ Graphics %tmp.38 146 42 50 ];
+        %tmp.38 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.39 146 51 68 ];
+        %tmp.39 = getv %tmp.38 :COLOR_TRANSPARENT;
+        invoke %tmp.33 %tmp.34(%tmp.37, %tmp.39);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 147 8 ]
+        %tmp.40 = lgetv %dc;
+        symbol [ dc %tmp.40 147 8 10 ];
+        symbol [ drawText %tmp.41 147 11 19 ];
+        %tmp.41 = getv function %tmp.40 :drawText;
+        %tmp.42 = lgetv %centerX;
+        symbol [ centerX %tmp.42 147 20 27 ];
+        %tmp.43 = 80;
+        symbol [ Graphics %tmp.44 147 33 41 ];
+        %tmp.44 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.45 147 42 52 ];
+        %tmp.45 = getv %tmp.44 :FONT_LARGE;
+        %tmp.46 = lgetv %timeStr.5;
+        symbol [ timeStr %tmp.46 148 12 19 ];
+        symbol [ Graphics %tmp.47 148 21 29 ];
+        %tmp.47 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.48 148 30 49 ];
+        %tmp.48 = getv %tmp.47 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.40 %tmp.41(%tmp.42, %tmp.43, %tmp.45, %tmp.46, %tmp.48);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 150 8 ]
+        %tmp.49 = lgetv %dc;
+        symbol [ dc %tmp.49 150 8 10 ];
+        symbol [ setColor %tmp.50 150 11 19 ];
+        %tmp.50 = getv function %tmp.49 :setColor;
+        symbol [ Constants %tmp.52 150 20 29 ];
+        %tmp.52 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.53 150 30 41 ];
+        %tmp.53 = getv %tmp.52 :COLOR_MUTED;
+        symbol [ Graphics %tmp.54 150 43 51 ];
+        %tmp.54 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.55 150 52 69 ];
+        %tmp.55 = getv %tmp.54 :COLOR_TRANSPARENT;
+        invoke %tmp.49 %tmp.50(%tmp.53, %tmp.55);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 151 8 ]
+        %tmp.56 = lgetv %dc;
+        symbol [ dc %tmp.56 151 8 10 ];
+        symbol [ drawText %tmp.57 151 11 19 ];
+        %tmp.57 = getv function %tmp.56 :drawText;
+        %tmp.58 = lgetv %centerX;
+        symbol [ centerX %tmp.58 151 20 27 ];
+        %tmp.59 = 115;
+        symbol [ Graphics %tmp.60 151 34 42 ];
+        %tmp.60 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.61 151 43 53 ];
+        %tmp.61 = getv %tmp.60 :FONT_XTINY;
+        %tmp.62 = "Hunt Active";
+        symbol [ Graphics %tmp.63 152 27 35 ];
+        %tmp.63 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.64 152 36 55 ];
+        %tmp.64 = getv %tmp.63 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.56 %tmp.57(%tmp.58, %tmp.59, %tmp.61, %tmp.62, %tmp.64);
+D__my_project_projects_UplandHunter_source_MainView_mc_135_79_153_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 171; @symbol_functiondef = [drawDogList,171,13,24]; @symbol_param<0> = [dc,171,25,27]; @symbol_param<0>_type<0> = [Graphics,171,31,39]; @symbol_param<0>_type<1> = [Dc,171,40,42]; @symbol_param<1> = [centerX,171,44,51]; @symbol_param<1>_type<0> = [Number,171,55,61]; @symbol_param<2> = [screenW,172,26,33]; @symbol_param<2>_type<0> = [Number,172,37,43]; @symbol_param<3> = [screenH,172,45,52]; @symbol_param<3>_type<0> = [Number,172,56,62]; ]
+    function drawDogList(dc as Graphics.Dc, centerX as Number, screenW as Number, screenH as Number) as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 174 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 174 12 15 ];
+        symbol [ Application %tmp.1 174 18 29 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.2 174 30 36 ];
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = as %tmp.3 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.4 174 42 57 ];
+        lputv %app.1 %tmp.4;
+        symbol [ app %app.1 174 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 175 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_stop" ]
+        %dogs.2 = local;
+        symbol [ dogs %dogs.2 175 12 16 ];
+        %tmp.5 = lgetv %app.1;
+        symbol [ app %tmp.5 175 19 22 ];
+        symbol [ _dogTracker %tmp.6 175 23 34 ];
+        %tmp.6 = getv %tmp.5 :_dogTracker;
+        symbol [ getDogs %tmp.7 175 35 42 ];
+        %tmp.7 = getv function %tmp.6 :getDogs;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        lputv %dogs.2 %tmp.8;
+        symbol [ dogs %dogs.2 175 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 176 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_stop" ]
+        %connState.3 = local;
+        symbol [ connState %connState.3 176 12 21 ];
+        %tmp.9 = lgetv %app.1;
+        symbol [ app %tmp.9 176 24 27 ];
+        symbol [ _dogTracker %tmp.10 176 28 39 ];
+        %tmp.10 = getv %tmp.9 :_dogTracker;
+        symbol [ getConnectionState %tmp.11 176 40 58 ];
+        %tmp.11 = getv function %tmp.10 :getConnectionState;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        lputv %connState.3 %tmp.12;
+        symbol [ connState %connState.3 176 12 21 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 179 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_179_8_189_8_if_stmt:
+        %tmp.13 = lgetv %connState.3;
+        symbol [ connState %tmp.13 179 12 21 ];
+        symbol [ Constants %tmp.15 179 25 34 ];
+        %tmp.15 = getv ? :Constants;
+        symbol [ ANT_STATE_SEARCHING %tmp.16 179 35 54 ];
+        %tmp.16 = getv %tmp.15 :ANT_STATE_SEARCHING;
+        %tmp.17 = eq %tmp.13 %tmp.16;
+        bf %tmp.17 @D__my_project_projects_UplandHunter_source_MainView_mc_179_8_189_8_if_false;
+D__my_project_projects_UplandHunter_source_MainView_mc_179_8_189_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_179_56_184_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 180 12 ]
+        %tmp.18 = lgetv %dc;
+        symbol [ dc %tmp.18 180 12 14 ];
+        symbol [ setColor %tmp.19 180 15 23 ];
+        %tmp.19 = getv function %tmp.18 :setColor;
+        symbol [ Constants %tmp.21 180 24 33 ];
+        %tmp.21 = getv ? :Constants;
+        symbol [ COLOR_WARNING %tmp.22 180 34 47 ];
+        %tmp.22 = getv %tmp.21 :COLOR_WARNING;
+        symbol [ Graphics %tmp.23 180 49 57 ];
+        %tmp.23 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.24 180 58 75 ];
+        %tmp.24 = getv %tmp.23 :COLOR_TRANSPARENT;
+        invoke %tmp.18 %tmp.19(%tmp.22, %tmp.24);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 181 12 ]
+        %tmp.25 = lgetv %dc;
+        symbol [ dc %tmp.25 181 12 14 ];
+        symbol [ drawText %tmp.26 181 15 23 ];
+        %tmp.26 = getv function %tmp.25 :drawText;
+        %tmp.27 = lgetv %centerX;
+        symbol [ centerX %tmp.27 181 24 31 ];
+        %tmp.28 = 150;
+        symbol [ Graphics %tmp.29 181 38 46 ];
+        %tmp.29 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.30 181 47 57 ];
+        %tmp.30 = getv %tmp.29 :FONT_SMALL;
+        %tmp.31 = "Searching for dogs...";
+        symbol [ Graphics %tmp.32 182 41 49 ];
+        %tmp.32 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.33 182 50 69 ];
+        %tmp.33 = getv %tmp.32 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.25 %tmp.26(%tmp.27, %tmp.28, %tmp.30, %tmp.31, %tmp.33);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 183 12 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_MainView_mc_179_56_184_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_179_8_189_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_179_8_189_8_if_false:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 184 15 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_184_15_189_8_if_stmt:
+D__my_project_projects_UplandHunter_source_MainView_mc_184_19_184_80_begin:
+        %tmp.34 = lgetv %connState.3;
+        symbol [ connState %tmp.34 184 19 28 ];
+        symbol [ Constants %tmp.36 184 32 41 ];
+        %tmp.36 = getv ? :Constants;
+        symbol [ ANT_STATE_CONNECTED %tmp.37 184 42 61 ];
+        %tmp.37 = getv %tmp.36 :ANT_STATE_CONNECTED;
+        %tmp.38 = ne %tmp.34 %tmp.37;
+        bt %tmp.38 @D__my_project_projects_UplandHunter_source_MainView_mc_184_15_189_8_if_true;
+D__my_project_projects_UplandHunter_source_MainView_mc_184_65_184_80_false:
+        %tmp.39 = lgetv %dogs.2;
+        symbol [ dogs %tmp.39 184 65 69 ];
+        symbol [ size %tmp.40 184 70 74 ];
+        %tmp.40 = getv function %tmp.39 :size;
+        %tmp.41 = invoke %tmp.39 %tmp.40();
+        %tmp.42 = 0;
+        %tmp.43 = eq %tmp.41 %tmp.42;
+        push %tmp.43;
+D__my_project_projects_UplandHunter_source_MainView_mc_184_65_184_80_end:
+        %tmp.44 = phi [%tmp.38 @D__my_project_projects_UplandHunter_source_MainView_mc_184_19_184_80_begin] [%tmp.43 @D__my_project_projects_UplandHunter_source_MainView_mc_184_65_184_80_false] [%tmp.44 @D__my_project_projects_UplandHunter_source_MainView_mc_184_65_184_80_end];
+        bf %tmp.44 @D__my_project_projects_UplandHunter_source_MainView_mc_184_15_189_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_184_15_189_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_184_83_189_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 185 12 ]
+        %tmp.45 = lgetv %dc;
+        symbol [ dc %tmp.45 185 12 14 ];
+        symbol [ setColor %tmp.46 185 15 23 ];
+        %tmp.46 = getv function %tmp.45 :setColor;
+        symbol [ Constants %tmp.48 185 24 33 ];
+        %tmp.48 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.49 185 34 45 ];
+        %tmp.49 = getv %tmp.48 :COLOR_MUTED;
+        symbol [ Graphics %tmp.50 185 47 55 ];
+        %tmp.50 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.51 185 56 73 ];
+        %tmp.51 = getv %tmp.50 :COLOR_TRANSPARENT;
+        invoke %tmp.45 %tmp.46(%tmp.49, %tmp.51);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 186 12 ]
+        %tmp.52 = lgetv %dc;
+        symbol [ dc %tmp.52 186 12 14 ];
+        symbol [ drawText %tmp.53 186 15 23 ];
+        %tmp.53 = getv function %tmp.52 :drawText;
+        %tmp.54 = lgetv %centerX;
+        symbol [ centerX %tmp.54 186 24 31 ];
+        %tmp.55 = 150;
+        symbol [ Graphics %tmp.56 186 38 46 ];
+        %tmp.56 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.57 186 47 57 ];
+        %tmp.57 = getv %tmp.56 :FONT_SMALL;
+        %tmp.58 = "No dogs connected";
+        symbol [ Graphics %tmp.59 187 37 45 ];
+        %tmp.59 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.60 187 46 65 ];
+        %tmp.60 = getv %tmp.59 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.52 %tmp.53(%tmp.54, %tmp.55, %tmp.57, %tmp.58, %tmp.60);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 188 12 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_MainView_mc_184_83_189_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_184_15_189_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_184_15_189_8_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_179_8_189_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 192 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_stop" ]
+        %startY.4 = local;
+        symbol [ startY %startY.4 192 12 18 ];
+        %tmp.61 = 145;
+        lputv %startY.4 %tmp.61;
+        symbol [ startY %startY.4 192 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 193 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_stop" ]
+        %rowHeight.5 = local;
+        symbol [ rowHeight %rowHeight.5 193 12 21 ];
+        %tmp.62 = 40;
+        lputv %rowHeight.5 %tmp.62;
+        symbol [ rowHeight %rowHeight.5 193 12 21 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 194 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_stop" ]
+        %leftPad.6 = local;
+        symbol [ leftPad %leftPad.6 194 12 19 ];
+        %tmp.63 = 50;
+        lputv %leftPad.6 %tmp.63;
+        symbol [ leftPad %leftPad.6 194 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 196 8 ]
+        for @D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_test @D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_incr @D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_begin" "D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_end" ]
+        %i.7 = local;
+        symbol [ i %i.7 196 17 18 ];
+        %tmp.64 = 0;
+        lputv %i.7 %tmp.64;
+        symbol [ i %i.7 196 17 18 ];
+D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_test:
+D__my_project_projects_UplandHunter_source_MainView_mc_196_24_196_47_begin:
+        %tmp.65 = lgetv %i.7;
+        symbol [ i %tmp.65 196 24 25 ];
+        %tmp.66 = lgetv %dogs.2;
+        symbol [ dogs %tmp.66 196 28 32 ];
+        symbol [ size %tmp.67 196 33 37 ];
+        %tmp.67 = getv function %tmp.66 :size;
+        %tmp.68 = invoke %tmp.66 %tmp.67();
+        %tmp.69 = lt %tmp.65 %tmp.68;
+        %tmp.70 = dup %tmp.69;
+        bf %tmp.70 @D__my_project_projects_UplandHunter_source_MainView_mc_196_43_196_47_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_196_43_196_47_true:
+        %tmp.71 = lgetv %i.7;
+        symbol [ i %tmp.71 196 43 44 ];
+        %tmp.72 = 4;
+        %tmp.73 = lt %tmp.71 %tmp.72;
+        %tmp.74 = and %tmp.69 %tmp.73;
+        push %tmp.74;
+D__my_project_projects_UplandHunter_source_MainView_mc_196_43_196_47_end:
+        %tmp.75 = phi [%tmp.70 @D__my_project_projects_UplandHunter_source_MainView_mc_196_24_196_47_begin] [%tmp.74 @D__my_project_projects_UplandHunter_source_MainView_mc_196_43_196_47_true] [%tmp.75 @D__my_project_projects_UplandHunter_source_MainView_mc_196_43_196_47_end];
+        bf %tmp.75 @D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_begin:
+D__my_project_projects_UplandHunter_source_MainView_mc_196_55_242_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 197 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_196_55_242_8_start" "D__my_project_projects_UplandHunter_source_MainView_mc_196_55_242_8_stop" ]
+        %dog.8 = local;
+        symbol [ dog %dog.8 197 16 19 ];
+        %tmp.76 = lgetv %dogs.2;
+        symbol [ dogs %tmp.76 197 22 26 ];
+        %tmp.77 = lgetv %i.7;
+        symbol [ i %tmp.77 197 27 28 ];
+        %tmp.78 = agetv %tmp.76 %tmp.77;
+        %tmp.79 = as %tmp.78 DogData;
+        symbol [ DogData %tmp.79 197 33 40 ];
+        lputv %dog.8 %tmp.79;
+        symbol [ dog %dog.8 197 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 198 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_196_55_242_8_start" "D__my_project_projects_UplandHunter_source_MainView_mc_196_55_242_8_stop" ]
+        %y.9 = local;
+        symbol [ y %y.9 198 16 17 ];
+        %tmp.80 = lgetv %startY.4;
+        symbol [ startY %tmp.80 198 20 26 ];
+        %tmp.81 = lgetv %i.7;
+        symbol [ i %tmp.81 198 30 31 ];
+        %tmp.82 = lgetv %rowHeight.5;
+        symbol [ rowHeight %tmp.82 198 34 43 ];
+        %tmp.83 = mul %tmp.81 %tmp.82;
+        %tmp.84 = add %tmp.80 %tmp.83;
+        lputv %y.9 %tmp.84;
+        symbol [ y %y.9 198 16 17 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 201 12 ]
+        %tmp.85 = self;
+        symbol [ checkDogAlert %tmp.86 201 12 25 ];
+        %tmp.86 = getv function %tmp.85 :checkDogAlert;
+        %tmp.87 = lgetv %dog.8;
+        symbol [ dog %tmp.87 201 26 29 ];
+        invoke %tmp.85 %tmp.86(%tmp.87);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 204 12 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_204_12_208_12_if_stmt:
+D__my_project_projects_UplandHunter_source_MainView_mc_204_16_205_40_begin:
+        %tmp.88 = lgetv %dog.8;
+        symbol [ dog %tmp.88 204 16 19 ];
+        symbol [ status %tmp.89 204 20 26 ];
+        %tmp.89 = getv %tmp.88 :status;
+        symbol [ Constants %tmp.91 204 30 39 ];
+        %tmp.91 = getv ? :Constants;
+        symbol [ DOG_STATUS_ON_POINT %tmp.92 204 40 59 ];
+        %tmp.92 = getv %tmp.91 :DOG_STATUS_ON_POINT;
+        %tmp.93 = eq %tmp.89 %tmp.92;
+        bt %tmp.93 @D__my_project_projects_UplandHunter_source_MainView_mc_204_12_208_12_if_true;
+D__my_project_projects_UplandHunter_source_MainView_mc_205_16_205_40_false:
+        %tmp.94 = lgetv %dog.8;
+        symbol [ dog %tmp.94 205 16 19 ];
+        symbol [ status %tmp.95 205 20 26 ];
+        %tmp.95 = getv %tmp.94 :status;
+        symbol [ Constants %tmp.97 205 30 39 ];
+        %tmp.97 = getv ? :Constants;
+        symbol [ DOG_STATUS_TREED %tmp.98 205 40 56 ];
+        %tmp.98 = getv %tmp.97 :DOG_STATUS_TREED;
+        %tmp.99 = eq %tmp.95 %tmp.98;
+        push %tmp.99;
+D__my_project_projects_UplandHunter_source_MainView_mc_205_16_205_40_end:
+        %tmp.100 = phi [%tmp.93 @D__my_project_projects_UplandHunter_source_MainView_mc_204_16_205_40_begin] [%tmp.99 @D__my_project_projects_UplandHunter_source_MainView_mc_205_16_205_40_false] [%tmp.100 @D__my_project_projects_UplandHunter_source_MainView_mc_205_16_205_40_end];
+        bf %tmp.100 @D__my_project_projects_UplandHunter_source_MainView_mc_204_12_208_12_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_204_12_208_12_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_205_58_208_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 206 16 ]
+        %tmp.101 = lgetv %dc;
+        symbol [ dc %tmp.101 206 16 18 ];
+        symbol [ setColor %tmp.102 206 19 27 ];
+        %tmp.102 = getv function %tmp.101 :setColor;
+        symbol [ Constants %tmp.104 206 28 37 ];
+        %tmp.104 = getv ? :Constants;
+        symbol [ COLOR_ALERT %tmp.105 206 38 49 ];
+        %tmp.105 = getv %tmp.104 :COLOR_ALERT;
+        symbol [ Constants %tmp.107 206 51 60 ];
+        %tmp.107 = getv ? :Constants;
+        symbol [ COLOR_ALERT %tmp.108 206 61 72 ];
+        %tmp.108 = getv %tmp.107 :COLOR_ALERT;
+        invoke %tmp.101 %tmp.102(%tmp.105, %tmp.108);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 207 16 ]
+        %tmp.109 = lgetv %dc;
+        symbol [ dc %tmp.109 207 16 18 ];
+        symbol [ fillRectangle %tmp.110 207 19 32 ];
+        %tmp.110 = getv function %tmp.109 :fillRectangle;
+        %tmp.111 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.111 207 33 40 ];
+        %tmp.112 = 10;
+        %tmp.113 = sub %tmp.111 %tmp.112;
+        %tmp.114 = lgetv %y.9;
+        symbol [ y %tmp.114 207 47 48 ];
+        %tmp.115 = 2;
+        %tmp.116 = sub %tmp.114 %tmp.115;
+        %tmp.117 = lgetv %screenW;
+        symbol [ screenW %tmp.117 207 54 61 ];
+        %tmp.118 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.118 207 65 72 ];
+        %tmp.119 = 2;
+        %tmp.120 = mul %tmp.118 %tmp.119;
+        %tmp.121 = sub %tmp.117 %tmp.120;
+        %tmp.122 = 20;
+        %tmp.123 = add %tmp.121 %tmp.122;
+        %tmp.124 = lgetv %rowHeight.5;
+        symbol [ rowHeight %tmp.124 207 84 93 ];
+        %tmp.125 = 4;
+        %tmp.126 = sub %tmp.124 %tmp.125;
+        invoke %tmp.109 %tmp.110(%tmp.113, %tmp.116, %tmp.123, %tmp.126);
+D__my_project_projects_UplandHunter_source_MainView_mc_205_58_208_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_204_12_208_12_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_204_12_208_12_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 211 12 ]
+        %tmp.127 = lgetv %dc;
+        symbol [ dc %tmp.127 211 12 14 ];
+        symbol [ setColor %tmp.128 211 15 23 ];
+        %tmp.128 = getv function %tmp.127 :setColor;
+        symbol [ Constants %tmp.130 211 24 33 ];
+        %tmp.130 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.131 211 34 44 ];
+        %tmp.131 = getv %tmp.130 :COLOR_TEXT;
+        symbol [ Graphics %tmp.132 211 46 54 ];
+        %tmp.132 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.133 211 55 72 ];
+        %tmp.133 = getv %tmp.132 :COLOR_TRANSPARENT;
+        invoke %tmp.127 %tmp.128(%tmp.131, %tmp.133);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 212 12 ]
+        %tmp.134 = lgetv %dc;
+        symbol [ dc %tmp.134 212 12 14 ];
+        symbol [ drawText %tmp.135 212 15 23 ];
+        %tmp.135 = getv function %tmp.134 :drawText;
+        %tmp.136 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.136 212 24 31 ];
+        %tmp.137 = lgetv %y.9;
+        symbol [ y %tmp.137 212 33 34 ];
+        symbol [ Graphics %tmp.138 212 36 44 ];
+        %tmp.138 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.139 212 45 55 ];
+        %tmp.139 = getv %tmp.138 :FONT_SMALL;
+        %tmp.140 = lgetv %dog.8;
+        symbol [ dog %tmp.140 213 16 19 ];
+        symbol [ name %tmp.141 213 20 24 ];
+        %tmp.141 = getv %tmp.140 :name;
+        symbol [ Graphics %tmp.142 213 26 34 ];
+        %tmp.142 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.143 213 35 52 ];
+        %tmp.143 = getv %tmp.142 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.134 %tmp.135(%tmp.136, %tmp.137, %tmp.139, %tmp.141, %tmp.143);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 216 12 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_216_12_241_12_if_stmt:
+        %tmp.144 = lgetv %dog.8;
+        symbol [ dog %tmp.144 216 16 19 ];
+        symbol [ status %tmp.145 216 20 26 ];
+        %tmp.145 = getv %tmp.144 :status;
+        symbol [ Constants %tmp.147 216 30 39 ];
+        %tmp.147 = getv ? :Constants;
+        symbol [ DOG_STATUS_ON_POINT %tmp.148 216 40 59 ];
+        %tmp.148 = getv %tmp.147 :DOG_STATUS_ON_POINT;
+        %tmp.149 = eq %tmp.145 %tmp.148;
+        bf %tmp.149 @D__my_project_projects_UplandHunter_source_MainView_mc_216_12_241_12_if_false;
+D__my_project_projects_UplandHunter_source_MainView_mc_216_12_241_12_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_216_61_220_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 217 16 ]
+        %tmp.150 = lgetv %dc;
+        symbol [ dc %tmp.150 217 16 18 ];
+        symbol [ setColor %tmp.151 217 19 27 ];
+        %tmp.151 = getv function %tmp.150 :setColor;
+        symbol [ Constants %tmp.153 217 28 37 ];
+        %tmp.153 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.154 217 38 48 ];
+        %tmp.154 = getv %tmp.153 :COLOR_TEXT;
+        symbol [ Graphics %tmp.155 217 50 58 ];
+        %tmp.155 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.156 217 59 76 ];
+        %tmp.156 = getv %tmp.155 :COLOR_TRANSPARENT;
+        invoke %tmp.150 %tmp.151(%tmp.154, %tmp.156);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 218 16 ]
+        %tmp.157 = lgetv %dc;
+        symbol [ dc %tmp.157 218 16 18 ];
+        symbol [ drawText %tmp.158 218 19 27 ];
+        %tmp.158 = getv function %tmp.157 :drawText;
+        %tmp.159 = lgetv %screenW;
+        symbol [ screenW %tmp.159 218 28 35 ];
+        %tmp.160 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.160 218 38 45 ];
+        %tmp.161 = sub %tmp.159 %tmp.160;
+        %tmp.162 = lgetv %y.9;
+        symbol [ y %tmp.162 218 47 48 ];
+        symbol [ Graphics %tmp.163 218 50 58 ];
+        %tmp.163 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.164 218 59 69 ];
+        %tmp.164 = getv %tmp.163 :FONT_SMALL;
+        %tmp.165 = "POINT!";
+        symbol [ Graphics %tmp.166 219 30 38 ];
+        %tmp.166 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.167 219 39 57 ];
+        %tmp.167 = getv %tmp.166 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.157 %tmp.158(%tmp.161, %tmp.162, %tmp.164, %tmp.165, %tmp.167);
+D__my_project_projects_UplandHunter_source_MainView_mc_216_61_220_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_216_12_241_12_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_216_12_241_12_if_false:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 220 19 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_220_19_241_12_if_stmt:
+        %tmp.168 = lgetv %dog.8;
+        symbol [ dog %tmp.168 220 23 26 ];
+        symbol [ status %tmp.169 220 27 33 ];
+        %tmp.169 = getv %tmp.168 :status;
+        symbol [ Constants %tmp.171 220 37 46 ];
+        %tmp.171 = getv ? :Constants;
+        symbol [ DOG_STATUS_TREED %tmp.172 220 47 63 ];
+        %tmp.172 = getv %tmp.171 :DOG_STATUS_TREED;
+        %tmp.173 = eq %tmp.169 %tmp.172;
+        bf %tmp.173 @D__my_project_projects_UplandHunter_source_MainView_mc_220_19_241_12_if_false;
+D__my_project_projects_UplandHunter_source_MainView_mc_220_19_241_12_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_220_65_224_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 221 16 ]
+        %tmp.174 = lgetv %dc;
+        symbol [ dc %tmp.174 221 16 18 ];
+        symbol [ setColor %tmp.175 221 19 27 ];
+        %tmp.175 = getv function %tmp.174 :setColor;
+        symbol [ Constants %tmp.177 221 28 37 ];
+        %tmp.177 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.178 221 38 48 ];
+        %tmp.178 = getv %tmp.177 :COLOR_TEXT;
+        symbol [ Graphics %tmp.179 221 50 58 ];
+        %tmp.179 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.180 221 59 76 ];
+        %tmp.180 = getv %tmp.179 :COLOR_TRANSPARENT;
+        invoke %tmp.174 %tmp.175(%tmp.178, %tmp.180);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 222 16 ]
+        %tmp.181 = lgetv %dc;
+        symbol [ dc %tmp.181 222 16 18 ];
+        symbol [ drawText %tmp.182 222 19 27 ];
+        %tmp.182 = getv function %tmp.181 :drawText;
+        %tmp.183 = lgetv %screenW;
+        symbol [ screenW %tmp.183 222 28 35 ];
+        %tmp.184 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.184 222 38 45 ];
+        %tmp.185 = sub %tmp.183 %tmp.184;
+        %tmp.186 = lgetv %y.9;
+        symbol [ y %tmp.186 222 47 48 ];
+        symbol [ Graphics %tmp.187 222 50 58 ];
+        %tmp.187 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.188 222 59 69 ];
+        %tmp.188 = getv %tmp.187 :FONT_SMALL;
+        %tmp.189 = "TREED!";
+        symbol [ Graphics %tmp.190 223 30 38 ];
+        %tmp.190 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.191 223 39 57 ];
+        %tmp.191 = getv %tmp.190 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.181 %tmp.182(%tmp.185, %tmp.186, %tmp.188, %tmp.189, %tmp.191);
+D__my_project_projects_UplandHunter_source_MainView_mc_220_65_224_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_220_19_241_12_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_220_19_241_12_if_false:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 224 19 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_224_19_241_12_if_stmt:
+        %tmp.192 = lgetv %dog.8;
+        symbol [ dog %tmp.192 224 23 26 ];
+        symbol [ status %tmp.193 224 27 33 ];
+        %tmp.193 = getv %tmp.192 :status;
+        symbol [ Constants %tmp.195 224 37 46 ];
+        %tmp.195 = getv ? :Constants;
+        symbol [ DOG_STATUS_COMM_LOST %tmp.196 224 47 67 ];
+        %tmp.196 = getv %tmp.195 :DOG_STATUS_COMM_LOST;
+        %tmp.197 = eq %tmp.193 %tmp.196;
+        bf %tmp.197 @D__my_project_projects_UplandHunter_source_MainView_mc_224_19_241_12_if_false;
+D__my_project_projects_UplandHunter_source_MainView_mc_224_19_241_12_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_224_69_228_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 225 16 ]
+        %tmp.198 = lgetv %dc;
+        symbol [ dc %tmp.198 225 16 18 ];
+        symbol [ setColor %tmp.199 225 19 27 ];
+        %tmp.199 = getv function %tmp.198 :setColor;
+        symbol [ Constants %tmp.201 225 28 37 ];
+        %tmp.201 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.202 225 38 49 ];
+        %tmp.202 = getv %tmp.201 :COLOR_MUTED;
+        symbol [ Graphics %tmp.203 225 51 59 ];
+        %tmp.203 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.204 225 60 77 ];
+        %tmp.204 = getv %tmp.203 :COLOR_TRANSPARENT;
+        invoke %tmp.198 %tmp.199(%tmp.202, %tmp.204);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 226 16 ]
+        %tmp.205 = lgetv %dc;
+        symbol [ dc %tmp.205 226 16 18 ];
+        symbol [ drawText %tmp.206 226 19 27 ];
+        %tmp.206 = getv function %tmp.205 :drawText;
+        %tmp.207 = lgetv %screenW;
+        symbol [ screenW %tmp.207 226 28 35 ];
+        %tmp.208 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.208 226 38 45 ];
+        %tmp.209 = sub %tmp.207 %tmp.208;
+        %tmp.210 = lgetv %y.9;
+        symbol [ y %tmp.210 226 47 48 ];
+        symbol [ Graphics %tmp.211 226 50 58 ];
+        %tmp.211 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.212 226 59 69 ];
+        %tmp.212 = getv %tmp.211 :FONT_SMALL;
+        %tmp.213 = "Lost";
+        symbol [ Graphics %tmp.214 227 28 36 ];
+        %tmp.214 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.215 227 37 55 ];
+        %tmp.215 = getv %tmp.214 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.205 %tmp.206(%tmp.209, %tmp.210, %tmp.212, %tmp.213, %tmp.215);
+D__my_project_projects_UplandHunter_source_MainView_mc_224_69_228_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_224_19_241_12_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_224_19_241_12_if_false:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 228 19 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_228_19_241_12_if_stmt:
+        %tmp.216 = lgetv %dog.8;
+        symbol [ dog %tmp.216 228 23 26 ];
+        symbol [ status %tmp.217 228 27 33 ];
+        %tmp.217 = getv %tmp.216 :status;
+        symbol [ Constants %tmp.219 228 37 46 ];
+        %tmp.219 = getv ? :Constants;
+        symbol [ DOG_STATUS_GPS_LOST %tmp.220 228 47 66 ];
+        %tmp.220 = getv %tmp.219 :DOG_STATUS_GPS_LOST;
+        %tmp.221 = eq %tmp.217 %tmp.220;
+        bf %tmp.221 @D__my_project_projects_UplandHunter_source_MainView_mc_228_19_241_12_if_else_false;
+D__my_project_projects_UplandHunter_source_MainView_mc_228_19_241_12_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_228_68_232_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 229 16 ]
+        %tmp.222 = lgetv %dc;
+        symbol [ dc %tmp.222 229 16 18 ];
+        symbol [ setColor %tmp.223 229 19 27 ];
+        %tmp.223 = getv function %tmp.222 :setColor;
+        symbol [ Constants %tmp.225 229 28 37 ];
+        %tmp.225 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.226 229 38 49 ];
+        %tmp.226 = getv %tmp.225 :COLOR_MUTED;
+        symbol [ Graphics %tmp.227 229 51 59 ];
+        %tmp.227 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.228 229 60 77 ];
+        %tmp.228 = getv %tmp.227 :COLOR_TRANSPARENT;
+        invoke %tmp.222 %tmp.223(%tmp.226, %tmp.228);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 230 16 ]
+        %tmp.229 = lgetv %dc;
+        symbol [ dc %tmp.229 230 16 18 ];
+        symbol [ drawText %tmp.230 230 19 27 ];
+        %tmp.230 = getv function %tmp.229 :drawText;
+        %tmp.231 = lgetv %screenW;
+        symbol [ screenW %tmp.231 230 28 35 ];
+        %tmp.232 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.232 230 38 45 ];
+        %tmp.233 = sub %tmp.231 %tmp.232;
+        %tmp.234 = lgetv %y.9;
+        symbol [ y %tmp.234 230 47 48 ];
+        symbol [ Graphics %tmp.235 230 50 58 ];
+        %tmp.235 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.236 230 59 69 ];
+        %tmp.236 = getv %tmp.235 :FONT_SMALL;
+        %tmp.237 = "No GPS";
+        symbol [ Graphics %tmp.238 231 30 38 ];
+        %tmp.238 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.239 231 39 57 ];
+        %tmp.239 = getv %tmp.238 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.229 %tmp.230(%tmp.233, %tmp.234, %tmp.236, %tmp.237, %tmp.239);
+D__my_project_projects_UplandHunter_source_MainView_mc_228_68_232_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_228_19_241_12_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_228_19_241_12_if_else_false:
+D__my_project_projects_UplandHunter_source_MainView_mc_232_19_241_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 236 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_232_19_241_12_start" "D__my_project_projects_UplandHunter_source_MainView_mc_232_19_241_12_stop" ]
+        %distColor.10 = local;
+        symbol [ distColor %distColor.10 236 20 29 ];
+        %tmp.240 = self;
+        symbol [ getDistanceColor %tmp.241 236 32 48 ];
+        %tmp.241 = getv function %tmp.240 :getDistanceColor;
+        %tmp.242 = lgetv %dog.8;
+        symbol [ dog %tmp.242 236 49 52 ];
+        symbol [ distanceYards %tmp.243 236 53 66 ];
+        %tmp.243 = getv %tmp.242 :distanceYards;
+        %tmp.244 = invoke %tmp.240 %tmp.241(%tmp.243);
+        lputv %distColor.10 %tmp.244;
+        symbol [ distColor %distColor.10 236 20 29 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 237 16 ]
+        %tmp.245 = lgetv %dc;
+        symbol [ dc %tmp.245 237 16 18 ];
+        symbol [ setColor %tmp.246 237 19 27 ];
+        %tmp.246 = getv function %tmp.245 :setColor;
+        %tmp.247 = lgetv %distColor.10;
+        symbol [ distColor %tmp.247 237 28 37 ];
+        symbol [ Graphics %tmp.248 237 39 47 ];
+        %tmp.248 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.249 237 48 65 ];
+        %tmp.249 = getv %tmp.248 :COLOR_TRANSPARENT;
+        invoke %tmp.245 %tmp.246(%tmp.247, %tmp.249);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 238 16 ]
+        %tmp.250 = lgetv %dc;
+        symbol [ dc %tmp.250 238 16 18 ];
+        symbol [ drawText %tmp.251 238 19 27 ];
+        %tmp.251 = getv function %tmp.250 :drawText;
+        %tmp.252 = lgetv %screenW;
+        symbol [ screenW %tmp.252 238 28 35 ];
+        %tmp.253 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.253 238 38 45 ];
+        %tmp.254 = sub %tmp.252 %tmp.253;
+        %tmp.255 = lgetv %y.9;
+        symbol [ y %tmp.255 238 47 48 ];
+        symbol [ Graphics %tmp.256 238 50 58 ];
+        %tmp.256 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.257 238 59 69 ];
+        %tmp.257 = getv %tmp.256 :FONT_SMALL;
+        symbol [ Constants %tmp.259 239 20 29 ];
+        %tmp.259 = getv ? :Constants;
+        symbol [ formatDogDistance %tmp.260 239 30 47 ];
+        %tmp.260 = getv function %tmp.259 :formatDogDistance;
+        %tmp.261 = lgetv %dog.8;
+        symbol [ dog %tmp.261 239 48 51 ];
+        symbol [ distanceYards %tmp.262 239 52 65 ];
+        %tmp.262 = getv %tmp.261 :distanceYards;
+        %tmp.263 = invoke %tmp.259 %tmp.260(%tmp.262);
+        symbol [ Graphics %tmp.264 240 20 28 ];
+        %tmp.264 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.265 240 29 47 ];
+        %tmp.265 = getv %tmp.264 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.250 %tmp.251(%tmp.254, %tmp.255, %tmp.257, %tmp.263, %tmp.265);
+D__my_project_projects_UplandHunter_source_MainView_mc_232_19_241_12_stop:
+D__my_project_projects_UplandHunter_source_MainView_mc_228_19_241_12_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_224_19_241_12_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_220_19_241_12_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_216_12_241_12_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_196_55_242_8_stop:
+D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 196 ]
+        %tmp.268 = lgetv %i.7;
+        symbol [ i %tmp.268 196 50 51 ];
+        %tmp.269 = add %tmp.268 1;
+        lputv %i.7 %tmp.269;
+        symbol [ i %i.7 196 50 51 ];
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_test;
+D__my_project_projects_UplandHunter_source_MainView_mc_196_8_242_8_for_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_172_72_243_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 257; @symbol_functiondef = [checkDogAlert,257,13,26]; @symbol_param<0> = [dog,257,27,30]; @symbol_param<0>_type<0> = [DogData,257,34,41]; ]
+    function checkDogAlert(dog as DogData) as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_257_51_272_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 258 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_257_51_272_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_257_51_272_4_stop" ]
+        %prevStatus.1 = local;
+        symbol [ prevStatus %prevStatus.1 258 12 22 ];
+        symbol [ _prevDogStatuses %tmp.2 258 25 41 ];
+        %tmp.2 = getv ? :_prevDogStatuses;
+        symbol [ get %tmp.3 258 42 45 ];
+        %tmp.3 = getv function %tmp.2 :get;
+        %tmp.4 = lgetv %dog;
+        symbol [ dog %tmp.4 258 46 49 ];
+        symbol [ id %tmp.5 258 50 52 ];
+        %tmp.5 = getv %tmp.4 :id;
+        %tmp.6 = invoke %tmp.2 %tmp.3(%tmp.5);
+        lputv %prevStatus.1 %tmp.6;
+        symbol [ prevStatus %prevStatus.1 258 12 22 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 261 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_261_8_268_8_if_stmt:
+D__my_project_projects_UplandHunter_source_MainView_mc_261_12_262_36_begin:
+        %tmp.7 = lgetv %dog;
+        symbol [ dog %tmp.7 261 12 15 ];
+        symbol [ status %tmp.8 261 16 22 ];
+        %tmp.8 = getv %tmp.7 :status;
+        symbol [ Constants %tmp.10 261 26 35 ];
+        %tmp.10 = getv ? :Constants;
+        symbol [ DOG_STATUS_ON_POINT %tmp.11 261 36 55 ];
+        %tmp.11 = getv %tmp.10 :DOG_STATUS_ON_POINT;
+        %tmp.12 = eq %tmp.8 %tmp.11;
+        bt %tmp.12 @D__my_project_projects_UplandHunter_source_MainView_mc_261_8_268_8_if_true;
+D__my_project_projects_UplandHunter_source_MainView_mc_262_12_262_36_false:
+        %tmp.13 = lgetv %dog;
+        symbol [ dog %tmp.13 262 12 15 ];
+        symbol [ status %tmp.14 262 16 22 ];
+        %tmp.14 = getv %tmp.13 :status;
+        symbol [ Constants %tmp.16 262 26 35 ];
+        %tmp.16 = getv ? :Constants;
+        symbol [ DOG_STATUS_TREED %tmp.17 262 36 52 ];
+        %tmp.17 = getv %tmp.16 :DOG_STATUS_TREED;
+        %tmp.18 = eq %tmp.14 %tmp.17;
+        push %tmp.18;
+D__my_project_projects_UplandHunter_source_MainView_mc_262_12_262_36_end:
+        %tmp.19 = phi [%tmp.12 @D__my_project_projects_UplandHunter_source_MainView_mc_261_12_262_36_begin] [%tmp.18 @D__my_project_projects_UplandHunter_source_MainView_mc_262_12_262_36_false] [%tmp.19 @D__my_project_projects_UplandHunter_source_MainView_mc_262_12_262_36_end];
+        bf %tmp.19 @D__my_project_projects_UplandHunter_source_MainView_mc_261_8_268_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_261_8_268_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_262_54_268_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 264 12 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_264_12_267_12_if_stmt:
+D__my_project_projects_UplandHunter_source_MainView_mc_264_16_264_56_begin:
+        %tmp.20 = lgetv %prevStatus.1;
+        symbol [ prevStatus %tmp.20 264 16 26 ];
+        %tmp.21 = null;
+        %tmp.22 = eq %tmp.20 %tmp.21;
+        bt %tmp.22 @D__my_project_projects_UplandHunter_source_MainView_mc_264_12_267_12_if_true;
+D__my_project_projects_UplandHunter_source_MainView_mc_264_38_264_56_false:
+        %tmp.23 = lgetv %prevStatus.1;
+        symbol [ prevStatus %tmp.23 264 38 48 ];
+        %tmp.24 = as %tmp.23 { (!Null) };
+        %tmp.25 = lgetv %dog;
+        symbol [ dog %tmp.25 264 52 55 ];
+        symbol [ status %tmp.26 264 56 62 ];
+        %tmp.26 = getv %tmp.25 :status;
+        %tmp.27 = ne %tmp.24 %tmp.26;
+        push %tmp.27;
+D__my_project_projects_UplandHunter_source_MainView_mc_264_38_264_56_end:
+        %tmp.28 = phi [%tmp.22 @D__my_project_projects_UplandHunter_source_MainView_mc_264_16_264_56_begin] [%tmp.27 @D__my_project_projects_UplandHunter_source_MainView_mc_264_38_264_56_false] [%tmp.28 @D__my_project_projects_UplandHunter_source_MainView_mc_264_38_264_56_end];
+        bf %tmp.28 @D__my_project_projects_UplandHunter_source_MainView_mc_264_12_267_12_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_264_12_267_12_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_264_64_267_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 266 16 ]
+        %tmp.29 = self;
+        symbol [ triggerPointAlert %tmp.30 266 16 33 ];
+        %tmp.30 = getv function %tmp.29 :triggerPointAlert;
+        invoke %tmp.29 %tmp.30();
+D__my_project_projects_UplandHunter_source_MainView_mc_264_64_267_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_264_12_267_12_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_264_12_267_12_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_262_54_268_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_261_8_268_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_261_8_268_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 271 8 ]
+        symbol [ _prevDogStatuses %tmp.32 271 8 24 ];
+        %tmp.32 = getv ? :_prevDogStatuses;
+        symbol [ put %tmp.33 271 25 28 ];
+        %tmp.33 = getv function %tmp.32 :put;
+        %tmp.34 = lgetv %dog;
+        symbol [ dog %tmp.34 271 29 32 ];
+        symbol [ id %tmp.35 271 33 35 ];
+        %tmp.35 = getv %tmp.34 :id;
+        %tmp.36 = lgetv %dog;
+        symbol [ dog %tmp.36 271 37 40 ];
+        symbol [ status %tmp.37 271 41 47 ];
+        %tmp.37 = getv %tmp.36 :status;
+        invoke %tmp.32 %tmp.33(%tmp.35, %tmp.37);
+D__my_project_projects_UplandHunter_source_MainView_mc_257_51_272_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 281; @symbol_functiondef = [triggerPointAlert,281,13,30]; ]
+    function triggerPointAlert() as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_281_41_299_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 283 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_281_41_299_4_start" "D__my_project_projects_UplandHunter_source_MainView_mc_281_41_299_4_stop" ]
+        %hapticEnabled.1 = local;
+        symbol [ hapticEnabled %hapticEnabled.1 283 12 25 ];
+        symbol [ Application %tmp.1 283 28 39 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.2 283 40 50 ];
+        %tmp.2 = getv %tmp.1 :Properties;
+        symbol [ getValue %tmp.3 283 51 59 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "hapticEnabled";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %hapticEnabled.1 %tmp.5;
+        symbol [ hapticEnabled %hapticEnabled.1 283 12 25 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 284 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_284_8_286_8_if_stmt:
+D__my_project_projects_UplandHunter_source_MainView_mc_284_12_284_38_begin:
+        %tmp.6 = lgetv %hapticEnabled.1;
+        symbol [ hapticEnabled %tmp.6 284 12 25 ];
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @D__my_project_projects_UplandHunter_source_MainView_mc_284_8_286_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_284_37_284_38_true:
+        %tmp.9 = lgetv %hapticEnabled.1;
+        symbol [ hapticEnabled %tmp.9 284 38 51 ];
+        %tmp.10 = as %tmp.9 { (!Null) };
+        %tmp.11 = not %tmp.10;
+        push %tmp.11;
+D__my_project_projects_UplandHunter_source_MainView_mc_284_37_284_38_end:
+        %tmp.12 = phi [%tmp.8 @D__my_project_projects_UplandHunter_source_MainView_mc_284_12_284_38_begin] [%tmp.11 @D__my_project_projects_UplandHunter_source_MainView_mc_284_37_284_38_true] [%tmp.12 @D__my_project_projects_UplandHunter_source_MainView_mc_284_37_284_38_end];
+        bf %tmp.12 @D__my_project_projects_UplandHunter_source_MainView_mc_284_8_286_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_284_8_286_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_284_53_286_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 285 12 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_MainView_mc_284_53_286_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_284_8_286_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_284_8_286_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 289 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_289_8_298_8_if_stmt:
+        symbol [ Attention %tmp.13 289 12 21 ];
+        %tmp.13 = getm $.Toybox.Attention;
+        %tmp.15 = const :vibrate;
+        symbol [ vibrate %tmp.15 289 27 34 const ];
+        %tmp.16 = canhazplz %tmp.13 %tmp.15;
+        bf %tmp.16 @D__my_project_projects_UplandHunter_source_MainView_mc_289_8_298_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_289_8_298_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_289_36_298_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 290 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MainView_mc_289_36_298_8_start" "D__my_project_projects_UplandHunter_source_MainView_mc_289_36_298_8_stop" ]
+        %vibeData.2 = local;
+        symbol [ vibeData %vibeData.2 290 16 24 ];
+        %tmp.17 = newa 5 Array<Attention.VibeProfile>;
+        symbol [ Array %tmp.17 296 17 22 ];
+        symbol [ Attention %tmp.17 296 23 32 ];
+        symbol [ VibeProfile %tmp.17 296 33 44 ];
+        symbol [ Attention %tmp.20 291 20 29 ];
+        %tmp.20 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.21 291 30 41 ];
+        %tmp.21 = getv function ? %tmp.20 :VibeProfile;
+        %tmp.22 = 100;
+        %tmp.23 = 200;
+        %tmp.18 = newc %tmp.21 (%tmp.22, %tmp.23);
+        %tmp.24 = dup %tmp.17;
+        %tmp.25 = aputv %tmp.24 0 %tmp.18;
+        symbol [ Attention %tmp.28 292 20 29 ];
+        %tmp.28 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.29 292 30 41 ];
+        %tmp.29 = getv function ? %tmp.28 :VibeProfile;
+        %tmp.30 = 0;
+        %tmp.31 = 100;
+        %tmp.26 = newc %tmp.29 (%tmp.30, %tmp.31);
+        %tmp.32 = dup %tmp.25;
+        %tmp.33 = aputv %tmp.32 1 %tmp.26;
+        symbol [ Attention %tmp.36 293 20 29 ];
+        %tmp.36 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.37 293 30 41 ];
+        %tmp.37 = getv function ? %tmp.36 :VibeProfile;
+        %tmp.38 = 100;
+        %tmp.39 = 200;
+        %tmp.34 = newc %tmp.37 (%tmp.38, %tmp.39);
+        %tmp.40 = dup %tmp.33;
+        %tmp.41 = aputv %tmp.40 2 %tmp.34;
+        symbol [ Attention %tmp.44 294 20 29 ];
+        %tmp.44 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.45 294 30 41 ];
+        %tmp.45 = getv function ? %tmp.44 :VibeProfile;
+        %tmp.46 = 0;
+        %tmp.47 = 100;
+        %tmp.42 = newc %tmp.45 (%tmp.46, %tmp.47);
+        %tmp.48 = dup %tmp.41;
+        %tmp.49 = aputv %tmp.48 3 %tmp.42;
+        symbol [ Attention %tmp.52 295 20 29 ];
+        %tmp.52 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.53 295 30 41 ];
+        %tmp.53 = getv function ? %tmp.52 :VibeProfile;
+        %tmp.54 = 100;
+        %tmp.55 = 200;
+        %tmp.50 = newc %tmp.53 (%tmp.54, %tmp.55);
+        %tmp.56 = dup %tmp.49;
+        %tmp.57 = aputv %tmp.56 4 %tmp.50;
+        lputv %vibeData.2 %tmp.57;
+        symbol [ vibeData %vibeData.2 290 16 24 ];
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 297 12 ]
+        symbol [ Attention %tmp.58 297 12 21 ];
+        %tmp.58 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.59 297 22 29 ];
+        %tmp.59 = getv function %tmp.58 :vibrate;
+        %tmp.60 = lgetv %vibeData.2;
+        symbol [ vibeData %tmp.60 297 30 38 ];
+        invoke %tmp.58 %tmp.59(%tmp.60);
+D__my_project_projects_UplandHunter_source_MainView_mc_289_36_298_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_289_8_298_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_289_8_298_8_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_281_41_299_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 304; @symbol_functiondef = [drawStartPrompt,304,13,28]; @symbol_param<0> = [dc,304,29,31]; @symbol_param<0>_type<0> = [Graphics,304,35,43]; @symbol_param<0>_type<1> = [Dc,304,44,46]; @symbol_param<1> = [centerX,304,48,55]; @symbol_param<1>_type<0> = [Number,304,59,65]; @symbol_param<2> = [screenH,305,30,37]; @symbol_param<2>_type<0> = [Number,305,41,47]; ]
+    function drawStartPrompt(dc as Graphics.Dc, centerX as Number, screenH as Number) as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_305_57_313_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 306 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 306 8 10 ];
+        symbol [ setColor %tmp.2 306 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Constants %tmp.4 306 20 29 ];
+        %tmp.4 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.5 306 30 40 ];
+        %tmp.5 = getv %tmp.4 :COLOR_TEXT;
+        symbol [ Graphics %tmp.6 306 42 50 ];
+        %tmp.6 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.7 306 51 68 ];
+        %tmp.7 = getv %tmp.6 :COLOR_TRANSPARENT;
+        invoke %tmp.1 %tmp.2(%tmp.5, %tmp.7);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 307 8 ]
+        %tmp.8 = lgetv %dc;
+        symbol [ dc %tmp.8 307 8 10 ];
+        symbol [ drawText %tmp.9 307 11 19 ];
+        %tmp.9 = getv function %tmp.8 :drawText;
+        %tmp.10 = lgetv %centerX;
+        symbol [ centerX %tmp.10 307 20 27 ];
+        %tmp.11 = lgetv %screenH;
+        symbol [ screenH %tmp.11 307 29 36 ];
+        %tmp.12 = 2;
+        %tmp.13 = div %tmp.11 %tmp.12;
+        %tmp.14 = 30;
+        %tmp.15 = sub %tmp.13 %tmp.14;
+        symbol [ Graphics %tmp.16 307 47 55 ];
+        %tmp.16 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.17 307 56 67 ];
+        %tmp.17 = getv %tmp.16 :FONT_MEDIUM;
+        %tmp.18 = "Press SELECT";
+        symbol [ Graphics %tmp.19 308 28 36 ];
+        %tmp.19 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.20 308 37 56 ];
+        %tmp.20 = getv %tmp.19 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.8 %tmp.9(%tmp.10, %tmp.15, %tmp.17, %tmp.18, %tmp.20);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 310 8 ]
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 310 8 10 ];
+        symbol [ setColor %tmp.22 310 11 19 ];
+        %tmp.22 = getv function %tmp.21 :setColor;
+        symbol [ Constants %tmp.24 310 20 29 ];
+        %tmp.24 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.25 310 30 41 ];
+        %tmp.25 = getv %tmp.24 :COLOR_MUTED;
+        symbol [ Graphics %tmp.26 310 43 51 ];
+        %tmp.26 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.27 310 52 69 ];
+        %tmp.27 = getv %tmp.26 :COLOR_TRANSPARENT;
+        invoke %tmp.21 %tmp.22(%tmp.25, %tmp.27);
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 311 8 ]
+        %tmp.28 = lgetv %dc;
+        symbol [ dc %tmp.28 311 8 10 ];
+        symbol [ drawText %tmp.29 311 11 19 ];
+        %tmp.29 = getv function %tmp.28 :drawText;
+        %tmp.30 = lgetv %centerX;
+        symbol [ centerX %tmp.30 311 20 27 ];
+        %tmp.31 = lgetv %screenH;
+        symbol [ screenH %tmp.31 311 29 36 ];
+        %tmp.32 = 2;
+        %tmp.33 = div %tmp.31 %tmp.32;
+        %tmp.34 = 10;
+        %tmp.35 = add %tmp.33 %tmp.34;
+        symbol [ Graphics %tmp.36 311 47 55 ];
+        %tmp.36 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.37 311 56 66 ];
+        %tmp.37 = getv %tmp.36 :FONT_SMALL;
+        %tmp.38 = "to start hunting";
+        symbol [ Graphics %tmp.39 312 32 40 ];
+        %tmp.39 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.40 312 41 60 ];
+        %tmp.40 = getv %tmp.39 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.28 %tmp.29(%tmp.30, %tmp.35, %tmp.37, %tmp.38, %tmp.40);
+D__my_project_projects_UplandHunter_source_MainView_mc_305_57_313_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 325; @symbol_functiondef = [getDistanceColor,325,13,29]; @symbol_param<0> = [distanceYards,325,30,43]; @symbol_param<0>_type<0> = [Number,325,47,53]; @symbol_return<0> = [Number,325,58,64]; ]
+    function getDistanceColor(distanceYards as Number) as Number {
+D__my_project_projects_UplandHunter_source_MainView_mc_325_65_332_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 326 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_326_8_330_8_if_stmt:
+        %tmp.1 = lgetv %distanceYards;
+        symbol [ distanceYards %tmp.1 326 12 25 ];
+        symbol [ Constants %tmp.3 326 28 37 ];
+        %tmp.3 = getv ? :Constants;
+        symbol [ DISTANCE_CLOSE_THRESHOLD %tmp.4 326 38 62 ];
+        %tmp.4 = getv %tmp.3 :DISTANCE_CLOSE_THRESHOLD;
+        %tmp.5 = lt %tmp.1 %tmp.4;
+        bf %tmp.5 @D__my_project_projects_UplandHunter_source_MainView_mc_326_8_330_8_if_false;
+D__my_project_projects_UplandHunter_source_MainView_mc_326_8_330_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_326_64_328_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 327 12 ]
+        symbol [ Constants %tmp.7 327 19 28 ];
+        %tmp.7 = getv ? :Constants;
+        symbol [ COLOR_SUCCESS %tmp.8 327 29 42 ];
+        %tmp.8 = getv %tmp.7 :COLOR_SUCCESS;
+        ret %tmp.8;
+D__my_project_projects_UplandHunter_source_MainView_mc_326_64_328_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_326_8_330_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_326_8_330_8_if_false:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 328 15 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_328_15_330_8_if_stmt:
+        %tmp.9 = lgetv %distanceYards;
+        symbol [ distanceYards %tmp.9 328 19 32 ];
+        symbol [ Constants %tmp.11 328 35 44 ];
+        %tmp.11 = getv ? :Constants;
+        symbol [ DISTANCE_FAR_THRESHOLD %tmp.12 328 45 67 ];
+        %tmp.12 = getv %tmp.11 :DISTANCE_FAR_THRESHOLD;
+        %tmp.13 = lt %tmp.9 %tmp.12;
+        bf %tmp.13 @D__my_project_projects_UplandHunter_source_MainView_mc_328_15_330_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_328_15_330_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_328_69_330_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 329 12 ]
+        symbol [ Constants %tmp.15 329 19 28 ];
+        %tmp.15 = getv ? :Constants;
+        symbol [ COLOR_WARNING %tmp.16 329 29 42 ];
+        %tmp.16 = getv %tmp.15 :COLOR_WARNING;
+        ret %tmp.16;
+D__my_project_projects_UplandHunter_source_MainView_mc_328_69_330_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_328_15_330_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_328_15_330_8_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_326_8_330_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 331 8 ]
+        symbol [ Constants %tmp.18 331 15 24 ];
+        %tmp.18 = getv ? :Constants;
+        symbol [ COLOR_ALERT %tmp.19 331 25 36 ];
+        %tmp.19 = getv %tmp.18 :COLOR_ALERT;
+        ret %tmp.19;
+D__my_project_projects_UplandHunter_source_MainView_mc_325_65_332_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 340; @symbol_functiondef = [startRefreshTimer,340,13,30]; ]
+    function startRefreshTimer() as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_340_41_346_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 341 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_341_8_343_8_if_stmt:
+        symbol [ _refreshTimer %tmp.2 341 12 25 ];
+        %tmp.2 = getv ? :_refreshTimer;
+        %tmp.3 = null;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_MainView_mc_341_8_343_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_341_8_343_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_341_35_343_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 342 12 ]
+        symbol [ Timer %tmp.7 342 32 37 ];
+        %tmp.7 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.8 342 38 43 ];
+        %tmp.8 = getv function ? %tmp.7 :Timer;
+        %tmp.5 = newc %tmp.8 ();
+        symbol [ _refreshTimer ? 342 12 25 ];
+        putv self :_refreshTimer %tmp.5;
+D__my_project_projects_UplandHunter_source_MainView_mc_341_35_343_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_341_8_343_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_341_8_343_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 345 8 ]
+        symbol [ _refreshTimer %tmp.10 345 8 21 ];
+        %tmp.10 = getv ? :_refreshTimer;
+        symbol [ start %tmp.11 345 22 27 ];
+        %tmp.11 = getv function %tmp.10 :start;
+        %tmp.12 = self;
+        symbol [ method %tmp.13 345 28 34 ];
+        %tmp.13 = getv function %tmp.12 :method;
+        %tmp.15 = const :onTimerTick;
+        symbol [ onTimerTick %tmp.15 345 36 47 const ];
+        %tmp.16 = invoke %tmp.12 %tmp.13(%tmp.15);
+        %tmp.17 = 1000;
+        %tmp.18 = true;
+        invoke %tmp.10 %tmp.11(%tmp.16, %tmp.17, %tmp.18);
+D__my_project_projects_UplandHunter_source_MainView_mc_340_41_346_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 352; @symbol_functiondef = [onTimerTick,352,13,24]; ]
+    function onTimerTick() as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_352_35_354_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 353 8 ]
+        symbol [ WatchUi %tmp.1 353 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.2 353 16 29 ];
+        %tmp.2 = getv function %tmp.1 :requestUpdate;
+        invoke %tmp.1 %tmp.2();
+D__my_project_projects_UplandHunter_source_MainView_mc_352_35_354_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 360; @symbol_functiondef = [onHide,360,13,19]; ]
+    function onHide() as Void {
+D__my_project_projects_UplandHunter_source_MainView_mc_360_30_364_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 361 8 ]
+D__my_project_projects_UplandHunter_source_MainView_mc_361_8_363_8_if_stmt:
+        symbol [ _refreshTimer %tmp.2 361 12 25 ];
+        %tmp.2 = getv ? :_refreshTimer;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_MainView_mc_361_8_363_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_361_8_363_8_if_true:
+D__my_project_projects_UplandHunter_source_MainView_mc_361_35_363_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MainView.mc" 362 12 ]
+        symbol [ _refreshTimer %tmp.6 362 12 25 ];
+        %tmp.6 = getv ? :_refreshTimer;
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stop %tmp.8 362 26 30 ];
+        %tmp.8 = getv function %tmp.7 :stop;
+        invoke %tmp.7 %tmp.8();
+D__my_project_projects_UplandHunter_source_MainView_mc_361_35_363_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MainView_mc_361_8_363_8_if_end;
+D__my_project_projects_UplandHunter_source_MainView_mc_361_8_363_8_if_end:
+D__my_project_projects_UplandHunter_source_MainView_mc_360_30_364_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\MainView.mc"; @line = 1; ]
+<init> {
+}

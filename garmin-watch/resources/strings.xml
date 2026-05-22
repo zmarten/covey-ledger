@@ -1,0 +1,68 @@
+<strings>
+    <!-- App name — shown in the Garmin app list and Connect IQ store -->
+    <string id="AppName">Upland Hunter</string>
+
+    <!-- Main screen labels -->
+    <string id="StartHunt">Start Hunt</string>
+    <string id="EndHunt">End Hunt</string>
+    <string id="MarkFlush">Mark Flush</string>
+    <string id="Stats">Stats</string>
+    <string id="Map">Map</string>
+    <string id="NoGps">Waiting for GPS...</string>
+    <string id="GpsReady">GPS Ready</string>
+
+    <!-- Species names — displayed in the flush workflow species picker -->
+    <string id="Pheasant">Pheasant</string>
+    <string id="Quail">Quail</string>
+    <string id="Chukar">Chukar</string>
+    <string id="GrouseRuffed">Grouse (Ruffed)</string>
+    <string id="GrouseSage">Grouse (Sage)</string>
+    <string id="GrouseSharptail">Grouse (Sharp-tail)</string>
+    <string id="Woodcock">Woodcock</string>
+    <string id="PrairieChicken">Prairie Chicken</string>
+    <string id="Partridge">Partridge</string>
+    <string id="Dove">Dove</string>
+    <string id="Other">Other</string>
+
+    <!-- Flush workflow labels -->
+    <string id="SelectSpecies">Select Species</string>
+    <string id="HowMany">How Many?</string>
+    <string id="ShotResult">Shot Result</string>
+    <string id="Shot">SHOT</string>
+    <string id="Missed">MISSED</string>
+    <string id="NoShot">NO SHOT</string>
+    <string id="BirdsDown">Birds Down</string>
+    <string id="MarkBirdLocation">MARK BIRD</string>
+    <string id="SaveWaypoint">SAVE</string>
+    <string id="FlushSaved">Flush Saved!</string>
+
+    <!-- Stats labels -->
+    <string id="TotalFlushes">Total Flushes</string>
+    <string id="ShotsTaken">Shots Taken</string>
+    <string id="SuccessRate">Success Rate</string>
+    <string id="BirdsDowned">Birds Downed</string>
+    <string id="HuntTime">Hunt Time</string>
+    <string id="Distance">Distance</string>
+
+    <!-- Navigation / Bird Locator -->
+    <string id="PointTowardBird">Point toward bird</string>
+    <string id="PressNext">Press NEXT</string>
+    <string id="EnterDistance">Enter Distance</string>
+    <string id="BirdRetrieved">RETRIEVED</string>
+    <string id="BackToHunt">BACK TO HUNT</string>
+
+    <!-- Dog tracker -->
+    <string id="NoDogs">No dogs connected</string>
+    <string id="Searching">Searching...</string>
+    <string id="OnPoint">ON POINT!</string>
+    <string id="Treed">TREED!</string>
+
+    <!-- General -->
+    <string id="Confirm">Confirm</string>
+    <string id="Cancel">Cancel</string>
+    <string id="Back">Back</string>
+    <string id="Yards">Yards</string>
+    <string id="Meters">Meters</string>
+    <string id="YardsAbbr">yd</string>
+    <string id="MetersAbbr">m</string>
+</strings>

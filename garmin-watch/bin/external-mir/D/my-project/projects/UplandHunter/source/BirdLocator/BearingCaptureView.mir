@@ -1,0 +1,835 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Sensor,3,14,20]; ]
+import Toybox.Sensor;
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Math,4,14,18]; ]
+import Toybox.Math;
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Lang,5,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [System,6,14,20]; ]
+import Toybox.System;
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 29; @symbol_classdef = [BearingCaptureView,29,6,24]; @symbol_extends<0> = [WatchUi,29,33,40]; @symbol_extends<1> = [View,29,41,45]; ]
+class BearingCaptureView extends WatchUi.View {
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 29; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 29; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 33; @position = 8; @symbol_vardef = [_currentHeading,33,8,23]; @symbol_type<0> = [Float,33,27,32]; ]
+    var _currentHeading as Float = 0.0f;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 36; @position = 8; @symbol_vardef = [_hasCompass,36,8,19]; @symbol_type<0> = [Boolean,36,23,30]; ]
+    var _hasCompass as Boolean = false;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 40; @position = 8; @symbol_vardef = [_capturedLat,40,8,20]; @symbol_type<0> = [Double,40,24,30]; ]
+    var _capturedLat as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 41; @position = 8; @symbol_vardef = [_capturedLon,41,8,20]; @symbol_type<0> = [Double,41,24,30]; ]
+    var _capturedLon as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 49; @symbol_functiondef = [initialize,49,13,23]; @symbol_param<0> = [lat,49,24,27]; @symbol_param<0>_type<0> = [Double,49,31,37]; @symbol_param<1> = [lon,49,39,42]; @symbol_param<1>_type<0> = [Double,49,46,52]; ]
+    function initialize(lat as Double, lon as Double) as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_49_54_53_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 50 8 ]
+        symbol [ View %tmp.2 50 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 50 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 51 8 ]
+        %tmp.4 = lgetv %lat;
+        symbol [ lat %tmp.4 51 23 26 ];
+        symbol [ _capturedLat ? 51 8 20 ];
+        putv self :_capturedLat %tmp.4;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 52 8 ]
+        %tmp.5 = lgetv %lon;
+        symbol [ lon %tmp.5 52 23 26 ];
+        symbol [ _capturedLon ? 52 8 20 ];
+        putv self :_capturedLon %tmp.5;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_49_54_53_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 62; @symbol_functiondef = [onShow,62,13,19]; ]
+    function onShow() as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_62_30_68_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 67 8 ]
+        symbol [ Sensor %tmp.1 67 8 14 ];
+        %tmp.1 = getm $.Toybox.Sensor;
+        symbol [ enableSensorEvents %tmp.2 67 15 33 ];
+        %tmp.2 = getv function %tmp.1 :enableSensorEvents;
+        %tmp.3 = self;
+        symbol [ method %tmp.4 67 34 40 ];
+        %tmp.4 = getv function %tmp.3 :method;
+        %tmp.6 = const :onSensorData;
+        symbol [ onSensorData %tmp.6 67 42 54 const ];
+        %tmp.7 = invoke %tmp.3 %tmp.4(%tmp.6);
+        invoke %tmp.1 %tmp.2(%tmp.7);
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_62_30_68_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 79; @symbol_functiondef = [onSensorData,79,13,25]; @symbol_param<0> = [sensorInfo,79,26,36]; @symbol_param<0>_type<0> = [Sensor,79,40,46]; @symbol_param<0>_type<1> = [Info,79,47,51]; ]
+    function onSensorData(sensorInfo as Sensor.Info) as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_79_61_95_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 80 8 ]
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_80_8_91_8_if_stmt:
+        %tmp.1 = lgetv %sensorInfo;
+        symbol [ sensorInfo %tmp.1 80 12 22 ];
+        symbol [ heading %tmp.2 80 23 30 ];
+        %tmp.2 = getv %tmp.1 :heading;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_80_8_91_8_if_else_false;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_80_8_91_8_if_true:
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_80_40_89_8_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 82 12 ]
+        symbol [ Math %tmp.5 82 30 34 ];
+        %tmp.5 = getm $.Toybox.Math;
+        symbol [ toDegrees %tmp.6 82 35 44 ];
+        %tmp.6 = getv function %tmp.5 :toDegrees;
+        %tmp.7 = lgetv %sensorInfo;
+        symbol [ sensorInfo %tmp.7 82 45 55 ];
+        symbol [ heading %tmp.8 82 56 63 ];
+        %tmp.8 = getv %tmp.7 :heading;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        symbol [ toFloat %tmp.10 82 65 72 ];
+        %tmp.10 = getv function %tmp.9 :toFloat;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        symbol [ _currentHeading ? 82 12 27 ];
+        putv self :_currentHeading %tmp.11;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 85 12 ]
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_85_12_87_12_if_stmt:
+        symbol [ _currentHeading %tmp.13 85 16 31 ];
+        %tmp.13 = getv ? :_currentHeading;
+        %tmp.14 = 0.0f;
+        %tmp.15 = lt %tmp.13 %tmp.14;
+        bf %tmp.15 @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_85_12_87_12_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_85_12_87_12_if_true:
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_85_40_87_12_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 86 16 ]
+        symbol [ _currentHeading %tmp.16 86 16 31 ];
+        %tmp.16 = getv self :_currentHeading;
+        %tmp.17 = 360.0f;
+        %tmp.18 = add %tmp.16 %tmp.17;
+        symbol [ _currentHeading ? 86 16 31 ];
+        putv self :_currentHeading dup %tmp.18;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_85_40_87_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_85_12_87_12_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_85_12_87_12_if_end:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 88 12 ]
+        %tmp.19 = true;
+        symbol [ _hasCompass ? 88 12 23 ];
+        putv self :_hasCompass %tmp.19;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_80_40_89_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_80_8_91_8_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_80_8_91_8_if_else_false:
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_89_15_91_8_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 90 12 ]
+        %tmp.20 = false;
+        symbol [ _hasCompass ? 90 12 23 ];
+        putv self :_hasCompass %tmp.20;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_89_15_91_8_stop:
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_80_8_91_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 94 8 ]
+        symbol [ WatchUi %tmp.21 94 8 15 ];
+        %tmp.21 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.22 94 16 29 ];
+        %tmp.22 = getv function %tmp.21 :requestUpdate;
+        invoke %tmp.21 %tmp.22();
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_79_61_95_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 107; @symbol_functiondef = [onUpdate,107,13,21]; @symbol_param<0> = [dc,107,22,24]; @symbol_param<0>_type<0> = [Graphics,107,28,36]; @symbol_param<0>_type<1> = [Dc,107,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 108 8 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_stop" ]
+        %screenW.1 = local;
+        symbol [ screenW %screenW.1 108 12 19 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 108 22 24 ];
+        symbol [ getWidth %tmp.2 108 25 33 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %screenW.1 %tmp.3;
+        symbol [ screenW %screenW.1 108 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 109 8 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_stop" ]
+        %screenH.2 = local;
+        symbol [ screenH %screenH.2 109 12 19 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 109 22 24 ];
+        symbol [ getHeight %tmp.5 109 25 34 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %screenH.2 %tmp.6;
+        symbol [ screenH %screenH.2 109 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 110 8 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_stop" ]
+        %centerX.3 = local;
+        symbol [ centerX %centerX.3 110 12 19 ];
+        %tmp.7 = lgetv %screenW.1;
+        symbol [ screenW %tmp.7 110 22 29 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %centerX.3 %tmp.9;
+        symbol [ centerX %centerX.3 110 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 111 8 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_stop" ]
+        %centerY.4 = local;
+        symbol [ centerY %centerY.4 111 12 19 ];
+        %tmp.10 = lgetv %screenH.2;
+        symbol [ screenH %tmp.10 111 22 29 ];
+        %tmp.11 = 2;
+        %tmp.12 = div %tmp.10 %tmp.11;
+        lputv %centerY.4 %tmp.12;
+        symbol [ centerY %centerY.4 111 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 114 8 ]
+        %tmp.13 = lgetv %dc;
+        symbol [ dc %tmp.13 114 8 10 ];
+        symbol [ setColor %tmp.14 114 11 19 ];
+        %tmp.14 = getv function %tmp.13 :setColor;
+        symbol [ Constants %tmp.16 114 20 29 ];
+        %tmp.16 = getv ? :Constants;
+        symbol [ getTextColor %tmp.17 114 30 42 ];
+        %tmp.17 = getv function %tmp.16 :getTextColor;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        symbol [ Constants %tmp.20 114 46 55 ];
+        %tmp.20 = getv ? :Constants;
+        symbol [ getBgColor %tmp.21 114 56 66 ];
+        %tmp.21 = getv function %tmp.20 :getBgColor;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        invoke %tmp.13 %tmp.14(%tmp.18, %tmp.22);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 115 8 ]
+        %tmp.23 = lgetv %dc;
+        symbol [ dc %tmp.23 115 8 10 ];
+        symbol [ clear %tmp.24 115 11 16 ];
+        %tmp.24 = getv function %tmp.23 :clear;
+        invoke %tmp.23 %tmp.24();
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 118 8 ]
+        %tmp.25 = lgetv %dc;
+        symbol [ dc %tmp.25 118 8 10 ];
+        symbol [ setColor %tmp.26 118 11 19 ];
+        %tmp.26 = getv function %tmp.25 :setColor;
+        symbol [ Constants %tmp.28 118 20 29 ];
+        %tmp.28 = getv ? :Constants;
+        symbol [ COLOR_PRIMARY %tmp.29 118 30 43 ];
+        %tmp.29 = getv %tmp.28 :COLOR_PRIMARY;
+        symbol [ Graphics %tmp.30 118 45 53 ];
+        %tmp.30 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.31 118 54 71 ];
+        %tmp.31 = getv %tmp.30 :COLOR_TRANSPARENT;
+        invoke %tmp.25 %tmp.26(%tmp.29, %tmp.31);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 119 8 ]
+        %tmp.32 = lgetv %dc;
+        symbol [ dc %tmp.32 119 8 10 ];
+        symbol [ drawText %tmp.33 119 11 19 ];
+        %tmp.33 = getv function %tmp.32 :drawText;
+        %tmp.34 = lgetv %centerX.3;
+        symbol [ centerX %tmp.34 119 20 27 ];
+        %tmp.35 = 30;
+        symbol [ Graphics %tmp.36 119 33 41 ];
+        %tmp.36 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.37 119 42 52 ];
+        %tmp.37 = getv %tmp.36 :FONT_SMALL;
+        %tmp.38 = "POINT TOWARD";
+        symbol [ Graphics %tmp.39 120 28 36 ];
+        %tmp.39 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.40 120 37 56 ];
+        %tmp.40 = getv %tmp.39 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.32 %tmp.33(%tmp.34, %tmp.35, %tmp.37, %tmp.38, %tmp.40);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 121 8 ]
+        %tmp.41 = lgetv %dc;
+        symbol [ dc %tmp.41 121 8 10 ];
+        symbol [ drawText %tmp.42 121 11 19 ];
+        %tmp.42 = getv function %tmp.41 :drawText;
+        %tmp.43 = lgetv %centerX.3;
+        symbol [ centerX %tmp.43 121 20 27 ];
+        %tmp.44 = 55;
+        symbol [ Graphics %tmp.45 121 33 41 ];
+        %tmp.45 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.46 121 42 52 ];
+        %tmp.46 = getv %tmp.45 :FONT_SMALL;
+        %tmp.47 = "BIRD";
+        symbol [ Graphics %tmp.48 122 20 28 ];
+        %tmp.48 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.49 122 29 48 ];
+        %tmp.49 = getv %tmp.48 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.41 %tmp.42(%tmp.43, %tmp.44, %tmp.46, %tmp.47, %tmp.49);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 124 8 ]
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_8_178_8_if_stmt:
+        symbol [ _hasCompass %tmp.51 124 12 23 ];
+        %tmp.51 = getv ? :_hasCompass;
+        bf %tmp.51 @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_8_178_8_if_else_false;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_8_178_8_if_true:
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 128 12 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_stop" ]
+        %headingRad.5 = local;
+        symbol [ headingRad %headingRad.5 128 16 26 ];
+        symbol [ Math %tmp.52 128 29 33 ];
+        %tmp.52 = getm $.Toybox.Math;
+        symbol [ toRadians %tmp.53 128 34 43 ];
+        %tmp.53 = getv function %tmp.52 :toRadians;
+        symbol [ _currentHeading %tmp.55 128 44 59 ];
+        %tmp.55 = getv ? :_currentHeading;
+        %tmp.56 = invoke %tmp.52 %tmp.53(%tmp.55);
+        lputv %headingRad.5 %tmp.56;
+        symbol [ headingRad %headingRad.5 128 16 26 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 131 12 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_stop" ]
+        %arrowCenterY.6 = local;
+        symbol [ arrowCenterY %arrowCenterY.6 131 16 28 ];
+        %tmp.57 = lgetv %centerY.4;
+        symbol [ centerY %tmp.57 131 31 38 ];
+        %tmp.58 = 10;
+        %tmp.59 = sub %tmp.57 %tmp.58;
+        lputv %arrowCenterY.6 %tmp.59;
+        symbol [ arrowCenterY %arrowCenterY.6 131 16 28 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 132 12 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_stop" ]
+        %arrowLength.7 = local;
+        symbol [ arrowLength %arrowLength.7 132 16 27 ];
+        %tmp.60 = 70;
+        lputv %arrowLength.7 %tmp.60;
+        symbol [ arrowLength %arrowLength.7 132 16 27 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 137 12 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_stop" ]
+        %tipX.8 = local;
+        symbol [ tipX %tipX.8 137 16 20 ];
+        %tmp.61 = lgetv %centerX.3;
+        symbol [ centerX %tmp.61 137 23 30 ];
+        %tmp.62 = lgetv %arrowLength.7;
+        symbol [ arrowLength %tmp.62 137 34 45 ];
+        symbol [ Math %tmp.63 137 48 52 ];
+        %tmp.63 = getm $.Toybox.Math;
+        symbol [ sin %tmp.64 137 53 56 ];
+        %tmp.64 = getv function %tmp.63 :sin;
+        %tmp.65 = lgetv %headingRad.5;
+        symbol [ headingRad %tmp.65 137 57 67 ];
+        %tmp.66 = invoke %tmp.63 %tmp.64(%tmp.65);
+        %tmp.67 = mul %tmp.62 %tmp.66;
+        symbol [ toNumber %tmp.68 137 70 78 ];
+        %tmp.68 = getv function %tmp.67 :toNumber;
+        %tmp.69 = invoke %tmp.67 %tmp.68();
+        %tmp.70 = add %tmp.61 %tmp.69;
+        lputv %tipX.8 %tmp.70;
+        symbol [ tipX %tipX.8 137 16 20 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 138 12 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_stop" ]
+        %tipY.9 = local;
+        symbol [ tipY %tipY.9 138 16 20 ];
+        %tmp.71 = lgetv %arrowCenterY.6;
+        symbol [ arrowCenterY %tmp.71 138 23 35 ];
+        %tmp.72 = lgetv %arrowLength.7;
+        symbol [ arrowLength %tmp.72 138 39 50 ];
+        symbol [ Math %tmp.73 138 53 57 ];
+        %tmp.73 = getm $.Toybox.Math;
+        symbol [ cos %tmp.74 138 58 61 ];
+        %tmp.74 = getv function %tmp.73 :cos;
+        %tmp.75 = lgetv %headingRad.5;
+        symbol [ headingRad %tmp.75 138 62 72 ];
+        %tmp.76 = invoke %tmp.73 %tmp.74(%tmp.75);
+        %tmp.77 = mul %tmp.72 %tmp.76;
+        symbol [ toNumber %tmp.78 138 75 83 ];
+        %tmp.78 = getv function %tmp.77 :toNumber;
+        %tmp.79 = invoke %tmp.77 %tmp.78();
+        %tmp.80 = sub %tmp.71 %tmp.79;
+        lputv %tipY.9 %tmp.80;
+        symbol [ tipY %tipY.9 138 16 20 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 141 12 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_stop" ]
+        %tailX.10 = local;
+        symbol [ tailX %tailX.10 141 16 21 ];
+        %tmp.81 = lgetv %centerX.3;
+        symbol [ centerX %tmp.81 141 24 31 ];
+        %tmp.82 = lgetv %arrowLength.7;
+        symbol [ arrowLength %tmp.82 141 35 46 ];
+        %tmp.83 = 0.4;
+        %tmp.84 = mul %tmp.82 %tmp.83;
+        symbol [ Math %tmp.85 141 55 59 ];
+        %tmp.85 = getm $.Toybox.Math;
+        symbol [ sin %tmp.86 141 60 63 ];
+        %tmp.86 = getv function %tmp.85 :sin;
+        %tmp.87 = lgetv %headingRad.5;
+        symbol [ headingRad %tmp.87 141 64 74 ];
+        %tmp.88 = invoke %tmp.85 %tmp.86(%tmp.87);
+        %tmp.89 = mul %tmp.84 %tmp.88;
+        symbol [ toNumber %tmp.90 141 77 85 ];
+        %tmp.90 = getv function %tmp.89 :toNumber;
+        %tmp.91 = invoke %tmp.89 %tmp.90();
+        %tmp.92 = sub %tmp.81 %tmp.91;
+        lputv %tailX.10 %tmp.92;
+        symbol [ tailX %tailX.10 141 16 21 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 142 12 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_stop" ]
+        %tailY.11 = local;
+        symbol [ tailY %tailY.11 142 16 21 ];
+        %tmp.93 = lgetv %arrowCenterY.6;
+        symbol [ arrowCenterY %tmp.93 142 24 36 ];
+        %tmp.94 = lgetv %arrowLength.7;
+        symbol [ arrowLength %tmp.94 142 40 51 ];
+        %tmp.95 = 0.4;
+        %tmp.96 = mul %tmp.94 %tmp.95;
+        symbol [ Math %tmp.97 142 60 64 ];
+        %tmp.97 = getm $.Toybox.Math;
+        symbol [ cos %tmp.98 142 65 68 ];
+        %tmp.98 = getv function %tmp.97 :cos;
+        %tmp.99 = lgetv %headingRad.5;
+        symbol [ headingRad %tmp.99 142 69 79 ];
+        %tmp.100 = invoke %tmp.97 %tmp.98(%tmp.99);
+        %tmp.101 = mul %tmp.96 %tmp.100;
+        symbol [ toNumber %tmp.102 142 82 90 ];
+        %tmp.102 = getv function %tmp.101 :toNumber;
+        %tmp.103 = invoke %tmp.101 %tmp.102();
+        %tmp.104 = add %tmp.93 %tmp.103;
+        lputv %tailY.11 %tmp.104;
+        symbol [ tailY %tailY.11 142 16 21 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 145 12 ]
+        %tmp.105 = lgetv %dc;
+        symbol [ dc %tmp.105 145 12 14 ];
+        symbol [ setColor %tmp.106 145 15 23 ];
+        %tmp.106 = getv function %tmp.105 :setColor;
+        symbol [ Constants %tmp.108 145 24 33 ];
+        %tmp.108 = getv ? :Constants;
+        symbol [ COLOR_PRIMARY %tmp.109 145 34 47 ];
+        %tmp.109 = getv %tmp.108 :COLOR_PRIMARY;
+        symbol [ Graphics %tmp.110 145 49 57 ];
+        %tmp.110 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.111 145 58 75 ];
+        %tmp.111 = getv %tmp.110 :COLOR_TRANSPARENT;
+        invoke %tmp.105 %tmp.106(%tmp.109, %tmp.111);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 146 12 ]
+        %tmp.112 = lgetv %dc;
+        symbol [ dc %tmp.112 146 12 14 ];
+        symbol [ setPenWidth %tmp.113 146 15 26 ];
+        %tmp.113 = getv function %tmp.112 :setPenWidth;
+        %tmp.114 = 4;
+        invoke %tmp.112 %tmp.113(%tmp.114);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 147 12 ]
+        %tmp.115 = lgetv %dc;
+        symbol [ dc %tmp.115 147 12 14 ];
+        symbol [ drawLine %tmp.116 147 15 23 ];
+        %tmp.116 = getv function %tmp.115 :drawLine;
+        %tmp.117 = lgetv %tailX.10;
+        symbol [ tailX %tmp.117 147 24 29 ];
+        %tmp.118 = lgetv %tailY.11;
+        symbol [ tailY %tmp.118 147 31 36 ];
+        %tmp.119 = lgetv %tipX.8;
+        symbol [ tipX %tmp.119 147 38 42 ];
+        %tmp.120 = lgetv %tipY.9;
+        symbol [ tipY %tmp.120 147 44 48 ];
+        invoke %tmp.115 %tmp.116(%tmp.117, %tmp.118, %tmp.119, %tmp.120);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 150 12 ]
+        %tmp.121 = lgetv %dc;
+        symbol [ dc %tmp.121 150 12 14 ];
+        symbol [ fillCircle %tmp.122 150 15 25 ];
+        %tmp.122 = getv function %tmp.121 :fillCircle;
+        %tmp.123 = lgetv %tipX.8;
+        symbol [ tipX %tmp.123 150 26 30 ];
+        %tmp.124 = lgetv %tipY.9;
+        symbol [ tipY %tmp.124 150 32 36 ];
+        %tmp.125 = 8;
+        invoke %tmp.121 %tmp.122(%tmp.123, %tmp.124, %tmp.125);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 153 12 ]
+        %tmp.126 = lgetv %dc;
+        symbol [ dc %tmp.126 153 12 14 ];
+        symbol [ setColor %tmp.127 153 15 23 ];
+        %tmp.127 = getv function %tmp.126 :setColor;
+        symbol [ Constants %tmp.129 153 24 33 ];
+        %tmp.129 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.130 153 34 45 ];
+        %tmp.130 = getv %tmp.129 :COLOR_MUTED;
+        symbol [ Graphics %tmp.131 153 47 55 ];
+        %tmp.131 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.132 153 56 73 ];
+        %tmp.132 = getv %tmp.131 :COLOR_TRANSPARENT;
+        invoke %tmp.126 %tmp.127(%tmp.130, %tmp.132);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 154 12 ]
+        %tmp.133 = lgetv %dc;
+        symbol [ dc %tmp.133 154 12 14 ];
+        symbol [ fillCircle %tmp.134 154 15 25 ];
+        %tmp.134 = getv function %tmp.133 :fillCircle;
+        %tmp.135 = lgetv %centerX.3;
+        symbol [ centerX %tmp.135 154 26 33 ];
+        %tmp.136 = lgetv %arrowCenterY.6;
+        symbol [ arrowCenterY %tmp.136 154 35 47 ];
+        %tmp.137 = 5;
+        invoke %tmp.133 %tmp.134(%tmp.135, %tmp.136, %tmp.137);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 157 12 ]
+        %tmp.138 = lgetv %dc;
+        symbol [ dc %tmp.138 157 12 14 ];
+        symbol [ setPenWidth %tmp.139 157 15 26 ];
+        %tmp.139 = getv function %tmp.138 :setPenWidth;
+        %tmp.140 = 1;
+        invoke %tmp.138 %tmp.139(%tmp.140);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 160 12 ]
+        %tmp.141 = lgetv %dc;
+        symbol [ dc %tmp.141 160 12 14 ];
+        symbol [ setColor %tmp.142 160 15 23 ];
+        %tmp.142 = getv function %tmp.141 :setColor;
+        symbol [ Constants %tmp.144 160 24 33 ];
+        %tmp.144 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.145 160 34 44 ];
+        %tmp.145 = getv %tmp.144 :COLOR_TEXT;
+        symbol [ Graphics %tmp.146 160 46 54 ];
+        %tmp.146 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.147 160 55 72 ];
+        %tmp.147 = getv %tmp.146 :COLOR_TRANSPARENT;
+        invoke %tmp.141 %tmp.142(%tmp.145, %tmp.147);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 161 12 ]
+        %tmp.148 = lgetv %dc;
+        symbol [ dc %tmp.148 161 12 14 ];
+        symbol [ drawText %tmp.149 161 15 23 ];
+        %tmp.149 = getv function %tmp.148 :drawText;
+        %tmp.150 = lgetv %centerX.3;
+        symbol [ centerX %tmp.150 161 24 31 ];
+        %tmp.151 = lgetv %centerY.4;
+        symbol [ centerY %tmp.151 161 33 40 ];
+        %tmp.152 = 55;
+        %tmp.153 = add %tmp.151 %tmp.152;
+        symbol [ Graphics %tmp.154 161 47 55 ];
+        %tmp.154 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.155 161 56 66 ];
+        %tmp.155 = getv %tmp.154 :FONT_LARGE;
+        symbol [ _currentHeading %tmp.157 162 16 31 ];
+        %tmp.157 = getv ? :_currentHeading;
+        symbol [ format %tmp.158 162 32 38 ];
+        %tmp.158 = getv function %tmp.157 :format;
+        %tmp.159 = "%d";
+        %tmp.160 = invoke %tmp.157 %tmp.158(%tmp.159);
+        %tmp.161 = "\u00B0";
+        %tmp.162 = add %tmp.160 %tmp.161;
+        symbol [ Graphics %tmp.163 163 16 24 ];
+        %tmp.163 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.164 163 25 44 ];
+        %tmp.164 = getv %tmp.163 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.148 %tmp.149(%tmp.150, %tmp.153, %tmp.155, %tmp.162, %tmp.164);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 166 12 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_stop" ]
+        %cardinal.12 = local;
+        symbol [ cardinal %cardinal.12 166 16 24 ];
+        symbol [ CoordinateMath %tmp.166 166 27 41 ];
+        %tmp.166 = getv ? :CoordinateMath;
+        symbol [ toCardinal %tmp.167 166 42 52 ];
+        %tmp.167 = getv function %tmp.166 :toCardinal;
+        symbol [ _currentHeading %tmp.169 166 53 68 ];
+        %tmp.169 = getv ? :_currentHeading;
+        symbol [ toDouble %tmp.170 166 69 77 ];
+        %tmp.170 = getv function %tmp.169 :toDouble;
+        %tmp.171 = invoke %tmp.169 %tmp.170();
+        %tmp.172 = invoke %tmp.166 %tmp.167(%tmp.171);
+        lputv %cardinal.12 %tmp.172;
+        symbol [ cardinal %cardinal.12 166 16 24 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 167 12 ]
+        %tmp.173 = lgetv %dc;
+        symbol [ dc %tmp.173 167 12 14 ];
+        symbol [ setColor %tmp.174 167 15 23 ];
+        %tmp.174 = getv function %tmp.173 :setColor;
+        symbol [ Constants %tmp.176 167 24 33 ];
+        %tmp.176 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.177 167 34 45 ];
+        %tmp.177 = getv %tmp.176 :COLOR_MUTED;
+        symbol [ Graphics %tmp.178 167 47 55 ];
+        %tmp.178 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.179 167 56 73 ];
+        %tmp.179 = getv %tmp.178 :COLOR_TRANSPARENT;
+        invoke %tmp.173 %tmp.174(%tmp.177, %tmp.179);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 168 12 ]
+        %tmp.180 = lgetv %dc;
+        symbol [ dc %tmp.180 168 12 14 ];
+        symbol [ drawText %tmp.181 168 15 23 ];
+        %tmp.181 = getv function %tmp.180 :drawText;
+        %tmp.182 = lgetv %centerX.3;
+        symbol [ centerX %tmp.182 168 24 31 ];
+        %tmp.183 = lgetv %centerY.4;
+        symbol [ centerY %tmp.183 168 33 40 ];
+        %tmp.184 = 95;
+        %tmp.185 = add %tmp.183 %tmp.184;
+        symbol [ Graphics %tmp.186 168 47 55 ];
+        %tmp.186 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.187 168 56 67 ];
+        %tmp.187 = getv %tmp.186 :FONT_MEDIUM;
+        %tmp.188 = lgetv %cardinal.12;
+        symbol [ cardinal %tmp.188 169 16 24 ];
+        symbol [ Graphics %tmp.189 169 26 34 ];
+        %tmp.189 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.190 169 35 54 ];
+        %tmp.190 = getv %tmp.189 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.180 %tmp.181(%tmp.182, %tmp.185, %tmp.187, %tmp.188, %tmp.190);
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_25_170_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_8_178_8_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_8_178_8_if_else_false:
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_170_15_178_8_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 172 12 ]
+        %tmp.191 = lgetv %dc;
+        symbol [ dc %tmp.191 172 12 14 ];
+        symbol [ setColor %tmp.192 172 15 23 ];
+        %tmp.192 = getv function %tmp.191 :setColor;
+        symbol [ Constants %tmp.194 172 24 33 ];
+        %tmp.194 = getv ? :Constants;
+        symbol [ COLOR_WARNING %tmp.195 172 34 47 ];
+        %tmp.195 = getv %tmp.194 :COLOR_WARNING;
+        symbol [ Graphics %tmp.196 172 49 57 ];
+        %tmp.196 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.197 172 58 75 ];
+        %tmp.197 = getv %tmp.196 :COLOR_TRANSPARENT;
+        invoke %tmp.191 %tmp.192(%tmp.195, %tmp.197);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 173 12 ]
+        %tmp.198 = lgetv %dc;
+        symbol [ dc %tmp.198 173 12 14 ];
+        symbol [ drawText %tmp.199 173 15 23 ];
+        %tmp.199 = getv function %tmp.198 :drawText;
+        %tmp.200 = lgetv %centerX.3;
+        symbol [ centerX %tmp.200 173 24 31 ];
+        %tmp.201 = lgetv %centerY.4;
+        symbol [ centerY %tmp.201 173 33 40 ];
+        symbol [ Graphics %tmp.202 173 42 50 ];
+        %tmp.202 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.203 173 51 61 ];
+        %tmp.203 = getv %tmp.202 :FONT_SMALL;
+        %tmp.204 = "Calibrating...";
+        symbol [ Graphics %tmp.205 174 34 42 ];
+        %tmp.205 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.206 174 43 62 ];
+        %tmp.206 = getv %tmp.205 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.198 %tmp.199(%tmp.200, %tmp.201, %tmp.203, %tmp.204, %tmp.206);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 175 12 ]
+        %tmp.207 = lgetv %dc;
+        symbol [ dc %tmp.207 175 12 14 ];
+        symbol [ setColor %tmp.208 175 15 23 ];
+        %tmp.208 = getv function %tmp.207 :setColor;
+        symbol [ Constants %tmp.210 175 24 33 ];
+        %tmp.210 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.211 175 34 45 ];
+        %tmp.211 = getv %tmp.210 :COLOR_MUTED;
+        symbol [ Graphics %tmp.212 175 47 55 ];
+        %tmp.212 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.213 175 56 73 ];
+        %tmp.213 = getv %tmp.212 :COLOR_TRANSPARENT;
+        invoke %tmp.207 %tmp.208(%tmp.211, %tmp.213);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 176 12 ]
+        %tmp.214 = lgetv %dc;
+        symbol [ dc %tmp.214 176 12 14 ];
+        symbol [ drawText %tmp.215 176 15 23 ];
+        %tmp.215 = getv function %tmp.214 :drawText;
+        %tmp.216 = lgetv %centerX.3;
+        symbol [ centerX %tmp.216 176 24 31 ];
+        %tmp.217 = lgetv %centerY.4;
+        symbol [ centerY %tmp.217 176 33 40 ];
+        %tmp.218 = 30;
+        %tmp.219 = add %tmp.217 %tmp.218;
+        symbol [ Graphics %tmp.220 176 47 55 ];
+        %tmp.220 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.221 176 56 66 ];
+        %tmp.221 = getv %tmp.220 :FONT_XTINY;
+        %tmp.222 = "Rotate wrist in a figure-8";
+        symbol [ Graphics %tmp.223 177 46 54 ];
+        %tmp.223 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.224 177 55 74 ];
+        %tmp.224 = getv %tmp.223 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.214 %tmp.215(%tmp.216, %tmp.219, %tmp.221, %tmp.222, %tmp.224);
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_170_15_178_8_stop:
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_124_8_178_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 181 8 ]
+        %tmp.225 = lgetv %dc;
+        symbol [ dc %tmp.225 181 8 10 ];
+        symbol [ setColor %tmp.226 181 11 19 ];
+        %tmp.226 = getv function %tmp.225 :setColor;
+        symbol [ Constants %tmp.228 181 20 29 ];
+        %tmp.228 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.229 181 30 41 ];
+        %tmp.229 = getv %tmp.228 :COLOR_MUTED;
+        symbol [ Graphics %tmp.230 181 43 51 ];
+        %tmp.230 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.231 181 52 69 ];
+        %tmp.231 = getv %tmp.230 :COLOR_TRANSPARENT;
+        invoke %tmp.225 %tmp.226(%tmp.229, %tmp.231);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 182 8 ]
+        %tmp.232 = lgetv %dc;
+        symbol [ dc %tmp.232 182 8 10 ];
+        symbol [ drawText %tmp.233 182 11 19 ];
+        %tmp.233 = getv function %tmp.232 :drawText;
+        %tmp.234 = lgetv %centerX.3;
+        symbol [ centerX %tmp.234 182 20 27 ];
+        %tmp.235 = lgetv %screenH.2;
+        symbol [ screenH %tmp.235 182 29 36 ];
+        %tmp.236 = 40;
+        %tmp.237 = sub %tmp.235 %tmp.236;
+        symbol [ Graphics %tmp.238 182 43 51 ];
+        %tmp.238 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.239 182 52 62 ];
+        %tmp.239 = getv %tmp.238 :FONT_XTINY;
+        %tmp.240 = "SELECT: Capture bearing";
+        symbol [ Graphics %tmp.241 183 39 47 ];
+        %tmp.241 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.242 183 48 67 ];
+        %tmp.242 = getv %tmp.241 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.232 %tmp.233(%tmp.234, %tmp.237, %tmp.239, %tmp.240, %tmp.242);
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_107_49_184_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 190; @symbol_functiondef = [onHide,190,13,19]; ]
+    function onHide() as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_190_30_192_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 191 8 ]
+        symbol [ Sensor %tmp.1 191 8 14 ];
+        %tmp.1 = getm $.Toybox.Sensor;
+        symbol [ enableSensorEvents %tmp.2 191 15 33 ];
+        %tmp.2 = getv function %tmp.1 :enableSensorEvents;
+        %tmp.3 = null;
+        invoke %tmp.1 %tmp.2(%tmp.3);
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_190_30_192_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 197; @symbol_functiondef = [getCapturedHeading,197,13,31]; @symbol_return<0> = [Float,197,37,42]; ]
+    function getCapturedHeading() as Float {
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_197_43_199_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 198 8 ]
+        symbol [ _currentHeading %tmp.2 198 15 30 ];
+        %tmp.2 = getv ? :_currentHeading;
+        ret %tmp.2;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_197_43_199_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 208; @symbol_classdef = [BearingCaptureDelegate,208,6,28]; @symbol_extends<0> = [WatchUi,208,37,44]; @symbol_extends<1> = [BehaviorDelegate,208,45,61]; ]
+class BearingCaptureDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 208; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 208; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 210; @position = 8; @symbol_vardef = [_debouncer,210,8,18]; @symbol_type<0> = [DebounceHelper,210,22,36]; ]
+    var _debouncer as DebounceHelper;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 212; @symbol_functiondef = [initialize,212,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_212_26_215_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 213 8 ]
+        symbol [ BehaviorDelegate %tmp.2 213 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 213 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 214 8 ]
+        symbol [ DebounceHelper %tmp.7 214 25 39 ];
+        %tmp.7 = getv ? :DebounceHelper;
+        %tmp.8 = null;
+        %tmp.4 = newc %tmp.7 (%tmp.8);
+        symbol [ _debouncer ? 214 8 18 ];
+        putv self :_debouncer %tmp.4;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_212_26_215_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 220; @symbol_functiondef = [onSelect,220,13,21]; @symbol_return<0> = [Boolean,220,27,34]; ]
+    function onSelect() as Boolean {
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_220_35_243_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 221 8 ]
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_221_8_221_53_if_stmt:
+        symbol [ _debouncer %tmp.2 221 13 23 ];
+        %tmp.2 = getv ? :_debouncer;
+        symbol [ canProcess %tmp.3 221 24 34 ];
+        %tmp.3 = getv function %tmp.2 :canProcess;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = not %tmp.4;
+        bf %tmp.5 @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_221_8_221_53_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_221_8_221_53_if_true:
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_221_38_221_53_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 221 40 ]
+        %tmp.6 = true;
+        ret %tmp.6;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_221_38_221_53_stop:
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_221_8_221_53_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_221_8_221_53_if_end:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 223 8 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_220_35_243_4_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_220_35_243_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 223 12 16 ];
+        symbol [ WatchUi %tmp.7 223 19 26 ];
+        %tmp.7 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.8 223 27 41 ];
+        %tmp.8 = getv function %tmp.7 :getCurrentView;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        %tmp.10 = 0;
+        %tmp.11 = agetv %tmp.9 %tmp.10;
+        %tmp.12 = as %tmp.11 BearingCaptureView;
+        symbol [ BearingCaptureView %tmp.12 223 50 68 ];
+        lputv %view.1 %tmp.12;
+        symbol [ view %view.1 223 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 226 8 ]
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_226_8_228_8_if_stmt:
+        %tmp.13 = lgetv %view.1;
+        symbol [ view %tmp.13 226 13 17 ];
+        symbol [ _hasCompass %tmp.14 226 18 29 ];
+        %tmp.14 = getv %tmp.13 :_hasCompass;
+        %tmp.15 = not %tmp.14;
+        bf %tmp.15 @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_226_8_228_8_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_226_8_228_8_if_true:
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_226_31_228_8_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 227 12 ]
+        %tmp.16 = true;
+        ret %tmp.16;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_226_31_228_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_226_8_228_8_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_226_8_228_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 230 8 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_220_35_243_4_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_220_35_243_4_stop" ]
+        %bearing.2 = local;
+        symbol [ bearing %bearing.2 230 12 19 ];
+        %tmp.17 = lgetv %view.1;
+        symbol [ view %tmp.17 230 22 26 ];
+        symbol [ getCapturedHeading %tmp.18 230 27 45 ];
+        %tmp.18 = getv function %tmp.17 :getCapturedHeading;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        lputv %bearing.2 %tmp.19;
+        symbol [ bearing %bearing.2 230 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 233 8 ]
+        symbol [ WatchUi %tmp.20 233 8 15 ];
+        %tmp.20 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.21 233 16 24 ];
+        %tmp.21 = getv function %tmp.20 :pushView;
+        symbol [ DistanceEntryView %tmp.25 234 16 33 ];
+        %tmp.25 = getv ? :DistanceEntryView;
+        %tmp.26 = lgetv %bearing.2;
+        symbol [ bearing %tmp.26 235 16 23 ];
+        symbol [ toDouble %tmp.27 235 24 32 ];
+        %tmp.27 = getv function %tmp.26 :toDouble;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        %tmp.29 = lgetv %view.1;
+        symbol [ view %tmp.29 236 16 20 ];
+        symbol [ _capturedLat %tmp.30 236 21 33 ];
+        %tmp.30 = getv %tmp.29 :_capturedLat;
+        %tmp.31 = lgetv %view.1;
+        symbol [ view %tmp.31 237 16 20 ];
+        symbol [ _capturedLon %tmp.32 237 21 33 ];
+        %tmp.32 = getv %tmp.31 :_capturedLon;
+        %tmp.22 = newc %tmp.25 (%tmp.28, %tmp.30, %tmp.32);
+        symbol [ DistanceEntryDelegate %tmp.36 239 16 37 ];
+        %tmp.36 = getv ? :DistanceEntryDelegate;
+        %tmp.33 = newc %tmp.36 ();
+        symbol [ WatchUi %tmp.37 240 12 19 ];
+        %tmp.37 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.38 240 20 30 ];
+        %tmp.38 = getv %tmp.37 :SLIDE_LEFT;
+        invoke %tmp.20 %tmp.21(%tmp.22, %tmp.33, %tmp.38);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 242 8 ]
+        %tmp.39 = true;
+        ret %tmp.39;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_220_35_243_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 245; @symbol_functiondef = [onBack,245,13,19]; @symbol_return<0> = [Boolean,245,25,32]; ]
+    function onBack() as Boolean {
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_245_33_248_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 246 8 ]
+        symbol [ WatchUi %tmp.1 246 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 246 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 246 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 246 32 43 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc" 247 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+D__my_project_projects_UplandHunter_source_BirdLocator_BearingCaptureView_mc_245_33_248_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BearingCaptureView.mc"; @line = 1; ]
+<init> {
+}

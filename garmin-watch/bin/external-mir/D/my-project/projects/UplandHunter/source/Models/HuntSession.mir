@@ -1,0 +1,267 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Time,2,14,18]; ]
+import Toybox.Time;
+[ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Application,3,14,25]; ]
+import Toybox.Application;
+[ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [System,4,14,20]; ]
+import Toybox.System;
+[ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 20; @symbol_classdef = [HuntSession,20,6,17]; ]
+class HuntSession {
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 20; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 20; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 24; @position = 8; @symbol_vardef = [_startTime,24,8,18]; @symbol_type<0> = [Number,24,22,28]; ]
+    var _startTime as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 28; @position = 8; @symbol_vardef = [_distanceTraveled,28,8,25]; @symbol_type<0> = [Double,28,29,35]; ]
+    var _distanceTraveled as Double = 0.0d;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 33; @position = 8; @symbol_vardef = [_lastLat,33,8,16]; @symbol_type<0> = [Double,33,20,26]; ]
+    var _lastLat as Double or Null = null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 34; @position = 8; @symbol_vardef = [_lastLon,34,8,16]; @symbol_type<0> = [Double,34,20,26]; ]
+    var _lastLon as Double or Null = null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 37; @position = 8; @symbol_vardef = [_isActive,37,8,17]; @symbol_type<0> = [Boolean,37,21,28]; ]
+    var _isActive as Boolean = false;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 43; @symbol_functiondef = [initialize,43,13,23]; ]
+    function initialize() as Void {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 52; @symbol_functiondef = [start,52,13,18]; ]
+    function start() as Void {
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_52_29_59_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 53 8 ]
+        symbol [ Time %tmp.1 53 21 25 ];
+        %tmp.1 = getm $.Toybox.Time;
+        symbol [ now %tmp.2 53 26 29 ];
+        %tmp.2 = getv function %tmp.1 :now;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ value %tmp.4 53 32 37 ];
+        %tmp.4 = getv function %tmp.3 :value;
+        %tmp.5 = invoke %tmp.3 %tmp.4();
+        symbol [ _startTime ? 53 8 18 ];
+        putv self :_startTime %tmp.5;
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 54 8 ]
+        %tmp.6 = 0.0d;
+        symbol [ _distanceTraveled ? 54 8 25 ];
+        putv self :_distanceTraveled %tmp.6;
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 55 8 ]
+        %tmp.7 = null;
+        symbol [ _lastLat ? 55 8 16 ];
+        putv self :_lastLat %tmp.7;
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 56 8 ]
+        %tmp.8 = null;
+        symbol [ _lastLon ? 56 8 16 ];
+        putv self :_lastLon %tmp.8;
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 57 8 ]
+        %tmp.9 = true;
+        symbol [ _isActive ? 57 8 17 ];
+        putv self :_isActive %tmp.9;
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 58 8 ]
+        symbol [ System %tmp.10 58 8 14 ];
+        %tmp.10 = getm $.Toybox.System;
+        symbol [ println %tmp.11 58 15 22 ];
+        %tmp.11 = getv function %tmp.10 :println;
+        %tmp.12 = "Hunt session started at ";
+        symbol [ _startTime %tmp.14 58 52 62 ];
+        %tmp.14 = getv ? :_startTime;
+        %tmp.15 = add %tmp.12 %tmp.14;
+        invoke %tmp.10 %tmp.11(%tmp.15);
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_52_29_59_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 67; @symbol_functiondef = [stop,67,13,17]; ]
+    function stop() as Void {
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_67_28_71_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 68 8 ]
+        %tmp.1 = false;
+        symbol [ _isActive ? 68 8 17 ];
+        putv self :_isActive %tmp.1;
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 69 8 ]
+        symbol [ System %tmp.2 69 8 14 ];
+        %tmp.2 = getm $.Toybox.System;
+        symbol [ println %tmp.3 69 15 22 ];
+        %tmp.3 = getv function %tmp.2 :println;
+        %tmp.4 = "Hunt session ended. Distance: ";
+        symbol [ _distanceTraveled %tmp.6 70 12 29 ];
+        %tmp.6 = getv ? :_distanceTraveled;
+        symbol [ format %tmp.7 70 30 36 ];
+        %tmp.7 = getv function %tmp.6 :format;
+        %tmp.8 = "%.0f";
+        %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
+        %tmp.10 = add %tmp.4 %tmp.9;
+        %tmp.11 = "m";
+        %tmp.12 = add %tmp.10 %tmp.11;
+        invoke %tmp.2 %tmp.3(%tmp.12);
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_67_28_71_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 83; @symbol_functiondef = [updatePosition,83,13,27]; @symbol_param<0> = [lat,83,28,31]; @symbol_param<0>_type<0> = [Double,83,35,41]; @symbol_param<1> = [lon,83,43,46]; @symbol_param<1>_type<0> = [Double,83,50,56]; ]
+    function updatePosition(lat as Double, lon as Double) as Void {
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_83_66_104_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 84 8 ]
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_84_8_86_8_if_stmt:
+        symbol [ _isActive %tmp.2 84 13 22 ];
+        %tmp.2 = getv ? :_isActive;
+        %tmp.3 = not %tmp.2;
+        bf %tmp.3 @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_84_8_86_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_84_8_86_8_if_true:
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_84_24_86_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 85 12 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_84_24_86_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_84_8_86_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_84_8_86_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 88 8 ]
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_8_100_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_12_88_44_begin:
+        symbol [ _lastLat %tmp.5 88 12 20 ];
+        %tmp.5 = getv ? :_lastLat;
+        %tmp.6 = null;
+        %tmp.7 = ne %tmp.5 %tmp.6;
+        bf %tmp.7 @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_8_100_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_32_88_44_true:
+        symbol [ _lastLon %tmp.9 88 32 40 ];
+        %tmp.9 = getv ? :_lastLon;
+        %tmp.10 = null;
+        %tmp.11 = ne %tmp.9 %tmp.10;
+        push %tmp.11;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_32_88_44_end:
+        %tmp.12 = phi [%tmp.7 @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_12_88_44_begin] [%tmp.11 @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_32_88_44_true] [%tmp.12 @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_32_88_44_end];
+        bf %tmp.12 @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_8_100_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_8_100_8_if_true:
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_50_100_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 90 12 ]
+        [ "D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_50_100_8_start" "D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_50_100_8_stop" ]
+        %distance.1 = local;
+        symbol [ distance %distance.1 90 16 24 ];
+        symbol [ CoordinateMath %tmp.14 90 27 41 ];
+        %tmp.14 = getv ? :CoordinateMath;
+        symbol [ haversineDistance %tmp.15 90 42 59 ];
+        %tmp.15 = getv function %tmp.14 :haversineDistance;
+        symbol [ _lastLat %tmp.17 91 16 24 ];
+        %tmp.17 = getv ? :_lastLat;
+        %tmp.18 = as %tmp.17 { (!Null) };
+        %tmp.19 = as %tmp.18 Double;
+        symbol [ Double %tmp.19 91 28 34 ];
+        symbol [ _lastLon %tmp.21 91 36 44 ];
+        %tmp.21 = getv ? :_lastLon;
+        %tmp.22 = as %tmp.21 { (!Null) };
+        %tmp.23 = as %tmp.22 Double;
+        symbol [ Double %tmp.23 91 48 54 ];
+        %tmp.24 = lgetv %lat;
+        symbol [ lat %tmp.24 91 56 59 ];
+        %tmp.25 = lgetv %lon;
+        symbol [ lon %tmp.25 91 61 64 ];
+        %tmp.26 = invoke %tmp.14 %tmp.15(%tmp.19, %tmp.23, %tmp.24, %tmp.25);
+        lputv %distance.1 %tmp.26;
+        symbol [ distance %distance.1 90 16 24 ];
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 97 12 ]
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_97_12_99_12_if_stmt:
+        %tmp.27 = lgetv %distance.1;
+        symbol [ distance %tmp.27 97 16 24 ];
+        %tmp.28 = 2.0;
+        %tmp.29 = gt %tmp.27 %tmp.28;
+        bf %tmp.29 @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_97_12_99_12_if_end;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_97_12_99_12_if_true:
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_97_32_99_12_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 98 16 ]
+        symbol [ _distanceTraveled %tmp.30 98 16 33 ];
+        %tmp.30 = getv self :_distanceTraveled;
+        %tmp.31 = lgetv %distance.1;
+        symbol [ distance %tmp.31 98 37 45 ];
+        %tmp.32 = add %tmp.30 %tmp.31;
+        symbol [ _distanceTraveled ? 98 16 33 ];
+        putv self :_distanceTraveled dup %tmp.32;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_97_32_99_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_97_12_99_12_if_end;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_97_12_99_12_if_end:
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_50_100_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_8_100_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_88_8_100_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 102 8 ]
+        %tmp.33 = lgetv %lat;
+        symbol [ lat %tmp.33 102 19 22 ];
+        symbol [ _lastLat ? 102 8 16 ];
+        putv self :_lastLat %tmp.33;
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 103 8 ]
+        %tmp.34 = lgetv %lon;
+        symbol [ lon %tmp.34 103 19 22 ];
+        symbol [ _lastLon ? 103 8 16 ];
+        putv self :_lastLon %tmp.34;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_83_66_104_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 109; @symbol_functiondef = [getDistanceTraveled,109,13,32]; @symbol_return<0> = [Double,109,38,44]; ]
+    function getDistanceTraveled() as Double {
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_109_45_111_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 110 8 ]
+        symbol [ _distanceTraveled %tmp.2 110 15 32 ];
+        %tmp.2 = getv ? :_distanceTraveled;
+        ret %tmp.2;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_109_45_111_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 116; @symbol_functiondef = [getDistanceMiles,116,13,29]; @symbol_return<0> = [Double,116,35,41]; ]
+    function getDistanceMiles() as Double {
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_116_42_118_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 117 8 ]
+        symbol [ _distanceTraveled %tmp.2 117 15 32 ];
+        %tmp.2 = getv ? :_distanceTraveled;
+        %tmp.3 = 1609.344;
+        %tmp.4 = div %tmp.2 %tmp.3;
+        ret %tmp.4;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_116_42_118_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 123; @symbol_functiondef = [getDuration,123,13,24]; @symbol_return<0> = [Number,123,30,36]; ]
+    function getDuration() as Number {
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_123_37_128_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 124 8 ]
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_124_8_126_8_if_stmt:
+        symbol [ _startTime %tmp.2 124 12 22 ];
+        %tmp.2 = getv ? :_startTime;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_124_8_126_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_124_8_126_8_if_true:
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_124_29_126_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 125 12 ]
+        %tmp.5 = 0;
+        ret %tmp.5;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_124_29_126_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_124_8_126_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_124_8_126_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 127 8 ]
+        symbol [ Time %tmp.6 127 15 19 ];
+        %tmp.6 = getm $.Toybox.Time;
+        symbol [ now %tmp.7 127 20 23 ];
+        %tmp.7 = getv function %tmp.6 :now;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        symbol [ value %tmp.9 127 26 31 ];
+        %tmp.9 = getv function %tmp.8 :value;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        symbol [ _startTime %tmp.12 127 36 46 ];
+        %tmp.12 = getv ? :_startTime;
+        %tmp.13 = sub %tmp.10 %tmp.12;
+        ret %tmp.13;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_123_37_128_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 133; @symbol_functiondef = [getStartTime,133,13,25]; @symbol_return<0> = [Number,133,31,37]; ]
+    function getStartTime() as Number {
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_133_38_135_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 134 8 ]
+        symbol [ _startTime %tmp.2 134 15 25 ];
+        %tmp.2 = getv ? :_startTime;
+        ret %tmp.2;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_133_38_135_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 140; @symbol_functiondef = [isActive,140,13,21]; @symbol_return<0> = [Boolean,140,27,34]; ]
+    function isActive() as Boolean {
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_140_35_142_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc" 141 8 ]
+        symbol [ _isActive %tmp.2 141 15 24 ];
+        %tmp.2 = getv ? :_isActive;
+        ret %tmp.2;
+D__my_project_projects_UplandHunter_source_Models_HuntSession_mc_140_35_142_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\Models\HuntSession.mc"; @line = 1; ]
+<init> {
+}

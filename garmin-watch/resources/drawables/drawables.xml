@@ -1,0 +1,9 @@
+<drawables>
+    <!--
+        Launcher icon — the icon shown in the Garmin watch app list.
+        Using a simple bitmap placeholder for now. For store submission,
+        this needs to be a proper icon in multiple sizes.
+        Connect IQ expects a square PNG; common sizes are 40x40 and 60x60.
+    -->
+    <bitmap id="LauncherIcon" filename="launcher_icon.png"/>
+</drawables>

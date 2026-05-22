@@ -1,0 +1,670 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Application,2,14,25]; ]
+import Toybox.Application;
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 15; @symbol_moduledef = [Constants,15,7,16]; ]
+module Constants {
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 15; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 26; @position = 10; @symbol_constdef = [COLOR_PRIMARY,26,10,23]; ]
+    const COLOR_PRIMARY = 0xEA580C;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 29; @position = 10; @symbol_constdef = [COLOR_SUCCESS,29,10,23]; ]
+    const COLOR_SUCCESS = 0x16A34A;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 32; @position = 10; @symbol_constdef = [COLOR_ALERT,32,10,21]; ]
+    const COLOR_ALERT = 0xDC2626;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 35; @position = 10; @symbol_constdef = [COLOR_WARNING,35,10,23]; ]
+    const COLOR_WARNING = 0xEAB308;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 38; @position = 10; @symbol_constdef = [COLOR_BG,38,10,18]; ]
+    const COLOR_BG = 0x1F2937;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 41; @position = 10; @symbol_constdef = [COLOR_TEXT,41,10,20]; ]
+    const COLOR_TEXT = 0xFFFFFF;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 44; @position = 10; @symbol_constdef = [COLOR_MUTED,44,10,21]; ]
+    const COLOR_MUTED = 0x9CA3AF;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 48; @position = 10; @symbol_constdef = [COLOR_HC_BG,48,10,21]; ]
+    const COLOR_HC_BG = 0x000000;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 51; @position = 10; @symbol_constdef = [COLOR_HC_TEXT,51,10,23]; ]
+    const COLOR_HC_TEXT = 0xFFFFFF;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 60; @position = 10; @symbol_constdef = [SPECIES_PHEASANT,60,10,26]; ]
+    const SPECIES_PHEASANT = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 61; @position = 10; @symbol_constdef = [SPECIES_QUAIL,61,10,23]; ]
+    const SPECIES_QUAIL = 1;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 62; @position = 10; @symbol_constdef = [SPECIES_CHUKAR,62,10,24]; ]
+    const SPECIES_CHUKAR = 2;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 63; @position = 10; @symbol_constdef = [SPECIES_GROUSE_RUFFED,63,10,31]; ]
+    const SPECIES_GROUSE_RUFFED = 3;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 64; @position = 10; @symbol_constdef = [SPECIES_GROUSE_SAGE,64,10,29]; ]
+    const SPECIES_GROUSE_SAGE = 4;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 65; @position = 10; @symbol_constdef = [SPECIES_GROUSE_SHARPTAIL,65,10,34]; ]
+    const SPECIES_GROUSE_SHARPTAIL = 5;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 66; @position = 10; @symbol_constdef = [SPECIES_WOODCOCK,66,10,26]; ]
+    const SPECIES_WOODCOCK = 6;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 67; @position = 10; @symbol_constdef = [SPECIES_PRAIRIE_CHICKEN,67,10,33]; ]
+    const SPECIES_PRAIRIE_CHICKEN = 7;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 68; @position = 10; @symbol_constdef = [SPECIES_PARTRIDGE,68,10,27]; ]
+    const SPECIES_PARTRIDGE = 8;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 69; @position = 10; @symbol_constdef = [SPECIES_DOVE,69,10,22]; ]
+    const SPECIES_DOVE = 9;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 70; @position = 10; @symbol_constdef = [SPECIES_OTHER,70,10,23]; ]
+    const SPECIES_OTHER = 10;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 73; @position = 10; @symbol_constdef = [SPECIES_COUNT,73,10,23]; ]
+    const SPECIES_COUNT = 11;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 84; @symbol_functiondef = [getSpeciesName,84,13,27]; @symbol_param<0> = [species,84,28,35]; @symbol_param<0>_type<0> = [Number,84,39,45]; @symbol_return<0> = [String,84,50,56]; ]
+    function getSpeciesName(species as Number) as String {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_84_57_99_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 85 8 ]
+        %tmp.1 = lgetv %species;
+        symbol [ species %tmp.1 85 16 23 ];
+        push %tmp.1;
+        switch %tmp.1 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_85_8_98_8_switchStmtEnd;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_85_8_98_8_switchStmtBegin:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 86 12 ]
+        %tmp.2 = dup %tmp.1;
+        symbol [ SPECIES_PHEASANT %tmp.4 86 17 33 ];
+        %tmp.4 = getv ? :SPECIES_PHEASANT;
+        %tmp.5 = getv function %tmp.2 :equals;
+        %tmp.6 = invoke %tmp.2 %tmp.5 (%tmp.4);
+        bt %tmp.6 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_86_12_86_59_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 87 12 ]
+        %tmp.7 = dup %tmp.1;
+        symbol [ SPECIES_QUAIL %tmp.9 87 17 30 ];
+        %tmp.9 = getv ? :SPECIES_QUAIL;
+        %tmp.10 = getv function %tmp.7 :equals;
+        %tmp.11 = invoke %tmp.7 %tmp.10 (%tmp.9);
+        bt %tmp.11 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_87_12_87_56_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 88 12 ]
+        %tmp.12 = dup %tmp.1;
+        symbol [ SPECIES_CHUKAR %tmp.14 88 17 31 ];
+        %tmp.14 = getv ? :SPECIES_CHUKAR;
+        %tmp.15 = getv function %tmp.12 :equals;
+        %tmp.16 = invoke %tmp.12 %tmp.15 (%tmp.14);
+        bt %tmp.16 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_88_12_88_57_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 89 12 ]
+        %tmp.17 = dup %tmp.1;
+        symbol [ SPECIES_GROUSE_RUFFED %tmp.19 89 17 38 ];
+        %tmp.19 = getv ? :SPECIES_GROUSE_RUFFED;
+        %tmp.20 = getv function %tmp.17 :equals;
+        %tmp.21 = invoke %tmp.17 %tmp.20 (%tmp.19);
+        bt %tmp.21 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_89_12_89_66_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 90 12 ]
+        %tmp.22 = dup %tmp.1;
+        symbol [ SPECIES_GROUSE_SAGE %tmp.24 90 17 36 ];
+        %tmp.24 = getv ? :SPECIES_GROUSE_SAGE;
+        %tmp.25 = getv function %tmp.22 :equals;
+        %tmp.26 = invoke %tmp.22 %tmp.25 (%tmp.24);
+        bt %tmp.26 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_90_12_90_64_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 91 12 ]
+        %tmp.27 = dup %tmp.1;
+        symbol [ SPECIES_GROUSE_SHARPTAIL %tmp.29 91 17 41 ];
+        %tmp.29 = getv ? :SPECIES_GROUSE_SHARPTAIL;
+        %tmp.30 = getv function %tmp.27 :equals;
+        %tmp.31 = invoke %tmp.27 %tmp.30 (%tmp.29);
+        bt %tmp.31 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_91_12_91_71_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 92 12 ]
+        %tmp.32 = dup %tmp.1;
+        symbol [ SPECIES_WOODCOCK %tmp.34 92 17 33 ];
+        %tmp.34 = getv ? :SPECIES_WOODCOCK;
+        %tmp.35 = getv function %tmp.32 :equals;
+        %tmp.36 = invoke %tmp.32 %tmp.35 (%tmp.34);
+        bt %tmp.36 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_92_12_92_59_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 93 12 ]
+        %tmp.37 = dup %tmp.1;
+        symbol [ SPECIES_PRAIRIE_CHICKEN %tmp.39 93 17 40 ];
+        %tmp.39 = getv ? :SPECIES_PRAIRIE_CHICKEN;
+        %tmp.40 = getv function %tmp.37 :equals;
+        %tmp.41 = invoke %tmp.37 %tmp.40 (%tmp.39);
+        bt %tmp.41 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_93_12_93_66_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 94 12 ]
+        %tmp.42 = dup %tmp.1;
+        symbol [ SPECIES_PARTRIDGE %tmp.44 94 17 34 ];
+        %tmp.44 = getv ? :SPECIES_PARTRIDGE;
+        %tmp.45 = getv function %tmp.42 :equals;
+        %tmp.46 = invoke %tmp.42 %tmp.45 (%tmp.44);
+        bt %tmp.46 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_94_12_94_60_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 95 12 ]
+        %tmp.47 = dup %tmp.1;
+        symbol [ SPECIES_DOVE %tmp.49 95 17 29 ];
+        %tmp.49 = getv ? :SPECIES_DOVE;
+        %tmp.50 = getv function %tmp.47 :equals;
+        %tmp.51 = invoke %tmp.47 %tmp.50 (%tmp.49);
+        bt %tmp.51 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_95_12_95_55_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 96 12 ]
+        %tmp.52 = dup %tmp.1;
+        symbol [ SPECIES_OTHER %tmp.54 96 17 30 ];
+        %tmp.54 = getv ? :SPECIES_OTHER;
+        %tmp.55 = getv function %tmp.52 :equals;
+        %tmp.56 = invoke %tmp.52 %tmp.55 (%tmp.54);
+        bt %tmp.56 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_96_12_96_56_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 97 12 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_85_8_98_8_switchStmtDefault:
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_85_8_98_8_defaultCodeBegin;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_86_12_86_59_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 86 42 ]
+        %tmp.57 = "Pheasant";
+        ret %tmp.57;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_87_12_87_56_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 87 42 ]
+        %tmp.58 = "Quail";
+        ret %tmp.58;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_88_12_88_57_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 88 42 ]
+        %tmp.59 = "Chukar";
+        ret %tmp.59;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_89_12_89_66_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 89 42 ]
+        %tmp.60 = "Grouse (Ruffed)";
+        ret %tmp.60;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_90_12_90_64_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 90 42 ]
+        %tmp.61 = "Grouse (Sage)";
+        ret %tmp.61;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_91_12_91_71_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 91 43 ]
+        %tmp.62 = "Grouse (Sharp-tail)";
+        ret %tmp.62;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_92_12_92_59_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 92 42 ]
+        %tmp.63 = "Woodcock";
+        ret %tmp.63;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_93_12_93_66_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 93 42 ]
+        %tmp.64 = "Prairie Chicken";
+        ret %tmp.64;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_94_12_94_60_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 94 42 ]
+        %tmp.65 = "Partridge";
+        ret %tmp.65;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_95_12_95_55_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 95 42 ]
+        %tmp.66 = "Dove";
+        ret %tmp.66;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_96_12_96_56_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 96 42 ]
+        %tmp.67 = "Other";
+        ret %tmp.67;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_97_12_97_58_switchCase:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_85_8_98_8_defaultCodeBegin:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 97 42 ]
+        %tmp.68 = "Unknown";
+        ret %tmp.68;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_85_8_98_8_switchStmtEnd:
+        pop;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_84_57_99_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 107; @position = 10; @symbol_constdef = [SHOT_HIT,107,10,18]; ]
+    const SHOT_HIT = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 110; @position = 10; @symbol_constdef = [SHOT_MISSED,110,10,21]; ]
+    const SHOT_MISSED = 1;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 113; @position = 10; @symbol_constdef = [SHOT_NO_SHOT,113,10,22]; ]
+    const SHOT_NO_SHOT = 2;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 122; @position = 10; @symbol_constdef = [DOG_STATUS_MOVING,122,10,27]; ]
+    const DOG_STATUS_MOVING = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 125; @position = 10; @symbol_constdef = [DOG_STATUS_STATIONARY,125,10,31]; ]
+    const DOG_STATUS_STATIONARY = 1;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 128; @position = 10; @symbol_constdef = [DOG_STATUS_ON_POINT,128,10,29]; ]
+    const DOG_STATUS_ON_POINT = 2;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 131; @position = 10; @symbol_constdef = [DOG_STATUS_TREED,131,10,26]; ]
+    const DOG_STATUS_TREED = 3;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 134; @position = 10; @symbol_constdef = [DOG_STATUS_GPS_LOST,134,10,29]; ]
+    const DOG_STATUS_GPS_LOST = 4;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 137; @position = 10; @symbol_constdef = [DOG_STATUS_COMM_LOST,137,10,30]; ]
+    const DOG_STATUS_COMM_LOST = 5;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 145; @position = 10; @symbol_constdef = [ANT_STATE_IDLE,145,10,24]; ]
+    const ANT_STATE_IDLE = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 148; @position = 10; @symbol_constdef = [ANT_STATE_SEARCHING,148,10,29]; ]
+    const ANT_STATE_SEARCHING = 1;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 151; @position = 10; @symbol_constdef = [ANT_STATE_CONNECTED,151,10,29]; ]
+    const ANT_STATE_CONNECTED = 2;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 154; @position = 10; @symbol_constdef = [ANT_STATE_LOST,154,10,24]; ]
+    const ANT_STATE_LOST = 3;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 163; @position = 10; @symbol_constdef = [DISTANCE_CLOSE_THRESHOLD,163,10,34]; ]
+    const DISTANCE_CLOSE_THRESHOLD = 30;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 166; @position = 10; @symbol_constdef = [DISTANCE_FAR_THRESHOLD,166,10,32]; ]
+    const DISTANCE_FAR_THRESHOLD = 100;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 174; @position = 10; @symbol_constdef = [MIN_TOUCH_TARGET,174,10,26]; ]
+    const MIN_TOUCH_TARGET = 60;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 177; @position = 10; @symbol_constdef = [DEBOUNCE_MS,177,10,21]; ]
+    const DEBOUNCE_MS = 500;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 180; @position = 10; @symbol_constdef = [CONFIRMATION_TIMEOUT_MS,180,10,33]; ]
+    const CONFIRMATION_TIMEOUT_MS = 2000;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 183; @position = 10; @symbol_constdef = [MAX_BIRD_MARKERS,183,10,26]; ]
+    const MAX_BIRD_MARKERS = 10;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 186; @position = 10; @symbol_constdef = [MAX_DOGS_DISPLAY,186,10,26]; ]
+    const MAX_DOGS_DISPLAY = 20;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 189; @position = 10; @symbol_constdef = [MAX_WAYPOINTS,189,10,23]; ]
+    const MAX_WAYPOINTS = 500;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 192; @position = 10; @symbol_constdef = [MAX_BREADCRUMB_POSITIONS,192,10,34]; ]
+    const MAX_BREADCRUMB_POSITIONS = 200;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 195; @position = 10; @symbol_constdef = [BREADCRUMB_SAMPLE_SECONDS,195,10,35]; ]
+    const BREADCRUMB_SAMPLE_SECONDS = 5;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 203; @position = 10; @symbol_constdef = [GPS_POLL_BATTERY_SAVER,203,10,32]; ]
+    const GPS_POLL_BATTERY_SAVER = 5000;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 206; @position = 10; @symbol_constdef = [GPS_POLL_STANDARD,206,10,27]; ]
+    const GPS_POLL_STANDARD = 2000;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 209; @position = 10; @symbol_constdef = [GPS_POLL_HIGH_ACCURACY,209,10,32]; ]
+    const GPS_POLL_HIGH_ACCURACY = 1000;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 217; @position = 10; @symbol_constdef = [EARTH_RADIUS_M,217,10,24]; ]
+    const EARTH_RADIUS_M = 6371000.0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 220; @position = 10; @symbol_constdef = [YARDS_TO_METERS,220,10,25]; ]
+    const YARDS_TO_METERS = 0.9144;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 223; @position = 10; @symbol_constdef = [METERS_TO_YARDS,223,10,25]; ]
+    const METERS_TO_YARDS = 1.09361;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 226; @position = 10; @symbol_constdef = [PI,226,10,12]; ]
+    const PI = 3.14159265358979;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 229; @position = 10; @symbol_constdef = [DEG_TO_RAD,229,10,20]; ]
+    const DEG_TO_RAD = 0.01745329251994;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 232; @position = 10; @symbol_constdef = [RAD_TO_DEG,232,10,20]; ]
+    const RAD_TO_DEG = 57.2957795130823;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 249; @symbol_functiondef = [getBgColor,249,13,23]; @symbol_return<0> = [Number,249,29,35]; ]
+    function getBgColor() as Number {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_249_36_255_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 250 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_249_36_255_4_start" "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_249_36_255_4_stop" ]
+        %hc.1 = local;
+        symbol [ hc %hc.1 250 12 14 ];
+        symbol [ Application %tmp.1 250 17 28 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.2 250 29 39 ];
+        %tmp.2 = getv %tmp.1 :Properties;
+        symbol [ getValue %tmp.3 250 40 48 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "highContrast";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %hc.1 %tmp.5;
+        symbol [ hc %hc.1 250 12 14 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 251 8 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_8_253_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_12_251_26_begin:
+        %tmp.6 = lgetv %hc.1;
+        symbol [ hc %tmp.6 251 12 14 ];
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_8_253_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_26_251_26_true:
+        %tmp.9 = lgetv %hc.1;
+        symbol [ hc %tmp.9 251 26 28 ];
+        %tmp.10 = as %tmp.9 { (!Null) };
+        push %tmp.10;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_26_251_26_end:
+        %tmp.11 = phi [%tmp.8 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_12_251_26_begin] [%tmp.10 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_26_251_26_true] [%tmp.11 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_26_251_26_end];
+        bf %tmp.11 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_8_253_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_8_253_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_30_253_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 252 12 ]
+        symbol [ COLOR_HC_BG %tmp.13 252 19 30 ];
+        %tmp.13 = getv ? :COLOR_HC_BG;
+        ret %tmp.13;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_30_253_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_8_253_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_251_8_253_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 254 8 ]
+        symbol [ COLOR_BG %tmp.15 254 15 23 ];
+        %tmp.15 = getv ? :COLOR_BG;
+        ret %tmp.15;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_249_36_255_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 265; @symbol_functiondef = [getTextColor,265,13,25]; @symbol_return<0> = [Number,265,31,37]; ]
+    function getTextColor() as Number {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_265_38_271_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 266 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_265_38_271_4_start" "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_265_38_271_4_stop" ]
+        %hc.1 = local;
+        symbol [ hc %hc.1 266 12 14 ];
+        symbol [ Application %tmp.1 266 17 28 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.2 266 29 39 ];
+        %tmp.2 = getv %tmp.1 :Properties;
+        symbol [ getValue %tmp.3 266 40 48 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "highContrast";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %hc.1 %tmp.5;
+        symbol [ hc %hc.1 266 12 14 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 267 8 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_8_269_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_12_267_26_begin:
+        %tmp.6 = lgetv %hc.1;
+        symbol [ hc %tmp.6 267 12 14 ];
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_8_269_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_26_267_26_true:
+        %tmp.9 = lgetv %hc.1;
+        symbol [ hc %tmp.9 267 26 28 ];
+        %tmp.10 = as %tmp.9 { (!Null) };
+        push %tmp.10;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_26_267_26_end:
+        %tmp.11 = phi [%tmp.8 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_12_267_26_begin] [%tmp.10 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_26_267_26_true] [%tmp.11 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_26_267_26_end];
+        bf %tmp.11 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_8_269_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_8_269_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_30_269_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 268 12 ]
+        symbol [ COLOR_HC_TEXT %tmp.13 268 19 32 ];
+        %tmp.13 = getv ? :COLOR_HC_TEXT;
+        ret %tmp.13;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_30_269_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_8_269_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_267_8_269_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 270 8 ]
+        symbol [ COLOR_TEXT %tmp.15 270 15 25 ];
+        %tmp.15 = getv ? :COLOR_TEXT;
+        ret %tmp.15;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_265_38_271_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 278; @symbol_functiondef = [isHighContrast,278,13,27]; @symbol_return<0> = [Boolean,278,33,40]; ]
+    function isHighContrast() as Boolean {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_278_41_281_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 279 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_278_41_281_4_start" "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_278_41_281_4_stop" ]
+        %hc.1 = local;
+        symbol [ hc %hc.1 279 12 14 ];
+        symbol [ Application %tmp.1 279 17 28 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.2 279 29 39 ];
+        %tmp.2 = getv %tmp.1 :Properties;
+        symbol [ getValue %tmp.3 279 40 48 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "highContrast";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %hc.1 %tmp.5;
+        symbol [ hc %hc.1 279 12 14 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 280 8 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_280_16_280_30_begin:
+        %tmp.6 = lgetv %hc.1;
+        symbol [ hc %tmp.6 280 16 18 ];
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        %tmp.9 = dup %tmp.8;
+        bf %tmp.9 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_280_30_280_30_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_280_30_280_30_true:
+        %tmp.10 = lgetv %hc.1;
+        symbol [ hc %tmp.10 280 30 32 ];
+        %tmp.11 = as %tmp.10 { (!Null) };
+        %tmp.12 = and %tmp.8 %tmp.11;
+        push %tmp.12;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_280_30_280_30_end:
+        %tmp.13 = phi [%tmp.9 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_280_16_280_30_begin] [%tmp.12 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_280_30_280_30_true] [%tmp.13 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_280_30_280_30_end];
+        ret %tmp.13;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_278_41_281_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 290; @symbol_functiondef = [isMetric,290,13,21]; @symbol_return<0> = [Boolean,290,27,34]; ]
+    function isMetric() as Boolean {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_290_35_293_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 291 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_290_35_293_4_start" "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_290_35_293_4_stop" ]
+        %unit.1 = local;
+        symbol [ unit %unit.1 291 12 16 ];
+        symbol [ Application %tmp.1 291 19 30 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.2 291 31 41 ];
+        %tmp.2 = getv %tmp.1 :Properties;
+        symbol [ getValue %tmp.3 291 42 50 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "unitSystem";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %unit.1 %tmp.5;
+        symbol [ unit %unit.1 291 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 292 8 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_292_16_292_40_begin:
+        %tmp.6 = lgetv %unit.1;
+        symbol [ unit %tmp.6 292 16 20 ];
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        %tmp.9 = dup %tmp.8;
+        bf %tmp.9 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_292_32_292_40_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_292_32_292_40_true:
+        %tmp.10 = lgetv %unit.1;
+        symbol [ unit %tmp.10 292 32 36 ];
+        %tmp.11 = as %tmp.10 { (!Null) };
+        %tmp.12 = 1;
+        %tmp.13 = eq %tmp.11 %tmp.12;
+        %tmp.14 = and %tmp.8 %tmp.13;
+        push %tmp.14;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_292_32_292_40_end:
+        %tmp.15 = phi [%tmp.9 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_292_16_292_40_begin] [%tmp.14 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_292_32_292_40_true] [%tmp.15 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_292_32_292_40_end];
+        ret %tmp.15;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_290_35_293_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 303; @symbol_functiondef = [formatDogDistance,303,13,30]; @symbol_param<0> = [distanceYards,303,31,44]; @symbol_param<0>_type<0> = [Number,303,48,54]; @symbol_return<0> = [String,303,59,65]; ]
+    function formatDogDistance(distanceYards as Number) as String {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_303_66_309_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 304 8 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_304_8_307_8_if_stmt:
+        %tmp.1 = self;
+        symbol [ isMetric %tmp.2 304 12 20 ];
+        %tmp.2 = getv function %tmp.1 :isMetric;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        bf %tmp.3 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_304_8_307_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_304_8_307_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_304_24_307_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 305 12 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_304_24_307_8_start" "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_304_24_307_8_stop" ]
+        %meters.1 = local;
+        symbol [ meters %meters.1 305 16 22 ];
+        %tmp.4 = lgetv %distanceYards;
+        symbol [ distanceYards %tmp.4 305 26 39 ];
+        symbol [ toDouble %tmp.5 305 40 48 ];
+        %tmp.5 = getv function %tmp.4 :toDouble;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        symbol [ YARDS_TO_METERS %tmp.8 305 53 68 ];
+        %tmp.8 = getv ? :YARDS_TO_METERS;
+        %tmp.9 = mul %tmp.6 %tmp.8;
+        symbol [ toNumber %tmp.10 305 70 78 ];
+        %tmp.10 = getv function %tmp.9 :toNumber;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %meters.1 %tmp.11;
+        symbol [ meters %meters.1 305 16 22 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 306 12 ]
+        %tmp.12 = lgetv %meters.1;
+        symbol [ meters %tmp.12 306 19 25 ];
+        symbol [ format %tmp.13 306 26 32 ];
+        %tmp.13 = getv function %tmp.12 :format;
+        %tmp.14 = "%d";
+        %tmp.15 = invoke %tmp.12 %tmp.13(%tmp.14);
+        %tmp.16 = " m";
+        %tmp.17 = add %tmp.15 %tmp.16;
+        ret %tmp.17;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_304_24_307_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_304_8_307_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_304_8_307_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 308 8 ]
+        %tmp.18 = lgetv %distanceYards;
+        symbol [ distanceYards %tmp.18 308 15 28 ];
+        symbol [ format %tmp.19 308 29 35 ];
+        %tmp.19 = getv function %tmp.18 :format;
+        %tmp.20 = "%d";
+        %tmp.21 = invoke %tmp.18 %tmp.19(%tmp.20);
+        %tmp.22 = " yd";
+        %tmp.23 = add %tmp.21 %tmp.22;
+        ret %tmp.23;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_303_66_309_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 320; @symbol_functiondef = [formatNavigationDistance,320,13,37]; @symbol_param<0> = [distanceMeters,320,38,52]; @symbol_param<0>_type<0> = [Double,320,56,62]; @symbol_return<0> = [String,320,67,73]; ]
+    function formatNavigationDistance(distanceMeters as Double) as String {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_320_74_326_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 321 8 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_321_8_323_8_if_stmt:
+        %tmp.1 = self;
+        symbol [ isMetric %tmp.2 321 12 20 ];
+        %tmp.2 = getv function %tmp.1 :isMetric;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        bf %tmp.3 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_321_8_323_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_321_8_323_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_321_24_323_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 322 12 ]
+        %tmp.4 = lgetv %distanceMeters;
+        symbol [ distanceMeters %tmp.4 322 19 33 ];
+        symbol [ format %tmp.5 322 34 40 ];
+        %tmp.5 = getv function %tmp.4 :format;
+        %tmp.6 = "%d";
+        %tmp.7 = invoke %tmp.4 %tmp.5(%tmp.6);
+        %tmp.8 = " m";
+        %tmp.9 = add %tmp.7 %tmp.8;
+        ret %tmp.9;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_321_24_323_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_321_8_323_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_321_8_323_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 324 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_320_74_326_4_start" "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_320_74_326_4_stop" ]
+        %yards.1 = local;
+        symbol [ yards %yards.1 324 12 17 ];
+        symbol [ CoordinateMath %tmp.11 324 20 34 ];
+        %tmp.11 = getv ? :CoordinateMath;
+        symbol [ metersToYards %tmp.12 324 35 48 ];
+        %tmp.12 = getv function %tmp.11 :metersToYards;
+        %tmp.13 = lgetv %distanceMeters;
+        symbol [ distanceMeters %tmp.13 324 49 63 ];
+        %tmp.14 = invoke %tmp.11 %tmp.12(%tmp.13);
+        lputv %yards.1 %tmp.14;
+        symbol [ yards %yards.1 324 12 17 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 325 8 ]
+        %tmp.15 = lgetv %yards.1;
+        symbol [ yards %tmp.15 325 15 20 ];
+        symbol [ format %tmp.16 325 21 27 ];
+        %tmp.16 = getv function %tmp.15 :format;
+        %tmp.17 = "%d";
+        %tmp.18 = invoke %tmp.15 %tmp.16(%tmp.17);
+        %tmp.19 = " yd";
+        %tmp.20 = add %tmp.18 %tmp.19;
+        ret %tmp.20;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_320_74_326_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 335; @symbol_functiondef = [getDistanceUnitLabel,335,13,33]; @symbol_return<0> = [String,335,39,45]; ]
+    function getDistanceUnitLabel() as String {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_335_46_337_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 336 8 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_begin:
+        %tmp.1 = self;
+        symbol [ isMetric %tmp.2 336 15 23 ];
+        %tmp.2 = getv function %tmp.1 :isMetric;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        bf %tmp.3 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_else_false;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_true:
+        %tmp.4 = "meters";
+        push %tmp.4;
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_else_false:
+        %tmp.5 = "yards";
+        push %tmp.5;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_end:
+        %tmp.6 = phi [%tmp.3 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_begin] [%tmp.4 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_true] [%tmp.5 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_else_false] [%tmp.6 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_336_15_336_39_end];
+        ret %tmp.6;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_335_46_337_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 347; @symbol_functiondef = [formatStatDistance,347,13,31]; @symbol_param<0> = [miles,347,32,37]; @symbol_param<0>_type<0> = [Double,347,41,47]; @symbol_return<0> = [String,347,52,58]; ]
+    function formatStatDistance(miles as Double) as String {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_347_59_353_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 348 8 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_348_8_351_8_if_stmt:
+        %tmp.1 = self;
+        symbol [ isMetric %tmp.2 348 12 20 ];
+        %tmp.2 = getv function %tmp.1 :isMetric;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        bf %tmp.3 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_348_8_351_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_348_8_351_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_348_24_351_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 349 12 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_348_24_351_8_start" "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_348_24_351_8_stop" ]
+        %km.1 = local;
+        symbol [ km %km.1 349 16 18 ];
+        %tmp.4 = lgetv %miles;
+        symbol [ miles %tmp.4 349 21 26 ];
+        %tmp.5 = 1.60934;
+        %tmp.6 = mul %tmp.4 %tmp.5;
+        lputv %km.1 %tmp.6;
+        symbol [ km %km.1 349 16 18 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 350 12 ]
+        %tmp.7 = lgetv %km.1;
+        symbol [ km %tmp.7 350 19 21 ];
+        symbol [ format %tmp.8 350 22 28 ];
+        %tmp.8 = getv function %tmp.7 :format;
+        %tmp.9 = "%.1f";
+        %tmp.10 = invoke %tmp.7 %tmp.8(%tmp.9);
+        %tmp.11 = " km";
+        %tmp.12 = add %tmp.10 %tmp.11;
+        ret %tmp.12;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_348_24_351_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_348_8_351_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_348_8_351_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 352 8 ]
+        %tmp.13 = lgetv %miles;
+        symbol [ miles %tmp.13 352 15 20 ];
+        symbol [ format %tmp.14 352 21 27 ];
+        %tmp.14 = getv function %tmp.13 :format;
+        %tmp.15 = "%.1f";
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        %tmp.17 = " mi";
+        %tmp.18 = add %tmp.16 %tmp.17;
+        ret %tmp.18;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_347_59_353_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 369; @symbol_functiondef = [getGpsPollInterval,369,13,31]; @symbol_return<0> = [Number,369,37,43]; ]
+    function getGpsPollInterval() as Number {
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_369_44_376_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 370 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_369_44_376_4_start" "D__my_project_projects_UplandHunter_source_Utils_Constants_mc_369_44_376_4_stop" ]
+        %rate.1 = local;
+        symbol [ rate %rate.1 370 12 16 ];
+        symbol [ Application %tmp.1 370 19 30 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.2 370 31 41 ];
+        %tmp.2 = getv %tmp.1 :Properties;
+        symbol [ getValue %tmp.3 370 42 50 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "gpsPollRate";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %rate.1 %tmp.5;
+        symbol [ rate %rate.1 370 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 371 8 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_371_8_374_8_if_stmt:
+        %tmp.6 = lgetv %rate.1;
+        symbol [ rate %tmp.6 371 12 16 ];
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_371_8_374_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_371_8_374_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_371_26_374_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 372 12 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_372_12_372_39_if_stmt:
+        %tmp.9 = lgetv %rate.1;
+        symbol [ rate %tmp.9 372 16 20 ];
+        %tmp.10 = as %tmp.9 { (!Null) };
+        %tmp.11 = 0;
+        %tmp.12 = eq %tmp.10 %tmp.11;
+        bf %tmp.12 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_372_12_372_39_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_372_12_372_39_if_true:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_372_27_372_39_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 372 29 ]
+        %tmp.13 = 5;
+        ret %tmp.13;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_372_27_372_39_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_372_12_372_39_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_372_12_372_39_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 373 12 ]
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_373_12_373_39_if_stmt:
+        %tmp.14 = lgetv %rate.1;
+        symbol [ rate %tmp.14 373 16 20 ];
+        %tmp.15 = as %tmp.14 { (!Null) };
+        %tmp.16 = 2;
+        %tmp.17 = eq %tmp.15 %tmp.16;
+        bf %tmp.17 @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_373_12_373_39_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_373_12_373_39_if_true:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_373_27_373_39_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 373 29 ]
+        %tmp.18 = 1;
+        ret %tmp.18;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_373_27_373_39_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_373_12_373_39_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_373_12_373_39_if_end:
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_371_26_374_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_Constants_mc_371_8_374_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_371_8_374_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc" 375 8 ]
+        %tmp.19 = 2;
+        ret %tmp.19;
+D__my_project_projects_UplandHunter_source_Utils_Constants_mc_369_44_376_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\Constants.mc"; @line = 1; ]
+<init> {
+}

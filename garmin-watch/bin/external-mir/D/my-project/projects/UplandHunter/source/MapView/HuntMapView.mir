@@ -1,0 +1,2653 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Position,3,14,22]; ]
+import Toybox.Position;
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Application,4,14,25]; ]
+import Toybox.Application;
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Timer,5,14,19]; ]
+import Toybox.Timer;
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Lang,6,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [System,7,14,20]; ]
+import Toybox.System;
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Time,8,14,18]; ]
+import Toybox.Time;
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 39; @symbol_classdef = [HuntMapView,39,6,17]; @symbol_extends<0> = [WatchUi,39,26,33]; @symbol_extends<1> = [MapTrackView,39,34,46]; ]
+class HuntMapView extends WatchUi.MapTrackView {
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 39; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 39; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 43; @position = 8; @symbol_vardef = [_updateTimer,43,8,20]; @symbol_type<0> = [Timer,43,24,29]; @symbol_type<1> = [Timer,43,30,35]; ]
+    var _updateTimer as Timer.Timer or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 47; @position = 8; @symbol_vardef = [_zoomLevel,47,8,18]; @symbol_type<0> = [Number,47,22,28]; ]
+    var _zoomLevel as Number = 4;
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 52; @position = 8; @symbol_vardef = [_isAutoZoom,52,8,19]; @symbol_type<0> = [Boolean,52,23,30]; ]
+    var _isAutoZoom as Boolean = true;
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 56; @position = 8; @symbol_vardef = [_cachedWaypoints,56,8,24]; @symbol_type<0> = [Array,56,28,33]; @symbol_type<1> = [Waypoint,56,34,42]; ]
+    var _cachedWaypoints as Array<Waypoint> or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 59; @position = 8; @symbol_vardef = [_lastWaypointLoad,59,8,25]; @symbol_type<0> = [Number,59,29,35]; ]
+    var _lastWaypointLoad as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 65; @symbol_functiondef = [initialize,65,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_65_26_67_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 66 8 ]
+        symbol [ MapTrackView %tmp.2 66 8 20 ];
+        %tmp.2 = getv ? :MapTrackView;
+        symbol [ initialize %tmp.3 66 21 31 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_65_26_67_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 76; @symbol_functiondef = [onShow,76,13,19]; ]
+    function onShow() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_76_30_93_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 79 8 ]
+        %tmp.1 = self;
+        symbol [ setMapMode %tmp.2 79 8 18 ];
+        %tmp.2 = getv function %tmp.1 :setMapMode;
+        symbol [ WatchUi %tmp.3 79 19 26 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ MAP_MODE_PREVIEW %tmp.4 79 27 43 ];
+        %tmp.4 = getv %tmp.3 :MAP_MODE_PREVIEW;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 83 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_76_30_93_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_76_30_93_4_stop" ]
+        %settings.1 = local;
+        symbol [ settings %settings.1 83 12 20 ];
+        symbol [ System %tmp.5 83 23 29 ];
+        %tmp.5 = getm $.Toybox.System;
+        symbol [ getDeviceSettings %tmp.6 83 30 47 ];
+        %tmp.6 = getv function %tmp.5 :getDeviceSettings;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %settings.1 %tmp.7;
+        symbol [ settings %settings.1 83 12 20 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 84 8 ]
+        %tmp.8 = self;
+        symbol [ setScreenVisibleArea %tmp.9 84 8 28 ];
+        %tmp.9 = getv function %tmp.8 :setScreenVisibleArea;
+        %tmp.10 = 0;
+        %tmp.11 = 30;
+        %tmp.12 = lgetv %settings.1;
+        symbol [ settings %tmp.12 84 36 44 ];
+        symbol [ screenWidth %tmp.13 84 45 56 ];
+        %tmp.13 = getv %tmp.12 :screenWidth;
+        %tmp.14 = lgetv %settings.1;
+        symbol [ settings %tmp.14 84 58 66 ];
+        symbol [ screenHeight %tmp.15 84 67 79 ];
+        %tmp.15 = getv %tmp.14 :screenHeight;
+        %tmp.16 = 25;
+        %tmp.17 = sub %tmp.15 %tmp.16;
+        invoke %tmp.8 %tmp.9(%tmp.10, %tmp.11, %tmp.13, %tmp.17);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 87 8 ]
+        %tmp.18 = self;
+        symbol [ refreshWaypoints %tmp.19 87 8 24 ];
+        %tmp.19 = getv function %tmp.18 :refreshWaypoints;
+        invoke %tmp.18 %tmp.19();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 88 8 ]
+        %tmp.20 = self;
+        symbol [ updateMapContent %tmp.21 88 8 24 ];
+        %tmp.21 = getv function %tmp.20 :updateMapContent;
+        invoke %tmp.20 %tmp.21();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 91 8 ]
+        symbol [ Timer %tmp.24 91 27 32 ];
+        %tmp.24 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.25 91 33 38 ];
+        %tmp.25 = getv function ? %tmp.24 :Timer;
+        %tmp.22 = newc %tmp.25 ();
+        symbol [ _updateTimer ? 91 8 20 ];
+        putv self :_updateTimer %tmp.22;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 92 8 ]
+        symbol [ _updateTimer %tmp.27 92 8 20 ];
+        %tmp.27 = getv ? :_updateTimer;
+        symbol [ start %tmp.28 92 21 26 ];
+        %tmp.28 = getv function %tmp.27 :start;
+        %tmp.29 = self;
+        symbol [ method %tmp.30 92 27 33 ];
+        %tmp.30 = getv function %tmp.29 :method;
+        %tmp.32 = const :onMapUpdate;
+        symbol [ onMapUpdate %tmp.32 92 35 46 const ];
+        %tmp.33 = invoke %tmp.29 %tmp.30(%tmp.32);
+        %tmp.34 = 2000;
+        %tmp.35 = true;
+        invoke %tmp.27 %tmp.28(%tmp.33, %tmp.34, %tmp.35);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_76_30_93_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 101; @symbol_functiondef = [onMapUpdate,101,13,24]; ]
+    function onMapUpdate() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_101_35_104_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 102 8 ]
+        %tmp.1 = self;
+        symbol [ updateMapContent %tmp.2 102 8 24 ];
+        %tmp.2 = getv function %tmp.1 :updateMapContent;
+        invoke %tmp.1 %tmp.2();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 103 8 ]
+        symbol [ WatchUi %tmp.3 103 8 15 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.4 103 16 29 ];
+        %tmp.4 = getv function %tmp.3 :requestUpdate;
+        invoke %tmp.3 %tmp.4();
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_101_35_104_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 115; @symbol_functiondef = [updateMapContent,115,13,29]; ]
+    function updateMapContent() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_115_40_121_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 116 8 ]
+        %tmp.1 = self;
+        symbol [ updateMarkers %tmp.2 116 8 21 ];
+        %tmp.2 = getv function %tmp.1 :updateMarkers;
+        invoke %tmp.1 %tmp.2();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 117 8 ]
+        %tmp.3 = self;
+        symbol [ updateBreadcrumb %tmp.4 117 8 24 ];
+        %tmp.4 = getv function %tmp.3 :updateBreadcrumb;
+        invoke %tmp.3 %tmp.4();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 118 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_118_8_120_8_if_stmt:
+        symbol [ _isAutoZoom %tmp.6 118 12 23 ];
+        %tmp.6 = getv ? :_isAutoZoom;
+        bf %tmp.6 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_118_8_120_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_118_8_120_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_118_25_120_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 119 12 ]
+        %tmp.7 = self;
+        symbol [ autoZoom %tmp.8 119 12 20 ];
+        %tmp.8 = getv function %tmp.7 :autoZoom;
+        invoke %tmp.7 %tmp.8();
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_118_25_120_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_118_8_120_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_118_8_120_8_if_end:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_115_40_121_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 130; @symbol_functiondef = [refreshWaypoints,130,13,29]; ]
+    function refreshWaypoints() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_130_40_138_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 131 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_130_40_138_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_130_40_138_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 131 12 15 ];
+        symbol [ Time %tmp.1 131 18 22 ];
+        %tmp.1 = getm $.Toybox.Time;
+        symbol [ now %tmp.2 131 23 26 ];
+        %tmp.2 = getv function %tmp.1 :now;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ value %tmp.4 131 29 34 ];
+        %tmp.4 = getv function %tmp.3 :value;
+        %tmp.5 = invoke %tmp.3 %tmp.4();
+        lputv %now.1 %tmp.5;
+        symbol [ now %now.1 131 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 132 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_8_137_8_if_stmt:
+        %tmp.6 = lgetv %now.1;
+        symbol [ now %tmp.6 132 12 15 ];
+        symbol [ _lastWaypointLoad %tmp.8 132 18 35 ];
+        %tmp.8 = getv ? :_lastWaypointLoad;
+        %tmp.9 = sub %tmp.6 %tmp.8;
+        %tmp.10 = 10;
+        %tmp.11 = gt %tmp.9 %tmp.10;
+        bf %tmp.11 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_8_137_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_8_137_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_42_137_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 133 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_42_137_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_42_137_8_stop" ]
+        %app.2 = local;
+        symbol [ app %app.2 133 16 19 ];
+        symbol [ Application %tmp.12 133 22 33 ];
+        %tmp.12 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.13 133 34 40 ];
+        %tmp.13 = getv function %tmp.12 :getApp;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        %tmp.15 = as %tmp.14 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.15 133 46 61 ];
+        lputv %app.2 %tmp.15;
+        symbol [ app %app.2 133 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 134 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_42_137_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_42_137_8_stop" ]
+        %session.3 = local;
+        symbol [ session %session.3 134 16 23 ];
+        %tmp.16 = lgetv %app.2;
+        symbol [ app %tmp.16 134 26 29 ];
+        symbol [ getHuntSession %tmp.17 134 30 44 ];
+        %tmp.17 = getv function %tmp.16 :getHuntSession;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        lputv %session.3 %tmp.18;
+        symbol [ session %session.3 134 16 23 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 135 12 ]
+        symbol [ WaypointManager %tmp.20 135 31 46 ];
+        %tmp.20 = getv ? :WaypointManager;
+        symbol [ getSessionWaypoints %tmp.21 135 47 66 ];
+        %tmp.21 = getv function %tmp.20 :getSessionWaypoints;
+        %tmp.22 = lgetv %session.3;
+        symbol [ session %tmp.22 135 67 74 ];
+        symbol [ getStartTime %tmp.23 135 75 87 ];
+        %tmp.23 = getv function %tmp.22 :getStartTime;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        %tmp.25 = invoke %tmp.20 %tmp.21(%tmp.24);
+        symbol [ _cachedWaypoints ? 135 12 28 ];
+        putv self :_cachedWaypoints %tmp.25;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 136 12 ]
+        %tmp.26 = lgetv %now.1;
+        symbol [ now %tmp.26 136 32 35 ];
+        symbol [ _lastWaypointLoad ? 136 12 29 ];
+        putv self :_lastWaypointLoad %tmp.26;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_42_137_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_8_137_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_132_8_137_8_if_end:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_130_40_138_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 154; @symbol_functiondef = [updateMarkers,154,13,26]; ]
+    function updateMarkers() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_154_37_239_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 155 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_154_37_239_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_154_37_239_4_stop" ]
+        %markers.1 = local;
+        symbol [ markers %markers.1 155 12 19 ];
+        %tmp.1 = newa 0 Array<WatchUi.MapMarker>;
+        symbol [ Array %tmp.1 155 28 33 ];
+        symbol [ WatchUi %tmp.1 155 34 41 ];
+        symbol [ MapMarker %tmp.1 155 42 51 ];
+        lputv %markers.1 %tmp.1;
+        symbol [ markers %markers.1 155 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 158 8 ]
+        %tmp.2 = self;
+        symbol [ refreshWaypoints %tmp.3 158 8 24 ];
+        %tmp.3 = getv function %tmp.2 :refreshWaypoints;
+        invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 162 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_162_8_176_8_if_stmt:
+        symbol [ _cachedWaypoints %tmp.5 162 12 28 ];
+        %tmp.5 = getv ? :_cachedWaypoints;
+        %tmp.6 = null;
+        %tmp.7 = ne %tmp.5 %tmp.6;
+        bf %tmp.7 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_162_8_176_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_162_8_176_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_162_38_176_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 163 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_162_38_176_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_162_38_176_8_stop" ]
+        %wps.2 = local;
+        symbol [ wps %wps.2 163 16 19 ];
+        symbol [ _cachedWaypoints %tmp.9 163 22 38 ];
+        %tmp.9 = getv ? :_cachedWaypoints;
+        %tmp.10 = as %tmp.9 { (!Null) };
+        %tmp.11 = as %tmp.10 Array<Waypoint>;
+        symbol [ Array %tmp.11 163 42 47 ];
+        symbol [ Waypoint %tmp.11 163 48 56 ];
+        lputv %wps.2 %tmp.11;
+        symbol [ wps %wps.2 163 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 164 12 ]
+        for @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_test @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_incr @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_init:
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_begin" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_end" ]
+        %i.3 = local;
+        symbol [ i %i.3 164 21 22 ];
+        %tmp.12 = 0;
+        lputv %i.3 %tmp.12;
+        symbol [ i %i.3 164 21 22 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_test:
+        %tmp.13 = lgetv %i.3;
+        symbol [ i %tmp.13 164 28 29 ];
+        %tmp.14 = lgetv %wps.2;
+        symbol [ wps %tmp.14 164 32 35 ];
+        symbol [ size %tmp.15 164 36 40 ];
+        %tmp.15 = getv function %tmp.14 :size;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        %tmp.17 = lt %tmp.13 %tmp.16;
+        bf %tmp.17 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_begin:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_49_175_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 165 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_49_175_12_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_49_175_12_stop" ]
+        %wp.4 = local;
+        symbol [ wp %wp.4 165 20 22 ];
+        %tmp.18 = lgetv %wps.2;
+        symbol [ wps %tmp.18 165 25 28 ];
+        %tmp.19 = lgetv %i.3;
+        symbol [ i %tmp.19 165 29 30 ];
+        %tmp.20 = agetv %tmp.18 %tmp.19;
+        lputv %wp.4 %tmp.20;
+        symbol [ wp %wp.4 165 20 22 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 166 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_49_175_12_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_49_175_12_stop" ]
+        %loc.5 = local;
+        symbol [ loc %loc.5 166 20 23 ];
+        symbol [ Position %tmp.23 166 30 38 ];
+        %tmp.23 = getm $.Toybox.Position;
+        symbol [ Location %tmp.24 166 39 47 ];
+        %tmp.24 = getv function ? %tmp.23 :Location;
+        %tmp.25 = newd 3;
+        %tmp.27 = const :latitude;
+        symbol [ latitude %tmp.27 167 21 29 const ];
+        %tmp.28 = lgetv %wp.4;
+        symbol [ wp %tmp.28 167 33 35 ];
+        symbol [ latitude %tmp.29 167 36 44 ];
+        %tmp.29 = getv %tmp.28 :latitude;
+        symbol [ toFloat %tmp.30 167 45 52 ];
+        %tmp.30 = getv function %tmp.29 :toFloat;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        %tmp.32 = dup %tmp.25;
+        %tmp.33 = aputv %tmp.32 %tmp.27 %tmp.31;
+        %tmp.35 = const :longitude;
+        symbol [ longitude %tmp.35 168 21 30 const ];
+        %tmp.36 = lgetv %wp.4;
+        symbol [ wp %tmp.36 168 34 36 ];
+        symbol [ longitude %tmp.37 168 37 46 ];
+        %tmp.37 = getv %tmp.36 :longitude;
+        symbol [ toFloat %tmp.38 168 47 54 ];
+        %tmp.38 = getv function %tmp.37 :toFloat;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        %tmp.40 = dup %tmp.33;
+        %tmp.41 = aputv %tmp.40 %tmp.35 %tmp.39;
+        %tmp.43 = const :format;
+        symbol [ format %tmp.43 169 21 27 const ];
+        %tmp.45 = const :degrees;
+        symbol [ degrees %tmp.45 169 32 39 const ];
+        %tmp.46 = dup %tmp.41;
+        %tmp.47 = aputv %tmp.46 %tmp.43 %tmp.45;
+        %tmp.21 = newc %tmp.24 (%tmp.47);
+        lputv %loc.5 %tmp.21;
+        symbol [ loc %loc.5 166 20 23 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 171 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_49_175_12_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_49_175_12_stop" ]
+        %marker.6 = local;
+        symbol [ marker %marker.6 171 20 26 ];
+        symbol [ WatchUi %tmp.50 171 33 40 ];
+        %tmp.50 = getm $.Toybox.WatchUi;
+        symbol [ MapMarker %tmp.51 171 41 50 ];
+        %tmp.51 = getv function ? %tmp.50 :MapMarker;
+        %tmp.52 = lgetv %loc.5;
+        symbol [ loc %tmp.52 171 51 54 ];
+        %tmp.48 = newc %tmp.51 (%tmp.52);
+        lputv %marker.6 %tmp.48;
+        symbol [ marker %marker.6 171 20 26 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 172 16 ]
+        %tmp.53 = lgetv %marker.6;
+        symbol [ marker %tmp.53 172 16 22 ];
+        symbol [ setIcon %tmp.54 172 23 30 ];
+        %tmp.54 = getv function %tmp.53 :setIcon;
+        symbol [ WatchUi %tmp.55 172 31 38 ];
+        %tmp.55 = getm $.Toybox.WatchUi;
+        symbol [ MAP_MARKER_ICON_PIN %tmp.56 172 39 58 ];
+        %tmp.56 = getv %tmp.55 :MAP_MARKER_ICON_PIN;
+        %tmp.57 = 0;
+        %tmp.58 = 0;
+        invoke %tmp.53 %tmp.54(%tmp.56, %tmp.57, %tmp.58);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 173 16 ]
+        %tmp.59 = lgetv %marker.6;
+        symbol [ marker %tmp.59 173 16 22 ];
+        symbol [ setLabel %tmp.60 173 23 31 ];
+        %tmp.60 = getv function %tmp.59 :setLabel;
+        symbol [ Constants %tmp.62 173 32 41 ];
+        %tmp.62 = getv ? :Constants;
+        symbol [ getSpeciesName %tmp.63 173 42 56 ];
+        %tmp.63 = getv function %tmp.62 :getSpeciesName;
+        %tmp.64 = lgetv %wp.4;
+        symbol [ wp %tmp.64 173 57 59 ];
+        symbol [ species %tmp.65 173 60 67 ];
+        %tmp.65 = getv %tmp.64 :species;
+        %tmp.66 = invoke %tmp.62 %tmp.63(%tmp.65);
+        invoke %tmp.59 %tmp.60(%tmp.66);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 174 16 ]
+        %tmp.67 = lgetv %markers.1;
+        symbol [ markers %tmp.67 174 16 23 ];
+        symbol [ add %tmp.68 174 24 27 ];
+        %tmp.68 = getv function %tmp.67 :add;
+        %tmp.69 = lgetv %marker.6;
+        symbol [ marker %tmp.69 174 28 34 ];
+        invoke %tmp.67 %tmp.68(%tmp.69);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_49_175_12_stop:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 164 ]
+        %tmp.72 = lgetv %i.3;
+        symbol [ i %tmp.72 164 44 45 ];
+        %tmp.73 = add %tmp.72 1;
+        lputv %i.3 %tmp.73;
+        symbol [ i %i.3 164 44 45 ];
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_test;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_164_12_175_12_for_end:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_162_38_176_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_162_8_176_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_162_8_176_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 181 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_154_37_239_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_154_37_239_4_stop" ]
+        %birdMarkers.7 = local;
+        symbol [ birdMarkers %birdMarkers.7 181 12 23 ];
+        symbol [ BirdMarkerManager %tmp.75 181 26 43 ];
+        %tmp.75 = getv ? :BirdMarkerManager;
+        symbol [ getMarkers %tmp.76 181 44 54 ];
+        %tmp.76 = getv function %tmp.75 :getMarkers;
+        %tmp.77 = invoke %tmp.75 %tmp.76();
+        lputv %birdMarkers.7 %tmp.77;
+        symbol [ birdMarkers %birdMarkers.7 181 12 23 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 182 8 ]
+        for @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_test @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_incr @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_begin" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_end" ]
+        %i.8 = local;
+        symbol [ i %i.8 182 17 18 ];
+        %tmp.78 = 0;
+        lputv %i.8 %tmp.78;
+        symbol [ i %i.8 182 17 18 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_test:
+        %tmp.79 = lgetv %i.8;
+        symbol [ i %tmp.79 182 24 25 ];
+        %tmp.80 = lgetv %birdMarkers.7;
+        symbol [ birdMarkers %tmp.80 182 28 39 ];
+        symbol [ size %tmp.81 182 40 44 ];
+        %tmp.81 = getv function %tmp.80 :size;
+        %tmp.82 = invoke %tmp.80 %tmp.81();
+        %tmp.83 = lt %tmp.79 %tmp.82;
+        bf %tmp.83 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_begin:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_53_193_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 183 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_53_193_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_53_193_8_stop" ]
+        %bm.9 = local;
+        symbol [ bm %bm.9 183 16 18 ];
+        %tmp.84 = lgetv %birdMarkers.7;
+        symbol [ birdMarkers %tmp.84 183 21 32 ];
+        %tmp.85 = lgetv %i.8;
+        symbol [ i %tmp.85 183 33 34 ];
+        %tmp.86 = agetv %tmp.84 %tmp.85;
+        lputv %bm.9 %tmp.86;
+        symbol [ bm %bm.9 183 16 18 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 184 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_53_193_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_53_193_8_stop" ]
+        %loc.10 = local;
+        symbol [ loc %loc.10 184 16 19 ];
+        symbol [ Position %tmp.89 184 26 34 ];
+        %tmp.89 = getm $.Toybox.Position;
+        symbol [ Location %tmp.90 184 35 43 ];
+        %tmp.90 = getv function ? %tmp.89 :Location;
+        %tmp.91 = newd 3;
+        %tmp.93 = const :latitude;
+        symbol [ latitude %tmp.93 185 17 25 const ];
+        %tmp.94 = lgetv %bm.9;
+        symbol [ bm %tmp.94 185 29 31 ];
+        symbol [ targetLat %tmp.95 185 32 41 ];
+        %tmp.95 = getv %tmp.94 :targetLat;
+        symbol [ toFloat %tmp.96 185 42 49 ];
+        %tmp.96 = getv function %tmp.95 :toFloat;
+        %tmp.97 = invoke %tmp.95 %tmp.96();
+        %tmp.98 = dup %tmp.91;
+        %tmp.99 = aputv %tmp.98 %tmp.93 %tmp.97;
+        %tmp.101 = const :longitude;
+        symbol [ longitude %tmp.101 186 17 26 const ];
+        %tmp.102 = lgetv %bm.9;
+        symbol [ bm %tmp.102 186 30 32 ];
+        symbol [ targetLon %tmp.103 186 33 42 ];
+        %tmp.103 = getv %tmp.102 :targetLon;
+        symbol [ toFloat %tmp.104 186 43 50 ];
+        %tmp.104 = getv function %tmp.103 :toFloat;
+        %tmp.105 = invoke %tmp.103 %tmp.104();
+        %tmp.106 = dup %tmp.99;
+        %tmp.107 = aputv %tmp.106 %tmp.101 %tmp.105;
+        %tmp.109 = const :format;
+        symbol [ format %tmp.109 187 17 23 const ];
+        %tmp.111 = const :degrees;
+        symbol [ degrees %tmp.111 187 28 35 const ];
+        %tmp.112 = dup %tmp.107;
+        %tmp.113 = aputv %tmp.112 %tmp.109 %tmp.111;
+        %tmp.87 = newc %tmp.90 (%tmp.113);
+        lputv %loc.10 %tmp.87;
+        symbol [ loc %loc.10 184 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 189 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_53_193_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_53_193_8_stop" ]
+        %marker.11 = local;
+        symbol [ marker %marker.11 189 16 22 ];
+        symbol [ WatchUi %tmp.116 189 29 36 ];
+        %tmp.116 = getm $.Toybox.WatchUi;
+        symbol [ MapMarker %tmp.117 189 37 46 ];
+        %tmp.117 = getv function ? %tmp.116 :MapMarker;
+        %tmp.118 = lgetv %loc.10;
+        symbol [ loc %tmp.118 189 47 50 ];
+        %tmp.114 = newc %tmp.117 (%tmp.118);
+        lputv %marker.11 %tmp.114;
+        symbol [ marker %marker.11 189 16 22 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 190 12 ]
+        %tmp.119 = lgetv %marker.11;
+        symbol [ marker %tmp.119 190 12 18 ];
+        symbol [ setIcon %tmp.120 190 19 26 ];
+        %tmp.120 = getv function %tmp.119 :setIcon;
+        symbol [ WatchUi %tmp.121 190 27 34 ];
+        %tmp.121 = getm $.Toybox.WatchUi;
+        symbol [ MAP_MARKER_ICON_PIN %tmp.122 190 35 54 ];
+        %tmp.122 = getv %tmp.121 :MAP_MARKER_ICON_PIN;
+        %tmp.123 = 0;
+        %tmp.124 = 0;
+        invoke %tmp.119 %tmp.120(%tmp.122, %tmp.123, %tmp.124);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 191 12 ]
+        %tmp.125 = lgetv %marker.11;
+        symbol [ marker %tmp.125 191 12 18 ];
+        symbol [ setLabel %tmp.126 191 19 27 ];
+        %tmp.126 = getv function %tmp.125 :setLabel;
+        %tmp.127 = "BIRD";
+        invoke %tmp.125 %tmp.126(%tmp.127);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 192 12 ]
+        %tmp.128 = lgetv %markers.1;
+        symbol [ markers %tmp.128 192 12 19 ];
+        symbol [ add %tmp.129 192 20 23 ];
+        %tmp.129 = getv function %tmp.128 :add;
+        %tmp.130 = lgetv %marker.11;
+        symbol [ marker %tmp.130 192 24 30 ];
+        invoke %tmp.128 %tmp.129(%tmp.130);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_53_193_8_stop:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 182 ]
+        %tmp.133 = lgetv %i.8;
+        symbol [ i %tmp.133 182 48 49 ];
+        %tmp.134 = add %tmp.133 1;
+        lputv %i.8 %tmp.134;
+        symbol [ i %i.8 182 48 49 ];
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_test;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_182_8_193_8_for_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 199 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_154_37_239_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_154_37_239_4_stop" ]
+        %app2.12 = local;
+        symbol [ app2 %app2.12 199 12 16 ];
+        symbol [ Application %tmp.135 199 19 30 ];
+        %tmp.135 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.136 199 31 37 ];
+        %tmp.136 = getv function %tmp.135 :getApp;
+        %tmp.137 = invoke %tmp.135 %tmp.136();
+        %tmp.138 = as %tmp.137 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.138 199 43 58 ];
+        lputv %app2.12 %tmp.138;
+        symbol [ app2 %app2.12 199 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 200 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_8_230_8_if_stmt:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_12_201_63_begin:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_12_200_73_begin:
+        %tmp.139 = lgetv %app2.12;
+        symbol [ app2 %tmp.139 200 12 16 ];
+        symbol [ _lastPosition %tmp.140 200 17 30 ];
+        %tmp.140 = getv %tmp.139 :_lastPosition;
+        %tmp.141 = null;
+        %tmp.142 = ne %tmp.140 %tmp.141;
+        bf %tmp.142 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_8_230_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_42_200_73_true:
+        %tmp.143 = lgetv %app2.12;
+        symbol [ app2 %tmp.143 200 42 46 ];
+        symbol [ _lastPosition %tmp.144 200 47 60 ];
+        %tmp.144 = getv %tmp.143 :_lastPosition;
+        symbol [ position %tmp.145 200 61 69 ];
+        %tmp.145 = getv %tmp.144 :position;
+        %tmp.146 = null;
+        %tmp.147 = ne %tmp.145 %tmp.146;
+        push %tmp.147;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_42_200_73_end:
+        %tmp.148 = phi [%tmp.142 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_12_200_73_begin] [%tmp.147 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_42_200_73_true] [%tmp.148 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_42_200_73_end];
+        bf %tmp.148 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_8_230_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_12_201_63_true:
+        %tmp.149 = lgetv %app2.12;
+        symbol [ app2 %tmp.149 201 12 16 ];
+        symbol [ _dogTracker %tmp.150 201 17 28 ];
+        %tmp.150 = getv %tmp.149 :_dogTracker;
+        symbol [ getConnectionState %tmp.151 201 29 47 ];
+        %tmp.151 = getv function %tmp.150 :getConnectionState;
+        %tmp.152 = invoke %tmp.150 %tmp.151();
+        symbol [ Constants %tmp.154 201 53 62 ];
+        %tmp.154 = getv ? :Constants;
+        symbol [ ANT_STATE_CONNECTED %tmp.155 201 63 82 ];
+        %tmp.155 = getv %tmp.154 :ANT_STATE_CONNECTED;
+        %tmp.156 = eq %tmp.152 %tmp.155;
+        push %tmp.156;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_12_201_63_end:
+        %tmp.157 = phi [%tmp.148 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_12_201_63_begin] [%tmp.156 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_12_201_63_true] [%tmp.157 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_12_201_63_end];
+        bf %tmp.157 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_8_230_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_8_230_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 202 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_stop" ]
+        %hunterCoords.13 = local;
+        symbol [ hunterCoords %hunterCoords.13 202 16 28 ];
+        %tmp.158 = lgetv %app2.12;
+        symbol [ app2 %tmp.158 202 31 35 ];
+        symbol [ _lastPosition %tmp.159 202 36 49 ];
+        %tmp.159 = getv %tmp.158 :_lastPosition;
+        symbol [ position %tmp.160 202 50 58 ];
+        %tmp.160 = getv %tmp.159 :position;
+        symbol [ toDegrees %tmp.161 202 59 68 ];
+        %tmp.161 = getv function %tmp.160 :toDegrees;
+        %tmp.162 = invoke %tmp.160 %tmp.161();
+        lputv %hunterCoords.13 %tmp.162;
+        symbol [ hunterCoords %hunterCoords.13 202 16 28 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 203 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_stop" ]
+        %hunterLat.14 = local;
+        symbol [ hunterLat %hunterLat.14 203 16 25 ];
+        %tmp.163 = lgetv %hunterCoords.13;
+        symbol [ hunterCoords %tmp.163 203 28 40 ];
+        %tmp.164 = 0;
+        %tmp.165 = agetv %tmp.163 %tmp.164;
+        %tmp.166 = as %tmp.165 Double;
+        symbol [ Double %tmp.166 203 47 53 ];
+        lputv %hunterLat.14 %tmp.166;
+        symbol [ hunterLat %hunterLat.14 203 16 25 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 204 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_stop" ]
+        %hunterLon.15 = local;
+        symbol [ hunterLon %hunterLon.15 204 16 25 ];
+        %tmp.167 = lgetv %hunterCoords.13;
+        symbol [ hunterCoords %tmp.167 204 28 40 ];
+        %tmp.168 = 1;
+        %tmp.169 = agetv %tmp.167 %tmp.168;
+        %tmp.170 = as %tmp.169 Double;
+        symbol [ Double %tmp.170 204 47 53 ];
+        lputv %hunterLon.15 %tmp.170;
+        symbol [ hunterLon %hunterLon.15 204 16 25 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 205 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_stop" ]
+        %dogs.16 = local;
+        symbol [ dogs %dogs.16 205 16 20 ];
+        %tmp.171 = lgetv %app2.12;
+        symbol [ app2 %tmp.171 205 23 27 ];
+        symbol [ _dogTracker %tmp.172 205 28 39 ];
+        %tmp.172 = getv %tmp.171 :_dogTracker;
+        symbol [ getDogs %tmp.173 205 40 47 ];
+        %tmp.173 = getv function %tmp.172 :getDogs;
+        %tmp.174 = invoke %tmp.172 %tmp.173();
+        lputv %dogs.16 %tmp.174;
+        symbol [ dogs %dogs.16 205 16 20 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 207 12 ]
+        for @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_test @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_incr @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_init:
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_begin" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_end" ]
+        %d.17 = local;
+        symbol [ d %d.17 207 21 22 ];
+        %tmp.175 = 0;
+        lputv %d.17 %tmp.175;
+        symbol [ d %d.17 207 21 22 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_test:
+        %tmp.176 = lgetv %d.17;
+        symbol [ d %tmp.176 207 28 29 ];
+        %tmp.177 = lgetv %dogs.16;
+        symbol [ dogs %tmp.177 207 32 36 ];
+        symbol [ size %tmp.178 207 37 41 ];
+        %tmp.178 = getv function %tmp.177 :size;
+        %tmp.179 = invoke %tmp.177 %tmp.178();
+        %tmp.180 = lt %tmp.176 %tmp.179;
+        bf %tmp.180 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_begin:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 208 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_stop" ]
+        %dog.18 = local;
+        symbol [ dog %dog.18 208 20 23 ];
+        %tmp.181 = lgetv %dogs.16;
+        symbol [ dogs %tmp.181 208 26 30 ];
+        %tmp.182 = lgetv %d.17;
+        symbol [ d %tmp.182 208 31 32 ];
+        %tmp.183 = agetv %tmp.181 %tmp.182;
+        %tmp.184 = as %tmp.183 DogData;
+        symbol [ DogData %tmp.184 208 37 44 ];
+        lputv %dog.18 %tmp.184;
+        symbol [ dog %dog.18 208 20 23 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 210 16 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_210_16_212_16_if_stmt:
+        %tmp.185 = lgetv %dog.18;
+        symbol [ dog %tmp.185 210 20 23 ];
+        symbol [ status %tmp.186 210 24 30 ];
+        %tmp.186 = getv %tmp.185 :status;
+        symbol [ Constants %tmp.188 210 34 43 ];
+        %tmp.188 = getv ? :Constants;
+        symbol [ DOG_STATUS_COMM_LOST %tmp.189 210 44 64 ];
+        %tmp.189 = getv %tmp.188 :DOG_STATUS_COMM_LOST;
+        %tmp.190 = eq %tmp.186 %tmp.189;
+        bf %tmp.190 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_210_16_212_16_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_210_16_212_16_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_210_66_212_16_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 211 20 ]
+        goto break @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_incr;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_210_66_212_16_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_210_16_212_16_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_210_16_212_16_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 215 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_stop" ]
+        %distMeters.19 = local;
+        symbol [ distMeters %distMeters.19 215 20 30 ];
+        %tmp.191 = lgetv %dog.18;
+        symbol [ dog %tmp.191 215 33 36 ];
+        symbol [ distanceYards %tmp.192 215 37 50 ];
+        %tmp.192 = getv %tmp.191 :distanceYards;
+        symbol [ toDouble %tmp.193 215 51 59 ];
+        %tmp.193 = getv function %tmp.192 :toDouble;
+        %tmp.194 = invoke %tmp.192 %tmp.193();
+        symbol [ Constants %tmp.196 215 64 73 ];
+        %tmp.196 = getv ? :Constants;
+        symbol [ YARDS_TO_METERS %tmp.197 215 74 89 ];
+        %tmp.197 = getv %tmp.196 :YARDS_TO_METERS;
+        %tmp.198 = mul %tmp.194 %tmp.197;
+        lputv %distMeters.19 %tmp.198;
+        symbol [ distMeters %distMeters.19 215 20 30 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 216 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_stop" ]
+        %dogPos.20 = local;
+        symbol [ dogPos %dogPos.20 216 20 26 ];
+        symbol [ CoordinateMath %tmp.200 216 29 43 ];
+        %tmp.200 = getv ? :CoordinateMath;
+        symbol [ destinationPoint %tmp.201 216 44 60 ];
+        %tmp.201 = getv function %tmp.200 :destinationPoint;
+        %tmp.202 = lgetv %hunterLat.14;
+        symbol [ hunterLat %tmp.202 217 20 29 ];
+        %tmp.203 = lgetv %hunterLon.15;
+        symbol [ hunterLon %tmp.203 217 31 40 ];
+        %tmp.204 = lgetv %dog.18;
+        symbol [ dog %tmp.204 217 42 45 ];
+        symbol [ direction %tmp.205 217 46 55 ];
+        %tmp.205 = getv %tmp.204 :direction;
+        %tmp.206 = lgetv %distMeters.19;
+        symbol [ distMeters %tmp.206 217 57 67 ];
+        %tmp.207 = invoke %tmp.200 %tmp.201(%tmp.202, %tmp.203, %tmp.205, %tmp.206);
+        lputv %dogPos.20 %tmp.207;
+        symbol [ dogPos %dogPos.20 216 20 26 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 220 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_stop" ]
+        %dogLoc.21 = local;
+        symbol [ dogLoc %dogLoc.21 220 20 26 ];
+        symbol [ Position %tmp.210 220 33 41 ];
+        %tmp.210 = getm $.Toybox.Position;
+        symbol [ Location %tmp.211 220 42 50 ];
+        %tmp.211 = getv function ? %tmp.210 :Location;
+        %tmp.212 = newd 3;
+        %tmp.214 = const :latitude;
+        symbol [ latitude %tmp.214 221 21 29 const ];
+        %tmp.215 = lgetv %dogPos.20;
+        symbol [ dogPos %tmp.215 221 34 40 ];
+        %tmp.216 = 0;
+        %tmp.217 = agetv %tmp.215 %tmp.216;
+        %tmp.218 = as %tmp.217 Double;
+        symbol [ Double %tmp.218 221 47 53 ];
+        symbol [ toFloat %tmp.219 221 55 62 ];
+        %tmp.219 = getv function %tmp.218 :toFloat;
+        %tmp.220 = invoke %tmp.218 %tmp.219();
+        %tmp.221 = dup %tmp.212;
+        %tmp.222 = aputv %tmp.221 %tmp.214 %tmp.220;
+        %tmp.224 = const :longitude;
+        symbol [ longitude %tmp.224 222 21 30 const ];
+        %tmp.225 = lgetv %dogPos.20;
+        symbol [ dogPos %tmp.225 222 35 41 ];
+        %tmp.226 = 1;
+        %tmp.227 = agetv %tmp.225 %tmp.226;
+        %tmp.228 = as %tmp.227 Double;
+        symbol [ Double %tmp.228 222 48 54 ];
+        symbol [ toFloat %tmp.229 222 56 63 ];
+        %tmp.229 = getv function %tmp.228 :toFloat;
+        %tmp.230 = invoke %tmp.228 %tmp.229();
+        %tmp.231 = dup %tmp.222;
+        %tmp.232 = aputv %tmp.231 %tmp.224 %tmp.230;
+        %tmp.234 = const :format;
+        symbol [ format %tmp.234 223 21 27 const ];
+        %tmp.236 = const :degrees;
+        symbol [ degrees %tmp.236 223 32 39 const ];
+        %tmp.237 = dup %tmp.232;
+        %tmp.238 = aputv %tmp.237 %tmp.234 %tmp.236;
+        %tmp.208 = newc %tmp.211 (%tmp.238);
+        lputv %dogLoc.21 %tmp.208;
+        symbol [ dogLoc %dogLoc.21 220 20 26 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 225 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_stop" ]
+        %dogMarker.22 = local;
+        symbol [ dogMarker %dogMarker.22 225 20 29 ];
+        symbol [ WatchUi %tmp.241 225 36 43 ];
+        %tmp.241 = getm $.Toybox.WatchUi;
+        symbol [ MapMarker %tmp.242 225 44 53 ];
+        %tmp.242 = getv function ? %tmp.241 :MapMarker;
+        %tmp.243 = lgetv %dogLoc.21;
+        symbol [ dogLoc %tmp.243 225 54 60 ];
+        %tmp.239 = newc %tmp.242 (%tmp.243);
+        lputv %dogMarker.22 %tmp.239;
+        symbol [ dogMarker %dogMarker.22 225 20 29 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 226 16 ]
+        %tmp.244 = lgetv %dogMarker.22;
+        symbol [ dogMarker %tmp.244 226 16 25 ];
+        symbol [ setIcon %tmp.245 226 26 33 ];
+        %tmp.245 = getv function %tmp.244 :setIcon;
+        symbol [ WatchUi %tmp.246 226 34 41 ];
+        %tmp.246 = getm $.Toybox.WatchUi;
+        symbol [ MAP_MARKER_ICON_PIN %tmp.247 226 42 61 ];
+        %tmp.247 = getv %tmp.246 :MAP_MARKER_ICON_PIN;
+        %tmp.248 = 0;
+        %tmp.249 = 0;
+        invoke %tmp.244 %tmp.245(%tmp.247, %tmp.248, %tmp.249);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 227 16 ]
+        %tmp.250 = lgetv %dogMarker.22;
+        symbol [ dogMarker %tmp.250 227 16 25 ];
+        symbol [ setLabel %tmp.251 227 26 34 ];
+        %tmp.251 = getv function %tmp.250 :setLabel;
+        %tmp.252 = lgetv %dog.18;
+        symbol [ dog %tmp.252 227 35 38 ];
+        symbol [ name %tmp.253 227 39 43 ];
+        %tmp.253 = getv %tmp.252 :name;
+        invoke %tmp.250 %tmp.251(%tmp.253);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 228 16 ]
+        %tmp.254 = lgetv %markers.1;
+        symbol [ markers %tmp.254 228 16 23 ];
+        symbol [ add %tmp.255 228 24 27 ];
+        %tmp.255 = getv function %tmp.254 :add;
+        %tmp.256 = lgetv %dogMarker.22;
+        symbol [ dogMarker %tmp.256 228 28 37 ];
+        invoke %tmp.254 %tmp.255(%tmp.256);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_50_229_12_stop:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 207 ]
+        %tmp.259 = lgetv %d.17;
+        symbol [ d %tmp.259 207 45 46 ];
+        %tmp.260 = add %tmp.259 1;
+        lputv %d.17 %tmp.260;
+        symbol [ d %d.17 207 45 46 ];
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_test;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_207_12_229_12_for_end:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_201_84_230_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_8_230_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_200_8_230_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 233 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_233_8_238_8_if_stmt:
+        %tmp.261 = lgetv %markers.1;
+        symbol [ markers %tmp.261 233 12 19 ];
+        symbol [ size %tmp.262 233 20 24 ];
+        %tmp.262 = getv function %tmp.261 :size;
+        %tmp.263 = invoke %tmp.261 %tmp.262();
+        %tmp.264 = 0;
+        %tmp.265 = gt %tmp.263 %tmp.264;
+        bf %tmp.265 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_233_8_238_8_if_else_false;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_233_8_238_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_233_32_235_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 234 12 ]
+        %tmp.266 = self;
+        symbol [ setMapMarker %tmp.267 234 12 24 ];
+        %tmp.267 = getv function %tmp.266 :setMapMarker;
+        %tmp.268 = lgetv %markers.1;
+        symbol [ markers %tmp.268 234 25 32 ];
+        invoke %tmp.266 %tmp.267(%tmp.268);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_233_32_235_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_233_8_238_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_233_8_238_8_if_else_false:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_235_15_238_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 237 12 ]
+        %tmp.269 = self;
+        symbol [ clear %tmp.270 237 12 17 ];
+        %tmp.270 = getv function %tmp.269 :clear;
+        invoke %tmp.269 %tmp.270();
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_235_15_238_8_stop:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_233_8_238_8_if_end:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_154_37_239_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 253; @symbol_functiondef = [autoZoom,253,13,21]; ]
+    function autoZoom() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 254 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 254 12 15 ];
+        symbol [ Application %tmp.1 254 18 29 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.2 254 30 36 ];
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = as %tmp.3 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.4 254 42 57 ];
+        lputv %app.1 %tmp.4;
+        symbol [ app %app.1 254 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 257 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %minLat.2 = local;
+        symbol [ minLat %minLat.2 257 12 18 ];
+        %tmp.5 = 90.0d;
+        lputv %minLat.2 %tmp.5;
+        symbol [ minLat %minLat.2 257 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 258 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %maxLat.3 = local;
+        symbol [ maxLat %maxLat.3 258 12 18 ];
+        %tmp.6 = -90.0d;
+        lputv %maxLat.3 %tmp.6;
+        symbol [ maxLat %maxLat.3 258 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 259 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %minLon.4 = local;
+        symbol [ minLon %minLon.4 259 12 18 ];
+        %tmp.7 = 180.0d;
+        lputv %minLon.4 %tmp.7;
+        symbol [ minLon %minLon.4 259 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 260 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %maxLon.5 = local;
+        symbol [ maxLon %maxLon.5 260 12 18 ];
+        %tmp.8 = -180.0d;
+        lputv %maxLon.5 %tmp.8;
+        symbol [ maxLon %maxLon.5 260 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 261 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %hasPoints.6 = local;
+        symbol [ hasPoints %hasPoints.6 261 12 21 ];
+        %tmp.9 = false;
+        lputv %hasPoints.6 %tmp.9;
+        symbol [ hasPoints %hasPoints.6 261 12 21 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 264 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_8_273_8_if_stmt:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_12_264_71_begin:
+        %tmp.10 = lgetv %app.1;
+        symbol [ app %tmp.10 264 12 15 ];
+        symbol [ _lastPosition %tmp.11 264 16 29 ];
+        %tmp.11 = getv %tmp.10 :_lastPosition;
+        %tmp.12 = null;
+        %tmp.13 = ne %tmp.11 %tmp.12;
+        bf %tmp.13 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_8_273_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_41_264_71_true:
+        %tmp.14 = lgetv %app.1;
+        symbol [ app %tmp.14 264 41 44 ];
+        symbol [ _lastPosition %tmp.15 264 45 58 ];
+        %tmp.15 = getv %tmp.14 :_lastPosition;
+        symbol [ position %tmp.16 264 59 67 ];
+        %tmp.16 = getv %tmp.15 :position;
+        %tmp.17 = null;
+        %tmp.18 = ne %tmp.16 %tmp.17;
+        push %tmp.18;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_41_264_71_end:
+        %tmp.19 = phi [%tmp.13 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_12_264_71_begin] [%tmp.18 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_41_264_71_true] [%tmp.19 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_41_264_71_end];
+        bf %tmp.19 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_8_273_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_8_273_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_77_273_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 265 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_77_273_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_77_273_8_stop" ]
+        %coords.7 = local;
+        symbol [ coords %coords.7 265 16 22 ];
+        %tmp.20 = lgetv %app.1;
+        symbol [ app %tmp.20 265 25 28 ];
+        symbol [ _lastPosition %tmp.21 265 29 42 ];
+        %tmp.21 = getv %tmp.20 :_lastPosition;
+        symbol [ position %tmp.22 265 43 51 ];
+        %tmp.22 = getv %tmp.21 :position;
+        symbol [ toDegrees %tmp.23 265 52 61 ];
+        %tmp.23 = getv function %tmp.22 :toDegrees;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        lputv %coords.7 %tmp.24;
+        symbol [ coords %coords.7 265 16 22 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 266 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_77_273_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_77_273_8_stop" ]
+        %lat.8 = local;
+        symbol [ lat %lat.8 266 16 19 ];
+        %tmp.25 = lgetv %coords.7;
+        symbol [ coords %tmp.25 266 22 28 ];
+        %tmp.26 = 0;
+        %tmp.27 = agetv %tmp.25 %tmp.26;
+        %tmp.28 = as %tmp.27 Double;
+        symbol [ Double %tmp.28 266 35 41 ];
+        lputv %lat.8 %tmp.28;
+        symbol [ lat %lat.8 266 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 267 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_77_273_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_77_273_8_stop" ]
+        %lon.9 = local;
+        symbol [ lon %lon.9 267 16 19 ];
+        %tmp.29 = lgetv %coords.7;
+        symbol [ coords %tmp.29 267 22 28 ];
+        %tmp.30 = 1;
+        %tmp.31 = agetv %tmp.29 %tmp.30;
+        %tmp.32 = as %tmp.31 Double;
+        symbol [ Double %tmp.32 267 35 41 ];
+        lputv %lon.9 %tmp.32;
+        symbol [ lon %lon.9 267 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 268 12 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_268_12_268_46_if_stmt:
+        %tmp.33 = lgetv %lat.8;
+        symbol [ lat %tmp.33 268 16 19 ];
+        %tmp.34 = lgetv %minLat.2;
+        symbol [ minLat %tmp.34 268 22 28 ];
+        %tmp.35 = lt %tmp.33 %tmp.34;
+        bf %tmp.35 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_268_12_268_46_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_268_12_268_46_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_268_30_268_46_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 268 32 ]
+        %tmp.36 = lgetv %lat.8;
+        symbol [ lat %tmp.36 268 41 44 ];
+        lputv %minLat.2 %tmp.36;
+        symbol [ minLat %minLat.2 268 32 38 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_268_30_268_46_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_268_12_268_46_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_268_12_268_46_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 269 12 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_269_12_269_46_if_stmt:
+        %tmp.37 = lgetv %lat.8;
+        symbol [ lat %tmp.37 269 16 19 ];
+        %tmp.38 = lgetv %maxLat.3;
+        symbol [ maxLat %tmp.38 269 22 28 ];
+        %tmp.39 = gt %tmp.37 %tmp.38;
+        bf %tmp.39 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_269_12_269_46_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_269_12_269_46_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_269_30_269_46_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 269 32 ]
+        %tmp.40 = lgetv %lat.8;
+        symbol [ lat %tmp.40 269 41 44 ];
+        lputv %maxLat.3 %tmp.40;
+        symbol [ maxLat %maxLat.3 269 32 38 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_269_30_269_46_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_269_12_269_46_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_269_12_269_46_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 270 12 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_270_12_270_46_if_stmt:
+        %tmp.41 = lgetv %lon.9;
+        symbol [ lon %tmp.41 270 16 19 ];
+        %tmp.42 = lgetv %minLon.4;
+        symbol [ minLon %tmp.42 270 22 28 ];
+        %tmp.43 = lt %tmp.41 %tmp.42;
+        bf %tmp.43 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_270_12_270_46_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_270_12_270_46_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_270_30_270_46_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 270 32 ]
+        %tmp.44 = lgetv %lon.9;
+        symbol [ lon %tmp.44 270 41 44 ];
+        lputv %minLon.4 %tmp.44;
+        symbol [ minLon %minLon.4 270 32 38 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_270_30_270_46_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_270_12_270_46_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_270_12_270_46_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 271 12 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_271_12_271_46_if_stmt:
+        %tmp.45 = lgetv %lon.9;
+        symbol [ lon %tmp.45 271 16 19 ];
+        %tmp.46 = lgetv %maxLon.5;
+        symbol [ maxLon %tmp.46 271 22 28 ];
+        %tmp.47 = gt %tmp.45 %tmp.46;
+        bf %tmp.47 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_271_12_271_46_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_271_12_271_46_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_271_30_271_46_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 271 32 ]
+        %tmp.48 = lgetv %lon.9;
+        symbol [ lon %tmp.48 271 41 44 ];
+        lputv %maxLon.5 %tmp.48;
+        symbol [ maxLon %maxLon.5 271 32 38 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_271_30_271_46_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_271_12_271_46_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_271_12_271_46_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 272 12 ]
+        %tmp.49 = true;
+        lputv %hasPoints.6 %tmp.49;
+        symbol [ hasPoints %hasPoints.6 272 12 21 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_77_273_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_8_273_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_264_8_273_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 276 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_276_8_286_8_if_stmt:
+        symbol [ _cachedWaypoints %tmp.51 276 12 28 ];
+        %tmp.51 = getv ? :_cachedWaypoints;
+        %tmp.52 = null;
+        %tmp.53 = ne %tmp.51 %tmp.52;
+        bf %tmp.53 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_276_8_286_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_276_8_286_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_276_38_286_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 277 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_276_38_286_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_276_38_286_8_stop" ]
+        %wps.10 = local;
+        symbol [ wps %wps.10 277 16 19 ];
+        symbol [ _cachedWaypoints %tmp.55 277 22 38 ];
+        %tmp.55 = getv ? :_cachedWaypoints;
+        %tmp.56 = as %tmp.55 { (!Null) };
+        %tmp.57 = as %tmp.56 Array<Waypoint>;
+        symbol [ Array %tmp.57 277 42 47 ];
+        symbol [ Waypoint %tmp.57 277 48 56 ];
+        lputv %wps.10 %tmp.57;
+        symbol [ wps %wps.10 277 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 278 12 ]
+        for @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_test @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_incr @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_init:
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_begin" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_end" ]
+        %i.11 = local;
+        symbol [ i %i.11 278 21 22 ];
+        %tmp.58 = 0;
+        lputv %i.11 %tmp.58;
+        symbol [ i %i.11 278 21 22 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_test:
+        %tmp.59 = lgetv %i.11;
+        symbol [ i %tmp.59 278 28 29 ];
+        %tmp.60 = lgetv %wps.10;
+        symbol [ wps %tmp.60 278 32 35 ];
+        symbol [ size %tmp.61 278 36 40 ];
+        %tmp.61 = getv function %tmp.60 :size;
+        %tmp.62 = invoke %tmp.60 %tmp.61();
+        %tmp.63 = lt %tmp.59 %tmp.62;
+        bf %tmp.63 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_begin:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_49_285_12_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 279 16 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_49_285_12_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_49_285_12_stop" ]
+        %wp.12 = local;
+        symbol [ wp %wp.12 279 20 22 ];
+        %tmp.64 = lgetv %wps.10;
+        symbol [ wps %tmp.64 279 25 28 ];
+        %tmp.65 = lgetv %i.11;
+        symbol [ i %tmp.65 279 29 30 ];
+        %tmp.66 = agetv %tmp.64 %tmp.65;
+        lputv %wp.12 %tmp.66;
+        symbol [ wp %wp.12 279 20 22 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 280 16 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_280_16_280_66_if_stmt:
+        %tmp.67 = lgetv %wp.12;
+        symbol [ wp %tmp.67 280 20 22 ];
+        symbol [ latitude %tmp.68 280 23 31 ];
+        %tmp.68 = getv %tmp.67 :latitude;
+        %tmp.69 = lgetv %minLat.2;
+        symbol [ minLat %tmp.69 280 34 40 ];
+        %tmp.70 = lt %tmp.68 %tmp.69;
+        bf %tmp.70 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_280_16_280_66_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_280_16_280_66_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_280_42_280_66_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 280 44 ]
+        %tmp.71 = lgetv %wp.12;
+        symbol [ wp %tmp.71 280 53 55 ];
+        symbol [ latitude %tmp.72 280 56 64 ];
+        %tmp.72 = getv %tmp.71 :latitude;
+        lputv %minLat.2 %tmp.72;
+        symbol [ minLat %minLat.2 280 44 50 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_280_42_280_66_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_280_16_280_66_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_280_16_280_66_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 281 16 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_281_16_281_66_if_stmt:
+        %tmp.73 = lgetv %wp.12;
+        symbol [ wp %tmp.73 281 20 22 ];
+        symbol [ latitude %tmp.74 281 23 31 ];
+        %tmp.74 = getv %tmp.73 :latitude;
+        %tmp.75 = lgetv %maxLat.3;
+        symbol [ maxLat %tmp.75 281 34 40 ];
+        %tmp.76 = gt %tmp.74 %tmp.75;
+        bf %tmp.76 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_281_16_281_66_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_281_16_281_66_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_281_42_281_66_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 281 44 ]
+        %tmp.77 = lgetv %wp.12;
+        symbol [ wp %tmp.77 281 53 55 ];
+        symbol [ latitude %tmp.78 281 56 64 ];
+        %tmp.78 = getv %tmp.77 :latitude;
+        lputv %maxLat.3 %tmp.78;
+        symbol [ maxLat %maxLat.3 281 44 50 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_281_42_281_66_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_281_16_281_66_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_281_16_281_66_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 282 16 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_282_16_282_68_if_stmt:
+        %tmp.79 = lgetv %wp.12;
+        symbol [ wp %tmp.79 282 20 22 ];
+        symbol [ longitude %tmp.80 282 23 32 ];
+        %tmp.80 = getv %tmp.79 :longitude;
+        %tmp.81 = lgetv %minLon.4;
+        symbol [ minLon %tmp.81 282 35 41 ];
+        %tmp.82 = lt %tmp.80 %tmp.81;
+        bf %tmp.82 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_282_16_282_68_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_282_16_282_68_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_282_43_282_68_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 282 45 ]
+        %tmp.83 = lgetv %wp.12;
+        symbol [ wp %tmp.83 282 54 56 ];
+        symbol [ longitude %tmp.84 282 57 66 ];
+        %tmp.84 = getv %tmp.83 :longitude;
+        lputv %minLon.4 %tmp.84;
+        symbol [ minLon %minLon.4 282 45 51 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_282_43_282_68_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_282_16_282_68_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_282_16_282_68_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 283 16 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_283_16_283_68_if_stmt:
+        %tmp.85 = lgetv %wp.12;
+        symbol [ wp %tmp.85 283 20 22 ];
+        symbol [ longitude %tmp.86 283 23 32 ];
+        %tmp.86 = getv %tmp.85 :longitude;
+        %tmp.87 = lgetv %maxLon.5;
+        symbol [ maxLon %tmp.87 283 35 41 ];
+        %tmp.88 = gt %tmp.86 %tmp.87;
+        bf %tmp.88 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_283_16_283_68_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_283_16_283_68_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_283_43_283_68_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 283 45 ]
+        %tmp.89 = lgetv %wp.12;
+        symbol [ wp %tmp.89 283 54 56 ];
+        symbol [ longitude %tmp.90 283 57 66 ];
+        %tmp.90 = getv %tmp.89 :longitude;
+        lputv %maxLon.5 %tmp.90;
+        symbol [ maxLon %maxLon.5 283 45 51 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_283_43_283_68_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_283_16_283_68_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_283_16_283_68_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 284 16 ]
+        %tmp.91 = true;
+        lputv %hasPoints.6 %tmp.91;
+        symbol [ hasPoints %hasPoints.6 284 16 25 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_49_285_12_stop:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 278 ]
+        %tmp.94 = lgetv %i.11;
+        symbol [ i %tmp.94 278 44 45 ];
+        %tmp.95 = add %tmp.94 1;
+        lputv %i.11 %tmp.95;
+        symbol [ i %i.11 278 44 45 ];
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_test;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_278_12_285_12_for_end:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_276_38_286_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_276_8_286_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_276_8_286_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 289 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %birdMarkers.13 = local;
+        symbol [ birdMarkers %birdMarkers.13 289 12 23 ];
+        symbol [ BirdMarkerManager %tmp.97 289 26 43 ];
+        %tmp.97 = getv ? :BirdMarkerManager;
+        symbol [ getMarkers %tmp.98 289 44 54 ];
+        %tmp.98 = getv function %tmp.97 :getMarkers;
+        %tmp.99 = invoke %tmp.97 %tmp.98();
+        lputv %birdMarkers.13 %tmp.99;
+        symbol [ birdMarkers %birdMarkers.13 289 12 23 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 290 8 ]
+        for @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_test @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_incr @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_begin" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_end" ]
+        %i.14 = local;
+        symbol [ i %i.14 290 17 18 ];
+        %tmp.100 = 0;
+        lputv %i.14 %tmp.100;
+        symbol [ i %i.14 290 17 18 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_test:
+        %tmp.101 = lgetv %i.14;
+        symbol [ i %tmp.101 290 24 25 ];
+        %tmp.102 = lgetv %birdMarkers.13;
+        symbol [ birdMarkers %tmp.102 290 28 39 ];
+        symbol [ size %tmp.103 290 40 44 ];
+        %tmp.103 = getv function %tmp.102 :size;
+        %tmp.104 = invoke %tmp.102 %tmp.103();
+        %tmp.105 = lt %tmp.101 %tmp.104;
+        bf %tmp.105 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_begin:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_53_297_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 291 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_53_297_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_53_297_8_stop" ]
+        %bm.15 = local;
+        symbol [ bm %bm.15 291 16 18 ];
+        %tmp.106 = lgetv %birdMarkers.13;
+        symbol [ birdMarkers %tmp.106 291 21 32 ];
+        %tmp.107 = lgetv %i.14;
+        symbol [ i %tmp.107 291 33 34 ];
+        %tmp.108 = agetv %tmp.106 %tmp.107;
+        lputv %bm.15 %tmp.108;
+        symbol [ bm %bm.15 291 16 18 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 292 12 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_292_12_292_64_if_stmt:
+        %tmp.109 = lgetv %bm.15;
+        symbol [ bm %tmp.109 292 16 18 ];
+        symbol [ targetLat %tmp.110 292 19 28 ];
+        %tmp.110 = getv %tmp.109 :targetLat;
+        %tmp.111 = lgetv %minLat.2;
+        symbol [ minLat %tmp.111 292 31 37 ];
+        %tmp.112 = lt %tmp.110 %tmp.111;
+        bf %tmp.112 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_292_12_292_64_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_292_12_292_64_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_292_39_292_64_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 292 41 ]
+        %tmp.113 = lgetv %bm.15;
+        symbol [ bm %tmp.113 292 50 52 ];
+        symbol [ targetLat %tmp.114 292 53 62 ];
+        %tmp.114 = getv %tmp.113 :targetLat;
+        lputv %minLat.2 %tmp.114;
+        symbol [ minLat %minLat.2 292 41 47 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_292_39_292_64_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_292_12_292_64_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_292_12_292_64_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 293 12 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_293_12_293_64_if_stmt:
+        %tmp.115 = lgetv %bm.15;
+        symbol [ bm %tmp.115 293 16 18 ];
+        symbol [ targetLat %tmp.116 293 19 28 ];
+        %tmp.116 = getv %tmp.115 :targetLat;
+        %tmp.117 = lgetv %maxLat.3;
+        symbol [ maxLat %tmp.117 293 31 37 ];
+        %tmp.118 = gt %tmp.116 %tmp.117;
+        bf %tmp.118 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_293_12_293_64_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_293_12_293_64_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_293_39_293_64_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 293 41 ]
+        %tmp.119 = lgetv %bm.15;
+        symbol [ bm %tmp.119 293 50 52 ];
+        symbol [ targetLat %tmp.120 293 53 62 ];
+        %tmp.120 = getv %tmp.119 :targetLat;
+        lputv %maxLat.3 %tmp.120;
+        symbol [ maxLat %maxLat.3 293 41 47 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_293_39_293_64_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_293_12_293_64_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_293_12_293_64_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 294 12 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_294_12_294_64_if_stmt:
+        %tmp.121 = lgetv %bm.15;
+        symbol [ bm %tmp.121 294 16 18 ];
+        symbol [ targetLon %tmp.122 294 19 28 ];
+        %tmp.122 = getv %tmp.121 :targetLon;
+        %tmp.123 = lgetv %minLon.4;
+        symbol [ minLon %tmp.123 294 31 37 ];
+        %tmp.124 = lt %tmp.122 %tmp.123;
+        bf %tmp.124 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_294_12_294_64_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_294_12_294_64_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_294_39_294_64_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 294 41 ]
+        %tmp.125 = lgetv %bm.15;
+        symbol [ bm %tmp.125 294 50 52 ];
+        symbol [ targetLon %tmp.126 294 53 62 ];
+        %tmp.126 = getv %tmp.125 :targetLon;
+        lputv %minLon.4 %tmp.126;
+        symbol [ minLon %minLon.4 294 41 47 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_294_39_294_64_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_294_12_294_64_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_294_12_294_64_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 295 12 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_295_12_295_64_if_stmt:
+        %tmp.127 = lgetv %bm.15;
+        symbol [ bm %tmp.127 295 16 18 ];
+        symbol [ targetLon %tmp.128 295 19 28 ];
+        %tmp.128 = getv %tmp.127 :targetLon;
+        %tmp.129 = lgetv %maxLon.5;
+        symbol [ maxLon %tmp.129 295 31 37 ];
+        %tmp.130 = gt %tmp.128 %tmp.129;
+        bf %tmp.130 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_295_12_295_64_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_295_12_295_64_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_295_39_295_64_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 295 41 ]
+        %tmp.131 = lgetv %bm.15;
+        symbol [ bm %tmp.131 295 50 52 ];
+        symbol [ targetLon %tmp.132 295 53 62 ];
+        %tmp.132 = getv %tmp.131 :targetLon;
+        lputv %maxLon.5 %tmp.132;
+        symbol [ maxLon %maxLon.5 295 41 47 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_295_39_295_64_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_295_12_295_64_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_295_12_295_64_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 296 12 ]
+        %tmp.133 = true;
+        lputv %hasPoints.6 %tmp.133;
+        symbol [ hasPoints %hasPoints.6 296 12 21 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_53_297_8_stop:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 290 ]
+        %tmp.136 = lgetv %i.14;
+        symbol [ i %tmp.136 290 48 49 ];
+        %tmp.137 = add %tmp.136 1;
+        lputv %i.14 %tmp.137;
+        symbol [ i %i.14 290 48 49 ];
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_test;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_290_8_297_8_for_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 300 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_300_8_302_8_if_stmt:
+        %tmp.138 = lgetv %hasPoints.6;
+        symbol [ hasPoints %tmp.138 300 13 22 ];
+        %tmp.139 = not %tmp.138;
+        bf %tmp.139 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_300_8_302_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_300_8_302_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_300_24_302_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 301 12 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_300_24_302_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_300_8_302_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_300_8_302_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 308 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %latRange.16 = local;
+        symbol [ latRange %latRange.16 308 12 20 ];
+        %tmp.140 = lgetv %maxLat.3;
+        symbol [ maxLat %tmp.140 308 23 29 ];
+        %tmp.141 = lgetv %minLat.2;
+        symbol [ minLat %tmp.141 308 32 38 ];
+        %tmp.142 = sub %tmp.140 %tmp.141;
+        lputv %latRange.16 %tmp.142;
+        symbol [ latRange %latRange.16 308 12 20 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 309 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %lonRange.17 = local;
+        symbol [ lonRange %lonRange.17 309 12 20 ];
+        %tmp.143 = lgetv %maxLon.5;
+        symbol [ maxLon %tmp.143 309 23 29 ];
+        %tmp.144 = lgetv %minLon.4;
+        symbol [ minLon %tmp.144 309 32 38 ];
+        %tmp.145 = sub %tmp.143 %tmp.144;
+        lputv %lonRange.17 %tmp.145;
+        symbol [ lonRange %lonRange.17 309 12 20 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 310 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %padding.18 = local;
+        symbol [ padding %padding.18 310 12 19 ];
+        %tmp.146 = 0.005d;
+        lputv %padding.18 %tmp.146;
+        symbol [ padding %padding.18 310 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 312 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_312_8_314_8_if_stmt:
+        %tmp.147 = lgetv %latRange.16;
+        symbol [ latRange %tmp.147 312 12 20 ];
+        %tmp.148 = 0.3d;
+        %tmp.149 = mul %tmp.147 %tmp.148;
+        %tmp.150 = lgetv %padding.18;
+        symbol [ padding %tmp.150 312 30 37 ];
+        %tmp.151 = gt %tmp.149 %tmp.150;
+        bf %tmp.151 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_312_8_314_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_312_8_314_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_312_39_314_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 313 12 ]
+        %tmp.152 = lgetv %latRange.16;
+        symbol [ latRange %tmp.152 313 22 30 ];
+        %tmp.153 = 0.3d;
+        %tmp.154 = mul %tmp.152 %tmp.153;
+        lputv %padding.18 %tmp.154;
+        symbol [ padding %padding.18 313 12 19 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_312_39_314_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_312_8_314_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_312_8_314_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 315 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_315_8_317_8_if_stmt:
+        %tmp.155 = lgetv %lonRange.17;
+        symbol [ lonRange %tmp.155 315 12 20 ];
+        %tmp.156 = 0.3d;
+        %tmp.157 = mul %tmp.155 %tmp.156;
+        %tmp.158 = lgetv %padding.18;
+        symbol [ padding %tmp.158 315 30 37 ];
+        %tmp.159 = gt %tmp.157 %tmp.158;
+        bf %tmp.159 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_315_8_317_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_315_8_317_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_315_39_317_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 316 12 ]
+        %tmp.160 = lgetv %lonRange.17;
+        symbol [ lonRange %tmp.160 316 22 30 ];
+        %tmp.161 = 0.3d;
+        %tmp.162 = mul %tmp.160 %tmp.161;
+        lputv %padding.18 %tmp.162;
+        symbol [ padding %padding.18 316 12 19 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_315_39_317_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_315_8_317_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_315_8_317_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 320 8 ]
+        %tmp.163 = lgetv %minLat.2;
+        symbol [ minLat %tmp.163 320 17 23 ];
+        %tmp.164 = lgetv %padding.18;
+        symbol [ padding %tmp.164 320 26 33 ];
+        %tmp.165 = sub %tmp.163 %tmp.164;
+        lputv %minLat.2 %tmp.165;
+        symbol [ minLat %minLat.2 320 8 14 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 321 8 ]
+        %tmp.166 = lgetv %maxLat.3;
+        symbol [ maxLat %tmp.166 321 17 23 ];
+        %tmp.167 = lgetv %padding.18;
+        symbol [ padding %tmp.167 321 26 33 ];
+        %tmp.168 = add %tmp.166 %tmp.167;
+        lputv %maxLat.3 %tmp.168;
+        symbol [ maxLat %maxLat.3 321 8 14 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 322 8 ]
+        %tmp.169 = lgetv %minLon.4;
+        symbol [ minLon %tmp.169 322 17 23 ];
+        %tmp.170 = lgetv %padding.18;
+        symbol [ padding %tmp.170 322 26 33 ];
+        %tmp.171 = sub %tmp.169 %tmp.170;
+        lputv %minLon.4 %tmp.171;
+        symbol [ minLon %minLon.4 322 8 14 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 323 8 ]
+        %tmp.172 = lgetv %maxLon.5;
+        symbol [ maxLon %tmp.172 323 17 23 ];
+        %tmp.173 = lgetv %padding.18;
+        symbol [ padding %tmp.173 323 26 33 ];
+        %tmp.174 = add %tmp.172 %tmp.173;
+        lputv %maxLon.5 %tmp.174;
+        symbol [ maxLon %maxLon.5 323 8 14 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 328 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %topLeft.19 = local;
+        symbol [ topLeft %topLeft.19 328 12 19 ];
+        symbol [ Position %tmp.177 328 26 34 ];
+        %tmp.177 = getm $.Toybox.Position;
+        symbol [ Location %tmp.178 328 35 43 ];
+        %tmp.178 = getv function ? %tmp.177 :Location;
+        %tmp.179 = newd 3;
+        %tmp.181 = const :latitude;
+        symbol [ latitude %tmp.181 329 13 21 const ];
+        %tmp.182 = lgetv %maxLat.3;
+        symbol [ maxLat %tmp.182 329 25 31 ];
+        symbol [ toFloat %tmp.183 329 32 39 ];
+        %tmp.183 = getv function %tmp.182 :toFloat;
+        %tmp.184 = invoke %tmp.182 %tmp.183();
+        %tmp.185 = dup %tmp.179;
+        %tmp.186 = aputv %tmp.185 %tmp.181 %tmp.184;
+        %tmp.188 = const :longitude;
+        symbol [ longitude %tmp.188 330 13 22 const ];
+        %tmp.189 = lgetv %minLon.4;
+        symbol [ minLon %tmp.189 330 26 32 ];
+        symbol [ toFloat %tmp.190 330 33 40 ];
+        %tmp.190 = getv function %tmp.189 :toFloat;
+        %tmp.191 = invoke %tmp.189 %tmp.190();
+        %tmp.192 = dup %tmp.186;
+        %tmp.193 = aputv %tmp.192 %tmp.188 %tmp.191;
+        %tmp.195 = const :format;
+        symbol [ format %tmp.195 331 13 19 const ];
+        %tmp.197 = const :degrees;
+        symbol [ degrees %tmp.197 331 24 31 const ];
+        %tmp.198 = dup %tmp.193;
+        %tmp.199 = aputv %tmp.198 %tmp.195 %tmp.197;
+        %tmp.175 = newc %tmp.178 (%tmp.199);
+        lputv %topLeft.19 %tmp.175;
+        symbol [ topLeft %topLeft.19 328 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 333 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop" ]
+        %bottomRight.20 = local;
+        symbol [ bottomRight %bottomRight.20 333 12 23 ];
+        symbol [ Position %tmp.202 333 30 38 ];
+        %tmp.202 = getm $.Toybox.Position;
+        symbol [ Location %tmp.203 333 39 47 ];
+        %tmp.203 = getv function ? %tmp.202 :Location;
+        %tmp.204 = newd 3;
+        %tmp.206 = const :latitude;
+        symbol [ latitude %tmp.206 334 13 21 const ];
+        %tmp.207 = lgetv %minLat.2;
+        symbol [ minLat %tmp.207 334 25 31 ];
+        symbol [ toFloat %tmp.208 334 32 39 ];
+        %tmp.208 = getv function %tmp.207 :toFloat;
+        %tmp.209 = invoke %tmp.207 %tmp.208();
+        %tmp.210 = dup %tmp.204;
+        %tmp.211 = aputv %tmp.210 %tmp.206 %tmp.209;
+        %tmp.213 = const :longitude;
+        symbol [ longitude %tmp.213 335 13 22 const ];
+        %tmp.214 = lgetv %maxLon.5;
+        symbol [ maxLon %tmp.214 335 26 32 ];
+        symbol [ toFloat %tmp.215 335 33 40 ];
+        %tmp.215 = getv function %tmp.214 :toFloat;
+        %tmp.216 = invoke %tmp.214 %tmp.215();
+        %tmp.217 = dup %tmp.211;
+        %tmp.218 = aputv %tmp.217 %tmp.213 %tmp.216;
+        %tmp.220 = const :format;
+        symbol [ format %tmp.220 336 13 19 const ];
+        %tmp.222 = const :degrees;
+        symbol [ degrees %tmp.222 336 24 31 const ];
+        %tmp.223 = dup %tmp.218;
+        %tmp.224 = aputv %tmp.223 %tmp.220 %tmp.222;
+        %tmp.200 = newc %tmp.203 (%tmp.224);
+        lputv %bottomRight.20 %tmp.200;
+        symbol [ bottomRight %bottomRight.20 333 12 23 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 339 8 ]
+        %tmp.225 = self;
+        symbol [ setMapVisibleArea %tmp.226 339 8 25 ];
+        %tmp.226 = getv function %tmp.225 :setMapVisibleArea;
+        %tmp.227 = lgetv %topLeft.19;
+        symbol [ topLeft %tmp.227 339 26 33 ];
+        %tmp.228 = lgetv %bottomRight.20;
+        symbol [ bottomRight %tmp.228 339 35 46 ];
+        invoke %tmp.225 %tmp.226(%tmp.227, %tmp.228);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_253_32_340_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 349; @symbol_functiondef = [applyManualZoom,349,13,28]; ]
+    function applyManualZoom() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 350 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 350 12 15 ];
+        symbol [ Application %tmp.1 350 18 29 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.2 350 30 36 ];
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = as %tmp.3 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.4 350 42 57 ];
+        lputv %app.1 %tmp.4;
+        symbol [ app %app.1 350 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 351 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_8_353_8_if_stmt:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_12_351_71_begin:
+        %tmp.5 = lgetv %app.1;
+        symbol [ app %tmp.5 351 12 15 ];
+        symbol [ _lastPosition %tmp.6 351 16 29 ];
+        %tmp.6 = getv %tmp.5 :_lastPosition;
+        %tmp.7 = null;
+        %tmp.8 = eq %tmp.6 %tmp.7;
+        bt %tmp.8 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_8_353_8_if_true;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_41_351_71_false:
+        %tmp.9 = lgetv %app.1;
+        symbol [ app %tmp.9 351 41 44 ];
+        symbol [ _lastPosition %tmp.10 351 45 58 ];
+        %tmp.10 = getv %tmp.9 :_lastPosition;
+        symbol [ position %tmp.11 351 59 67 ];
+        %tmp.11 = getv %tmp.10 :position;
+        %tmp.12 = null;
+        %tmp.13 = eq %tmp.11 %tmp.12;
+        push %tmp.13;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_41_351_71_end:
+        %tmp.14 = phi [%tmp.8 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_12_351_71_begin] [%tmp.13 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_41_351_71_false] [%tmp.14 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_41_351_71_end];
+        bf %tmp.14 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_8_353_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_8_353_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_77_353_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 352 12 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_77_353_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_8_353_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_351_8_353_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 355 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_stop" ]
+        %coords.2 = local;
+        symbol [ coords %coords.2 355 12 18 ];
+        %tmp.15 = lgetv %app.1;
+        symbol [ app %tmp.15 355 21 24 ];
+        symbol [ _lastPosition %tmp.16 355 25 38 ];
+        %tmp.16 = getv %tmp.15 :_lastPosition;
+        symbol [ position %tmp.17 355 39 47 ];
+        %tmp.17 = getv %tmp.16 :position;
+        symbol [ toDegrees %tmp.18 355 48 57 ];
+        %tmp.18 = getv function %tmp.17 :toDegrees;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        lputv %coords.2 %tmp.19;
+        symbol [ coords %coords.2 355 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 356 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_stop" ]
+        %lat.3 = local;
+        symbol [ lat %lat.3 356 12 15 ];
+        %tmp.20 = lgetv %coords.2;
+        symbol [ coords %tmp.20 356 18 24 ];
+        %tmp.21 = 0;
+        %tmp.22 = agetv %tmp.20 %tmp.21;
+        %tmp.23 = as %tmp.22 Double;
+        symbol [ Double %tmp.23 356 31 37 ];
+        lputv %lat.3 %tmp.23;
+        symbol [ lat %lat.3 356 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 357 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_stop" ]
+        %lon.4 = local;
+        symbol [ lon %lon.4 357 12 15 ];
+        %tmp.24 = lgetv %coords.2;
+        symbol [ coords %tmp.24 357 18 24 ];
+        %tmp.25 = 1;
+        %tmp.26 = agetv %tmp.24 %tmp.25;
+        %tmp.27 = as %tmp.26 Double;
+        symbol [ Double %tmp.27 357 31 37 ];
+        lputv %lon.4 %tmp.27;
+        symbol [ lon %lon.4 357 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 360 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_stop" ]
+        %range.5 = local;
+        symbol [ range %range.5 360 12 17 ];
+        %tmp.28 = self;
+        symbol [ getZoomRange %tmp.29 360 20 32 ];
+        %tmp.29 = getv function %tmp.28 :getZoomRange;
+        %tmp.30 = invoke %tmp.28 %tmp.29();
+        lputv %range.5 %tmp.30;
+        symbol [ range %range.5 360 12 17 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 362 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_stop" ]
+        %topLeft.6 = local;
+        symbol [ topLeft %topLeft.6 362 12 19 ];
+        symbol [ Position %tmp.33 362 26 34 ];
+        %tmp.33 = getm $.Toybox.Position;
+        symbol [ Location %tmp.34 362 35 43 ];
+        %tmp.34 = getv function ? %tmp.33 :Location;
+        %tmp.35 = newd 3;
+        %tmp.37 = const :latitude;
+        symbol [ latitude %tmp.37 363 13 21 const ];
+        %tmp.38 = lgetv %lat.3;
+        symbol [ lat %tmp.38 363 26 29 ];
+        %tmp.39 = lgetv %range.5;
+        symbol [ range %tmp.39 363 32 37 ];
+        %tmp.40 = add %tmp.38 %tmp.39;
+        symbol [ toFloat %tmp.41 363 39 46 ];
+        %tmp.41 = getv function %tmp.40 :toFloat;
+        %tmp.42 = invoke %tmp.40 %tmp.41();
+        %tmp.43 = dup %tmp.35;
+        %tmp.44 = aputv %tmp.43 %tmp.37 %tmp.42;
+        %tmp.46 = const :longitude;
+        symbol [ longitude %tmp.46 364 13 22 const ];
+        %tmp.47 = lgetv %lon.4;
+        symbol [ lon %tmp.47 364 27 30 ];
+        %tmp.48 = lgetv %range.5;
+        symbol [ range %tmp.48 364 33 38 ];
+        %tmp.49 = sub %tmp.47 %tmp.48;
+        symbol [ toFloat %tmp.50 364 40 47 ];
+        %tmp.50 = getv function %tmp.49 :toFloat;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        %tmp.52 = dup %tmp.44;
+        %tmp.53 = aputv %tmp.52 %tmp.46 %tmp.51;
+        %tmp.55 = const :format;
+        symbol [ format %tmp.55 365 13 19 const ];
+        %tmp.57 = const :degrees;
+        symbol [ degrees %tmp.57 365 24 31 const ];
+        %tmp.58 = dup %tmp.53;
+        %tmp.59 = aputv %tmp.58 %tmp.55 %tmp.57;
+        %tmp.31 = newc %tmp.34 (%tmp.59);
+        lputv %topLeft.6 %tmp.31;
+        symbol [ topLeft %topLeft.6 362 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 367 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_stop" ]
+        %bottomRight.7 = local;
+        symbol [ bottomRight %bottomRight.7 367 12 23 ];
+        symbol [ Position %tmp.62 367 30 38 ];
+        %tmp.62 = getm $.Toybox.Position;
+        symbol [ Location %tmp.63 367 39 47 ];
+        %tmp.63 = getv function ? %tmp.62 :Location;
+        %tmp.64 = newd 3;
+        %tmp.66 = const :latitude;
+        symbol [ latitude %tmp.66 368 13 21 const ];
+        %tmp.67 = lgetv %lat.3;
+        symbol [ lat %tmp.67 368 26 29 ];
+        %tmp.68 = lgetv %range.5;
+        symbol [ range %tmp.68 368 32 37 ];
+        %tmp.69 = sub %tmp.67 %tmp.68;
+        symbol [ toFloat %tmp.70 368 39 46 ];
+        %tmp.70 = getv function %tmp.69 :toFloat;
+        %tmp.71 = invoke %tmp.69 %tmp.70();
+        %tmp.72 = dup %tmp.64;
+        %tmp.73 = aputv %tmp.72 %tmp.66 %tmp.71;
+        %tmp.75 = const :longitude;
+        symbol [ longitude %tmp.75 369 13 22 const ];
+        %tmp.76 = lgetv %lon.4;
+        symbol [ lon %tmp.76 369 27 30 ];
+        %tmp.77 = lgetv %range.5;
+        symbol [ range %tmp.77 369 33 38 ];
+        %tmp.78 = add %tmp.76 %tmp.77;
+        symbol [ toFloat %tmp.79 369 40 47 ];
+        %tmp.79 = getv function %tmp.78 :toFloat;
+        %tmp.80 = invoke %tmp.78 %tmp.79();
+        %tmp.81 = dup %tmp.73;
+        %tmp.82 = aputv %tmp.81 %tmp.75 %tmp.80;
+        %tmp.84 = const :format;
+        symbol [ format %tmp.84 370 13 19 const ];
+        %tmp.86 = const :degrees;
+        symbol [ degrees %tmp.86 370 24 31 const ];
+        %tmp.87 = dup %tmp.82;
+        %tmp.88 = aputv %tmp.87 %tmp.84 %tmp.86;
+        %tmp.60 = newc %tmp.63 (%tmp.88);
+        lputv %bottomRight.7 %tmp.60;
+        symbol [ bottomRight %bottomRight.7 367 12 23 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 373 8 ]
+        %tmp.89 = self;
+        symbol [ setMapVisibleArea %tmp.90 373 8 25 ];
+        %tmp.90 = getv function %tmp.89 :setMapVisibleArea;
+        %tmp.91 = lgetv %topLeft.6;
+        symbol [ topLeft %tmp.91 373 26 33 ];
+        %tmp.92 = lgetv %bottomRight.7;
+        symbol [ bottomRight %tmp.92 373 35 46 ];
+        invoke %tmp.89 %tmp.90(%tmp.91, %tmp.92);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_349_39_374_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 391; @symbol_functiondef = [getZoomRange,391,13,25]; @symbol_return<0> = [Double,391,31,37]; ]
+    function getZoomRange() as Double {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_391_38_402_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 392 8 ]
+        symbol [ _zoomLevel %tmp.2 392 16 26 ];
+        %tmp.2 = getv ? :_zoomLevel;
+        push %tmp.2;
+        switch %tmp.2 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_392_8_401_8_switchStmtEnd;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_392_8_401_8_switchStmtBegin:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 393 12 ]
+        %tmp.3 = dup %tmp.2;
+        %tmp.4 = 1;
+        %tmp.5 = getv function %tmp.3 :equals;
+        %tmp.6 = invoke %tmp.3 %tmp.5 (%tmp.4);
+        bt %tmp.6 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_393_12_393_34_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 394 12 ]
+        %tmp.7 = dup %tmp.2;
+        %tmp.8 = 2;
+        %tmp.9 = getv function %tmp.7 :equals;
+        %tmp.10 = invoke %tmp.7 %tmp.9 (%tmp.8);
+        bt %tmp.10 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_394_12_394_33_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 395 12 ]
+        %tmp.11 = dup %tmp.2;
+        %tmp.12 = 3;
+        %tmp.13 = getv function %tmp.11 :equals;
+        %tmp.14 = invoke %tmp.11 %tmp.13 (%tmp.12);
+        bt %tmp.14 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_395_12_395_33_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 396 12 ]
+        %tmp.15 = dup %tmp.2;
+        %tmp.16 = 4;
+        %tmp.17 = getv function %tmp.15 :equals;
+        %tmp.18 = invoke %tmp.15 %tmp.17 (%tmp.16);
+        bt %tmp.18 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_396_12_396_33_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 397 12 ]
+        %tmp.19 = dup %tmp.2;
+        %tmp.20 = 5;
+        %tmp.21 = getv function %tmp.19 :equals;
+        %tmp.22 = invoke %tmp.19 %tmp.21 (%tmp.20);
+        bt %tmp.22 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_397_12_397_32_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 398 12 ]
+        %tmp.23 = dup %tmp.2;
+        %tmp.24 = 6;
+        %tmp.25 = getv function %tmp.23 :equals;
+        %tmp.26 = invoke %tmp.23 %tmp.25 (%tmp.24);
+        bt %tmp.26 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_398_12_398_32_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 399 12 ]
+        %tmp.27 = dup %tmp.2;
+        %tmp.28 = 7;
+        %tmp.29 = getv function %tmp.27 :equals;
+        %tmp.30 = invoke %tmp.27 %tmp.29 (%tmp.28);
+        bt %tmp.30 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_399_12_399_31_switchCase;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 400 12 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_392_8_401_8_switchStmtDefault:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_392_8_401_8_defaultCodeBegin;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_393_12_393_34_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 393 20 ]
+        %tmp.31 = 0.0005d;
+        ret %tmp.31;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_394_12_394_33_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 394 20 ]
+        %tmp.32 = 0.001d;
+        ret %tmp.32;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_395_12_395_33_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 395 20 ]
+        %tmp.33 = 0.003d;
+        ret %tmp.33;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_396_12_396_33_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 396 20 ]
+        %tmp.34 = 0.005d;
+        ret %tmp.34;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_397_12_397_32_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 397 20 ]
+        %tmp.35 = 0.01d;
+        ret %tmp.35;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_398_12_398_32_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 398 20 ]
+        %tmp.36 = 0.03d;
+        ret %tmp.36;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_399_12_399_31_switchCase:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 399 20 ]
+        %tmp.37 = 0.1d;
+        ret %tmp.37;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_400_12_400_34_switchCase:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_392_8_401_8_defaultCodeBegin:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 400 21 ]
+        %tmp.38 = 0.005d;
+        ret %tmp.38;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_392_8_401_8_switchStmtEnd:
+        pop;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_391_38_402_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 414; @symbol_functiondef = [updateBreadcrumb,414,13,29]; ]
+    function updateBreadcrumb() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_414_40_443_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 415 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_414_40_443_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_414_40_443_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 415 12 15 ];
+        symbol [ Application %tmp.1 415 18 29 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.2 415 30 36 ];
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = as %tmp.3 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.4 415 42 57 ];
+        lputv %app.1 %tmp.4;
+        symbol [ app %app.1 415 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 416 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_414_40_443_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_414_40_443_4_stop" ]
+        %positions.2 = local;
+        symbol [ positions %positions.2 416 12 21 ];
+        %tmp.5 = lgetv %app.1;
+        symbol [ app %tmp.5 416 24 27 ];
+        symbol [ _breadcrumbPositions %tmp.6 416 28 48 ];
+        %tmp.6 = getv %tmp.5 :_breadcrumbPositions;
+        lputv %positions.2 %tmp.6;
+        symbol [ positions %positions.2 416 12 21 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 419 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_419_8_421_8_if_stmt:
+        %tmp.7 = lgetv %positions.2;
+        symbol [ positions %tmp.7 419 12 21 ];
+        symbol [ size %tmp.8 419 22 26 ];
+        %tmp.8 = getv function %tmp.7 :size;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        %tmp.10 = 2;
+        %tmp.11 = lt %tmp.9 %tmp.10;
+        bf %tmp.11 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_419_8_421_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_419_8_421_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_419_34_421_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 420 12 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_419_34_421_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_419_8_421_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_419_8_421_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 424 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_414_40_443_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_414_40_443_4_stop" ]
+        %polyline.3 = local;
+        symbol [ polyline %polyline.3 424 12 20 ];
+        symbol [ WatchUi %tmp.14 424 27 34 ];
+        %tmp.14 = getm $.Toybox.WatchUi;
+        symbol [ MapPolyline %tmp.15 424 35 46 ];
+        %tmp.15 = getv function ? %tmp.14 :MapPolyline;
+        %tmp.12 = newc %tmp.15 ();
+        lputv %polyline.3 %tmp.12;
+        symbol [ polyline %polyline.3 424 12 20 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 425 8 ]
+        %tmp.16 = lgetv %polyline.3;
+        symbol [ polyline %tmp.16 425 8 16 ];
+        symbol [ setColor %tmp.17 425 17 25 ];
+        %tmp.17 = getv function %tmp.16 :setColor;
+        symbol [ Constants %tmp.19 425 26 35 ];
+        %tmp.19 = getv ? :Constants;
+        symbol [ COLOR_PRIMARY %tmp.20 425 36 49 ];
+        %tmp.20 = getv %tmp.19 :COLOR_PRIMARY;
+        invoke %tmp.16 %tmp.17(%tmp.20);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 426 8 ]
+        %tmp.21 = lgetv %polyline.3;
+        symbol [ polyline %tmp.21 426 8 16 ];
+        symbol [ setWidth %tmp.22 426 17 25 ];
+        %tmp.22 = getv function %tmp.21 :setWidth;
+        %tmp.23 = 3;
+        invoke %tmp.21 %tmp.22(%tmp.23);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 429 8 ]
+        for @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_test @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_incr @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_begin" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_end" ]
+        %i.4 = local;
+        symbol [ i %i.4 429 17 18 ];
+        %tmp.24 = 0;
+        lputv %i.4 %tmp.24;
+        symbol [ i %i.4 429 17 18 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_test:
+        %tmp.25 = lgetv %i.4;
+        symbol [ i %tmp.25 429 24 25 ];
+        %tmp.26 = lgetv %positions.2;
+        symbol [ positions %tmp.26 429 28 37 ];
+        symbol [ size %tmp.27 429 38 42 ];
+        %tmp.27 = getv function %tmp.26 :size;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        %tmp.29 = lt %tmp.25 %tmp.28;
+        bf %tmp.29 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_begin:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 430 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_stop" ]
+        %pos.5 = local;
+        symbol [ pos %pos.5 430 16 19 ];
+        %tmp.30 = lgetv %positions.2;
+        symbol [ positions %tmp.30 430 22 31 ];
+        %tmp.31 = lgetv %i.4;
+        symbol [ i %tmp.31 430 32 33 ];
+        %tmp.32 = agetv %tmp.30 %tmp.31;
+        %tmp.33 = as %tmp.32 Array;
+        symbol [ Array %tmp.33 430 38 43 ];
+        lputv %pos.5 %tmp.33;
+        symbol [ pos %pos.5 430 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 431 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_stop" ]
+        %lat.6 = local;
+        symbol [ lat %lat.6 431 16 19 ];
+        %tmp.34 = lgetv %pos.5;
+        symbol [ pos %tmp.34 431 22 25 ];
+        %tmp.35 = 0;
+        %tmp.36 = agetv %tmp.34 %tmp.35;
+        %tmp.37 = as %tmp.36 Double;
+        symbol [ Double %tmp.37 431 32 38 ];
+        lputv %lat.6 %tmp.37;
+        symbol [ lat %lat.6 431 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 432 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_stop" ]
+        %lon.7 = local;
+        symbol [ lon %lon.7 432 16 19 ];
+        %tmp.38 = lgetv %pos.5;
+        symbol [ pos %tmp.38 432 22 25 ];
+        %tmp.39 = 1;
+        %tmp.40 = agetv %tmp.38 %tmp.39;
+        %tmp.41 = as %tmp.40 Double;
+        symbol [ Double %tmp.41 432 32 38 ];
+        lputv %lon.7 %tmp.41;
+        symbol [ lon %lon.7 432 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 433 12 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_stop" ]
+        %loc.8 = local;
+        symbol [ loc %loc.8 433 16 19 ];
+        symbol [ Position %tmp.44 433 26 34 ];
+        %tmp.44 = getm $.Toybox.Position;
+        symbol [ Location %tmp.45 433 35 43 ];
+        %tmp.45 = getv function ? %tmp.44 :Location;
+        %tmp.46 = newd 3;
+        %tmp.48 = const :latitude;
+        symbol [ latitude %tmp.48 434 17 25 const ];
+        %tmp.49 = lgetv %lat.6;
+        symbol [ lat %tmp.49 434 29 32 ];
+        symbol [ toFloat %tmp.50 434 33 40 ];
+        %tmp.50 = getv function %tmp.49 :toFloat;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        %tmp.52 = dup %tmp.46;
+        %tmp.53 = aputv %tmp.52 %tmp.48 %tmp.51;
+        %tmp.55 = const :longitude;
+        symbol [ longitude %tmp.55 435 17 26 const ];
+        %tmp.56 = lgetv %lon.7;
+        symbol [ lon %tmp.56 435 30 33 ];
+        symbol [ toFloat %tmp.57 435 34 41 ];
+        %tmp.57 = getv function %tmp.56 :toFloat;
+        %tmp.58 = invoke %tmp.56 %tmp.57();
+        %tmp.59 = dup %tmp.53;
+        %tmp.60 = aputv %tmp.59 %tmp.55 %tmp.58;
+        %tmp.62 = const :format;
+        symbol [ format %tmp.62 436 17 23 const ];
+        %tmp.64 = const :degrees;
+        symbol [ degrees %tmp.64 436 28 35 const ];
+        %tmp.65 = dup %tmp.60;
+        %tmp.66 = aputv %tmp.65 %tmp.62 %tmp.64;
+        %tmp.42 = newc %tmp.45 (%tmp.66);
+        lputv %loc.8 %tmp.42;
+        symbol [ loc %loc.8 433 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 438 12 ]
+        %tmp.67 = lgetv %polyline.3;
+        symbol [ polyline %tmp.67 438 12 20 ];
+        symbol [ addLocation %tmp.68 438 21 32 ];
+        %tmp.68 = getv function %tmp.67 :addLocation;
+        %tmp.69 = lgetv %loc.8;
+        symbol [ loc %tmp.69 438 33 36 ];
+        invoke %tmp.67 %tmp.68(%tmp.69);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_51_439_8_stop:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 429 ]
+        %tmp.72 = lgetv %i.4;
+        symbol [ i %tmp.72 429 46 47 ];
+        %tmp.73 = add %tmp.72 1;
+        lputv %i.4 %tmp.73;
+        symbol [ i %i.4 429 46 47 ];
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_test;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_429_8_439_8_for_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 442 8 ]
+        %tmp.74 = self;
+        symbol [ setPolyline %tmp.75 442 8 19 ];
+        %tmp.75 = getv function %tmp.74 :setPolyline;
+        %tmp.76 = lgetv %polyline.3;
+        symbol [ polyline %tmp.76 442 20 28 ];
+        invoke %tmp.74 %tmp.75(%tmp.76);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_414_40_443_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 457; @symbol_functiondef = [onUpdate,457,13,21]; @symbol_param<0> = [dc,457,22,24]; @symbol_param<0>_type<0> = [Graphics,457,28,36]; @symbol_param<0>_type<1> = [Dc,457,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 460 8 ]
+        symbol [ MapTrackView %tmp.2 460 8 20 ];
+        %tmp.2 = getv ? :MapTrackView;
+        symbol [ onUpdate %tmp.3 460 21 29 ];
+        %tmp.3 = getv function %tmp.2 :onUpdate;
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 460 30 32 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 462 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_stop" ]
+        %screenW.1 = local;
+        symbol [ screenW %screenW.1 462 12 19 ];
+        %tmp.5 = lgetv %dc;
+        symbol [ dc %tmp.5 462 22 24 ];
+        symbol [ getWidth %tmp.6 462 25 33 ];
+        %tmp.6 = getv function %tmp.5 :getWidth;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %screenW.1 %tmp.7;
+        symbol [ screenW %screenW.1 462 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 463 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_stop" ]
+        %screenH.2 = local;
+        symbol [ screenH %screenH.2 463 12 19 ];
+        %tmp.8 = lgetv %dc;
+        symbol [ dc %tmp.8 463 22 24 ];
+        symbol [ getHeight %tmp.9 463 25 34 ];
+        %tmp.9 = getv function %tmp.8 :getHeight;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        lputv %screenH.2 %tmp.10;
+        symbol [ screenH %screenH.2 463 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 464 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_stop" ]
+        %centerX.3 = local;
+        symbol [ centerX %centerX.3 464 12 19 ];
+        %tmp.11 = lgetv %screenW.1;
+        symbol [ screenW %tmp.11 464 22 29 ];
+        %tmp.12 = 2;
+        %tmp.13 = div %tmp.11 %tmp.12;
+        lputv %centerX.3 %tmp.13;
+        symbol [ centerX %centerX.3 464 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 468 8 ]
+        %tmp.14 = lgetv %dc;
+        symbol [ dc %tmp.14 468 8 10 ];
+        symbol [ setColor %tmp.15 468 11 19 ];
+        %tmp.15 = getv function %tmp.14 :setColor;
+        symbol [ Constants %tmp.17 468 20 29 ];
+        %tmp.17 = getv ? :Constants;
+        symbol [ getBgColor %tmp.18 468 30 40 ];
+        %tmp.18 = getv function %tmp.17 :getBgColor;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        symbol [ Constants %tmp.21 468 44 53 ];
+        %tmp.21 = getv ? :Constants;
+        symbol [ getBgColor %tmp.22 468 54 64 ];
+        %tmp.22 = getv function %tmp.21 :getBgColor;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        invoke %tmp.14 %tmp.15(%tmp.19, %tmp.23);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 469 8 ]
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 469 8 10 ];
+        symbol [ fillRectangle %tmp.25 469 11 24 ];
+        %tmp.25 = getv function %tmp.24 :fillRectangle;
+        %tmp.26 = 0;
+        %tmp.27 = 0;
+        %tmp.28 = lgetv %screenW.1;
+        symbol [ screenW %tmp.28 469 31 38 ];
+        %tmp.29 = 30;
+        invoke %tmp.24 %tmp.25(%tmp.26, %tmp.27, %tmp.28, %tmp.29);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 470 8 ]
+        %tmp.30 = lgetv %dc;
+        symbol [ dc %tmp.30 470 8 10 ];
+        symbol [ setColor %tmp.31 470 11 19 ];
+        %tmp.31 = getv function %tmp.30 :setColor;
+        symbol [ Constants %tmp.33 470 20 29 ];
+        %tmp.33 = getv ? :Constants;
+        symbol [ COLOR_PRIMARY %tmp.34 470 30 43 ];
+        %tmp.34 = getv %tmp.33 :COLOR_PRIMARY;
+        symbol [ Graphics %tmp.35 470 45 53 ];
+        %tmp.35 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.36 470 54 71 ];
+        %tmp.36 = getv %tmp.35 :COLOR_TRANSPARENT;
+        invoke %tmp.30 %tmp.31(%tmp.34, %tmp.36);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 471 8 ]
+        %tmp.37 = lgetv %dc;
+        symbol [ dc %tmp.37 471 8 10 ];
+        symbol [ drawText %tmp.38 471 11 19 ];
+        %tmp.38 = getv function %tmp.37 :drawText;
+        %tmp.39 = lgetv %centerX.3;
+        symbol [ centerX %tmp.39 471 20 27 ];
+        %tmp.40 = 5;
+        symbol [ Graphics %tmp.41 471 32 40 ];
+        %tmp.41 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.42 471 41 51 ];
+        %tmp.42 = getv %tmp.41 :FONT_XTINY;
+        %tmp.43 = "HUNT MAP";
+        symbol [ Graphics %tmp.44 472 24 32 ];
+        %tmp.44 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.45 472 33 52 ];
+        %tmp.45 = getv %tmp.44 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.37 %tmp.38(%tmp.39, %tmp.40, %tmp.42, %tmp.43, %tmp.45);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 476 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_stop" ]
+        %markerCount.4 = local;
+        symbol [ markerCount %markerCount.4 476 12 23 ];
+        %tmp.46 = 0;
+        lputv %markerCount.4 %tmp.46;
+        symbol [ markerCount %markerCount.4 476 12 23 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 477 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_477_8_479_8_if_stmt:
+        symbol [ _cachedWaypoints %tmp.48 477 12 28 ];
+        %tmp.48 = getv ? :_cachedWaypoints;
+        %tmp.49 = null;
+        %tmp.50 = ne %tmp.48 %tmp.49;
+        bf %tmp.50 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_477_8_479_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_477_8_479_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_477_38_479_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 478 12 ]
+        %tmp.51 = lgetv %markerCount.4;
+        symbol [ markerCount %tmp.51 478 12 23 ];
+        symbol [ _cachedWaypoints %tmp.53 478 28 44 ];
+        %tmp.53 = getv ? :_cachedWaypoints;
+        %tmp.54 = as %tmp.53 { (!Null) };
+        %tmp.55 = as %tmp.54 Array<Waypoint>;
+        symbol [ Array %tmp.55 478 48 53 ];
+        symbol [ Waypoint %tmp.55 478 54 62 ];
+        symbol [ size %tmp.56 478 65 69 ];
+        %tmp.56 = getv function %tmp.55 :size;
+        %tmp.57 = invoke %tmp.55 %tmp.56();
+        %tmp.58 = add %tmp.51 %tmp.57;
+        lputv %markerCount.4 %tmp.58;
+        symbol [ markerCount %markerCount.4 478 12 23 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_477_38_479_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_477_8_479_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_477_8_479_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 480 8 ]
+        %tmp.59 = lgetv %markerCount.4;
+        symbol [ markerCount %tmp.59 480 8 19 ];
+        symbol [ BirdMarkerManager %tmp.61 480 23 40 ];
+        %tmp.61 = getv ? :BirdMarkerManager;
+        symbol [ getMarkerCount %tmp.62 480 41 55 ];
+        %tmp.62 = getv function %tmp.61 :getMarkerCount;
+        %tmp.63 = invoke %tmp.61 %tmp.62();
+        %tmp.64 = add %tmp.59 %tmp.63;
+        lputv %markerCount.4 %tmp.64;
+        symbol [ markerCount %markerCount.4 480 8 19 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 482 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_482_8_486_8_if_stmt:
+        %tmp.65 = lgetv %markerCount.4;
+        symbol [ markerCount %tmp.65 482 12 23 ];
+        %tmp.66 = 0;
+        %tmp.67 = gt %tmp.65 %tmp.66;
+        bf %tmp.67 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_482_8_486_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_482_8_486_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_482_29_486_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 483 12 ]
+        %tmp.68 = lgetv %dc;
+        symbol [ dc %tmp.68 483 12 14 ];
+        symbol [ setColor %tmp.69 483 15 23 ];
+        %tmp.69 = getv function %tmp.68 :setColor;
+        symbol [ Constants %tmp.71 483 24 33 ];
+        %tmp.71 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.72 483 34 45 ];
+        %tmp.72 = getv %tmp.71 :COLOR_MUTED;
+        symbol [ Graphics %tmp.73 483 47 55 ];
+        %tmp.73 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.74 483 56 73 ];
+        %tmp.74 = getv %tmp.73 :COLOR_TRANSPARENT;
+        invoke %tmp.68 %tmp.69(%tmp.72, %tmp.74);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 484 12 ]
+        %tmp.75 = lgetv %dc;
+        symbol [ dc %tmp.75 484 12 14 ];
+        symbol [ drawText %tmp.76 484 15 23 ];
+        %tmp.76 = getv function %tmp.75 :drawText;
+        %tmp.77 = lgetv %screenW.1;
+        symbol [ screenW %tmp.77 484 24 31 ];
+        %tmp.78 = 40;
+        %tmp.79 = sub %tmp.77 %tmp.78;
+        %tmp.80 = 8;
+        symbol [ Graphics %tmp.81 484 41 49 ];
+        %tmp.81 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.82 484 50 60 ];
+        %tmp.82 = getv %tmp.81 :FONT_XTINY;
+        %tmp.83 = lgetv %markerCount.4;
+        symbol [ markerCount %tmp.83 485 16 27 ];
+        symbol [ format %tmp.84 485 28 34 ];
+        %tmp.84 = getv function %tmp.83 :format;
+        %tmp.85 = "%d";
+        %tmp.86 = invoke %tmp.83 %tmp.84(%tmp.85);
+        symbol [ Graphics %tmp.87 485 42 50 ];
+        %tmp.87 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.88 485 51 70 ];
+        %tmp.88 = getv %tmp.87 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.75 %tmp.76(%tmp.79, %tmp.80, %tmp.82, %tmp.86, %tmp.88);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_482_29_486_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_482_8_486_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_482_8_486_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 490 8 ]
+        %tmp.89 = lgetv %dc;
+        symbol [ dc %tmp.89 490 8 10 ];
+        symbol [ setColor %tmp.90 490 11 19 ];
+        %tmp.90 = getv function %tmp.89 :setColor;
+        symbol [ Constants %tmp.92 490 20 29 ];
+        %tmp.92 = getv ? :Constants;
+        symbol [ getBgColor %tmp.93 490 30 40 ];
+        %tmp.93 = getv function %tmp.92 :getBgColor;
+        %tmp.94 = invoke %tmp.92 %tmp.93();
+        symbol [ Constants %tmp.96 490 44 53 ];
+        %tmp.96 = getv ? :Constants;
+        symbol [ getBgColor %tmp.97 490 54 64 ];
+        %tmp.97 = getv function %tmp.96 :getBgColor;
+        %tmp.98 = invoke %tmp.96 %tmp.97();
+        invoke %tmp.89 %tmp.90(%tmp.94, %tmp.98);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 491 8 ]
+        %tmp.99 = lgetv %dc;
+        symbol [ dc %tmp.99 491 8 10 ];
+        symbol [ fillRectangle %tmp.100 491 11 24 ];
+        %tmp.100 = getv function %tmp.99 :fillRectangle;
+        %tmp.101 = 0;
+        %tmp.102 = lgetv %screenH.2;
+        symbol [ screenH %tmp.102 491 28 35 ];
+        %tmp.103 = 25;
+        %tmp.104 = sub %tmp.102 %tmp.103;
+        %tmp.105 = lgetv %screenW.1;
+        symbol [ screenW %tmp.105 491 42 49 ];
+        %tmp.106 = 25;
+        invoke %tmp.99 %tmp.100(%tmp.101, %tmp.104, %tmp.105, %tmp.106);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 492 8 ]
+        %tmp.107 = lgetv %dc;
+        symbol [ dc %tmp.107 492 8 10 ];
+        symbol [ setColor %tmp.108 492 11 19 ];
+        %tmp.108 = getv function %tmp.107 :setColor;
+        symbol [ Constants %tmp.110 492 20 29 ];
+        %tmp.110 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.111 492 30 41 ];
+        %tmp.111 = getv %tmp.110 :COLOR_MUTED;
+        symbol [ Graphics %tmp.112 492 43 51 ];
+        %tmp.112 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.113 492 52 69 ];
+        %tmp.113 = getv %tmp.112 :COLOR_TRANSPARENT;
+        invoke %tmp.107 %tmp.108(%tmp.111, %tmp.113);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 494 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_stop" ]
+        %zoomText.5 = local;
+        symbol [ zoomText %zoomText.5 494 12 20 ];
+        %tmp.114 = "ZOOM: ";
+        lputv %zoomText.5 %tmp.114;
+        symbol [ zoomText %zoomText.5 494 12 20 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 495 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_495_8_499_8_if_stmt:
+        symbol [ _isAutoZoom %tmp.116 495 12 23 ];
+        %tmp.116 = getv ? :_isAutoZoom;
+        bf %tmp.116 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_495_8_499_8_if_else_false;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_495_8_499_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_495_25_497_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 496 12 ]
+        %tmp.117 = lgetv %zoomText.5;
+        symbol [ zoomText %tmp.117 496 12 20 ];
+        %tmp.118 = "AUTO";
+        %tmp.119 = add %tmp.117 %tmp.118;
+        lputv %zoomText.5 %tmp.119;
+        symbol [ zoomText %zoomText.5 496 12 20 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_495_25_497_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_495_8_499_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_495_8_499_8_if_else_false:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_497_15_499_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 498 12 ]
+        %tmp.120 = lgetv %zoomText.5;
+        symbol [ zoomText %tmp.120 498 12 20 ];
+        symbol [ _zoomLevel %tmp.122 498 24 34 ];
+        %tmp.122 = getv ? :_zoomLevel;
+        symbol [ format %tmp.123 498 35 41 ];
+        %tmp.123 = getv function %tmp.122 :format;
+        %tmp.124 = "%d";
+        %tmp.125 = invoke %tmp.122 %tmp.123(%tmp.124);
+        %tmp.126 = "/7";
+        %tmp.127 = add %tmp.125 %tmp.126;
+        %tmp.128 = add %tmp.120 %tmp.127;
+        lputv %zoomText.5 %tmp.128;
+        symbol [ zoomText %zoomText.5 498 12 20 ];
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_497_15_499_8_stop:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_495_8_499_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 500 8 ]
+        %tmp.129 = lgetv %dc;
+        symbol [ dc %tmp.129 500 8 10 ];
+        symbol [ drawText %tmp.130 500 11 19 ];
+        %tmp.130 = getv function %tmp.129 :drawText;
+        %tmp.131 = lgetv %centerX.3;
+        symbol [ centerX %tmp.131 500 20 27 ];
+        %tmp.132 = lgetv %screenH.2;
+        symbol [ screenH %tmp.132 500 29 36 ];
+        %tmp.133 = 23;
+        %tmp.134 = sub %tmp.132 %tmp.133;
+        symbol [ Graphics %tmp.135 500 43 51 ];
+        %tmp.135 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.136 500 52 62 ];
+        %tmp.136 = getv %tmp.135 :FONT_XTINY;
+        %tmp.137 = lgetv %zoomText.5;
+        symbol [ zoomText %tmp.137 501 12 20 ];
+        symbol [ Graphics %tmp.138 501 22 30 ];
+        %tmp.138 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.139 501 31 50 ];
+        %tmp.139 = getv %tmp.138 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.129 %tmp.130(%tmp.131, %tmp.134, %tmp.136, %tmp.137, %tmp.139);
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_457_49_502_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 510; @symbol_functiondef = [zoomIn,510,13,19]; ]
+    function zoomIn() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_510_30_517_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 511 8 ]
+        %tmp.1 = false;
+        symbol [ _isAutoZoom ? 511 8 19 ];
+        putv self :_isAutoZoom %tmp.1;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 512 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_512_8_514_8_if_stmt:
+        symbol [ _zoomLevel %tmp.3 512 12 22 ];
+        %tmp.3 = getv ? :_zoomLevel;
+        %tmp.4 = 1;
+        %tmp.5 = gt %tmp.3 %tmp.4;
+        bf %tmp.5 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_512_8_514_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_512_8_514_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_512_28_514_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 513 12 ]
+        symbol [ _zoomLevel %tmp.8 513 12 22 ];
+        %tmp.8 = getv ? :_zoomLevel;
+        %tmp.9 = sub %tmp.8 1;
+        symbol [ _zoomLevel ? 513 12 22 ];
+        putv self :_zoomLevel dup %tmp.9;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_512_28_514_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_512_8_514_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_512_8_514_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 515 8 ]
+        %tmp.10 = self;
+        symbol [ applyManualZoom %tmp.11 515 8 23 ];
+        %tmp.11 = getv function %tmp.10 :applyManualZoom;
+        invoke %tmp.10 %tmp.11();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 516 8 ]
+        symbol [ WatchUi %tmp.12 516 8 15 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.13 516 16 29 ];
+        %tmp.13 = getv function %tmp.12 :requestUpdate;
+        invoke %tmp.12 %tmp.13();
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_510_30_517_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 525; @symbol_functiondef = [zoomOut,525,13,20]; ]
+    function zoomOut() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_525_31_532_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 526 8 ]
+        %tmp.1 = false;
+        symbol [ _isAutoZoom ? 526 8 19 ];
+        putv self :_isAutoZoom %tmp.1;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 527 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_527_8_529_8_if_stmt:
+        symbol [ _zoomLevel %tmp.3 527 12 22 ];
+        %tmp.3 = getv ? :_zoomLevel;
+        %tmp.4 = 7;
+        %tmp.5 = lt %tmp.3 %tmp.4;
+        bf %tmp.5 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_527_8_529_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_527_8_529_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_527_28_529_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 528 12 ]
+        symbol [ _zoomLevel %tmp.8 528 12 22 ];
+        %tmp.8 = getv ? :_zoomLevel;
+        %tmp.9 = add %tmp.8 1;
+        symbol [ _zoomLevel ? 528 12 22 ];
+        putv self :_zoomLevel dup %tmp.9;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_527_28_529_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_527_8_529_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_527_8_529_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 530 8 ]
+        %tmp.10 = self;
+        symbol [ applyManualZoom %tmp.11 530 8 23 ];
+        %tmp.11 = getv function %tmp.10 :applyManualZoom;
+        invoke %tmp.10 %tmp.11();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 531 8 ]
+        symbol [ WatchUi %tmp.12 531 8 15 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.13 531 16 29 ];
+        %tmp.13 = getv function %tmp.12 :requestUpdate;
+        invoke %tmp.12 %tmp.13();
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_525_31_532_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 541; @symbol_functiondef = [toggleAutoZoom,541,13,27]; ]
+    function toggleAutoZoom() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_541_38_548_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 542 8 ]
+        symbol [ _isAutoZoom %tmp.2 542 23 34 ];
+        %tmp.2 = getv ? :_isAutoZoom;
+        %tmp.3 = not %tmp.2;
+        symbol [ _isAutoZoom ? 542 8 19 ];
+        putv self :_isAutoZoom %tmp.3;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 543 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_543_8_546_8_if_stmt:
+        symbol [ _isAutoZoom %tmp.5 543 12 23 ];
+        %tmp.5 = getv ? :_isAutoZoom;
+        bf %tmp.5 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_543_8_546_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_543_8_546_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_543_25_546_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 544 12 ]
+        %tmp.6 = 4;
+        symbol [ _zoomLevel ? 544 12 22 ];
+        putv self :_zoomLevel %tmp.6;
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 545 12 ]
+        %tmp.7 = self;
+        symbol [ autoZoom %tmp.8 545 12 20 ];
+        %tmp.8 = getv function %tmp.7 :autoZoom;
+        invoke %tmp.7 %tmp.8();
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_543_25_546_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_543_8_546_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_543_8_546_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 547 8 ]
+        symbol [ WatchUi %tmp.9 547 8 15 ];
+        %tmp.9 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.10 547 16 29 ];
+        %tmp.10 = getv function %tmp.9 :requestUpdate;
+        invoke %tmp.9 %tmp.10();
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_541_38_548_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 554; @symbol_functiondef = [onHide,554,13,19]; ]
+    function onHide() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_554_30_559_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 555 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_555_8_558_8_if_stmt:
+        symbol [ _updateTimer %tmp.2 555 12 24 ];
+        %tmp.2 = getv ? :_updateTimer;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_555_8_558_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_555_8_558_8_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_555_34_558_8_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 556 12 ]
+        symbol [ _updateTimer %tmp.6 556 12 24 ];
+        %tmp.6 = getv ? :_updateTimer;
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stop %tmp.8 556 25 29 ];
+        %tmp.8 = getv function %tmp.7 :stop;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 557 12 ]
+        %tmp.9 = null;
+        symbol [ _updateTimer ? 557 12 24 ];
+        putv self :_updateTimer %tmp.9;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_555_34_558_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_555_8_558_8_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_555_8_558_8_if_end:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_554_30_559_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 574; @symbol_classdef = [HuntMapDelegate,574,6,21]; @symbol_extends<0> = [WatchUi,574,30,37]; @symbol_extends<1> = [BehaviorDelegate,574,38,54]; ]
+class HuntMapDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 574; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 574; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 576; @position = 8; @symbol_vardef = [_debouncer,576,8,18]; @symbol_type<0> = [DebounceHelper,576,22,36]; ]
+    var _debouncer as DebounceHelper;
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 578; @symbol_functiondef = [initialize,578,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_578_26_581_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 579 8 ]
+        symbol [ BehaviorDelegate %tmp.2 579 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 579 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 580 8 ]
+        symbol [ DebounceHelper %tmp.7 580 25 39 ];
+        %tmp.7 = getv ? :DebounceHelper;
+        %tmp.8 = null;
+        %tmp.4 = newc %tmp.7 (%tmp.8);
+        symbol [ _debouncer ? 580 8 18 ];
+        putv self :_debouncer %tmp.4;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_578_26_581_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 586; @symbol_functiondef = [onSelect,586,13,21]; @symbol_return<0> = [Boolean,586,27,34]; ]
+    function onSelect() as Boolean {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_586_35_591_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 587 8 ]
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_587_8_587_53_if_stmt:
+        symbol [ _debouncer %tmp.2 587 13 23 ];
+        %tmp.2 = getv ? :_debouncer;
+        symbol [ canProcess %tmp.3 587 24 34 ];
+        %tmp.3 = getv function %tmp.2 :canProcess;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = not %tmp.4;
+        bf %tmp.5 @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_587_8_587_53_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_587_8_587_53_if_true:
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_587_38_587_53_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 587 40 ]
+        %tmp.6 = true;
+        ret %tmp.6;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_587_38_587_53_stop:
+        goto @D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_587_8_587_53_if_end;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_587_8_587_53_if_end:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 588 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_586_35_591_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_586_35_591_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 588 12 16 ];
+        symbol [ WatchUi %tmp.7 588 19 26 ];
+        %tmp.7 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.8 588 27 41 ];
+        %tmp.8 = getv function %tmp.7 :getCurrentView;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        %tmp.10 = 0;
+        %tmp.11 = agetv %tmp.9 %tmp.10;
+        %tmp.12 = as %tmp.11 HuntMapView;
+        symbol [ HuntMapView %tmp.12 588 50 61 ];
+        lputv %view.1 %tmp.12;
+        symbol [ view %view.1 588 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 589 8 ]
+        %tmp.13 = lgetv %view.1;
+        symbol [ view %tmp.13 589 8 12 ];
+        symbol [ toggleAutoZoom %tmp.14 589 13 27 ];
+        %tmp.14 = getv function %tmp.13 :toggleAutoZoom;
+        invoke %tmp.13 %tmp.14();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 590 8 ]
+        %tmp.15 = true;
+        ret %tmp.15;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_586_35_591_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 596; @symbol_functiondef = [onNextPage,596,13,23]; @symbol_return<0> = [Boolean,596,29,36]; ]
+    function onNextPage() as Boolean {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_596_37_600_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 597 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_596_37_600_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_596_37_600_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 597 12 16 ];
+        symbol [ WatchUi %tmp.1 597 19 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.2 597 27 41 ];
+        %tmp.2 = getv function %tmp.1 :getCurrentView;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = 0;
+        %tmp.5 = agetv %tmp.3 %tmp.4;
+        %tmp.6 = as %tmp.5 HuntMapView;
+        symbol [ HuntMapView %tmp.6 597 50 61 ];
+        lputv %view.1 %tmp.6;
+        symbol [ view %view.1 597 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 598 8 ]
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 598 8 12 ];
+        symbol [ zoomOut %tmp.8 598 13 20 ];
+        %tmp.8 = getv function %tmp.7 :zoomOut;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 599 8 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_596_37_600_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 605; @symbol_functiondef = [onPreviousPage,605,13,27]; @symbol_return<0> = [Boolean,605,33,40]; ]
+    function onPreviousPage() as Boolean {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_605_41_609_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 606 8 ]
+        [ "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_605_41_609_4_start" "D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_605_41_609_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 606 12 16 ];
+        symbol [ WatchUi %tmp.1 606 19 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.2 606 27 41 ];
+        %tmp.2 = getv function %tmp.1 :getCurrentView;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = 0;
+        %tmp.5 = agetv %tmp.3 %tmp.4;
+        %tmp.6 = as %tmp.5 HuntMapView;
+        symbol [ HuntMapView %tmp.6 606 50 61 ];
+        lputv %view.1 %tmp.6;
+        symbol [ view %view.1 606 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 607 8 ]
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 607 8 12 ];
+        symbol [ zoomIn %tmp.8 607 13 19 ];
+        %tmp.8 = getv function %tmp.7 :zoomIn;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 608 8 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_605_41_609_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 614; @symbol_functiondef = [onBack,614,13,19]; @symbol_return<0> = [Boolean,614,25,32]; ]
+    function onBack() as Boolean {
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_614_33_617_4_start:
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 615 8 ]
+        symbol [ WatchUi %tmp.1 615 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 615 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 615 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 615 32 43 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc" 616 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+D__my_project_projects_UplandHunter_source_MapView_HuntMapView_mc_614_33_617_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\MapView\HuntMapView.mc"; @line = 1; ]
+<init> {
+}

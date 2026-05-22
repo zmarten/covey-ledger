@@ -1,0 +1,841 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Application,1,14,25]; ]
+import Toybox.Application;
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Math,2,14,18]; ]
+import Toybox.Math;
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Position,4,14,22]; ]
+import Toybox.Position;
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 24; @symbol_moduledef = [CoordinateMath,24,7,21]; ]
+module CoordinateMath {
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 24; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 42; @symbol_functiondef = [haversineDistance,42,13,30]; @symbol_param<0> = [lat1,42,31,35]; @symbol_param<0>_type<0> = [Double,42,39,45]; @symbol_param<1> = [lon1,42,47,51]; @symbol_param<1>_type<0> = [Double,42,55,61]; @symbol_param<2> = [lat2,43,31,35]; @symbol_param<2>_type<0> = [Double,43,39,45]; @symbol_param<3> = [lon2,43,47,51]; @symbol_param<3>_type<0> = [Double,43,55,61]; @symbol_return<0> = [Double,43,66,72]; ]
+    function haversineDistance(lat1 as Double, lon1 as Double, lat2 as Double, lon2 as Double) as Double {
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 46 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %lat1Rad.1 = local;
+        symbol [ lat1Rad %lat1Rad.1 46 12 19 ];
+        %tmp.1 = lgetv %lat1;
+        symbol [ lat1 %tmp.1 46 22 26 ];
+        symbol [ Constants %tmp.3 46 29 38 ];
+        %tmp.3 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.4 46 39 49 ];
+        %tmp.4 = getv %tmp.3 :DEG_TO_RAD;
+        %tmp.5 = mul %tmp.1 %tmp.4;
+        lputv %lat1Rad.1 %tmp.5;
+        symbol [ lat1Rad %lat1Rad.1 46 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 47 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %lon1Rad.2 = local;
+        symbol [ lon1Rad %lon1Rad.2 47 12 19 ];
+        %tmp.6 = lgetv %lon1;
+        symbol [ lon1 %tmp.6 47 22 26 ];
+        symbol [ Constants %tmp.8 47 29 38 ];
+        %tmp.8 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.9 47 39 49 ];
+        %tmp.9 = getv %tmp.8 :DEG_TO_RAD;
+        %tmp.10 = mul %tmp.6 %tmp.9;
+        lputv %lon1Rad.2 %tmp.10;
+        symbol [ lon1Rad %lon1Rad.2 47 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 48 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %lat2Rad.3 = local;
+        symbol [ lat2Rad %lat2Rad.3 48 12 19 ];
+        %tmp.11 = lgetv %lat2;
+        symbol [ lat2 %tmp.11 48 22 26 ];
+        symbol [ Constants %tmp.13 48 29 38 ];
+        %tmp.13 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.14 48 39 49 ];
+        %tmp.14 = getv %tmp.13 :DEG_TO_RAD;
+        %tmp.15 = mul %tmp.11 %tmp.14;
+        lputv %lat2Rad.3 %tmp.15;
+        symbol [ lat2Rad %lat2Rad.3 48 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 49 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %lon2Rad.4 = local;
+        symbol [ lon2Rad %lon2Rad.4 49 12 19 ];
+        %tmp.16 = lgetv %lon2;
+        symbol [ lon2 %tmp.16 49 22 26 ];
+        symbol [ Constants %tmp.18 49 29 38 ];
+        %tmp.18 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.19 49 39 49 ];
+        %tmp.19 = getv %tmp.18 :DEG_TO_RAD;
+        %tmp.20 = mul %tmp.16 %tmp.19;
+        lputv %lon2Rad.4 %tmp.20;
+        symbol [ lon2Rad %lon2Rad.4 49 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 52 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %dLat.5 = local;
+        symbol [ dLat %dLat.5 52 12 16 ];
+        %tmp.21 = lgetv %lat2Rad.3;
+        symbol [ lat2Rad %tmp.21 52 19 26 ];
+        %tmp.22 = lgetv %lat1Rad.1;
+        symbol [ lat1Rad %tmp.22 52 29 36 ];
+        %tmp.23 = sub %tmp.21 %tmp.22;
+        lputv %dLat.5 %tmp.23;
+        symbol [ dLat %dLat.5 52 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 53 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %dLon.6 = local;
+        symbol [ dLon %dLon.6 53 12 16 ];
+        %tmp.24 = lgetv %lon2Rad.4;
+        symbol [ lon2Rad %tmp.24 53 19 26 ];
+        %tmp.25 = lgetv %lon1Rad.2;
+        symbol [ lon1Rad %tmp.25 53 29 36 ];
+        %tmp.26 = sub %tmp.24 %tmp.25;
+        lputv %dLon.6 %tmp.26;
+        symbol [ dLon %dLon.6 53 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 58 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %sinDLatHalf.7 = local;
+        symbol [ sinDLatHalf %sinDLatHalf.7 58 12 23 ];
+        symbol [ Math %tmp.27 58 26 30 ];
+        %tmp.27 = getm $.Toybox.Math;
+        symbol [ sin %tmp.28 58 31 34 ];
+        %tmp.28 = getv function %tmp.27 :sin;
+        %tmp.29 = lgetv %dLat.5;
+        symbol [ dLat %tmp.29 58 35 39 ];
+        %tmp.30 = 2.0;
+        %tmp.31 = div %tmp.29 %tmp.30;
+        %tmp.32 = invoke %tmp.27 %tmp.28(%tmp.31);
+        lputv %sinDLatHalf.7 %tmp.32;
+        symbol [ sinDLatHalf %sinDLatHalf.7 58 12 23 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 59 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %sinDLonHalf.8 = local;
+        symbol [ sinDLonHalf %sinDLonHalf.8 59 12 23 ];
+        symbol [ Math %tmp.33 59 26 30 ];
+        %tmp.33 = getm $.Toybox.Math;
+        symbol [ sin %tmp.34 59 31 34 ];
+        %tmp.34 = getv function %tmp.33 :sin;
+        %tmp.35 = lgetv %dLon.6;
+        symbol [ dLon %tmp.35 59 35 39 ];
+        %tmp.36 = 2.0;
+        %tmp.37 = div %tmp.35 %tmp.36;
+        %tmp.38 = invoke %tmp.33 %tmp.34(%tmp.37);
+        lputv %sinDLonHalf.8 %tmp.38;
+        symbol [ sinDLonHalf %sinDLonHalf.8 59 12 23 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 60 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %a.9 = local;
+        symbol [ a %a.9 60 12 13 ];
+        %tmp.39 = lgetv %sinDLatHalf.7;
+        symbol [ sinDLatHalf %tmp.39 60 16 27 ];
+        %tmp.40 = lgetv %sinDLatHalf.7;
+        symbol [ sinDLatHalf %tmp.40 60 30 41 ];
+        %tmp.41 = mul %tmp.39 %tmp.40;
+        symbol [ Math %tmp.42 61 16 20 ];
+        %tmp.42 = getm $.Toybox.Math;
+        symbol [ cos %tmp.43 61 21 24 ];
+        %tmp.43 = getv function %tmp.42 :cos;
+        %tmp.44 = lgetv %lat1Rad.1;
+        symbol [ lat1Rad %tmp.44 61 25 32 ];
+        %tmp.45 = invoke %tmp.42 %tmp.43(%tmp.44);
+        symbol [ Math %tmp.46 61 36 40 ];
+        %tmp.46 = getm $.Toybox.Math;
+        symbol [ cos %tmp.47 61 41 44 ];
+        %tmp.47 = getv function %tmp.46 :cos;
+        %tmp.48 = lgetv %lat2Rad.3;
+        symbol [ lat2Rad %tmp.48 61 45 52 ];
+        %tmp.49 = invoke %tmp.46 %tmp.47(%tmp.48);
+        %tmp.50 = mul %tmp.45 %tmp.49;
+        %tmp.51 = lgetv %sinDLonHalf.8;
+        symbol [ sinDLonHalf %tmp.51 62 16 27 ];
+        %tmp.52 = mul %tmp.50 %tmp.51;
+        %tmp.53 = lgetv %sinDLonHalf.8;
+        symbol [ sinDLonHalf %tmp.53 62 30 41 ];
+        %tmp.54 = mul %tmp.52 %tmp.53;
+        %tmp.55 = add %tmp.41 %tmp.54;
+        lputv %a.9 %tmp.55;
+        symbol [ a %a.9 60 12 13 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 66 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop" ]
+        %c.10 = local;
+        symbol [ c %c.10 66 12 13 ];
+        %tmp.56 = 2.0;
+        symbol [ Math %tmp.57 66 22 26 ];
+        %tmp.57 = getm $.Toybox.Math;
+        symbol [ atan2 %tmp.58 66 27 32 ];
+        %tmp.58 = getv function %tmp.57 :atan2;
+        symbol [ Math %tmp.59 66 33 37 ];
+        %tmp.59 = getm $.Toybox.Math;
+        symbol [ sqrt %tmp.60 66 38 42 ];
+        %tmp.60 = getv function %tmp.59 :sqrt;
+        %tmp.61 = lgetv %a.9;
+        symbol [ a %tmp.61 66 43 44 ];
+        %tmp.62 = invoke %tmp.59 %tmp.60(%tmp.61);
+        symbol [ Math %tmp.63 66 47 51 ];
+        %tmp.63 = getm $.Toybox.Math;
+        symbol [ sqrt %tmp.64 66 52 56 ];
+        %tmp.64 = getv function %tmp.63 :sqrt;
+        %tmp.65 = 1.0;
+        %tmp.66 = lgetv %a.9;
+        symbol [ a %tmp.66 66 63 64 ];
+        %tmp.67 = sub %tmp.65 %tmp.66;
+        %tmp.68 = invoke %tmp.63 %tmp.64(%tmp.67);
+        %tmp.69 = invoke %tmp.57 %tmp.58(%tmp.62, %tmp.68);
+        %tmp.70 = mul %tmp.56 %tmp.69;
+        lputv %c.10 %tmp.70;
+        symbol [ c %c.10 66 12 13 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 69 8 ]
+        symbol [ Constants %tmp.72 69 15 24 ];
+        %tmp.72 = getv ? :Constants;
+        symbol [ EARTH_RADIUS_M %tmp.73 69 25 39 ];
+        %tmp.73 = getv %tmp.72 :EARTH_RADIUS_M;
+        %tmp.74 = lgetv %c.10;
+        symbol [ c %tmp.74 69 42 43 ];
+        %tmp.75 = mul %tmp.73 %tmp.74;
+        ret %tmp.75;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_43_73_70_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 88; @symbol_functiondef = [calculateBearing,88,13,29]; @symbol_param<0> = [lat1,88,30,34]; @symbol_param<0>_type<0> = [Double,88,38,44]; @symbol_param<1> = [lon1,88,46,50]; @symbol_param<1>_type<0> = [Double,88,54,60]; @symbol_param<2> = [lat2,89,31,35]; @symbol_param<2>_type<0> = [Double,89,39,45]; @symbol_param<3> = [lon2,89,47,51]; @symbol_param<3>_type<0> = [Double,89,55,61]; @symbol_return<0> = [Double,89,66,72]; ]
+    function calculateBearing(lat1 as Double, lon1 as Double, lat2 as Double, lon2 as Double) as Double {
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 91 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_stop" ]
+        %lat1Rad.1 = local;
+        symbol [ lat1Rad %lat1Rad.1 91 12 19 ];
+        %tmp.1 = lgetv %lat1;
+        symbol [ lat1 %tmp.1 91 22 26 ];
+        symbol [ Constants %tmp.3 91 29 38 ];
+        %tmp.3 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.4 91 39 49 ];
+        %tmp.4 = getv %tmp.3 :DEG_TO_RAD;
+        %tmp.5 = mul %tmp.1 %tmp.4;
+        lputv %lat1Rad.1 %tmp.5;
+        symbol [ lat1Rad %lat1Rad.1 91 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 92 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_stop" ]
+        %lat2Rad.2 = local;
+        symbol [ lat2Rad %lat2Rad.2 92 12 19 ];
+        %tmp.6 = lgetv %lat2;
+        symbol [ lat2 %tmp.6 92 22 26 ];
+        symbol [ Constants %tmp.8 92 29 38 ];
+        %tmp.8 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.9 92 39 49 ];
+        %tmp.9 = getv %tmp.8 :DEG_TO_RAD;
+        %tmp.10 = mul %tmp.6 %tmp.9;
+        lputv %lat2Rad.2 %tmp.10;
+        symbol [ lat2Rad %lat2Rad.2 92 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 93 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_stop" ]
+        %dLonRad.3 = local;
+        symbol [ dLonRad %dLonRad.3 93 12 19 ];
+        %tmp.11 = lgetv %lon2;
+        symbol [ lon2 %tmp.11 93 23 27 ];
+        %tmp.12 = lgetv %lon1;
+        symbol [ lon1 %tmp.12 93 30 34 ];
+        %tmp.13 = sub %tmp.11 %tmp.12;
+        symbol [ Constants %tmp.15 93 38 47 ];
+        %tmp.15 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.16 93 48 58 ];
+        %tmp.16 = getv %tmp.15 :DEG_TO_RAD;
+        %tmp.17 = mul %tmp.13 %tmp.16;
+        lputv %dLonRad.3 %tmp.17;
+        symbol [ dLonRad %dLonRad.3 93 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 98 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_stop" ]
+        %y.4 = local;
+        symbol [ y %y.4 98 12 13 ];
+        symbol [ Math %tmp.18 98 16 20 ];
+        %tmp.18 = getm $.Toybox.Math;
+        symbol [ sin %tmp.19 98 21 24 ];
+        %tmp.19 = getv function %tmp.18 :sin;
+        %tmp.20 = lgetv %dLonRad.3;
+        symbol [ dLonRad %tmp.20 98 25 32 ];
+        %tmp.21 = invoke %tmp.18 %tmp.19(%tmp.20);
+        symbol [ Math %tmp.22 98 36 40 ];
+        %tmp.22 = getm $.Toybox.Math;
+        symbol [ cos %tmp.23 98 41 44 ];
+        %tmp.23 = getv function %tmp.22 :cos;
+        %tmp.24 = lgetv %lat2Rad.2;
+        symbol [ lat2Rad %tmp.24 98 45 52 ];
+        %tmp.25 = invoke %tmp.22 %tmp.23(%tmp.24);
+        %tmp.26 = mul %tmp.21 %tmp.25;
+        lputv %y.4 %tmp.26;
+        symbol [ y %y.4 98 12 13 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 99 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_stop" ]
+        %x.5 = local;
+        symbol [ x %x.5 99 12 13 ];
+        symbol [ Math %tmp.27 99 16 20 ];
+        %tmp.27 = getm $.Toybox.Math;
+        symbol [ cos %tmp.28 99 21 24 ];
+        %tmp.28 = getv function %tmp.27 :cos;
+        %tmp.29 = lgetv %lat1Rad.1;
+        symbol [ lat1Rad %tmp.29 99 25 32 ];
+        %tmp.30 = invoke %tmp.27 %tmp.28(%tmp.29);
+        symbol [ Math %tmp.31 99 36 40 ];
+        %tmp.31 = getm $.Toybox.Math;
+        symbol [ sin %tmp.32 99 41 44 ];
+        %tmp.32 = getv function %tmp.31 :sin;
+        %tmp.33 = lgetv %lat2Rad.2;
+        symbol [ lat2Rad %tmp.33 99 45 52 ];
+        %tmp.34 = invoke %tmp.31 %tmp.32(%tmp.33);
+        %tmp.35 = mul %tmp.30 %tmp.34;
+        symbol [ Math %tmp.36 100 16 20 ];
+        %tmp.36 = getm $.Toybox.Math;
+        symbol [ sin %tmp.37 100 21 24 ];
+        %tmp.37 = getv function %tmp.36 :sin;
+        %tmp.38 = lgetv %lat1Rad.1;
+        symbol [ lat1Rad %tmp.38 100 25 32 ];
+        %tmp.39 = invoke %tmp.36 %tmp.37(%tmp.38);
+        symbol [ Math %tmp.40 100 36 40 ];
+        %tmp.40 = getm $.Toybox.Math;
+        symbol [ cos %tmp.41 100 41 44 ];
+        %tmp.41 = getv function %tmp.40 :cos;
+        %tmp.42 = lgetv %lat2Rad.2;
+        symbol [ lat2Rad %tmp.42 100 45 52 ];
+        %tmp.43 = invoke %tmp.40 %tmp.41(%tmp.42);
+        %tmp.44 = mul %tmp.39 %tmp.43;
+        symbol [ Math %tmp.45 100 56 60 ];
+        %tmp.45 = getm $.Toybox.Math;
+        symbol [ cos %tmp.46 100 61 64 ];
+        %tmp.46 = getv function %tmp.45 :cos;
+        %tmp.47 = lgetv %dLonRad.3;
+        symbol [ dLonRad %tmp.47 100 65 72 ];
+        %tmp.48 = invoke %tmp.45 %tmp.46(%tmp.47);
+        %tmp.49 = mul %tmp.44 %tmp.48;
+        %tmp.50 = sub %tmp.35 %tmp.49;
+        lputv %x.5 %tmp.50;
+        symbol [ x %x.5 99 12 13 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 102 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_stop" ]
+        %bearing.6 = local;
+        symbol [ bearing %bearing.6 102 12 19 ];
+        symbol [ Math %tmp.51 102 22 26 ];
+        %tmp.51 = getm $.Toybox.Math;
+        symbol [ atan2 %tmp.52 102 27 32 ];
+        %tmp.52 = getv function %tmp.51 :atan2;
+        %tmp.53 = lgetv %y.4;
+        symbol [ y %tmp.53 102 33 34 ];
+        %tmp.54 = lgetv %x.5;
+        symbol [ x %tmp.54 102 36 37 ];
+        %tmp.55 = invoke %tmp.51 %tmp.52(%tmp.53, %tmp.54);
+        symbol [ Constants %tmp.57 102 41 50 ];
+        %tmp.57 = getv ? :Constants;
+        symbol [ RAD_TO_DEG %tmp.58 102 51 61 ];
+        %tmp.58 = getv %tmp.57 :RAD_TO_DEG;
+        %tmp.59 = mul %tmp.55 %tmp.58;
+        lputv %bearing.6 %tmp.59;
+        symbol [ bearing %bearing.6 102 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 109 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_stop" ]
+        %result.7 = local;
+        symbol [ result %result.7 109 12 18 ];
+        %tmp.60 = lgetv %bearing.6;
+        symbol [ bearing %tmp.60 109 21 28 ];
+        %tmp.61 = 360.0;
+        %tmp.62 = add %tmp.60 %tmp.61;
+        lputv %result.7 %tmp.62;
+        symbol [ result %result.7 109 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 110 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_110_8_112_8_if_stmt:
+        %tmp.63 = lgetv %result.7;
+        symbol [ result %tmp.63 110 12 18 ];
+        %tmp.64 = 360.0;
+        %tmp.65 = gte %tmp.63 %tmp.64;
+        bf %tmp.65 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_110_8_112_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_110_8_112_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_110_29_112_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 111 12 ]
+        %tmp.66 = lgetv %result.7;
+        symbol [ result %tmp.66 111 21 27 ];
+        %tmp.67 = 360.0;
+        %tmp.68 = sub %tmp.66 %tmp.67;
+        lputv %result.7 %tmp.68;
+        symbol [ result %result.7 111 12 18 ];
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_110_29_112_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_110_8_112_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_110_8_112_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 113 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_113_8_115_8_if_stmt:
+        %tmp.69 = lgetv %result.7;
+        symbol [ result %tmp.69 113 12 18 ];
+        %tmp.70 = 360.0;
+        %tmp.71 = gte %tmp.69 %tmp.70;
+        bf %tmp.71 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_113_8_115_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_113_8_115_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_113_29_115_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 114 12 ]
+        %tmp.72 = lgetv %result.7;
+        symbol [ result %tmp.72 114 21 27 ];
+        %tmp.73 = 360.0;
+        %tmp.74 = sub %tmp.72 %tmp.73;
+        lputv %result.7 %tmp.74;
+        symbol [ result %result.7 114 12 18 ];
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_113_29_115_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_113_8_115_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_113_8_115_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 116 8 ]
+        %tmp.75 = lgetv %result.7;
+        symbol [ result %tmp.75 116 15 21 ];
+        ret %tmp.75;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_89_73_117_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 135; @symbol_functiondef = [destinationPoint,135,13,29]; @symbol_param<0> = [lat,135,30,33]; @symbol_param<0>_type<0> = [Double,135,37,43]; @symbol_param<1> = [lon,135,45,48]; @symbol_param<1>_type<0> = [Double,135,52,58]; @symbol_param<2> = [bearing,136,31,38]; @symbol_param<2>_type<0> = [Double,136,42,48]; @symbol_param<3> = [distance,136,50,58]; @symbol_param<3>_type<0> = [Double,136,62,68]; @symbol_return<0> = [Array,136,73,78]; @symbol_return<1> = [Double,136,79,85]; ]
+    function destinationPoint(lat as Double, lon as Double, bearing as Double, distance as Double) as Array<Double> {
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 138 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_stop" ]
+        %latRad.1 = local;
+        symbol [ latRad %latRad.1 138 12 18 ];
+        %tmp.1 = lgetv %lat;
+        symbol [ lat %tmp.1 138 21 24 ];
+        symbol [ Constants %tmp.3 138 27 36 ];
+        %tmp.3 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.4 138 37 47 ];
+        %tmp.4 = getv %tmp.3 :DEG_TO_RAD;
+        %tmp.5 = mul %tmp.1 %tmp.4;
+        lputv %latRad.1 %tmp.5;
+        symbol [ latRad %latRad.1 138 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 139 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_stop" ]
+        %lonRad.2 = local;
+        symbol [ lonRad %lonRad.2 139 12 18 ];
+        %tmp.6 = lgetv %lon;
+        symbol [ lon %tmp.6 139 21 24 ];
+        symbol [ Constants %tmp.8 139 27 36 ];
+        %tmp.8 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.9 139 37 47 ];
+        %tmp.9 = getv %tmp.8 :DEG_TO_RAD;
+        %tmp.10 = mul %tmp.6 %tmp.9;
+        lputv %lonRad.2 %tmp.10;
+        symbol [ lonRad %lonRad.2 139 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 140 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_stop" ]
+        %bearRad.3 = local;
+        symbol [ bearRad %bearRad.3 140 12 19 ];
+        %tmp.11 = lgetv %bearing;
+        symbol [ bearing %tmp.11 140 22 29 ];
+        symbol [ Constants %tmp.13 140 32 41 ];
+        %tmp.13 = getv ? :Constants;
+        symbol [ DEG_TO_RAD %tmp.14 140 42 52 ];
+        %tmp.14 = getv %tmp.13 :DEG_TO_RAD;
+        %tmp.15 = mul %tmp.11 %tmp.14;
+        lputv %bearRad.3 %tmp.15;
+        symbol [ bearRad %bearRad.3 140 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 143 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_stop" ]
+        %angDist.4 = local;
+        symbol [ angDist %angDist.4 143 12 19 ];
+        %tmp.16 = lgetv %distance;
+        symbol [ distance %tmp.16 143 22 30 ];
+        symbol [ Constants %tmp.18 143 33 42 ];
+        %tmp.18 = getv ? :Constants;
+        symbol [ EARTH_RADIUS_M %tmp.19 143 43 57 ];
+        %tmp.19 = getv %tmp.18 :EARTH_RADIUS_M;
+        %tmp.20 = div %tmp.16 %tmp.19;
+        lputv %angDist.4 %tmp.20;
+        symbol [ angDist %angDist.4 143 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 147 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_stop" ]
+        %lat2Rad.5 = local;
+        symbol [ lat2Rad %lat2Rad.5 147 12 19 ];
+        symbol [ Math %tmp.21 147 22 26 ];
+        %tmp.21 = getm $.Toybox.Math;
+        symbol [ asin %tmp.22 147 27 31 ];
+        %tmp.22 = getv function %tmp.21 :asin;
+        symbol [ Math %tmp.23 148 12 16 ];
+        %tmp.23 = getm $.Toybox.Math;
+        symbol [ sin %tmp.24 148 17 20 ];
+        %tmp.24 = getv function %tmp.23 :sin;
+        %tmp.25 = lgetv %latRad.1;
+        symbol [ latRad %tmp.25 148 21 27 ];
+        %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+        symbol [ Math %tmp.27 148 31 35 ];
+        %tmp.27 = getm $.Toybox.Math;
+        symbol [ cos %tmp.28 148 36 39 ];
+        %tmp.28 = getv function %tmp.27 :cos;
+        %tmp.29 = lgetv %angDist.4;
+        symbol [ angDist %tmp.29 148 40 47 ];
+        %tmp.30 = invoke %tmp.27 %tmp.28(%tmp.29);
+        %tmp.31 = mul %tmp.26 %tmp.30;
+        symbol [ Math %tmp.32 149 12 16 ];
+        %tmp.32 = getm $.Toybox.Math;
+        symbol [ cos %tmp.33 149 17 20 ];
+        %tmp.33 = getv function %tmp.32 :cos;
+        %tmp.34 = lgetv %latRad.1;
+        symbol [ latRad %tmp.34 149 21 27 ];
+        %tmp.35 = invoke %tmp.32 %tmp.33(%tmp.34);
+        symbol [ Math %tmp.36 149 31 35 ];
+        %tmp.36 = getm $.Toybox.Math;
+        symbol [ sin %tmp.37 149 36 39 ];
+        %tmp.37 = getv function %tmp.36 :sin;
+        %tmp.38 = lgetv %angDist.4;
+        symbol [ angDist %tmp.38 149 40 47 ];
+        %tmp.39 = invoke %tmp.36 %tmp.37(%tmp.38);
+        %tmp.40 = mul %tmp.35 %tmp.39;
+        symbol [ Math %tmp.41 149 51 55 ];
+        %tmp.41 = getm $.Toybox.Math;
+        symbol [ cos %tmp.42 149 56 59 ];
+        %tmp.42 = getv function %tmp.41 :cos;
+        %tmp.43 = lgetv %bearRad.3;
+        symbol [ bearRad %tmp.43 149 60 67 ];
+        %tmp.44 = invoke %tmp.41 %tmp.42(%tmp.43);
+        %tmp.45 = mul %tmp.40 %tmp.44;
+        %tmp.46 = add %tmp.31 %tmp.45;
+        %tmp.47 = invoke %tmp.21 %tmp.22(%tmp.46);
+        lputv %lat2Rad.5 %tmp.47;
+        symbol [ lat2Rad %lat2Rad.5 147 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 155 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_stop" ]
+        %lon2Rad.6 = local;
+        symbol [ lon2Rad %lon2Rad.6 155 12 19 ];
+        %tmp.48 = lgetv %lonRad.2;
+        symbol [ lonRad %tmp.48 155 22 28 ];
+        symbol [ Math %tmp.49 155 31 35 ];
+        %tmp.49 = getm $.Toybox.Math;
+        symbol [ atan2 %tmp.50 155 36 41 ];
+        %tmp.50 = getv function %tmp.49 :atan2;
+        symbol [ Math %tmp.51 156 12 16 ];
+        %tmp.51 = getm $.Toybox.Math;
+        symbol [ sin %tmp.52 156 17 20 ];
+        %tmp.52 = getv function %tmp.51 :sin;
+        %tmp.53 = lgetv %bearRad.3;
+        symbol [ bearRad %tmp.53 156 21 28 ];
+        %tmp.54 = invoke %tmp.51 %tmp.52(%tmp.53);
+        symbol [ Math %tmp.55 156 32 36 ];
+        %tmp.55 = getm $.Toybox.Math;
+        symbol [ sin %tmp.56 156 37 40 ];
+        %tmp.56 = getv function %tmp.55 :sin;
+        %tmp.57 = lgetv %angDist.4;
+        symbol [ angDist %tmp.57 156 41 48 ];
+        %tmp.58 = invoke %tmp.55 %tmp.56(%tmp.57);
+        %tmp.59 = mul %tmp.54 %tmp.58;
+        symbol [ Math %tmp.60 156 52 56 ];
+        %tmp.60 = getm $.Toybox.Math;
+        symbol [ cos %tmp.61 156 57 60 ];
+        %tmp.61 = getv function %tmp.60 :cos;
+        %tmp.62 = lgetv %latRad.1;
+        symbol [ latRad %tmp.62 156 61 67 ];
+        %tmp.63 = invoke %tmp.60 %tmp.61(%tmp.62);
+        %tmp.64 = mul %tmp.59 %tmp.63;
+        symbol [ Math %tmp.65 157 12 16 ];
+        %tmp.65 = getm $.Toybox.Math;
+        symbol [ cos %tmp.66 157 17 20 ];
+        %tmp.66 = getv function %tmp.65 :cos;
+        %tmp.67 = lgetv %angDist.4;
+        symbol [ angDist %tmp.67 157 21 28 ];
+        %tmp.68 = invoke %tmp.65 %tmp.66(%tmp.67);
+        symbol [ Math %tmp.69 157 32 36 ];
+        %tmp.69 = getm $.Toybox.Math;
+        symbol [ sin %tmp.70 157 37 40 ];
+        %tmp.70 = getv function %tmp.69 :sin;
+        %tmp.71 = lgetv %latRad.1;
+        symbol [ latRad %tmp.71 157 41 47 ];
+        %tmp.72 = invoke %tmp.69 %tmp.70(%tmp.71);
+        symbol [ Math %tmp.73 157 51 55 ];
+        %tmp.73 = getm $.Toybox.Math;
+        symbol [ sin %tmp.74 157 56 59 ];
+        %tmp.74 = getv function %tmp.73 :sin;
+        %tmp.75 = lgetv %lat2Rad.5;
+        symbol [ lat2Rad %tmp.75 157 60 67 ];
+        %tmp.76 = invoke %tmp.73 %tmp.74(%tmp.75);
+        %tmp.77 = mul %tmp.72 %tmp.76;
+        %tmp.78 = sub %tmp.68 %tmp.77;
+        %tmp.79 = invoke %tmp.49 %tmp.50(%tmp.64, %tmp.78);
+        %tmp.80 = add %tmp.48 %tmp.79;
+        lputv %lon2Rad.6 %tmp.80;
+        symbol [ lon2Rad %lon2Rad.6 155 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 161 8 ]
+        %tmp.81 = newa 2 Array<Double>;
+        symbol [ Array %tmp.81 161 83 88 ];
+        symbol [ Double %tmp.81 161 89 95 ];
+        %tmp.82 = lgetv %lat2Rad.5;
+        symbol [ lat2Rad %tmp.82 161 16 23 ];
+        symbol [ Constants %tmp.84 161 26 35 ];
+        %tmp.84 = getv ? :Constants;
+        symbol [ RAD_TO_DEG %tmp.85 161 36 46 ];
+        %tmp.85 = getv %tmp.84 :RAD_TO_DEG;
+        %tmp.86 = mul %tmp.82 %tmp.85;
+        %tmp.87 = dup %tmp.81;
+        %tmp.88 = aputv %tmp.87 0 %tmp.86;
+        %tmp.89 = lgetv %lon2Rad.6;
+        symbol [ lon2Rad %tmp.89 161 48 55 ];
+        symbol [ Constants %tmp.91 161 58 67 ];
+        %tmp.91 = getv ? :Constants;
+        symbol [ RAD_TO_DEG %tmp.92 161 68 78 ];
+        %tmp.92 = getv %tmp.91 :RAD_TO_DEG;
+        %tmp.93 = mul %tmp.89 %tmp.92;
+        %tmp.94 = dup %tmp.88;
+        %tmp.95 = aputv %tmp.94 1 %tmp.93;
+        ret %tmp.95;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_136_87_162_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 173; @symbol_functiondef = [toCardinal,173,13,23]; @symbol_param<0> = [degrees,173,24,31]; @symbol_param<0>_type<0> = [Double,173,35,41]; @symbol_return<0> = [String,173,46,52]; ]
+    function toCardinal(degrees as Double) as String {
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_173_53_194_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 175 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_173_53_194_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_173_53_194_4_stop" ]
+        %normalized.1 = local;
+        symbol [ normalized %normalized.1 175 12 22 ];
+        %tmp.1 = lgetv %degrees;
+        symbol [ degrees %tmp.1 175 25 32 ];
+        %tmp.2 = 360.0;
+        %tmp.3 = add %tmp.1 %tmp.2;
+        lputv %normalized.1 %tmp.3;
+        symbol [ normalized %normalized.1 175 12 22 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 176 8 ]
+        while @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_176_8_178_8_while_test @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_176_8_178_8_while_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_176_8_178_8_while_test:
+        %tmp.4 = lgetv %normalized.1;
+        symbol [ normalized %tmp.4 176 15 25 ];
+        %tmp.5 = 360.0;
+        %tmp.6 = gte %tmp.4 %tmp.5;
+        bf %tmp.6 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_176_8_178_8_while_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_176_8_178_8_while_begin:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_176_36_178_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 177 12 ]
+        %tmp.7 = lgetv %normalized.1;
+        symbol [ normalized %tmp.7 177 25 35 ];
+        %tmp.8 = 360.0;
+        %tmp.9 = sub %tmp.7 %tmp.8;
+        lputv %normalized.1 %tmp.9;
+        symbol [ normalized %normalized.1 177 12 22 ];
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_176_36_178_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_176_8_178_8_while_test;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_176_8_178_8_while_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 179 8 ]
+        while @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_179_8_181_8_while_test @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_179_8_181_8_while_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_179_8_181_8_while_test:
+        %tmp.10 = lgetv %normalized.1;
+        symbol [ normalized %tmp.10 179 15 25 ];
+        %tmp.11 = 0.0;
+        %tmp.12 = lt %tmp.10 %tmp.11;
+        bf %tmp.12 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_179_8_181_8_while_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_179_8_181_8_while_begin:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_179_33_181_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 180 12 ]
+        %tmp.13 = lgetv %normalized.1;
+        symbol [ normalized %tmp.13 180 25 35 ];
+        %tmp.14 = 360.0;
+        %tmp.15 = add %tmp.13 %tmp.14;
+        lputv %normalized.1 %tmp.15;
+        symbol [ normalized %normalized.1 180 12 22 ];
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_179_33_181_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_179_8_181_8_while_test;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_179_8_181_8_while_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 186 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_8_186_69_if_stmt:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_12_186_48_begin:
+        %tmp.16 = lgetv %normalized.1;
+        symbol [ normalized %tmp.16 186 12 22 ];
+        %tmp.17 = 337.5;
+        %tmp.18 = gte %tmp.16 %tmp.17;
+        bt %tmp.18 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_8_186_69_if_true;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_35_186_48_false:
+        %tmp.19 = lgetv %normalized.1;
+        symbol [ normalized %tmp.19 186 35 45 ];
+        %tmp.20 = 22.5;
+        %tmp.21 = lt %tmp.19 %tmp.20;
+        push %tmp.21;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_35_186_48_end:
+        %tmp.22 = phi [%tmp.18 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_12_186_48_begin] [%tmp.21 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_35_186_48_false] [%tmp.22 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_35_186_48_end];
+        bf %tmp.22 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_8_186_69_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_8_186_69_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_55_186_69_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 186 57 ]
+        %tmp.23 = "N";
+        ret %tmp.23;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_55_186_69_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_8_186_69_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_186_8_186_69_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 187 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_187_8_187_47_if_stmt:
+        %tmp.24 = lgetv %normalized.1;
+        symbol [ normalized %tmp.24 187 12 22 ];
+        %tmp.25 = 67.5;
+        %tmp.26 = lt %tmp.24 %tmp.25;
+        bf %tmp.26 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_187_8_187_47_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_187_8_187_47_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_187_32_187_47_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 187 34 ]
+        %tmp.27 = "NE";
+        ret %tmp.27;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_187_32_187_47_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_187_8_187_47_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_187_8_187_47_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 188 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_188_8_188_46_if_stmt:
+        %tmp.28 = lgetv %normalized.1;
+        symbol [ normalized %tmp.28 188 12 22 ];
+        %tmp.29 = 112.5;
+        %tmp.30 = lt %tmp.28 %tmp.29;
+        bf %tmp.30 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_188_8_188_46_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_188_8_188_46_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_188_32_188_46_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 188 34 ]
+        %tmp.31 = "E";
+        ret %tmp.31;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_188_32_188_46_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_188_8_188_46_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_188_8_188_46_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 189 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_189_8_189_47_if_stmt:
+        %tmp.32 = lgetv %normalized.1;
+        symbol [ normalized %tmp.32 189 12 22 ];
+        %tmp.33 = 157.5;
+        %tmp.34 = lt %tmp.32 %tmp.33;
+        bf %tmp.34 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_189_8_189_47_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_189_8_189_47_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_189_32_189_47_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 189 34 ]
+        %tmp.35 = "SE";
+        ret %tmp.35;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_189_32_189_47_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_189_8_189_47_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_189_8_189_47_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 190 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_190_8_190_46_if_stmt:
+        %tmp.36 = lgetv %normalized.1;
+        symbol [ normalized %tmp.36 190 12 22 ];
+        %tmp.37 = 202.5;
+        %tmp.38 = lt %tmp.36 %tmp.37;
+        bf %tmp.38 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_190_8_190_46_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_190_8_190_46_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_190_32_190_46_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 190 34 ]
+        %tmp.39 = "S";
+        ret %tmp.39;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_190_32_190_46_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_190_8_190_46_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_190_8_190_46_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 191 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_191_8_191_47_if_stmt:
+        %tmp.40 = lgetv %normalized.1;
+        symbol [ normalized %tmp.40 191 12 22 ];
+        %tmp.41 = 247.5;
+        %tmp.42 = lt %tmp.40 %tmp.41;
+        bf %tmp.42 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_191_8_191_47_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_191_8_191_47_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_191_32_191_47_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 191 34 ]
+        %tmp.43 = "SW";
+        ret %tmp.43;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_191_32_191_47_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_191_8_191_47_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_191_8_191_47_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 192 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_192_8_192_46_if_stmt:
+        %tmp.44 = lgetv %normalized.1;
+        symbol [ normalized %tmp.44 192 12 22 ];
+        %tmp.45 = 292.5;
+        %tmp.46 = lt %tmp.44 %tmp.45;
+        bf %tmp.46 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_192_8_192_46_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_192_8_192_46_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_192_32_192_46_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 192 34 ]
+        %tmp.47 = "W";
+        ret %tmp.47;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_192_32_192_46_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_192_8_192_46_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_192_8_192_46_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 193 8 ]
+        %tmp.48 = "NW";
+        ret %tmp.48;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_173_53_194_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 202; @symbol_functiondef = [metersToYards,202,13,26]; @symbol_param<0> = [meters,202,27,33]; @symbol_param<0>_type<0> = [Double,202,37,43]; @symbol_return<0> = [Double,202,48,54]; ]
+    function metersToYards(meters as Double) as Double {
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_202_55_204_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 203 8 ]
+        %tmp.1 = lgetv %meters;
+        symbol [ meters %tmp.1 203 15 21 ];
+        symbol [ Constants %tmp.3 203 24 33 ];
+        %tmp.3 = getv ? :Constants;
+        symbol [ METERS_TO_YARDS %tmp.4 203 34 49 ];
+        %tmp.4 = getv %tmp.3 :METERS_TO_YARDS;
+        %tmp.5 = mul %tmp.1 %tmp.4;
+        ret %tmp.5;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_202_55_204_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 212; @symbol_functiondef = [yardsToMeters,212,13,26]; @symbol_param<0> = [yards,212,27,32]; @symbol_param<0>_type<0> = [Double,212,36,42]; @symbol_return<0> = [Double,212,47,53]; ]
+    function yardsToMeters(yards as Double) as Double {
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_212_54_214_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 213 8 ]
+        %tmp.1 = lgetv %yards;
+        symbol [ yards %tmp.1 213 15 20 ];
+        symbol [ Constants %tmp.3 213 23 32 ];
+        %tmp.3 = getv ? :Constants;
+        symbol [ YARDS_TO_METERS %tmp.4 213 33 48 ];
+        %tmp.4 = getv %tmp.3 :YARDS_TO_METERS;
+        %tmp.5 = mul %tmp.1 %tmp.4;
+        ret %tmp.5;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_212_54_214_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 226; @symbol_functiondef = [formatDistance,226,13,27]; @symbol_param<0> = [meters,226,28,34]; @symbol_param<0>_type<0> = [Double,226,38,44]; @symbol_return<0> = [String,226,49,55]; ]
+    function formatDistance(meters as Double) as String {
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_226_56_236_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 227 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_226_56_236_4_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_226_56_236_4_stop" ]
+        %unitSystem.1 = local;
+        symbol [ unitSystem %unitSystem.1 227 12 22 ];
+        symbol [ Application %tmp.1 227 25 36 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.2 227 37 47 ];
+        %tmp.2 = getv %tmp.1 :Properties;
+        symbol [ getValue %tmp.3 227 48 56 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "unitSystem";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        %tmp.6 = as %tmp.5 Number;
+        symbol [ Number %tmp.6 227 74 80 ];
+        lputv %unitSystem.1 %tmp.6;
+        symbol [ unitSystem %unitSystem.1 227 12 22 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 228 8 ]
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_228_8_235_8_if_stmt:
+        %tmp.7 = lgetv %unitSystem.1;
+        symbol [ unitSystem %tmp.7 228 12 22 ];
+        %tmp.8 = 1;
+        %tmp.9 = eq %tmp.7 %tmp.8;
+        bf %tmp.9 @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_228_8_235_8_if_else_false;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_228_8_235_8_if_true:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_228_29_231_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 230 12 ]
+        %tmp.10 = lgetv %meters;
+        symbol [ meters %tmp.10 230 19 25 ];
+        symbol [ format %tmp.11 230 26 32 ];
+        %tmp.11 = getv function %tmp.10 :format;
+        %tmp.12 = "%d";
+        %tmp.13 = invoke %tmp.10 %tmp.11(%tmp.12);
+        %tmp.14 = " m";
+        %tmp.15 = add %tmp.13 %tmp.14;
+        ret %tmp.15;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_228_29_231_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_228_8_235_8_if_end;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_228_8_235_8_if_else_false:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_231_15_235_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 233 12 ]
+        [ "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_231_15_235_8_start" "D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_231_15_235_8_stop" ]
+        %yards.2 = local;
+        symbol [ yards %yards.2 233 16 21 ];
+        %tmp.16 = self;
+        symbol [ metersToYards %tmp.17 233 24 37 ];
+        %tmp.17 = getv function %tmp.16 :metersToYards;
+        %tmp.18 = lgetv %meters;
+        symbol [ meters %tmp.18 233 38 44 ];
+        %tmp.19 = invoke %tmp.16 %tmp.17(%tmp.18);
+        lputv %yards.2 %tmp.19;
+        symbol [ yards %yards.2 233 16 21 ];
+[ "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc" 234 12 ]
+        %tmp.20 = lgetv %yards.2;
+        symbol [ yards %tmp.20 234 19 24 ];
+        symbol [ format %tmp.21 234 25 31 ];
+        %tmp.21 = getv function %tmp.20 :format;
+        %tmp.22 = "%d";
+        %tmp.23 = invoke %tmp.20 %tmp.21(%tmp.22);
+        %tmp.24 = " yd";
+        %tmp.25 = add %tmp.23 %tmp.24;
+        ret %tmp.25;
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_231_15_235_8_stop:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_228_8_235_8_if_end:
+D__my_project_projects_UplandHunter_source_Utils_CoordinateMath_mc_226_56_236_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\Utils\CoordinateMath.mc"; @line = 1; ]
+<init> {
+}

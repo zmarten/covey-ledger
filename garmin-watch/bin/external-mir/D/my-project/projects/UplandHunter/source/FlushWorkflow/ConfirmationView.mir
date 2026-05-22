@@ -1,0 +1,1338 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Timer,3,14,19]; ]
+import Toybox.Timer;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Attention,4,14,23]; ]
+import Toybox.Attention;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Application,5,14,25]; ]
+import Toybox.Application;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Lang,6,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Time,7,14,18]; ]
+import Toybox.Time;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 26; @symbol_classdef = [ConfirmationView,26,6,22]; @symbol_extends<0> = [WatchUi,26,31,38]; @symbol_extends<1> = [View,26,39,43]; ]
+class ConfirmationView extends WatchUi.View {
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 26; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 26; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 29; @position = 8; @symbol_vardef = [_species,29,8,16]; @symbol_type<0> = [Number,29,20,26]; ]
+    var _species as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 30; @position = 8; @symbol_vardef = [_quantityFlushed,30,8,24]; @symbol_type<0> = [Number,30,28,34]; ]
+    var _quantityFlushed as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 31; @position = 8; @symbol_vardef = [_coveySize,31,8,18]; @symbol_type<0> = [Number,31,22,28]; ]
+    var _coveySize as Number or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 32; @position = 8; @symbol_vardef = [_shotResult,32,8,19]; @symbol_type<0> = [Number,32,23,29]; ]
+    var _shotResult as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 33; @position = 8; @symbol_vardef = [_birdsDown,33,8,18]; @symbol_type<0> = [Number,33,22,28]; ]
+    var _birdsDown as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 34; @position = 8; @symbol_vardef = [_capturedLat,34,8,20]; @symbol_type<0> = [Double,34,24,30]; ]
+    var _capturedLat as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 35; @position = 8; @symbol_vardef = [_capturedLon,35,8,20]; @symbol_type<0> = [Double,35,24,30]; ]
+    var _capturedLon as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 36; @position = 8; @symbol_vardef = [_capturedTime,36,8,21]; @symbol_type<0> = [Number,36,25,31]; ]
+    var _capturedTime as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 42; @position = 8; @symbol_vardef = [_workflowDepth,42,8,22]; @symbol_type<0> = [Number,42,26,32]; ]
+    var _workflowDepth as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 46; @position = 8; @symbol_vardef = [_popHelper,46,8,18]; @symbol_type<0> = [PopChainHelper,46,22,36]; ]
+    var _popHelper as PopChainHelper or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 49; @position = 8; @symbol_vardef = [_dismissTimer,49,8,21]; @symbol_type<0> = [Timer,49,25,30]; @symbol_type<1> = [Timer,49,31,36]; ]
+    var _dismissTimer as Timer.Timer or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 58; @symbol_functiondef = [initialize,58,13,23]; @symbol_param<0> = [species,58,24,31]; @symbol_param<0>_type<0> = [Number,58,35,41]; @symbol_param<1> = [quantityFlushed,58,43,58]; @symbol_param<1>_type<0> = [Number,58,62,68]; @symbol_param<2> = [coveySize,58,70,79]; @symbol_param<2>_type<0> = [Number,58,83,89]; @symbol_param<3> = [shotResult,59,25,35]; @symbol_param<3>_type<0> = [Number,59,39,45]; @symbol_param<4> = [birdsDown,59,47,56]; @symbol_param<4>_type<0> = [Number,59,60,66]; @symbol_param<5> = [lat,60,25,28]; @symbol_param<5>_type<0> = [Double,60,32,38]; @symbol_param<6> = [lon,60,40,43]; @symbol_param<6>_type<0> = [Double,60,47,53]; @symbol_param<7> = [time,60,55,59]; @symbol_param<7>_type<0> = [Number,60,63,69]; @symbol_param<8> = [workflowDepth,61,25,38]; @symbol_param<8>_type<0> = [Number,61,42,48]; ]
+    function initialize(species as Number, quantityFlushed as Number, coveySize as Number or Null, shotResult as Number, birdsDown as Number, lat as Double, lon as Double, time as Number, workflowDepth as Number) as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_61_50_78_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 62 8 ]
+        symbol [ View %tmp.2 62 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 62 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 63 8 ]
+        %tmp.4 = lgetv %species;
+        symbol [ species %tmp.4 63 19 26 ];
+        symbol [ _species ? 63 8 16 ];
+        putv self :_species %tmp.4;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 64 8 ]
+        %tmp.5 = lgetv %quantityFlushed;
+        symbol [ quantityFlushed %tmp.5 64 27 42 ];
+        symbol [ _quantityFlushed ? 64 8 24 ];
+        putv self :_quantityFlushed %tmp.5;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 65 8 ]
+        %tmp.6 = lgetv %coveySize;
+        symbol [ coveySize %tmp.6 65 21 30 ];
+        symbol [ _coveySize ? 65 8 18 ];
+        putv self :_coveySize %tmp.6;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 66 8 ]
+        %tmp.7 = lgetv %shotResult;
+        symbol [ shotResult %tmp.7 66 22 32 ];
+        symbol [ _shotResult ? 66 8 19 ];
+        putv self :_shotResult %tmp.7;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 67 8 ]
+        %tmp.8 = lgetv %birdsDown;
+        symbol [ birdsDown %tmp.8 67 21 30 ];
+        symbol [ _birdsDown ? 67 8 18 ];
+        putv self :_birdsDown %tmp.8;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 68 8 ]
+        %tmp.9 = lgetv %lat;
+        symbol [ lat %tmp.9 68 23 26 ];
+        symbol [ _capturedLat ? 68 8 20 ];
+        putv self :_capturedLat %tmp.9;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 69 8 ]
+        %tmp.10 = lgetv %lon;
+        symbol [ lon %tmp.10 69 23 26 ];
+        symbol [ _capturedLon ? 69 8 20 ];
+        putv self :_capturedLon %tmp.10;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 70 8 ]
+        %tmp.11 = lgetv %time;
+        symbol [ time %tmp.11 70 24 28 ];
+        symbol [ _capturedTime ? 70 8 21 ];
+        putv self :_capturedTime %tmp.11;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 71 8 ]
+        %tmp.12 = lgetv %workflowDepth;
+        symbol [ workflowDepth %tmp.12 71 25 38 ];
+        symbol [ _workflowDepth ? 71 8 22 ];
+        putv self :_workflowDepth %tmp.12;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 72 8 ]
+        %tmp.13 = null;
+        symbol [ _popHelper ? 72 8 18 ];
+        putv self :_popHelper %tmp.13;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 77 8 ]
+        %tmp.14 = self;
+        symbol [ saveWaypoint %tmp.15 77 8 20 ];
+        %tmp.15 = getv function %tmp.14 :saveWaypoint;
+        invoke %tmp.14 %tmp.15();
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_61_50_78_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 83; @symbol_functiondef = [onShow,83,13,19]; ]
+    function onShow() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_83_30_98_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 87 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_83_30_98_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_83_30_98_4_stop" ]
+        %hapticEnabled.1 = local;
+        symbol [ hapticEnabled %hapticEnabled.1 87 12 25 ];
+        symbol [ Application %tmp.1 87 28 39 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ Properties %tmp.2 87 40 50 ];
+        %tmp.2 = getv %tmp.1 :Properties;
+        symbol [ getValue %tmp.3 87 51 59 ];
+        %tmp.3 = getv function %tmp.2 :getValue;
+        %tmp.4 = "hapticEnabled";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        lputv %hapticEnabled.1 %tmp.5;
+        symbol [ hapticEnabled %hapticEnabled.1 87 12 25 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 88 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_8_93_8_if_stmt:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_12_88_53_begin:
+        %tmp.6 = lgetv %hapticEnabled.1;
+        symbol [ hapticEnabled %tmp.6 88 12 25 ];
+        %tmp.7 = false;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_8_93_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_38_88_53_true:
+        symbol [ Attention %tmp.9 88 38 47 ];
+        %tmp.9 = getm $.Toybox.Attention;
+        %tmp.11 = const :vibrate;
+        symbol [ vibrate %tmp.11 88 53 60 const ];
+        %tmp.12 = canhazplz %tmp.9 %tmp.11;
+        push %tmp.12;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_38_88_53_end:
+        %tmp.13 = phi [%tmp.8 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_12_88_53_begin] [%tmp.12 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_38_88_53_true] [%tmp.13 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_38_88_53_end];
+        bf %tmp.13 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_8_93_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_8_93_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_62_93_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 89 12 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_62_93_8_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_62_93_8_stop" ]
+        %vibeProfile.2 = local;
+        symbol [ vibeProfile %vibeProfile.2 89 16 27 ];
+        %tmp.14 = newa 1 Array<Attention.VibeProfile>;
+        symbol [ Array %tmp.14 91 17 22 ];
+        symbol [ Attention %tmp.14 91 23 32 ];
+        symbol [ VibeProfile %tmp.14 91 33 44 ];
+        symbol [ Attention %tmp.17 90 20 29 ];
+        %tmp.17 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.18 90 30 41 ];
+        %tmp.18 = getv function ? %tmp.17 :VibeProfile;
+        %tmp.19 = 50;
+        %tmp.20 = 200;
+        %tmp.15 = newc %tmp.18 (%tmp.19, %tmp.20);
+        %tmp.21 = dup %tmp.14;
+        %tmp.22 = aputv %tmp.21 0 %tmp.15;
+        lputv %vibeProfile.2 %tmp.22;
+        symbol [ vibeProfile %vibeProfile.2 89 16 27 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 92 12 ]
+        symbol [ Attention %tmp.23 92 12 21 ];
+        %tmp.23 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.24 92 22 29 ];
+        %tmp.24 = getv function %tmp.23 :vibrate;
+        %tmp.25 = lgetv %vibeProfile.2;
+        symbol [ vibeProfile %tmp.25 92 30 41 ];
+        invoke %tmp.23 %tmp.24(%tmp.25);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_62_93_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_8_93_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_88_8_93_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 96 8 ]
+        symbol [ Timer %tmp.28 96 28 33 ];
+        %tmp.28 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.29 96 34 39 ];
+        %tmp.29 = getv function ? %tmp.28 :Timer;
+        %tmp.26 = newc %tmp.29 ();
+        symbol [ _dismissTimer ? 96 8 21 ];
+        putv self :_dismissTimer %tmp.26;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 97 8 ]
+        symbol [ _dismissTimer %tmp.31 97 8 21 ];
+        %tmp.31 = getv ? :_dismissTimer;
+        symbol [ start %tmp.32 97 22 27 ];
+        %tmp.32 = getv function %tmp.31 :start;
+        %tmp.33 = self;
+        symbol [ method %tmp.34 97 28 34 ];
+        %tmp.34 = getv function %tmp.33 :method;
+        %tmp.36 = const :onDismissTimer;
+        symbol [ onDismissTimer %tmp.36 97 36 50 const ];
+        %tmp.37 = invoke %tmp.33 %tmp.34(%tmp.36);
+        symbol [ Constants %tmp.39 97 53 62 ];
+        %tmp.39 = getv ? :Constants;
+        symbol [ CONFIRMATION_TIMEOUT_MS %tmp.40 97 63 86 ];
+        %tmp.40 = getv %tmp.39 :CONFIRMATION_TIMEOUT_MS;
+        %tmp.41 = false;
+        invoke %tmp.31 %tmp.32(%tmp.37, %tmp.40, %tmp.41);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_83_30_98_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 110; @symbol_functiondef = [onUpdate,110,13,21]; @symbol_param<0> = [dc,110,22,24]; @symbol_param<0>_type<0> = [Graphics,110,28,36]; @symbol_param<0>_type<1> = [Dc,110,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 111 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop" ]
+        %screenW.1 = local;
+        symbol [ screenW %screenW.1 111 12 19 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 111 22 24 ];
+        symbol [ getWidth %tmp.2 111 25 33 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %screenW.1 %tmp.3;
+        symbol [ screenW %screenW.1 111 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 112 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop" ]
+        %screenH.2 = local;
+        symbol [ screenH %screenH.2 112 12 19 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 112 22 24 ];
+        symbol [ getHeight %tmp.5 112 25 34 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %screenH.2 %tmp.6;
+        symbol [ screenH %screenH.2 112 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 113 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop" ]
+        %centerX.3 = local;
+        symbol [ centerX %centerX.3 113 12 19 ];
+        %tmp.7 = lgetv %screenW.1;
+        symbol [ screenW %tmp.7 113 22 29 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %centerX.3 %tmp.9;
+        symbol [ centerX %centerX.3 113 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 116 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 116 8 10 ];
+        symbol [ setColor %tmp.11 116 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        symbol [ Constants %tmp.13 116 20 29 ];
+        %tmp.13 = getv ? :Constants;
+        symbol [ getTextColor %tmp.14 116 30 42 ];
+        %tmp.14 = getv function %tmp.13 :getTextColor;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        symbol [ Constants %tmp.17 116 46 55 ];
+        %tmp.17 = getv ? :Constants;
+        symbol [ getBgColor %tmp.18 116 56 66 ];
+        %tmp.18 = getv function %tmp.17 :getBgColor;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        invoke %tmp.10 %tmp.11(%tmp.15, %tmp.19);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 117 8 ]
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 117 8 10 ];
+        symbol [ clear %tmp.21 117 11 16 ];
+        %tmp.21 = getv function %tmp.20 :clear;
+        invoke %tmp.20 %tmp.21();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 120 8 ]
+        %tmp.22 = lgetv %dc;
+        symbol [ dc %tmp.22 120 8 10 ];
+        symbol [ setColor %tmp.23 120 11 19 ];
+        %tmp.23 = getv function %tmp.22 :setColor;
+        symbol [ Constants %tmp.25 120 20 29 ];
+        %tmp.25 = getv ? :Constants;
+        symbol [ COLOR_SUCCESS %tmp.26 120 30 43 ];
+        %tmp.26 = getv %tmp.25 :COLOR_SUCCESS;
+        symbol [ Graphics %tmp.27 120 45 53 ];
+        %tmp.27 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.28 120 54 71 ];
+        %tmp.28 = getv %tmp.27 :COLOR_TRANSPARENT;
+        invoke %tmp.22 %tmp.23(%tmp.26, %tmp.28);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 121 8 ]
+        %tmp.29 = lgetv %dc;
+        symbol [ dc %tmp.29 121 8 10 ];
+        symbol [ drawText %tmp.30 121 11 19 ];
+        %tmp.30 = getv function %tmp.29 :drawText;
+        %tmp.31 = lgetv %centerX.3;
+        symbol [ centerX %tmp.31 121 20 27 ];
+        %tmp.32 = 40;
+        symbol [ Graphics %tmp.33 121 33 41 ];
+        %tmp.33 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.34 121 42 53 ];
+        %tmp.34 = getv %tmp.33 :FONT_MEDIUM;
+        %tmp.35 = "FLUSH SAVED!";
+        symbol [ Graphics %tmp.36 122 28 36 ];
+        %tmp.36 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.37 122 37 56 ];
+        %tmp.37 = getv %tmp.36 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.29 %tmp.30(%tmp.31, %tmp.32, %tmp.34, %tmp.35, %tmp.37);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 125 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop" ]
+        %speciesText.4 = local;
+        symbol [ speciesText %speciesText.4 125 12 23 ];
+        symbol [ Constants %tmp.39 125 26 35 ];
+        %tmp.39 = getv ? :Constants;
+        symbol [ getSpeciesName %tmp.40 125 36 50 ];
+        %tmp.40 = getv function %tmp.39 :getSpeciesName;
+        symbol [ _species %tmp.42 125 51 59 ];
+        %tmp.42 = getv ? :_species;
+        %tmp.43 = invoke %tmp.39 %tmp.40(%tmp.42);
+        lputv %speciesText.4 %tmp.43;
+        symbol [ speciesText %speciesText.4 125 12 23 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 126 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_126_8_128_8_if_stmt:
+        symbol [ _quantityFlushed %tmp.45 126 12 28 ];
+        %tmp.45 = getv ? :_quantityFlushed;
+        %tmp.46 = 1;
+        %tmp.47 = gt %tmp.45 %tmp.46;
+        bf %tmp.47 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_126_8_128_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_126_8_128_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_126_34_128_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 127 12 ]
+        %tmp.48 = lgetv %speciesText.4;
+        symbol [ speciesText %tmp.48 127 26 37 ];
+        %tmp.49 = " x";
+        %tmp.50 = add %tmp.48 %tmp.49;
+        symbol [ _quantityFlushed %tmp.52 127 47 63 ];
+        %tmp.52 = getv ? :_quantityFlushed;
+        symbol [ format %tmp.53 127 64 70 ];
+        %tmp.53 = getv function %tmp.52 :format;
+        %tmp.54 = "%d";
+        %tmp.55 = invoke %tmp.52 %tmp.53(%tmp.54);
+        %tmp.56 = add %tmp.50 %tmp.55;
+        lputv %speciesText.4 %tmp.56;
+        symbol [ speciesText %speciesText.4 127 12 23 ];
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_126_34_128_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_126_8_128_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_126_8_128_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 129 8 ]
+        %tmp.57 = lgetv %dc;
+        symbol [ dc %tmp.57 129 8 10 ];
+        symbol [ setColor %tmp.58 129 11 19 ];
+        %tmp.58 = getv function %tmp.57 :setColor;
+        symbol [ Constants %tmp.60 129 20 29 ];
+        %tmp.60 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.61 129 30 40 ];
+        %tmp.61 = getv %tmp.60 :COLOR_TEXT;
+        symbol [ Graphics %tmp.62 129 42 50 ];
+        %tmp.62 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.63 129 51 68 ];
+        %tmp.63 = getv %tmp.62 :COLOR_TRANSPARENT;
+        invoke %tmp.57 %tmp.58(%tmp.61, %tmp.63);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 130 8 ]
+        %tmp.64 = lgetv %dc;
+        symbol [ dc %tmp.64 130 8 10 ];
+        symbol [ drawText %tmp.65 130 11 19 ];
+        %tmp.65 = getv function %tmp.64 :drawText;
+        %tmp.66 = lgetv %centerX.3;
+        symbol [ centerX %tmp.66 130 20 27 ];
+        %tmp.67 = 90;
+        symbol [ Graphics %tmp.68 130 33 41 ];
+        %tmp.68 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.69 130 42 52 ];
+        %tmp.69 = getv %tmp.68 :FONT_SMALL;
+        %tmp.70 = lgetv %speciesText.4;
+        symbol [ speciesText %tmp.70 131 12 23 ];
+        symbol [ Graphics %tmp.71 131 25 33 ];
+        %tmp.71 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.72 131 34 53 ];
+        %tmp.72 = getv %tmp.71 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.64 %tmp.65(%tmp.66, %tmp.67, %tmp.69, %tmp.70, %tmp.72);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 134 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop" ]
+        %resultText.5 = local;
+        symbol [ resultText %resultText.5 134 12 22 ];
+        %tmp.73 = "";
+        lputv %resultText.5 %tmp.73;
+        symbol [ resultText %resultText.5 134 12 22 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 135 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_135_8_144_8_if_stmt:
+        symbol [ _shotResult %tmp.75 135 12 23 ];
+        %tmp.75 = getv ? :_shotResult;
+        symbol [ Constants %tmp.77 135 27 36 ];
+        %tmp.77 = getv ? :Constants;
+        symbol [ SHOT_HIT %tmp.78 135 37 45 ];
+        %tmp.78 = getv %tmp.77 :SHOT_HIT;
+        %tmp.79 = eq %tmp.75 %tmp.78;
+        bf %tmp.79 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_135_8_144_8_if_false;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_135_8_144_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_135_47_138_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 136 12 ]
+        %tmp.80 = "SHOT - ";
+        symbol [ _birdsDown %tmp.82 136 37 47 ];
+        %tmp.82 = getv ? :_birdsDown;
+        symbol [ format %tmp.83 136 48 54 ];
+        %tmp.83 = getv function %tmp.82 :format;
+        %tmp.84 = "%d";
+        %tmp.85 = invoke %tmp.82 %tmp.83(%tmp.84);
+        %tmp.86 = add %tmp.80 %tmp.85;
+        %tmp.87 = " down";
+        %tmp.88 = add %tmp.86 %tmp.87;
+        lputv %resultText.5 %tmp.88;
+        symbol [ resultText %resultText.5 136 12 22 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 137 12 ]
+        %tmp.89 = lgetv %dc;
+        symbol [ dc %tmp.89 137 12 14 ];
+        symbol [ setColor %tmp.90 137 15 23 ];
+        %tmp.90 = getv function %tmp.89 :setColor;
+        symbol [ Constants %tmp.92 137 24 33 ];
+        %tmp.92 = getv ? :Constants;
+        symbol [ COLOR_SUCCESS %tmp.93 137 34 47 ];
+        %tmp.93 = getv %tmp.92 :COLOR_SUCCESS;
+        symbol [ Graphics %tmp.94 137 49 57 ];
+        %tmp.94 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.95 137 58 75 ];
+        %tmp.95 = getv %tmp.94 :COLOR_TRANSPARENT;
+        invoke %tmp.89 %tmp.90(%tmp.93, %tmp.95);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_135_47_138_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_135_8_144_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_135_8_144_8_if_false:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 138 15 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_138_15_144_8_if_stmt:
+        symbol [ _shotResult %tmp.97 138 19 30 ];
+        %tmp.97 = getv ? :_shotResult;
+        symbol [ Constants %tmp.99 138 34 43 ];
+        %tmp.99 = getv ? :Constants;
+        symbol [ SHOT_MISSED %tmp.100 138 44 55 ];
+        %tmp.100 = getv %tmp.99 :SHOT_MISSED;
+        %tmp.101 = eq %tmp.97 %tmp.100;
+        bf %tmp.101 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_138_15_144_8_if_else_false;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_138_15_144_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_138_57_141_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 139 12 ]
+        %tmp.102 = "MISSED";
+        lputv %resultText.5 %tmp.102;
+        symbol [ resultText %resultText.5 139 12 22 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 140 12 ]
+        %tmp.103 = lgetv %dc;
+        symbol [ dc %tmp.103 140 12 14 ];
+        symbol [ setColor %tmp.104 140 15 23 ];
+        %tmp.104 = getv function %tmp.103 :setColor;
+        symbol [ Constants %tmp.106 140 24 33 ];
+        %tmp.106 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.107 140 34 45 ];
+        %tmp.107 = getv %tmp.106 :COLOR_MUTED;
+        symbol [ Graphics %tmp.108 140 47 55 ];
+        %tmp.108 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.109 140 56 73 ];
+        %tmp.109 = getv %tmp.108 :COLOR_TRANSPARENT;
+        invoke %tmp.103 %tmp.104(%tmp.107, %tmp.109);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_138_57_141_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_138_15_144_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_138_15_144_8_if_else_false:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_141_15_144_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 142 12 ]
+        %tmp.110 = "NO SHOT";
+        lputv %resultText.5 %tmp.110;
+        symbol [ resultText %resultText.5 142 12 22 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 143 12 ]
+        %tmp.111 = lgetv %dc;
+        symbol [ dc %tmp.111 143 12 14 ];
+        symbol [ setColor %tmp.112 143 15 23 ];
+        %tmp.112 = getv function %tmp.111 :setColor;
+        symbol [ Constants %tmp.114 143 24 33 ];
+        %tmp.114 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.115 143 34 45 ];
+        %tmp.115 = getv %tmp.114 :COLOR_MUTED;
+        symbol [ Graphics %tmp.116 143 47 55 ];
+        %tmp.116 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.117 143 56 73 ];
+        %tmp.117 = getv %tmp.116 :COLOR_TRANSPARENT;
+        invoke %tmp.111 %tmp.112(%tmp.115, %tmp.117);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_141_15_144_8_stop:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_138_15_144_8_if_end:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_135_8_144_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 145 8 ]
+        %tmp.118 = lgetv %dc;
+        symbol [ dc %tmp.118 145 8 10 ];
+        symbol [ drawText %tmp.119 145 11 19 ];
+        %tmp.119 = getv function %tmp.118 :drawText;
+        %tmp.120 = lgetv %centerX.3;
+        symbol [ centerX %tmp.120 145 20 27 ];
+        %tmp.121 = 125;
+        symbol [ Graphics %tmp.122 145 34 42 ];
+        %tmp.122 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.123 145 43 53 ];
+        %tmp.123 = getv %tmp.122 :FONT_SMALL;
+        %tmp.124 = lgetv %resultText.5;
+        symbol [ resultText %tmp.124 146 12 22 ];
+        symbol [ Graphics %tmp.125 146 24 32 ];
+        %tmp.125 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.126 146 33 52 ];
+        %tmp.126 = getv %tmp.125 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.118 %tmp.119(%tmp.120, %tmp.121, %tmp.123, %tmp.124, %tmp.126);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 149 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_149_8_153_8_if_stmt:
+        symbol [ _coveySize %tmp.128 149 12 22 ];
+        %tmp.128 = getv ? :_coveySize;
+        %tmp.129 = null;
+        %tmp.130 = ne %tmp.128 %tmp.129;
+        bf %tmp.130 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_149_8_153_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_149_8_153_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_149_32_153_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 150 12 ]
+        %tmp.131 = lgetv %dc;
+        symbol [ dc %tmp.131 150 12 14 ];
+        symbol [ setColor %tmp.132 150 15 23 ];
+        %tmp.132 = getv function %tmp.131 :setColor;
+        symbol [ Constants %tmp.134 150 24 33 ];
+        %tmp.134 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.135 150 34 45 ];
+        %tmp.135 = getv %tmp.134 :COLOR_MUTED;
+        symbol [ Graphics %tmp.136 150 47 55 ];
+        %tmp.136 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.137 150 56 73 ];
+        %tmp.137 = getv %tmp.136 :COLOR_TRANSPARENT;
+        invoke %tmp.131 %tmp.132(%tmp.135, %tmp.137);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 151 12 ]
+        %tmp.138 = lgetv %dc;
+        symbol [ dc %tmp.138 151 12 14 ];
+        symbol [ drawText %tmp.139 151 15 23 ];
+        %tmp.139 = getv function %tmp.138 :drawText;
+        %tmp.140 = lgetv %centerX.3;
+        symbol [ centerX %tmp.140 151 24 31 ];
+        %tmp.141 = 155;
+        symbol [ Graphics %tmp.142 151 38 46 ];
+        %tmp.142 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.143 151 47 57 ];
+        %tmp.143 = getv %tmp.142 :FONT_XTINY;
+        %tmp.144 = "Covey: ";
+        symbol [ _coveySize %tmp.146 152 28 38 ];
+        %tmp.146 = getv ? :_coveySize;
+        symbol [ format %tmp.147 152 39 45 ];
+        %tmp.147 = getv function %tmp.146 :format;
+        %tmp.148 = "%d";
+        %tmp.149 = invoke %tmp.146 %tmp.147(%tmp.148);
+        %tmp.150 = add %tmp.144 %tmp.149;
+        symbol [ Graphics %tmp.151 152 53 61 ];
+        %tmp.151 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.152 152 62 81 ];
+        %tmp.152 = getv %tmp.151 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.138 %tmp.139(%tmp.140, %tmp.141, %tmp.143, %tmp.150, %tmp.152);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_149_32_153_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_149_8_153_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_149_8_153_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 156 8 ]
+        %tmp.153 = lgetv %dc;
+        symbol [ dc %tmp.153 156 8 10 ];
+        symbol [ setColor %tmp.154 156 11 19 ];
+        %tmp.154 = getv function %tmp.153 :setColor;
+        symbol [ Constants %tmp.156 156 20 29 ];
+        %tmp.156 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.157 156 30 41 ];
+        %tmp.157 = getv %tmp.156 :COLOR_MUTED;
+        symbol [ Graphics %tmp.158 156 43 51 ];
+        %tmp.158 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.159 156 52 69 ];
+        %tmp.159 = getv %tmp.158 :COLOR_TRANSPARENT;
+        invoke %tmp.153 %tmp.154(%tmp.157, %tmp.159);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 157 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop" ]
+        %latStr.6 = local;
+        symbol [ latStr %latStr.6 157 12 18 ];
+        symbol [ _capturedLat %tmp.161 157 21 33 ];
+        %tmp.161 = getv ? :_capturedLat;
+        symbol [ format %tmp.162 157 34 40 ];
+        %tmp.162 = getv function %tmp.161 :format;
+        %tmp.163 = "%.4f";
+        %tmp.164 = invoke %tmp.161 %tmp.162(%tmp.163);
+        lputv %latStr.6 %tmp.164;
+        symbol [ latStr %latStr.6 157 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 158 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop" ]
+        %lonStr.7 = local;
+        symbol [ lonStr %lonStr.7 158 12 18 ];
+        symbol [ _capturedLon %tmp.166 158 21 33 ];
+        %tmp.166 = getv ? :_capturedLon;
+        symbol [ format %tmp.167 158 34 40 ];
+        %tmp.167 = getv function %tmp.166 :format;
+        %tmp.168 = "%.4f";
+        %tmp.169 = invoke %tmp.166 %tmp.167(%tmp.168);
+        lputv %lonStr.7 %tmp.169;
+        symbol [ lonStr %lonStr.7 158 12 18 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 159 8 ]
+        %tmp.170 = lgetv %dc;
+        symbol [ dc %tmp.170 159 8 10 ];
+        symbol [ drawText %tmp.171 159 11 19 ];
+        %tmp.171 = getv function %tmp.170 :drawText;
+        %tmp.172 = lgetv %centerX.3;
+        symbol [ centerX %tmp.172 159 20 27 ];
+        %tmp.173 = lgetv %screenH.2;
+        symbol [ screenH %tmp.173 159 29 36 ];
+        %tmp.174 = 100;
+        %tmp.175 = sub %tmp.173 %tmp.174;
+        symbol [ Graphics %tmp.176 159 44 52 ];
+        %tmp.176 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.177 159 53 63 ];
+        %tmp.177 = getv %tmp.176 :FONT_XTINY;
+        %tmp.178 = lgetv %latStr.6;
+        symbol [ latStr %tmp.178 160 12 18 ];
+        %tmp.179 = ", ";
+        %tmp.180 = add %tmp.178 %tmp.179;
+        %tmp.181 = lgetv %lonStr.7;
+        symbol [ lonStr %tmp.181 160 28 34 ];
+        %tmp.182 = add %tmp.180 %tmp.181;
+        symbol [ Graphics %tmp.183 160 36 44 ];
+        %tmp.183 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.184 160 45 64 ];
+        %tmp.184 = getv %tmp.183 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.170 %tmp.171(%tmp.172, %tmp.175, %tmp.177, %tmp.182, %tmp.184);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 163 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop" ]
+        %now.8 = local;
+        symbol [ now %now.8 163 12 15 ];
+        symbol [ Time %tmp.185 163 18 22 ];
+        %tmp.185 = getm $.Toybox.Time;
+        symbol [ Gregorian %tmp.186 163 23 32 ];
+        %tmp.186 = getv %tmp.185 :Gregorian;
+        symbol [ info %tmp.187 163 33 37 ];
+        %tmp.187 = getv function %tmp.186 :info;
+        symbol [ Time %tmp.190 163 42 46 ];
+        %tmp.190 = getm $.Toybox.Time;
+        symbol [ Moment %tmp.191 163 47 53 ];
+        %tmp.191 = getv function ? %tmp.190 :Moment;
+        symbol [ _capturedTime %tmp.193 163 54 67 ];
+        %tmp.193 = getv ? :_capturedTime;
+        %tmp.188 = newc %tmp.191 (%tmp.193);
+        symbol [ Time %tmp.194 163 70 74 ];
+        %tmp.194 = getm $.Toybox.Time;
+        symbol [ FORMAT_SHORT %tmp.195 163 75 87 ];
+        %tmp.195 = getv %tmp.194 :FORMAT_SHORT;
+        %tmp.196 = invoke %tmp.186 %tmp.187(%tmp.188, %tmp.195);
+        lputv %now.8 %tmp.196;
+        symbol [ now %now.8 163 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 164 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop" ]
+        %timeStr.9 = local;
+        symbol [ timeStr %timeStr.9 164 12 19 ];
+        %tmp.197 = lgetv %now.8;
+        symbol [ now %tmp.197 164 22 25 ];
+        symbol [ hour %tmp.198 164 26 30 ];
+        %tmp.198 = getv %tmp.197 :hour;
+        symbol [ format %tmp.199 164 31 37 ];
+        %tmp.199 = getv function %tmp.198 :format;
+        %tmp.200 = "%02d";
+        %tmp.201 = invoke %tmp.198 %tmp.199(%tmp.200);
+        %tmp.202 = ":";
+        %tmp.203 = add %tmp.201 %tmp.202;
+        %tmp.204 = lgetv %now.8;
+        symbol [ now %tmp.204 164 54 57 ];
+        symbol [ min %tmp.205 164 58 61 ];
+        %tmp.205 = getv %tmp.204 :min;
+        symbol [ format %tmp.206 164 62 68 ];
+        %tmp.206 = getv function %tmp.205 :format;
+        %tmp.207 = "%02d";
+        %tmp.208 = invoke %tmp.205 %tmp.206(%tmp.207);
+        %tmp.209 = add %tmp.203 %tmp.208;
+        %tmp.210 = ":";
+        %tmp.211 = add %tmp.209 %tmp.210;
+        %tmp.212 = lgetv %now.8;
+        symbol [ now %tmp.212 164 85 88 ];
+        symbol [ sec %tmp.213 164 89 92 ];
+        %tmp.213 = getv %tmp.212 :sec;
+        symbol [ format %tmp.214 164 93 99 ];
+        %tmp.214 = getv function %tmp.213 :format;
+        %tmp.215 = "%02d";
+        %tmp.216 = invoke %tmp.213 %tmp.214(%tmp.215);
+        %tmp.217 = add %tmp.211 %tmp.216;
+        lputv %timeStr.9 %tmp.217;
+        symbol [ timeStr %timeStr.9 164 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 165 8 ]
+        %tmp.218 = lgetv %dc;
+        symbol [ dc %tmp.218 165 8 10 ];
+        symbol [ setColor %tmp.219 165 11 19 ];
+        %tmp.219 = getv function %tmp.218 :setColor;
+        symbol [ Constants %tmp.221 165 20 29 ];
+        %tmp.221 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.222 165 30 41 ];
+        %tmp.222 = getv %tmp.221 :COLOR_MUTED;
+        symbol [ Graphics %tmp.223 165 43 51 ];
+        %tmp.223 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.224 165 52 69 ];
+        %tmp.224 = getv %tmp.223 :COLOR_TRANSPARENT;
+        invoke %tmp.218 %tmp.219(%tmp.222, %tmp.224);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 166 8 ]
+        %tmp.225 = lgetv %dc;
+        symbol [ dc %tmp.225 166 8 10 ];
+        symbol [ drawText %tmp.226 166 11 19 ];
+        %tmp.226 = getv function %tmp.225 :drawText;
+        %tmp.227 = lgetv %centerX.3;
+        symbol [ centerX %tmp.227 166 20 27 ];
+        %tmp.228 = lgetv %screenH.2;
+        symbol [ screenH %tmp.228 166 29 36 ];
+        %tmp.229 = 75;
+        %tmp.230 = sub %tmp.228 %tmp.229;
+        symbol [ Graphics %tmp.231 166 43 51 ];
+        %tmp.231 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.232 166 52 62 ];
+        %tmp.232 = getv %tmp.231 :FONT_XTINY;
+        %tmp.233 = lgetv %timeStr.9;
+        symbol [ timeStr %tmp.233 167 12 19 ];
+        symbol [ Graphics %tmp.234 167 21 29 ];
+        %tmp.234 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.235 167 30 49 ];
+        %tmp.235 = getv %tmp.234 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.225 %tmp.226(%tmp.227, %tmp.230, %tmp.232, %tmp.233, %tmp.235);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 170 8 ]
+        %tmp.236 = lgetv %dc;
+        symbol [ dc %tmp.236 170 8 10 ];
+        symbol [ setColor %tmp.237 170 11 19 ];
+        %tmp.237 = getv function %tmp.236 :setColor;
+        symbol [ Constants %tmp.239 170 20 29 ];
+        %tmp.239 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.240 170 30 41 ];
+        %tmp.240 = getv %tmp.239 :COLOR_MUTED;
+        symbol [ Graphics %tmp.241 170 43 51 ];
+        %tmp.241 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.242 170 52 69 ];
+        %tmp.242 = getv %tmp.241 :COLOR_TRANSPARENT;
+        invoke %tmp.236 %tmp.237(%tmp.240, %tmp.242);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 171 8 ]
+        %tmp.243 = lgetv %dc;
+        symbol [ dc %tmp.243 171 8 10 ];
+        symbol [ drawText %tmp.244 171 11 19 ];
+        %tmp.244 = getv function %tmp.243 :drawText;
+        %tmp.245 = lgetv %centerX.3;
+        symbol [ centerX %tmp.245 171 20 27 ];
+        %tmp.246 = lgetv %screenH.2;
+        symbol [ screenH %tmp.246 171 29 36 ];
+        %tmp.247 = 40;
+        %tmp.248 = sub %tmp.246 %tmp.247;
+        symbol [ Graphics %tmp.249 171 43 51 ];
+        %tmp.249 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.250 171 52 62 ];
+        %tmp.250 = getv %tmp.249 :FONT_XTINY;
+        %tmp.251 = "Auto-dismiss in 2s...";
+        symbol [ Graphics %tmp.252 172 37 45 ];
+        %tmp.252 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.253 172 46 65 ];
+        %tmp.253 = getv %tmp.252 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.243 %tmp.244(%tmp.245, %tmp.248, %tmp.250, %tmp.251, %tmp.253);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_110_49_173_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 182; @symbol_functiondef = [onDismissTimer,182,13,27]; ]
+    function onDismissTimer() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_182_38_188_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 187 8 ]
+        %tmp.1 = self;
+        symbol [ popToMainView %tmp.2 187 8 21 ];
+        %tmp.2 = getv function %tmp.1 :popToMainView;
+        invoke %tmp.1 %tmp.2();
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_182_38_188_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 202; @symbol_functiondef = [popToMainView,202,13,26]; ]
+    function popToMainView() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_202_37_209_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 203 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_203_8_206_8_if_stmt:
+        symbol [ _dismissTimer %tmp.2 203 12 25 ];
+        %tmp.2 = getv ? :_dismissTimer;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_203_8_206_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_203_8_206_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_203_35_206_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 204 12 ]
+        symbol [ _dismissTimer %tmp.6 204 12 25 ];
+        %tmp.6 = getv ? :_dismissTimer;
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stop %tmp.8 204 26 30 ];
+        %tmp.8 = getv function %tmp.7 :stop;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 205 12 ]
+        %tmp.9 = null;
+        symbol [ _dismissTimer ? 205 12 25 ];
+        putv self :_dismissTimer %tmp.9;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_203_35_206_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_203_8_206_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_203_8_206_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 207 8 ]
+        symbol [ PopChainHelper %tmp.13 207 25 39 ];
+        %tmp.13 = getv ? :PopChainHelper;
+        symbol [ _workflowDepth %tmp.15 207 40 54 ];
+        %tmp.15 = getv ? :_workflowDepth;
+        %tmp.10 = newc %tmp.13 (%tmp.15);
+        symbol [ _popHelper ? 207 8 18 ];
+        putv self :_popHelper %tmp.10;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 208 8 ]
+        symbol [ _popHelper %tmp.17 208 8 18 ];
+        %tmp.17 = getv ? :_popHelper;
+        symbol [ startPopping %tmp.18 208 19 31 ];
+        %tmp.18 = getv function %tmp.17 :startPopping;
+        invoke %tmp.17 %tmp.18();
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_202_37_209_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 218; @symbol_functiondef = [saveWaypoint,218,13,25]; ]
+    function saveWaypoint() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_218_36_269_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 222 8 ]
+        try @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_beginTry @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_endTry @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_catch @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_finally;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_beginTry:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_12_263_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 224 12 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_12_263_8_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_12_263_8_stop" ]
+        %waypoint.1 = local;
+        symbol [ waypoint %waypoint.1 224 16 24 ];
+        symbol [ Waypoint %tmp.4 224 31 39 ];
+        %tmp.4 = getv ? :Waypoint;
+        symbol [ _capturedLat %tmp.6 225 16 28 ];
+        %tmp.6 = getv ? :_capturedLat;
+        symbol [ _capturedLon %tmp.8 225 30 42 ];
+        %tmp.8 = getv ? :_capturedLon;
+        symbol [ _capturedTime %tmp.10 225 44 57 ];
+        %tmp.10 = getv ? :_capturedTime;
+        symbol [ _species %tmp.12 226 16 24 ];
+        %tmp.12 = getv ? :_species;
+        symbol [ _quantityFlushed %tmp.14 226 26 42 ];
+        %tmp.14 = getv ? :_quantityFlushed;
+        symbol [ _birdsDown %tmp.16 226 44 54 ];
+        %tmp.16 = getv ? :_birdsDown;
+        symbol [ _shotResult %tmp.18 226 56 67 ];
+        %tmp.18 = getv ? :_shotResult;
+        %tmp.1 = newc %tmp.4 (%tmp.6, %tmp.8, %tmp.10, %tmp.12, %tmp.14, %tmp.16, %tmp.18);
+        lputv %waypoint.1 %tmp.1;
+        symbol [ waypoint %waypoint.1 224 16 24 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 230 12 ]
+        %tmp.19 = lgetv %waypoint.1;
+        symbol [ waypoint %tmp.19 230 12 20 ];
+        symbol [ _coveySize %tmp.21 230 33 43 ];
+        %tmp.21 = getv ? :_coveySize;
+        symbol [ coveySize ? 230 21 30 ];
+        putv %tmp.19 :coveySize %tmp.21;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 233 12 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_12_263_8_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_12_263_8_stop" ]
+        %saved.2 = local;
+        symbol [ saved %saved.2 233 16 21 ];
+        symbol [ WaypointManager %tmp.23 233 24 39 ];
+        %tmp.23 = getv ? :WaypointManager;
+        symbol [ saveWaypoint %tmp.24 233 40 52 ];
+        %tmp.24 = getv function %tmp.23 :saveWaypoint;
+        %tmp.25 = lgetv %waypoint.1;
+        symbol [ waypoint %tmp.25 233 53 61 ];
+        %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+        lputv %saved.2 %tmp.26;
+        symbol [ saved %saved.2 233 16 21 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 235 12 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_12_262_12_if_stmt:
+        %tmp.27 = lgetv %saved.2;
+        symbol [ saved %tmp.27 235 16 21 ];
+        bf %tmp.27 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_12_262_12_if_else_false;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_12_262_12_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 238 16 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_stop" ]
+        %app.3 = local;
+        symbol [ app %app.3 238 20 23 ];
+        symbol [ Application %tmp.28 238 26 37 ];
+        %tmp.28 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.29 238 38 44 ];
+        %tmp.29 = getv function %tmp.28 :getApp;
+        %tmp.30 = invoke %tmp.28 %tmp.29();
+        %tmp.31 = as %tmp.30 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.31 238 50 65 ];
+        lputv %app.3 %tmp.31;
+        symbol [ app %app.3 238 20 23 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 239 16 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_stop" ]
+        %session.4 = local;
+        symbol [ session %session.4 239 20 27 ];
+        %tmp.32 = lgetv %app.3;
+        symbol [ app %tmp.32 239 30 33 ];
+        symbol [ getHuntSession %tmp.33 239 34 48 ];
+        %tmp.33 = getv function %tmp.32 :getHuntSession;
+        %tmp.34 = invoke %tmp.32 %tmp.33();
+        lputv %session.4 %tmp.34;
+        symbol [ session %session.4 239 20 27 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 240 16 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_stop" ]
+        %sessionWaypoints.5 = local;
+        symbol [ sessionWaypoints %sessionWaypoints.5 240 20 36 ];
+        symbol [ WaypointManager %tmp.36 240 39 54 ];
+        %tmp.36 = getv ? :WaypointManager;
+        symbol [ getSessionWaypoints %tmp.37 240 55 74 ];
+        %tmp.37 = getv function %tmp.36 :getSessionWaypoints;
+        %tmp.38 = lgetv %session.4;
+        symbol [ session %tmp.38 240 75 82 ];
+        symbol [ getStartTime %tmp.39 240 83 95 ];
+        %tmp.39 = getv function %tmp.38 :getStartTime;
+        %tmp.40 = invoke %tmp.38 %tmp.39();
+        %tmp.41 = invoke %tmp.36 %tmp.37(%tmp.40);
+        lputv %sessionWaypoints.5 %tmp.41;
+        symbol [ sessionWaypoints %sessionWaypoints.5 240 20 36 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 242 16 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_stop" ]
+        %totalFlushes.6 = local;
+        symbol [ totalFlushes %totalFlushes.6 242 20 32 ];
+        %tmp.42 = lgetv %sessionWaypoints.5;
+        symbol [ sessionWaypoints %tmp.42 242 35 51 ];
+        symbol [ size %tmp.43 242 52 56 ];
+        %tmp.43 = getv function %tmp.42 :size;
+        %tmp.44 = invoke %tmp.42 %tmp.43();
+        lputv %totalFlushes.6 %tmp.44;
+        symbol [ totalFlushes %totalFlushes.6 242 20 32 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 243 16 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_stop" ]
+        %totalDown.7 = local;
+        symbol [ totalDown %totalDown.7 243 20 29 ];
+        %tmp.45 = 0;
+        lputv %totalDown.7 %tmp.45;
+        symbol [ totalDown %totalDown.7 243 20 29 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 244 16 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_stop" ]
+        %totalShots.8 = local;
+        symbol [ totalShots %totalShots.8 244 20 30 ];
+        %tmp.46 = 0;
+        lputv %totalShots.8 %tmp.46;
+        symbol [ totalShots %totalShots.8 244 20 30 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 245 16 ]
+        for @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_test @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_incr @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_init:
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_begin" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_end" ]
+        %i.9 = local;
+        symbol [ i %i.9 245 25 26 ];
+        %tmp.47 = 0;
+        lputv %i.9 %tmp.47;
+        symbol [ i %i.9 245 25 26 ];
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_test:
+        %tmp.48 = lgetv %i.9;
+        symbol [ i %tmp.48 245 32 33 ];
+        %tmp.49 = lgetv %sessionWaypoints.5;
+        symbol [ sessionWaypoints %tmp.49 245 36 52 ];
+        symbol [ size %tmp.50 245 53 57 ];
+        %tmp.50 = getv function %tmp.49 :size;
+        %tmp.51 = invoke %tmp.49 %tmp.50();
+        %tmp.52 = lt %tmp.48 %tmp.51;
+        bf %tmp.52 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_begin:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_66_251_16_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 246 20 ]
+        %tmp.53 = lgetv %totalDown.7;
+        symbol [ totalDown %tmp.53 246 20 29 ];
+        %tmp.54 = lgetv %sessionWaypoints.5;
+        symbol [ sessionWaypoints %tmp.54 246 33 49 ];
+        %tmp.55 = lgetv %i.9;
+        symbol [ i %tmp.55 246 50 51 ];
+        %tmp.56 = agetv %tmp.54 %tmp.55;
+        symbol [ birdsDown %tmp.57 246 53 62 ];
+        %tmp.57 = getv %tmp.56 :birdsDown;
+        %tmp.58 = add %tmp.53 %tmp.57;
+        lputv %totalDown.7 %tmp.58;
+        symbol [ totalDown %totalDown.7 246 20 29 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 247 20 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_247_20_250_20_if_stmt:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_247_24_248_68_begin:
+        %tmp.59 = lgetv %sessionWaypoints.5;
+        symbol [ sessionWaypoints %tmp.59 247 24 40 ];
+        %tmp.60 = lgetv %i.9;
+        symbol [ i %tmp.60 247 41 42 ];
+        %tmp.61 = agetv %tmp.59 %tmp.60;
+        symbol [ shotResult %tmp.62 247 44 54 ];
+        %tmp.62 = getv %tmp.61 :shotResult;
+        symbol [ Constants %tmp.64 247 58 67 ];
+        %tmp.64 = getv ? :Constants;
+        symbol [ SHOT_HIT %tmp.65 247 68 76 ];
+        %tmp.65 = getv %tmp.64 :SHOT_HIT;
+        %tmp.66 = eq %tmp.62 %tmp.65;
+        bt %tmp.66 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_247_20_250_20_if_true;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_248_24_248_68_false:
+        %tmp.67 = lgetv %sessionWaypoints.5;
+        symbol [ sessionWaypoints %tmp.67 248 24 40 ];
+        %tmp.68 = lgetv %i.9;
+        symbol [ i %tmp.68 248 41 42 ];
+        %tmp.69 = agetv %tmp.67 %tmp.68;
+        symbol [ shotResult %tmp.70 248 44 54 ];
+        %tmp.70 = getv %tmp.69 :shotResult;
+        symbol [ Constants %tmp.72 248 58 67 ];
+        %tmp.72 = getv ? :Constants;
+        symbol [ SHOT_MISSED %tmp.73 248 68 79 ];
+        %tmp.73 = getv %tmp.72 :SHOT_MISSED;
+        %tmp.74 = eq %tmp.70 %tmp.73;
+        push %tmp.74;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_248_24_248_68_end:
+        %tmp.75 = phi [%tmp.66 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_247_24_248_68_begin] [%tmp.74 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_248_24_248_68_false] [%tmp.75 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_248_24_248_68_end];
+        bf %tmp.75 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_247_20_250_20_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_247_20_250_20_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_248_81_250_20_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 249 24 ]
+        %tmp.78 = lgetv %totalShots.8;
+        symbol [ totalShots %tmp.78 249 24 34 ];
+        %tmp.79 = add %tmp.78 1;
+        lputv %totalShots.8 %tmp.79;
+        symbol [ totalShots %totalShots.8 249 24 34 ];
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_248_81_250_20_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_247_20_250_20_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_247_20_250_20_if_end:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_66_251_16_stop:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 245 ]
+        %tmp.82 = lgetv %i.9;
+        symbol [ i %tmp.82 245 61 62 ];
+        %tmp.83 = add %tmp.82 1;
+        lputv %i.9 %tmp.83;
+        symbol [ i %i.9 245 61 62 ];
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_test;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_245_16_251_16_for_end:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 253 16 ]
+        %tmp.84 = lgetv %app.3;
+        symbol [ app %tmp.84 253 16 19 ];
+        symbol [ updateFitData %tmp.85 253 20 33 ];
+        %tmp.85 = getv function %tmp.84 :updateFitData;
+        %tmp.86 = lgetv %totalFlushes.6;
+        symbol [ totalFlushes %tmp.86 253 34 46 ];
+        %tmp.87 = lgetv %totalDown.7;
+        symbol [ totalDown %tmp.87 253 48 57 ];
+        %tmp.88 = lgetv %totalShots.8;
+        symbol [ totalShots %tmp.88 253 59 69 ];
+        invoke %tmp.84 %tmp.85(%tmp.86, %tmp.87, %tmp.88);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 258 16 ]
+        %tmp.89 = lgetv %app.3;
+        symbol [ app %tmp.89 258 16 19 ];
+        symbol [ recordFlushLap %tmp.90 258 20 34 ];
+        %tmp.90 = getv function %tmp.89 :recordFlushLap;
+        symbol [ _species %tmp.92 258 35 43 ];
+        %tmp.92 = getv ? :_species;
+        symbol [ _quantityFlushed %tmp.94 258 45 61 ];
+        %tmp.94 = getv ? :_quantityFlushed;
+        symbol [ _birdsDown %tmp.96 258 63 73 ];
+        %tmp.96 = getv ? :_birdsDown;
+        symbol [ _shotResult %tmp.98 258 75 86 ];
+        %tmp.98 = getv ? :_shotResult;
+        symbol [ _capturedLat %tmp.100 259 35 47 ];
+        %tmp.100 = getv ? :_capturedLat;
+        symbol [ _capturedLon %tmp.102 259 49 61 ];
+        %tmp.102 = getv ? :_capturedLon;
+        invoke %tmp.89 %tmp.90(%tmp.92, %tmp.94, %tmp.96, %tmp.98, %tmp.100, %tmp.102);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_23_260_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_12_262_12_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_12_262_12_if_else_false:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_260_19_262_12_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 261 16 ]
+        symbol [ System %tmp.104 261 16 22 ];
+        %tmp.104 = getv ? :System;
+        symbol [ println %tmp.105 261 23 30 ];
+        %tmp.105 = getv function %tmp.104 :println;
+        %tmp.106 = "WARNING: Failed to save waypoint!";
+        invoke %tmp.104 %tmp.105(%tmp.106);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_260_19_262_12_stop:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_235_12_262_12_if_end:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_12_263_8_stop:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_endTry:
+        jsr @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_finally;
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_catch:
+        %tmp.107 = exception;
+        push %tmp.107;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 263 10 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_catch" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_263_10_268_8_end" ]
+        %ex.10 = local;
+        symbol [ ex %ex.10 263 17 19 ];
+        %tmp.108 = dup %tmp.107;
+        lputv %ex.10 %tmp.108;
+        symbol [ ex %ex.10 263 17 19 ];
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_263_21_268_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 267 12 ]
+        symbol [ System %tmp.110 267 12 18 ];
+        %tmp.110 = getv ? :System;
+        symbol [ println %tmp.111 267 19 26 ];
+        %tmp.111 = getv function %tmp.110 :println;
+        %tmp.112 = "ERROR: Exception saving waypoint: ";
+        %tmp.113 = lgetv %ex.10;
+        symbol [ ex %tmp.113 267 66 68 ];
+        symbol [ getErrorMessage %tmp.114 267 69 84 ];
+        %tmp.114 = getv function %tmp.113 :getErrorMessage;
+        %tmp.115 = invoke %tmp.113 %tmp.114();
+        %tmp.116 = add %tmp.112 %tmp.115;
+        invoke %tmp.110 %tmp.111(%tmp.116);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_263_21_268_8_stop:
+        jsr @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_finally;
+        pop;
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_263_10_268_8_end:
+        try @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_catch @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_263_10_268_8_end @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_263_10_268_8_end @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_finally;
+        jsr @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_finally;
+        throw %tmp.107;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_finally:
+        jsrret;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_222_8_268_8_end:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_218_36_269_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 274; @symbol_functiondef = [onHide,274,13,19]; ]
+    function onHide() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_274_30_279_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 275 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_275_8_278_8_if_stmt:
+        symbol [ _dismissTimer %tmp.2 275 12 25 ];
+        %tmp.2 = getv ? :_dismissTimer;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_275_8_278_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_275_8_278_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_275_35_278_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 276 12 ]
+        symbol [ _dismissTimer %tmp.6 276 12 25 ];
+        %tmp.6 = getv ? :_dismissTimer;
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stop %tmp.8 276 26 30 ];
+        %tmp.8 = getv function %tmp.7 :stop;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 277 12 ]
+        %tmp.9 = null;
+        symbol [ _dismissTimer ? 277 12 25 ];
+        putv self :_dismissTimer %tmp.9;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_275_35_278_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_275_8_278_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_275_8_278_8_if_end:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_274_30_279_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 297; @symbol_classdef = [PopChainHelper,297,6,20]; ]
+class PopChainHelper {
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 297; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 297; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 299; @position = 8; @symbol_vardef = [_timer,299,8,14]; @symbol_type<0> = [Timer,299,18,23]; @symbol_type<1> = [Timer,299,24,29]; ]
+    var _timer as Timer.Timer or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 300; @position = 8; @symbol_vardef = [_popsLeft,300,8,17]; @symbol_type<0> = [Number,300,21,27]; ]
+    var _popsLeft as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 305; @symbol_functiondef = [initialize,305,13,23]; @symbol_param<0> = [totalPops,305,24,33]; @symbol_param<0>_type<0> = [Number,305,37,43]; ]
+    function initialize(totalPops as Number) as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_305_45_307_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 306 8 ]
+        %tmp.1 = lgetv %totalPops;
+        symbol [ totalPops %tmp.1 306 20 29 ];
+        %tmp.2 = 1;
+        %tmp.3 = sub %tmp.1 %tmp.2;
+        symbol [ _popsLeft ? 306 8 17 ];
+        putv self :_popsLeft %tmp.3;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_305_45_307_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 313; @symbol_functiondef = [startPopping,313,13,25]; ]
+    function startPopping() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_313_36_324_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 315 8 ]
+        symbol [ WatchUi %tmp.1 315 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 315 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 315 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.4 315 32 42 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 320 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_320_8_323_8_if_stmt:
+        symbol [ _popsLeft %tmp.6 320 12 21 ];
+        %tmp.6 = getv ? :_popsLeft;
+        %tmp.7 = 0;
+        %tmp.8 = gt %tmp.6 %tmp.7;
+        bf %tmp.8 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_320_8_323_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_320_8_323_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_320_27_323_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 321 12 ]
+        symbol [ Timer %tmp.11 321 25 30 ];
+        %tmp.11 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.12 321 31 36 ];
+        %tmp.12 = getv function ? %tmp.11 :Timer;
+        %tmp.9 = newc %tmp.12 ();
+        symbol [ _timer ? 321 12 18 ];
+        putv self :_timer %tmp.9;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 322 12 ]
+        symbol [ _timer %tmp.14 322 12 18 ];
+        %tmp.14 = getv ? :_timer;
+        symbol [ start %tmp.15 322 19 24 ];
+        %tmp.15 = getv function %tmp.14 :start;
+        %tmp.16 = self;
+        symbol [ method %tmp.17 322 25 31 ];
+        %tmp.17 = getv function %tmp.16 :method;
+        %tmp.19 = const :popNext;
+        symbol [ popNext %tmp.19 322 33 40 const ];
+        %tmp.20 = invoke %tmp.16 %tmp.17(%tmp.19);
+        %tmp.21 = 50;
+        %tmp.22 = false;
+        invoke %tmp.14 %tmp.15(%tmp.20, %tmp.21, %tmp.22);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_320_27_323_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_320_8_323_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_320_8_323_8_if_end:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_313_36_324_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 330; @symbol_functiondef = [popNext,330,13,20]; ]
+    function popNext() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_330_31_343_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 331 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_331_8_331_38_if_stmt:
+        symbol [ _popsLeft %tmp.2 331 12 21 ];
+        %tmp.2 = getv ? :_popsLeft;
+        %tmp.3 = 0;
+        %tmp.4 = lte %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_331_8_331_38_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_331_8_331_38_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_331_28_331_38_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 331 30 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_331_28_331_38_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_331_8_331_38_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_331_8_331_38_if_end:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 333 8 ]
+        symbol [ WatchUi %tmp.5 333 8 15 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.6 333 16 23 ];
+        %tmp.6 = getv function %tmp.5 :popView;
+        symbol [ WatchUi %tmp.7 333 24 31 ];
+        %tmp.7 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.8 333 32 47 ];
+        %tmp.8 = getv %tmp.7 :SLIDE_IMMEDIATE;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 334 8 ]
+        symbol [ _popsLeft %tmp.11 334 8 17 ];
+        %tmp.11 = getv ? :_popsLeft;
+        %tmp.12 = sub %tmp.11 1;
+        symbol [ _popsLeft ? 334 8 17 ];
+        putv self :_popsLeft dup %tmp.12;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 336 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_336_8_340_8_if_stmt:
+        symbol [ _popsLeft %tmp.14 336 12 21 ];
+        %tmp.14 = getv ? :_popsLeft;
+        %tmp.15 = 0;
+        %tmp.16 = gt %tmp.14 %tmp.15;
+        bf %tmp.16 @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_336_8_340_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_336_8_340_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_336_27_340_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 338 12 ]
+        symbol [ Timer %tmp.19 338 25 30 ];
+        %tmp.19 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.20 338 31 36 ];
+        %tmp.20 = getv function ? %tmp.19 :Timer;
+        %tmp.17 = newc %tmp.20 ();
+        symbol [ _timer ? 338 12 18 ];
+        putv self :_timer %tmp.17;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 339 12 ]
+        symbol [ _timer %tmp.22 339 12 18 ];
+        %tmp.22 = getv ? :_timer;
+        symbol [ start %tmp.23 339 19 24 ];
+        %tmp.23 = getv function %tmp.22 :start;
+        %tmp.24 = self;
+        symbol [ method %tmp.25 339 25 31 ];
+        %tmp.25 = getv function %tmp.24 :method;
+        %tmp.27 = const :popNext;
+        symbol [ popNext %tmp.27 339 33 40 const ];
+        %tmp.28 = invoke %tmp.24 %tmp.25(%tmp.27);
+        %tmp.29 = 50;
+        %tmp.30 = false;
+        invoke %tmp.22 %tmp.23(%tmp.28, %tmp.29, %tmp.30);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_336_27_340_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_336_8_340_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_336_8_340_8_if_end:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_330_31_343_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 352; @symbol_classdef = [ConfirmationDelegate,352,6,26]; @symbol_extends<0> = [WatchUi,352,35,42]; @symbol_extends<1> = [BehaviorDelegate,352,43,59]; ]
+class ConfirmationDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 352; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 352; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 354; @symbol_functiondef = [initialize,354,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_354_26_356_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 355 8 ]
+        symbol [ BehaviorDelegate %tmp.2 355 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 355 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_354_26_356_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 361; @symbol_functiondef = [onSelect,361,13,21]; @symbol_return<0> = [Boolean,361,27,34]; ]
+    function onSelect() as Boolean {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_361_35_365_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 362 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_361_35_365_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_361_35_365_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 362 12 16 ];
+        symbol [ WatchUi %tmp.1 362 19 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.2 362 27 41 ];
+        %tmp.2 = getv function %tmp.1 :getCurrentView;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = 0;
+        %tmp.5 = agetv %tmp.3 %tmp.4;
+        %tmp.6 = as %tmp.5 ConfirmationView;
+        symbol [ ConfirmationView %tmp.6 362 50 66 ];
+        lputv %view.1 %tmp.6;
+        symbol [ view %view.1 362 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 363 8 ]
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 363 8 12 ];
+        symbol [ popToMainView %tmp.8 363 13 26 ];
+        %tmp.8 = getv function %tmp.7 :popToMainView;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 364 8 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_361_35_365_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 370; @symbol_functiondef = [onBack,370,13,19]; @symbol_return<0> = [Boolean,370,25,32]; ]
+    function onBack() as Boolean {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_370_33_374_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 371 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_370_33_374_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_370_33_374_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 371 12 16 ];
+        symbol [ WatchUi %tmp.1 371 19 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.2 371 27 41 ];
+        %tmp.2 = getv function %tmp.1 :getCurrentView;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = 0;
+        %tmp.5 = agetv %tmp.3 %tmp.4;
+        %tmp.6 = as %tmp.5 ConfirmationView;
+        symbol [ ConfirmationView %tmp.6 371 50 66 ];
+        lputv %view.1 %tmp.6;
+        symbol [ view %view.1 371 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 372 8 ]
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 372 8 12 ];
+        symbol [ popToMainView %tmp.8 372 13 26 ];
+        %tmp.8 = getv function %tmp.7 :popToMainView;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc" 373 8 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_ConfirmationView_mc_370_33_374_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\ConfirmationView.mc"; @line = 1; ]
+<init> {
+}

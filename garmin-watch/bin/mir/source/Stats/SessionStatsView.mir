@@ -1,0 +1,1811 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Application,3,14,25]; ]
+import Toybox.Application;
+[ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Lang,4,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Time,5,14,18]; ]
+import Toybox.Time;
+[ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 22; @symbol_classdef = [SessionStatsView,22,6,22]; @symbol_extends<0> = [WatchUi,22,31,38]; @symbol_extends<1> = [View,22,39,43]; ]
+class SessionStatsView extends WatchUi.View {
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 22; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 22; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 25; @position = 8; @symbol_vardef = [_totalFlushes,25,8,21]; @symbol_type<0> = [Number,25,25,31]; ]
+    var _totalFlushes as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 26; @position = 8; @symbol_vardef = [_totalShots,26,8,19]; @symbol_type<0> = [Number,26,23,29]; ]
+    var _totalShots as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 27; @position = 8; @symbol_vardef = [_totalDown,27,8,18]; @symbol_type<0> = [Number,27,22,28]; ]
+    var _totalDown as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 28; @position = 8; @symbol_vardef = [_successRate,28,8,20]; @symbol_type<0> = [Number,28,24,30]; ]
+    var _successRate as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 29; @position = 8; @symbol_vardef = [_duration,29,8,17]; @symbol_type<0> = [Number,29,21,27]; ]
+    var _duration as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 30; @position = 8; @symbol_vardef = [_distanceMiles,30,8,22]; @symbol_type<0> = [Double,30,26,32]; ]
+    var _distanceMiles as Double = 0.0d;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 33; @position = 8; @symbol_vardef = [_speciesBreakdown,33,8,25]; @symbol_type<0> = [Array,33,29,34]; ]
+    var _speciesBreakdown as Array or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 36; @position = 8; @symbol_vardef = [_scrollOffset,36,8,21]; @symbol_type<0> = [Number,36,25,31]; ]
+    var _scrollOffset as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 41; @symbol_functiondef = [initialize,41,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_41_26_43_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 42 8 ]
+        symbol [ View %tmp.2 42 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 42 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_41_26_43_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 53; @symbol_functiondef = [onShow,53,13,19]; ]
+    function onShow() as Void {
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 54 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_stop" ]
+        %app.1 = local;
+        symbol [ app %app.1 54 12 15 ];
+        symbol [ Application %tmp.1 54 18 29 ];
+        %tmp.1 = getm $.Toybox.Application;
+        symbol [ getApp %tmp.2 54 30 36 ];
+        %tmp.2 = getv function %tmp.1 :getApp;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = as %tmp.3 UplandHunterApp;
+        symbol [ UplandHunterApp %tmp.4 54 42 57 ];
+        lputv %app.1 %tmp.4;
+        symbol [ app %app.1 54 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 55 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_stop" ]
+        %session.2 = local;
+        symbol [ session %session.2 55 12 19 ];
+        %tmp.5 = lgetv %app.1;
+        symbol [ app %tmp.5 55 22 25 ];
+        symbol [ getHuntSession %tmp.6 55 26 40 ];
+        %tmp.6 = getv function %tmp.5 :getHuntSession;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %session.2 %tmp.7;
+        symbol [ session %session.2 55 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 58 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_stop" ]
+        %waypoints.3 = local;
+        symbol [ waypoints %waypoints.3 58 12 21 ];
+        symbol [ WaypointManager %tmp.9 58 24 39 ];
+        %tmp.9 = getv ? :WaypointManager;
+        symbol [ getSessionWaypoints %tmp.10 58 40 59 ];
+        %tmp.10 = getv function %tmp.9 :getSessionWaypoints;
+        %tmp.11 = lgetv %session.2;
+        symbol [ session %tmp.11 58 60 67 ];
+        symbol [ getStartTime %tmp.12 58 68 80 ];
+        %tmp.12 = getv function %tmp.11 :getStartTime;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        %tmp.14 = invoke %tmp.9 %tmp.10(%tmp.13);
+        lputv %waypoints.3 %tmp.14;
+        symbol [ waypoints %waypoints.3 58 12 21 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 61 8 ]
+        %tmp.15 = lgetv %waypoints.3;
+        symbol [ waypoints %tmp.15 61 24 33 ];
+        symbol [ size %tmp.16 61 34 38 ];
+        %tmp.16 = getv function %tmp.15 :size;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        symbol [ _totalFlushes ? 61 8 21 ];
+        putv self :_totalFlushes %tmp.17;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 62 8 ]
+        %tmp.18 = 0;
+        symbol [ _totalShots ? 62 8 19 ];
+        putv self :_totalShots %tmp.18;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 63 8 ]
+        %tmp.19 = 0;
+        symbol [ _totalDown ? 63 8 18 ];
+        putv self :_totalDown %tmp.19;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 66 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_stop" ]
+        %speciesFlushed.4 = local;
+        symbol [ speciesFlushed %speciesFlushed.4 66 12 26 ];
+        symbol [ Constants %tmp.22 66 34 43 ];
+        %tmp.22 = getv ? :Constants;
+        symbol [ SPECIES_COUNT %tmp.23 66 44 57 ];
+        %tmp.23 = getv %tmp.22 :SPECIES_COUNT;
+        %tmp.20 = newa %tmp.23;
+        %tmp.24 = as %tmp.20 Array<Number>;
+        symbol [ Array %tmp.24 66 62 67 ];
+        symbol [ Number %tmp.24 66 68 74 ];
+        lputv %speciesFlushed.4 %tmp.24;
+        symbol [ speciesFlushed %speciesFlushed.4 66 12 26 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 67 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_stop" ]
+        %speciesDowned.5 = local;
+        symbol [ speciesDowned %speciesDowned.5 67 12 25 ];
+        symbol [ Constants %tmp.27 67 33 42 ];
+        %tmp.27 = getv ? :Constants;
+        symbol [ SPECIES_COUNT %tmp.28 67 43 56 ];
+        %tmp.28 = getv %tmp.27 :SPECIES_COUNT;
+        %tmp.25 = newa %tmp.28;
+        %tmp.29 = as %tmp.25 Array<Number>;
+        symbol [ Array %tmp.29 67 61 66 ];
+        symbol [ Number %tmp.29 67 67 73 ];
+        lputv %speciesDowned.5 %tmp.29;
+        symbol [ speciesDowned %speciesDowned.5 67 12 25 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 68 8 ]
+        for @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_test @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_incr @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_begin" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_end" ]
+        %i.6 = local;
+        symbol [ i %i.6 68 17 18 ];
+        %tmp.30 = 0;
+        lputv %i.6 %tmp.30;
+        symbol [ i %i.6 68 17 18 ];
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_test:
+        %tmp.31 = lgetv %i.6;
+        symbol [ i %tmp.31 68 24 25 ];
+        symbol [ Constants %tmp.33 68 28 37 ];
+        %tmp.33 = getv ? :Constants;
+        symbol [ SPECIES_COUNT %tmp.34 68 38 51 ];
+        %tmp.34 = getv %tmp.33 :SPECIES_COUNT;
+        %tmp.35 = lt %tmp.31 %tmp.34;
+        bf %tmp.35 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_begin:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_58_71_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 69 12 ]
+        %tmp.36 = lgetv %speciesFlushed.4;
+        symbol [ speciesFlushed %tmp.36 69 12 26 ];
+        %tmp.37 = 0;
+        %tmp.38 = lgetv %i.6;
+        symbol [ i %tmp.38 69 27 28 ];
+        aputv %tmp.36 %tmp.38 %tmp.37;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 70 12 ]
+        %tmp.39 = lgetv %speciesDowned.5;
+        symbol [ speciesDowned %tmp.39 70 12 25 ];
+        %tmp.40 = 0;
+        %tmp.41 = lgetv %i.6;
+        symbol [ i %tmp.41 70 26 27 ];
+        aputv %tmp.39 %tmp.41 %tmp.40;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_58_71_8_stop:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 68 ]
+        %tmp.44 = lgetv %i.6;
+        symbol [ i %tmp.44 68 53 54 ];
+        %tmp.45 = add %tmp.44 1;
+        lputv %i.6 %tmp.45;
+        symbol [ i %i.6 68 53 54 ];
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_test;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_68_8_71_8_for_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 74 8 ]
+        for @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_test @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_incr @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_begin" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_end" ]
+        %i.7 = local;
+        symbol [ i %i.7 74 17 18 ];
+        %tmp.46 = 0;
+        lputv %i.7 %tmp.46;
+        symbol [ i %i.7 74 17 18 ];
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_test:
+        %tmp.47 = lgetv %i.7;
+        symbol [ i %tmp.47 74 24 25 ];
+        %tmp.48 = lgetv %waypoints.3;
+        symbol [ waypoints %tmp.48 74 28 37 ];
+        symbol [ size %tmp.49 74 38 42 ];
+        %tmp.49 = getv function %tmp.48 :size;
+        %tmp.50 = invoke %tmp.48 %tmp.49();
+        %tmp.51 = lt %tmp.47 %tmp.50;
+        bf %tmp.51 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_begin:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_51_91_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 75 12 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_51_91_8_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_51_91_8_stop" ]
+        %wp.8 = local;
+        symbol [ wp %wp.8 75 16 18 ];
+        %tmp.52 = lgetv %waypoints.3;
+        symbol [ waypoints %tmp.52 75 21 30 ];
+        %tmp.53 = lgetv %i.7;
+        symbol [ i %tmp.53 75 31 32 ];
+        %tmp.54 = agetv %tmp.52 %tmp.53;
+        lputv %wp.8 %tmp.54;
+        symbol [ wp %wp.8 75 16 18 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 78 12 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_78_12_81_12_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_78_16_79_43_begin:
+        %tmp.55 = lgetv %wp.8;
+        symbol [ wp %tmp.55 78 16 18 ];
+        symbol [ shotResult %tmp.56 78 19 29 ];
+        %tmp.56 = getv %tmp.55 :shotResult;
+        symbol [ Constants %tmp.58 78 33 42 ];
+        %tmp.58 = getv ? :Constants;
+        symbol [ SHOT_HIT %tmp.59 78 43 51 ];
+        %tmp.59 = getv %tmp.58 :SHOT_HIT;
+        %tmp.60 = eq %tmp.56 %tmp.59;
+        bt %tmp.60 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_78_12_81_12_if_true;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_79_16_79_43_false:
+        %tmp.61 = lgetv %wp.8;
+        symbol [ wp %tmp.61 79 16 18 ];
+        symbol [ shotResult %tmp.62 79 19 29 ];
+        %tmp.62 = getv %tmp.61 :shotResult;
+        symbol [ Constants %tmp.64 79 33 42 ];
+        %tmp.64 = getv ? :Constants;
+        symbol [ SHOT_MISSED %tmp.65 79 43 54 ];
+        %tmp.65 = getv %tmp.64 :SHOT_MISSED;
+        %tmp.66 = eq %tmp.62 %tmp.65;
+        push %tmp.66;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_79_16_79_43_end:
+        %tmp.67 = phi [%tmp.60 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_78_16_79_43_begin] [%tmp.66 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_79_16_79_43_false] [%tmp.67 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_79_16_79_43_end];
+        bf %tmp.67 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_78_12_81_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_78_12_81_12_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_79_56_81_12_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 80 16 ]
+        symbol [ _totalShots %tmp.70 80 16 27 ];
+        %tmp.70 = getv ? :_totalShots;
+        %tmp.71 = add %tmp.70 1;
+        symbol [ _totalShots ? 80 16 27 ];
+        putv self :_totalShots dup %tmp.71;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_79_56_81_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_78_12_81_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_78_12_81_12_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 84 12 ]
+        symbol [ _totalDown %tmp.72 84 12 22 ];
+        %tmp.72 = getv self :_totalDown;
+        %tmp.73 = lgetv %wp.8;
+        symbol [ wp %tmp.73 84 26 28 ];
+        symbol [ birdsDown %tmp.74 84 29 38 ];
+        %tmp.74 = getv %tmp.73 :birdsDown;
+        %tmp.75 = add %tmp.72 %tmp.74;
+        symbol [ _totalDown ? 84 12 22 ];
+        putv self :_totalDown dup %tmp.75;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 87 12 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_12_90_12_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_16_87_58_begin:
+        %tmp.76 = lgetv %wp.8;
+        symbol [ wp %tmp.76 87 16 18 ];
+        symbol [ species %tmp.77 87 19 26 ];
+        %tmp.77 = getv %tmp.76 :species;
+        %tmp.78 = 0;
+        %tmp.79 = gte %tmp.77 %tmp.78;
+        bf %tmp.79 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_12_90_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_35_87_58_true:
+        %tmp.80 = lgetv %wp.8;
+        symbol [ wp %tmp.80 87 35 37 ];
+        symbol [ species %tmp.81 87 38 45 ];
+        %tmp.81 = getv %tmp.80 :species;
+        symbol [ Constants %tmp.83 87 48 57 ];
+        %tmp.83 = getv ? :Constants;
+        symbol [ SPECIES_COUNT %tmp.84 87 58 71 ];
+        %tmp.84 = getv %tmp.83 :SPECIES_COUNT;
+        %tmp.85 = lt %tmp.81 %tmp.84;
+        push %tmp.85;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_35_87_58_end:
+        %tmp.86 = phi [%tmp.79 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_16_87_58_begin] [%tmp.85 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_35_87_58_true] [%tmp.86 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_35_87_58_end];
+        bf %tmp.86 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_12_90_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_12_90_12_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_73_90_12_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 88 16 ]
+        %tmp.87 = lgetv %speciesFlushed.4;
+        symbol [ speciesFlushed %tmp.87 88 16 30 ];
+        %tmp.88 = lgetv %speciesFlushed.4;
+        symbol [ speciesFlushed %tmp.88 88 16 30 ];
+        %tmp.89 = lgetv %wp.8;
+        symbol [ wp %tmp.89 88 31 33 ];
+        symbol [ species %tmp.90 88 34 41 ];
+        %tmp.90 = getv %tmp.89 :species;
+        %tmp.91 = agetv %tmp.88 %tmp.90;
+        %tmp.92 = lgetv %wp.8;
+        symbol [ wp %tmp.92 88 46 48 ];
+        symbol [ quantityFlushed %tmp.93 88 49 64 ];
+        %tmp.93 = getv %tmp.92 :quantityFlushed;
+        %tmp.94 = add %tmp.91 %tmp.93;
+        %tmp.95 = lgetv %wp.8;
+        symbol [ wp %tmp.95 88 31 33 ];
+        symbol [ species %tmp.96 88 34 41 ];
+        %tmp.96 = getv %tmp.95 :species;
+        aputv %tmp.87 %tmp.96 dup %tmp.94;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 89 16 ]
+        %tmp.97 = lgetv %speciesDowned.5;
+        symbol [ speciesDowned %tmp.97 89 16 29 ];
+        %tmp.98 = lgetv %speciesDowned.5;
+        symbol [ speciesDowned %tmp.98 89 16 29 ];
+        %tmp.99 = lgetv %wp.8;
+        symbol [ wp %tmp.99 89 30 32 ];
+        symbol [ species %tmp.100 89 33 40 ];
+        %tmp.100 = getv %tmp.99 :species;
+        %tmp.101 = agetv %tmp.98 %tmp.100;
+        %tmp.102 = lgetv %wp.8;
+        symbol [ wp %tmp.102 89 45 47 ];
+        symbol [ birdsDown %tmp.103 89 48 57 ];
+        %tmp.103 = getv %tmp.102 :birdsDown;
+        %tmp.104 = add %tmp.101 %tmp.103;
+        %tmp.105 = lgetv %wp.8;
+        symbol [ wp %tmp.105 89 30 32 ];
+        symbol [ species %tmp.106 89 33 40 ];
+        %tmp.106 = getv %tmp.105 :species;
+        aputv %tmp.97 %tmp.106 dup %tmp.104;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_73_90_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_12_90_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_87_12_90_12_if_end:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_51_91_8_stop:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 74 ]
+        %tmp.109 = lgetv %i.7;
+        symbol [ i %tmp.109 74 46 47 ];
+        %tmp.110 = add %tmp.109 1;
+        lputv %i.7 %tmp.110;
+        symbol [ i %i.7 74 46 47 ];
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_test;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_74_8_91_8_for_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 94 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_94_8_98_8_if_stmt:
+        symbol [ _totalShots %tmp.112 94 12 23 ];
+        %tmp.112 = getv ? :_totalShots;
+        %tmp.113 = 0;
+        %tmp.114 = gt %tmp.112 %tmp.113;
+        bf %tmp.114 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_94_8_98_8_if_else_false;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_94_8_98_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_94_29_96_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 95 12 ]
+        symbol [ _totalDown %tmp.116 95 28 38 ];
+        %tmp.116 = getv ? :_totalDown;
+        %tmp.117 = 100;
+        %tmp.118 = mul %tmp.116 %tmp.117;
+        symbol [ _totalShots %tmp.120 95 48 59 ];
+        %tmp.120 = getv ? :_totalShots;
+        %tmp.121 = div %tmp.118 %tmp.120;
+        symbol [ _successRate ? 95 12 24 ];
+        putv self :_successRate %tmp.121;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_94_29_96_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_94_8_98_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_94_8_98_8_if_else_false:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_96_15_98_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 97 12 ]
+        %tmp.122 = 0;
+        symbol [ _successRate ? 97 12 24 ];
+        putv self :_successRate %tmp.122;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_96_15_98_8_stop:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_94_8_98_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 101 8 ]
+        %tmp.123 = lgetv %session.2;
+        symbol [ session %tmp.123 101 20 27 ];
+        symbol [ getDuration %tmp.124 101 28 39 ];
+        %tmp.124 = getv function %tmp.123 :getDuration;
+        %tmp.125 = invoke %tmp.123 %tmp.124();
+        symbol [ _duration ? 101 8 17 ];
+        putv self :_duration %tmp.125;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 102 8 ]
+        %tmp.126 = lgetv %session.2;
+        symbol [ session %tmp.126 102 25 32 ];
+        symbol [ getDistanceMiles %tmp.127 102 33 49 ];
+        %tmp.127 = getv function %tmp.126 :getDistanceMiles;
+        %tmp.128 = invoke %tmp.126 %tmp.127();
+        symbol [ _distanceMiles ? 102 8 22 ];
+        putv self :_distanceMiles %tmp.128;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 105 8 ]
+        %tmp.129 = newa 0 Array;
+        symbol [ Array %tmp.129 105 34 39 ];
+        symbol [ _speciesBreakdown ? 105 8 25 ];
+        putv self :_speciesBreakdown %tmp.129;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 106 8 ]
+        for @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_test @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_incr @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_begin" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_end" ]
+        %i.9 = local;
+        symbol [ i %i.9 106 17 18 ];
+        %tmp.130 = 0;
+        lputv %i.9 %tmp.130;
+        symbol [ i %i.9 106 17 18 ];
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_test:
+        %tmp.131 = lgetv %i.9;
+        symbol [ i %tmp.131 106 24 25 ];
+        symbol [ Constants %tmp.133 106 28 37 ];
+        %tmp.133 = getv ? :Constants;
+        symbol [ SPECIES_COUNT %tmp.134 106 38 51 ];
+        %tmp.134 = getv %tmp.133 :SPECIES_COUNT;
+        %tmp.135 = lt %tmp.131 %tmp.134;
+        bf %tmp.135 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_begin:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_58_114_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 107 12 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_107_12_113_12_if_stmt:
+        %tmp.136 = lgetv %speciesFlushed.4;
+        symbol [ speciesFlushed %tmp.136 107 16 30 ];
+        %tmp.137 = lgetv %i.9;
+        symbol [ i %tmp.137 107 31 32 ];
+        %tmp.138 = agetv %tmp.136 %tmp.137;
+        %tmp.139 = 0;
+        %tmp.140 = gt %tmp.138 %tmp.139;
+        bf %tmp.140 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_107_12_113_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_107_12_113_12_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_107_39_113_12_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 108 16 ]
+        symbol [ _speciesBreakdown %tmp.142 108 16 33 ];
+        %tmp.142 = getv ? :_speciesBreakdown;
+        symbol [ add %tmp.143 108 34 37 ];
+        %tmp.143 = getv function %tmp.142 :add;
+        %tmp.144 = newd 3;
+        %tmp.145 = "species";
+        %tmp.146 = lgetv %i.9;
+        symbol [ i %tmp.146 109 33 34 ];
+        %tmp.147 = dup %tmp.144;
+        %tmp.148 = aputv %tmp.147 %tmp.145 %tmp.146;
+        %tmp.149 = "flushed";
+        %tmp.150 = lgetv %speciesFlushed.4;
+        symbol [ speciesFlushed %tmp.150 110 33 47 ];
+        %tmp.151 = lgetv %i.9;
+        symbol [ i %tmp.151 110 48 49 ];
+        %tmp.152 = agetv %tmp.150 %tmp.151;
+        %tmp.153 = dup %tmp.148;
+        %tmp.154 = aputv %tmp.153 %tmp.149 %tmp.152;
+        %tmp.155 = "downed";
+        %tmp.156 = lgetv %speciesDowned.5;
+        symbol [ speciesDowned %tmp.156 111 32 45 ];
+        %tmp.157 = lgetv %i.9;
+        symbol [ i %tmp.157 111 46 47 ];
+        %tmp.158 = agetv %tmp.156 %tmp.157;
+        %tmp.159 = dup %tmp.154;
+        %tmp.160 = aputv %tmp.159 %tmp.155 %tmp.158;
+        invoke %tmp.142 %tmp.143(%tmp.160);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_107_39_113_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_107_12_113_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_107_12_113_12_if_end:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_58_114_8_stop:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 106 ]
+        %tmp.163 = lgetv %i.9;
+        symbol [ i %tmp.163 106 53 54 ];
+        %tmp.164 = add %tmp.163 1;
+        lputv %i.9 %tmp.164;
+        symbol [ i %i.9 106 53 54 ];
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_test;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_106_8_114_8_for_end:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_53_30_115_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 123; @symbol_functiondef = [onUpdate,123,13,21]; @symbol_param<0> = [dc,123,22,24]; @symbol_param<0>_type<0> = [Graphics,123,28,36]; @symbol_param<0>_type<1> = [Dc,123,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 124 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_stop" ]
+        %screenW.1 = local;
+        symbol [ screenW %screenW.1 124 12 19 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 124 22 24 ];
+        symbol [ getWidth %tmp.2 124 25 33 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %screenW.1 %tmp.3;
+        symbol [ screenW %screenW.1 124 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 125 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_stop" ]
+        %screenH.2 = local;
+        symbol [ screenH %screenH.2 125 12 19 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 125 22 24 ];
+        symbol [ getHeight %tmp.5 125 25 34 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %screenH.2 %tmp.6;
+        symbol [ screenH %screenH.2 125 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 126 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_stop" ]
+        %centerX.3 = local;
+        symbol [ centerX %centerX.3 126 12 19 ];
+        %tmp.7 = lgetv %screenW.1;
+        symbol [ screenW %tmp.7 126 22 29 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %centerX.3 %tmp.9;
+        symbol [ centerX %centerX.3 126 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 129 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 129 8 10 ];
+        symbol [ setColor %tmp.11 129 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        symbol [ Constants %tmp.13 129 20 29 ];
+        %tmp.13 = getv ? :Constants;
+        symbol [ getTextColor %tmp.14 129 30 42 ];
+        %tmp.14 = getv function %tmp.13 :getTextColor;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        symbol [ Constants %tmp.17 129 46 55 ];
+        %tmp.17 = getv ? :Constants;
+        symbol [ getBgColor %tmp.18 129 56 66 ];
+        %tmp.18 = getv function %tmp.17 :getBgColor;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        invoke %tmp.10 %tmp.11(%tmp.15, %tmp.19);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 130 8 ]
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 130 8 10 ];
+        symbol [ clear %tmp.21 130 11 16 ];
+        %tmp.21 = getv function %tmp.20 :clear;
+        invoke %tmp.20 %tmp.21();
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 133 8 ]
+        %tmp.22 = lgetv %dc;
+        symbol [ dc %tmp.22 133 8 10 ];
+        symbol [ setColor %tmp.23 133 11 19 ];
+        %tmp.23 = getv function %tmp.22 :setColor;
+        symbol [ Constants %tmp.25 133 20 29 ];
+        %tmp.25 = getv ? :Constants;
+        symbol [ COLOR_PRIMARY %tmp.26 133 30 43 ];
+        %tmp.26 = getv %tmp.25 :COLOR_PRIMARY;
+        symbol [ Graphics %tmp.27 133 45 53 ];
+        %tmp.27 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.28 133 54 71 ];
+        %tmp.28 = getv %tmp.27 :COLOR_TRANSPARENT;
+        invoke %tmp.22 %tmp.23(%tmp.26, %tmp.28);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 134 8 ]
+        %tmp.29 = lgetv %dc;
+        symbol [ dc %tmp.29 134 8 10 ];
+        symbol [ drawText %tmp.30 134 11 19 ];
+        %tmp.30 = getv function %tmp.29 :drawText;
+        %tmp.31 = lgetv %centerX.3;
+        symbol [ centerX %tmp.31 134 20 27 ];
+        %tmp.32 = 25;
+        symbol [ Graphics %tmp.33 134 33 41 ];
+        %tmp.33 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.34 134 42 52 ];
+        %tmp.34 = getv %tmp.33 :FONT_SMALL;
+        %tmp.35 = "SESSION STATS";
+        symbol [ Graphics %tmp.36 135 29 37 ];
+        %tmp.36 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.37 135 38 57 ];
+        %tmp.37 = getv %tmp.36 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.29 %tmp.30(%tmp.31, %tmp.32, %tmp.34, %tmp.35, %tmp.37);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 139 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_stop" ]
+        %y.4 = local;
+        symbol [ y %y.4 139 12 13 ];
+        %tmp.38 = 65;
+        symbol [ _scrollOffset %tmp.40 139 22 35 ];
+        %tmp.40 = getv ? :_scrollOffset;
+        %tmp.41 = 35;
+        %tmp.42 = mul %tmp.40 %tmp.41;
+        %tmp.43 = sub %tmp.38 %tmp.42;
+        lputv %y.4 %tmp.43;
+        symbol [ y %y.4 139 12 13 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 140 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_stop" ]
+        %rowHeight.5 = local;
+        symbol [ rowHeight %rowHeight.5 140 12 21 ];
+        %tmp.44 = 35;
+        lputv %rowHeight.5 %tmp.44;
+        symbol [ rowHeight %rowHeight.5 140 12 21 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 141 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_stop" ]
+        %leftPad.6 = local;
+        symbol [ leftPad %leftPad.6 141 12 19 ];
+        %tmp.45 = 50;
+        lputv %leftPad.6 %tmp.45;
+        symbol [ leftPad %leftPad.6 141 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 142 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_stop" ]
+        %rightPad.7 = local;
+        symbol [ rightPad %rightPad.7 142 12 20 ];
+        %tmp.46 = lgetv %screenW.1;
+        symbol [ screenW %tmp.46 142 23 30 ];
+        %tmp.47 = 50;
+        %tmp.48 = sub %tmp.46 %tmp.47;
+        lputv %rightPad.7 %tmp.48;
+        symbol [ rightPad %rightPad.7 142 12 20 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 145 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_8_152_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_12_145_36_begin:
+        %tmp.49 = lgetv %y.4;
+        symbol [ y %tmp.49 145 12 13 ];
+        %tmp.50 = 40;
+        %tmp.51 = gt %tmp.49 %tmp.50;
+        bf %tmp.51 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_8_152_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_22_145_36_true:
+        %tmp.52 = lgetv %y.4;
+        symbol [ y %tmp.52 145 22 23 ];
+        %tmp.53 = lgetv %screenH.2;
+        symbol [ screenH %tmp.53 145 26 33 ];
+        %tmp.54 = 30;
+        %tmp.55 = sub %tmp.53 %tmp.54;
+        %tmp.56 = lt %tmp.52 %tmp.55;
+        push %tmp.56;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_22_145_36_end:
+        %tmp.57 = phi [%tmp.51 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_12_145_36_begin] [%tmp.56 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_22_145_36_true] [%tmp.57 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_22_145_36_end];
+        bf %tmp.57 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_8_152_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_8_152_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_40_152_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 146 12 ]
+        %tmp.58 = lgetv %dc;
+        symbol [ dc %tmp.58 146 12 14 ];
+        symbol [ setColor %tmp.59 146 15 23 ];
+        %tmp.59 = getv function %tmp.58 :setColor;
+        symbol [ Constants %tmp.61 146 24 33 ];
+        %tmp.61 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.62 146 34 45 ];
+        %tmp.62 = getv %tmp.61 :COLOR_MUTED;
+        symbol [ Graphics %tmp.63 146 47 55 ];
+        %tmp.63 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.64 146 56 73 ];
+        %tmp.64 = getv %tmp.63 :COLOR_TRANSPARENT;
+        invoke %tmp.58 %tmp.59(%tmp.62, %tmp.64);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 147 12 ]
+        %tmp.65 = lgetv %dc;
+        symbol [ dc %tmp.65 147 12 14 ];
+        symbol [ drawText %tmp.66 147 15 23 ];
+        %tmp.66 = getv function %tmp.65 :drawText;
+        %tmp.67 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.67 147 24 31 ];
+        %tmp.68 = lgetv %y.4;
+        symbol [ y %tmp.68 147 33 34 ];
+        symbol [ Graphics %tmp.69 147 36 44 ];
+        %tmp.69 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.70 147 45 55 ];
+        %tmp.70 = getv %tmp.69 :FONT_XTINY;
+        %tmp.71 = "Total Flushes";
+        symbol [ Graphics %tmp.72 148 33 41 ];
+        %tmp.72 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.73 148 42 59 ];
+        %tmp.73 = getv %tmp.72 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.65 %tmp.66(%tmp.67, %tmp.68, %tmp.70, %tmp.71, %tmp.73);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 149 12 ]
+        %tmp.74 = lgetv %dc;
+        symbol [ dc %tmp.74 149 12 14 ];
+        symbol [ setColor %tmp.75 149 15 23 ];
+        %tmp.75 = getv function %tmp.74 :setColor;
+        symbol [ Constants %tmp.77 149 24 33 ];
+        %tmp.77 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.78 149 34 44 ];
+        %tmp.78 = getv %tmp.77 :COLOR_TEXT;
+        symbol [ Graphics %tmp.79 149 46 54 ];
+        %tmp.79 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.80 149 55 72 ];
+        %tmp.80 = getv %tmp.79 :COLOR_TRANSPARENT;
+        invoke %tmp.74 %tmp.75(%tmp.78, %tmp.80);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 150 12 ]
+        %tmp.81 = lgetv %dc;
+        symbol [ dc %tmp.81 150 12 14 ];
+        symbol [ drawText %tmp.82 150 15 23 ];
+        %tmp.82 = getv function %tmp.81 :drawText;
+        %tmp.83 = lgetv %rightPad.7;
+        symbol [ rightPad %tmp.83 150 24 32 ];
+        %tmp.84 = lgetv %y.4;
+        symbol [ y %tmp.84 150 34 35 ];
+        symbol [ Graphics %tmp.85 150 37 45 ];
+        %tmp.85 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.86 150 46 56 ];
+        %tmp.86 = getv %tmp.85 :FONT_SMALL;
+        symbol [ _totalFlushes %tmp.88 151 16 29 ];
+        %tmp.88 = getv ? :_totalFlushes;
+        symbol [ format %tmp.89 151 30 36 ];
+        %tmp.89 = getv function %tmp.88 :format;
+        %tmp.90 = "%d";
+        %tmp.91 = invoke %tmp.88 %tmp.89(%tmp.90);
+        symbol [ Graphics %tmp.92 151 44 52 ];
+        %tmp.92 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.93 151 53 71 ];
+        %tmp.93 = getv %tmp.92 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.81 %tmp.82(%tmp.83, %tmp.84, %tmp.86, %tmp.91, %tmp.93);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_40_152_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_8_152_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_145_8_152_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 153 8 ]
+        %tmp.94 = lgetv %y.4;
+        symbol [ y %tmp.94 153 8 9 ];
+        %tmp.95 = lgetv %rowHeight.5;
+        symbol [ rowHeight %tmp.95 153 13 22 ];
+        %tmp.96 = add %tmp.94 %tmp.95;
+        lputv %y.4 %tmp.96;
+        symbol [ y %y.4 153 8 9 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 156 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_8_163_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_12_156_36_begin:
+        %tmp.97 = lgetv %y.4;
+        symbol [ y %tmp.97 156 12 13 ];
+        %tmp.98 = 40;
+        %tmp.99 = gt %tmp.97 %tmp.98;
+        bf %tmp.99 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_8_163_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_22_156_36_true:
+        %tmp.100 = lgetv %y.4;
+        symbol [ y %tmp.100 156 22 23 ];
+        %tmp.101 = lgetv %screenH.2;
+        symbol [ screenH %tmp.101 156 26 33 ];
+        %tmp.102 = 30;
+        %tmp.103 = sub %tmp.101 %tmp.102;
+        %tmp.104 = lt %tmp.100 %tmp.103;
+        push %tmp.104;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_22_156_36_end:
+        %tmp.105 = phi [%tmp.99 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_12_156_36_begin] [%tmp.104 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_22_156_36_true] [%tmp.105 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_22_156_36_end];
+        bf %tmp.105 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_8_163_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_8_163_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_40_163_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 157 12 ]
+        %tmp.106 = lgetv %dc;
+        symbol [ dc %tmp.106 157 12 14 ];
+        symbol [ setColor %tmp.107 157 15 23 ];
+        %tmp.107 = getv function %tmp.106 :setColor;
+        symbol [ Constants %tmp.109 157 24 33 ];
+        %tmp.109 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.110 157 34 45 ];
+        %tmp.110 = getv %tmp.109 :COLOR_MUTED;
+        symbol [ Graphics %tmp.111 157 47 55 ];
+        %tmp.111 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.112 157 56 73 ];
+        %tmp.112 = getv %tmp.111 :COLOR_TRANSPARENT;
+        invoke %tmp.106 %tmp.107(%tmp.110, %tmp.112);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 158 12 ]
+        %tmp.113 = lgetv %dc;
+        symbol [ dc %tmp.113 158 12 14 ];
+        symbol [ drawText %tmp.114 158 15 23 ];
+        %tmp.114 = getv function %tmp.113 :drawText;
+        %tmp.115 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.115 158 24 31 ];
+        %tmp.116 = lgetv %y.4;
+        symbol [ y %tmp.116 158 33 34 ];
+        symbol [ Graphics %tmp.117 158 36 44 ];
+        %tmp.117 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.118 158 45 55 ];
+        %tmp.118 = getv %tmp.117 :FONT_XTINY;
+        %tmp.119 = "Shots Taken";
+        symbol [ Graphics %tmp.120 159 31 39 ];
+        %tmp.120 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.121 159 40 57 ];
+        %tmp.121 = getv %tmp.120 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.113 %tmp.114(%tmp.115, %tmp.116, %tmp.118, %tmp.119, %tmp.121);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 160 12 ]
+        %tmp.122 = lgetv %dc;
+        symbol [ dc %tmp.122 160 12 14 ];
+        symbol [ setColor %tmp.123 160 15 23 ];
+        %tmp.123 = getv function %tmp.122 :setColor;
+        symbol [ Constants %tmp.125 160 24 33 ];
+        %tmp.125 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.126 160 34 44 ];
+        %tmp.126 = getv %tmp.125 :COLOR_TEXT;
+        symbol [ Graphics %tmp.127 160 46 54 ];
+        %tmp.127 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.128 160 55 72 ];
+        %tmp.128 = getv %tmp.127 :COLOR_TRANSPARENT;
+        invoke %tmp.122 %tmp.123(%tmp.126, %tmp.128);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 161 12 ]
+        %tmp.129 = lgetv %dc;
+        symbol [ dc %tmp.129 161 12 14 ];
+        symbol [ drawText %tmp.130 161 15 23 ];
+        %tmp.130 = getv function %tmp.129 :drawText;
+        %tmp.131 = lgetv %rightPad.7;
+        symbol [ rightPad %tmp.131 161 24 32 ];
+        %tmp.132 = lgetv %y.4;
+        symbol [ y %tmp.132 161 34 35 ];
+        symbol [ Graphics %tmp.133 161 37 45 ];
+        %tmp.133 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.134 161 46 56 ];
+        %tmp.134 = getv %tmp.133 :FONT_SMALL;
+        symbol [ _totalShots %tmp.136 162 16 27 ];
+        %tmp.136 = getv ? :_totalShots;
+        symbol [ format %tmp.137 162 28 34 ];
+        %tmp.137 = getv function %tmp.136 :format;
+        %tmp.138 = "%d";
+        %tmp.139 = invoke %tmp.136 %tmp.137(%tmp.138);
+        symbol [ Graphics %tmp.140 162 42 50 ];
+        %tmp.140 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.141 162 51 69 ];
+        %tmp.141 = getv %tmp.140 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.129 %tmp.130(%tmp.131, %tmp.132, %tmp.134, %tmp.139, %tmp.141);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_40_163_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_8_163_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_156_8_163_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 164 8 ]
+        %tmp.142 = lgetv %y.4;
+        symbol [ y %tmp.142 164 8 9 ];
+        %tmp.143 = lgetv %rowHeight.5;
+        symbol [ rowHeight %tmp.143 164 13 22 ];
+        %tmp.144 = add %tmp.142 %tmp.143;
+        lputv %y.4 %tmp.144;
+        symbol [ y %y.4 164 8 9 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 167 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_8_182_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_12_167_36_begin:
+        %tmp.145 = lgetv %y.4;
+        symbol [ y %tmp.145 167 12 13 ];
+        %tmp.146 = 40;
+        %tmp.147 = gt %tmp.145 %tmp.146;
+        bf %tmp.147 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_8_182_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_22_167_36_true:
+        %tmp.148 = lgetv %y.4;
+        symbol [ y %tmp.148 167 22 23 ];
+        %tmp.149 = lgetv %screenH.2;
+        symbol [ screenH %tmp.149 167 26 33 ];
+        %tmp.150 = 30;
+        %tmp.151 = sub %tmp.149 %tmp.150;
+        %tmp.152 = lt %tmp.148 %tmp.151;
+        push %tmp.152;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_22_167_36_end:
+        %tmp.153 = phi [%tmp.147 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_12_167_36_begin] [%tmp.152 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_22_167_36_true] [%tmp.153 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_22_167_36_end];
+        bf %tmp.153 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_8_182_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_8_182_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_40_182_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 168 12 ]
+        %tmp.154 = lgetv %dc;
+        symbol [ dc %tmp.154 168 12 14 ];
+        symbol [ setColor %tmp.155 168 15 23 ];
+        %tmp.155 = getv function %tmp.154 :setColor;
+        symbol [ Constants %tmp.157 168 24 33 ];
+        %tmp.157 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.158 168 34 45 ];
+        %tmp.158 = getv %tmp.157 :COLOR_MUTED;
+        symbol [ Graphics %tmp.159 168 47 55 ];
+        %tmp.159 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.160 168 56 73 ];
+        %tmp.160 = getv %tmp.159 :COLOR_TRANSPARENT;
+        invoke %tmp.154 %tmp.155(%tmp.158, %tmp.160);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 169 12 ]
+        %tmp.161 = lgetv %dc;
+        symbol [ dc %tmp.161 169 12 14 ];
+        symbol [ drawText %tmp.162 169 15 23 ];
+        %tmp.162 = getv function %tmp.161 :drawText;
+        %tmp.163 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.163 169 24 31 ];
+        %tmp.164 = lgetv %y.4;
+        symbol [ y %tmp.164 169 33 34 ];
+        symbol [ Graphics %tmp.165 169 36 44 ];
+        %tmp.165 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.166 169 45 55 ];
+        %tmp.166 = getv %tmp.165 :FONT_XTINY;
+        %tmp.167 = "Success Rate";
+        symbol [ Graphics %tmp.168 170 32 40 ];
+        %tmp.168 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.169 170 41 58 ];
+        %tmp.169 = getv %tmp.168 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.161 %tmp.162(%tmp.163, %tmp.164, %tmp.166, %tmp.167, %tmp.169);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 173 12 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_40_182_8_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_40_182_8_stop" ]
+        %rateColor.8 = local;
+        symbol [ rateColor %rateColor.8 173 16 25 ];
+        symbol [ Constants %tmp.171 173 28 37 ];
+        %tmp.171 = getv ? :Constants;
+        symbol [ COLOR_ALERT %tmp.172 173 38 49 ];
+        %tmp.172 = getv %tmp.171 :COLOR_ALERT;
+        lputv %rateColor.8 %tmp.172;
+        symbol [ rateColor %rateColor.8 173 16 25 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 174 12 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_174_12_178_12_if_stmt:
+        symbol [ _successRate %tmp.174 174 16 28 ];
+        %tmp.174 = getv ? :_successRate;
+        %tmp.175 = 50;
+        %tmp.176 = gte %tmp.174 %tmp.175;
+        bf %tmp.176 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_174_12_178_12_if_false;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_174_12_178_12_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_174_36_176_12_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 175 16 ]
+        symbol [ Constants %tmp.178 175 28 37 ];
+        %tmp.178 = getv ? :Constants;
+        symbol [ COLOR_SUCCESS %tmp.179 175 38 51 ];
+        %tmp.179 = getv %tmp.178 :COLOR_SUCCESS;
+        lputv %rateColor.8 %tmp.179;
+        symbol [ rateColor %rateColor.8 175 16 25 ];
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_174_36_176_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_174_12_178_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_174_12_178_12_if_false:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 176 19 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_176_19_178_12_if_stmt:
+        symbol [ _successRate %tmp.181 176 23 35 ];
+        %tmp.181 = getv ? :_successRate;
+        %tmp.182 = 25;
+        %tmp.183 = gte %tmp.181 %tmp.182;
+        bf %tmp.183 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_176_19_178_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_176_19_178_12_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_176_43_178_12_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 177 16 ]
+        symbol [ Constants %tmp.185 177 28 37 ];
+        %tmp.185 = getv ? :Constants;
+        symbol [ COLOR_WARNING %tmp.186 177 38 51 ];
+        %tmp.186 = getv %tmp.185 :COLOR_WARNING;
+        lputv %rateColor.8 %tmp.186;
+        symbol [ rateColor %rateColor.8 177 16 25 ];
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_176_43_178_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_176_19_178_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_176_19_178_12_if_end:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_174_12_178_12_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 179 12 ]
+        %tmp.187 = lgetv %dc;
+        symbol [ dc %tmp.187 179 12 14 ];
+        symbol [ setColor %tmp.188 179 15 23 ];
+        %tmp.188 = getv function %tmp.187 :setColor;
+        %tmp.189 = lgetv %rateColor.8;
+        symbol [ rateColor %tmp.189 179 24 33 ];
+        symbol [ Graphics %tmp.190 179 35 43 ];
+        %tmp.190 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.191 179 44 61 ];
+        %tmp.191 = getv %tmp.190 :COLOR_TRANSPARENT;
+        invoke %tmp.187 %tmp.188(%tmp.189, %tmp.191);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 180 12 ]
+        %tmp.192 = lgetv %dc;
+        symbol [ dc %tmp.192 180 12 14 ];
+        symbol [ drawText %tmp.193 180 15 23 ];
+        %tmp.193 = getv function %tmp.192 :drawText;
+        %tmp.194 = lgetv %rightPad.7;
+        symbol [ rightPad %tmp.194 180 24 32 ];
+        %tmp.195 = lgetv %y.4;
+        symbol [ y %tmp.195 180 34 35 ];
+        symbol [ Graphics %tmp.196 180 37 45 ];
+        %tmp.196 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.197 180 46 56 ];
+        %tmp.197 = getv %tmp.196 :FONT_SMALL;
+        symbol [ _successRate %tmp.199 181 16 28 ];
+        %tmp.199 = getv ? :_successRate;
+        symbol [ format %tmp.200 181 29 35 ];
+        %tmp.200 = getv function %tmp.199 :format;
+        %tmp.201 = "%d";
+        %tmp.202 = invoke %tmp.199 %tmp.200(%tmp.201);
+        %tmp.203 = "%";
+        %tmp.204 = add %tmp.202 %tmp.203;
+        symbol [ Graphics %tmp.205 181 49 57 ];
+        %tmp.205 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.206 181 58 76 ];
+        %tmp.206 = getv %tmp.205 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.192 %tmp.193(%tmp.194, %tmp.195, %tmp.197, %tmp.204, %tmp.206);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_40_182_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_8_182_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_167_8_182_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 183 8 ]
+        %tmp.207 = lgetv %y.4;
+        symbol [ y %tmp.207 183 8 9 ];
+        %tmp.208 = lgetv %rowHeight.5;
+        symbol [ rowHeight %tmp.208 183 13 22 ];
+        %tmp.209 = add %tmp.207 %tmp.208;
+        lputv %y.4 %tmp.209;
+        symbol [ y %y.4 183 8 9 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 186 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_8_193_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_12_186_36_begin:
+        %tmp.210 = lgetv %y.4;
+        symbol [ y %tmp.210 186 12 13 ];
+        %tmp.211 = 40;
+        %tmp.212 = gt %tmp.210 %tmp.211;
+        bf %tmp.212 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_8_193_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_22_186_36_true:
+        %tmp.213 = lgetv %y.4;
+        symbol [ y %tmp.213 186 22 23 ];
+        %tmp.214 = lgetv %screenH.2;
+        symbol [ screenH %tmp.214 186 26 33 ];
+        %tmp.215 = 30;
+        %tmp.216 = sub %tmp.214 %tmp.215;
+        %tmp.217 = lt %tmp.213 %tmp.216;
+        push %tmp.217;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_22_186_36_end:
+        %tmp.218 = phi [%tmp.212 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_12_186_36_begin] [%tmp.217 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_22_186_36_true] [%tmp.218 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_22_186_36_end];
+        bf %tmp.218 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_8_193_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_8_193_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_40_193_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 187 12 ]
+        %tmp.219 = lgetv %dc;
+        symbol [ dc %tmp.219 187 12 14 ];
+        symbol [ setColor %tmp.220 187 15 23 ];
+        %tmp.220 = getv function %tmp.219 :setColor;
+        symbol [ Constants %tmp.222 187 24 33 ];
+        %tmp.222 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.223 187 34 45 ];
+        %tmp.223 = getv %tmp.222 :COLOR_MUTED;
+        symbol [ Graphics %tmp.224 187 47 55 ];
+        %tmp.224 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.225 187 56 73 ];
+        %tmp.225 = getv %tmp.224 :COLOR_TRANSPARENT;
+        invoke %tmp.219 %tmp.220(%tmp.223, %tmp.225);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 188 12 ]
+        %tmp.226 = lgetv %dc;
+        symbol [ dc %tmp.226 188 12 14 ];
+        symbol [ drawText %tmp.227 188 15 23 ];
+        %tmp.227 = getv function %tmp.226 :drawText;
+        %tmp.228 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.228 188 24 31 ];
+        %tmp.229 = lgetv %y.4;
+        symbol [ y %tmp.229 188 33 34 ];
+        symbol [ Graphics %tmp.230 188 36 44 ];
+        %tmp.230 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.231 188 45 55 ];
+        %tmp.231 = getv %tmp.230 :FONT_XTINY;
+        %tmp.232 = "Birds Downed";
+        symbol [ Graphics %tmp.233 189 32 40 ];
+        %tmp.233 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.234 189 41 58 ];
+        %tmp.234 = getv %tmp.233 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.226 %tmp.227(%tmp.228, %tmp.229, %tmp.231, %tmp.232, %tmp.234);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 190 12 ]
+        %tmp.235 = lgetv %dc;
+        symbol [ dc %tmp.235 190 12 14 ];
+        symbol [ setColor %tmp.236 190 15 23 ];
+        %tmp.236 = getv function %tmp.235 :setColor;
+        symbol [ Constants %tmp.238 190 24 33 ];
+        %tmp.238 = getv ? :Constants;
+        symbol [ COLOR_SUCCESS %tmp.239 190 34 47 ];
+        %tmp.239 = getv %tmp.238 :COLOR_SUCCESS;
+        symbol [ Graphics %tmp.240 190 49 57 ];
+        %tmp.240 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.241 190 58 75 ];
+        %tmp.241 = getv %tmp.240 :COLOR_TRANSPARENT;
+        invoke %tmp.235 %tmp.236(%tmp.239, %tmp.241);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 191 12 ]
+        %tmp.242 = lgetv %dc;
+        symbol [ dc %tmp.242 191 12 14 ];
+        symbol [ drawText %tmp.243 191 15 23 ];
+        %tmp.243 = getv function %tmp.242 :drawText;
+        %tmp.244 = lgetv %rightPad.7;
+        symbol [ rightPad %tmp.244 191 24 32 ];
+        %tmp.245 = lgetv %y.4;
+        symbol [ y %tmp.245 191 34 35 ];
+        symbol [ Graphics %tmp.246 191 37 45 ];
+        %tmp.246 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.247 191 46 56 ];
+        %tmp.247 = getv %tmp.246 :FONT_SMALL;
+        symbol [ _totalDown %tmp.249 192 16 26 ];
+        %tmp.249 = getv ? :_totalDown;
+        symbol [ format %tmp.250 192 27 33 ];
+        %tmp.250 = getv function %tmp.249 :format;
+        %tmp.251 = "%d";
+        %tmp.252 = invoke %tmp.249 %tmp.250(%tmp.251);
+        symbol [ Graphics %tmp.253 192 41 49 ];
+        %tmp.253 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.254 192 50 68 ];
+        %tmp.254 = getv %tmp.253 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.242 %tmp.243(%tmp.244, %tmp.245, %tmp.247, %tmp.252, %tmp.254);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_40_193_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_8_193_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_186_8_193_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 194 8 ]
+        %tmp.255 = lgetv %y.4;
+        symbol [ y %tmp.255 194 8 9 ];
+        %tmp.256 = lgetv %rowHeight.5;
+        symbol [ rowHeight %tmp.256 194 13 22 ];
+        %tmp.257 = add %tmp.255 %tmp.256;
+        lputv %y.4 %tmp.257;
+        symbol [ y %y.4 194 8 9 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 197 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_8_208_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_12_197_36_begin:
+        %tmp.258 = lgetv %y.4;
+        symbol [ y %tmp.258 197 12 13 ];
+        %tmp.259 = 40;
+        %tmp.260 = gt %tmp.258 %tmp.259;
+        bf %tmp.260 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_8_208_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_22_197_36_true:
+        %tmp.261 = lgetv %y.4;
+        symbol [ y %tmp.261 197 22 23 ];
+        %tmp.262 = lgetv %screenH.2;
+        symbol [ screenH %tmp.262 197 26 33 ];
+        %tmp.263 = 30;
+        %tmp.264 = sub %tmp.262 %tmp.263;
+        %tmp.265 = lt %tmp.261 %tmp.264;
+        push %tmp.265;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_22_197_36_end:
+        %tmp.266 = phi [%tmp.260 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_12_197_36_begin] [%tmp.265 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_22_197_36_true] [%tmp.266 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_22_197_36_end];
+        bf %tmp.266 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_8_208_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_8_208_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_40_208_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 198 12 ]
+        %tmp.267 = lgetv %dc;
+        symbol [ dc %tmp.267 198 12 14 ];
+        symbol [ setColor %tmp.268 198 15 23 ];
+        %tmp.268 = getv function %tmp.267 :setColor;
+        symbol [ Constants %tmp.270 198 24 33 ];
+        %tmp.270 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.271 198 34 45 ];
+        %tmp.271 = getv %tmp.270 :COLOR_MUTED;
+        symbol [ Graphics %tmp.272 198 47 55 ];
+        %tmp.272 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.273 198 56 73 ];
+        %tmp.273 = getv %tmp.272 :COLOR_TRANSPARENT;
+        invoke %tmp.267 %tmp.268(%tmp.271, %tmp.273);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 199 12 ]
+        %tmp.274 = lgetv %dc;
+        symbol [ dc %tmp.274 199 12 14 ];
+        symbol [ drawText %tmp.275 199 15 23 ];
+        %tmp.275 = getv function %tmp.274 :drawText;
+        %tmp.276 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.276 199 24 31 ];
+        %tmp.277 = lgetv %y.4;
+        symbol [ y %tmp.277 199 33 34 ];
+        symbol [ Graphics %tmp.278 199 36 44 ];
+        %tmp.278 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.279 199 45 55 ];
+        %tmp.279 = getv %tmp.278 :FONT_XTINY;
+        %tmp.280 = "Hunt Time";
+        symbol [ Graphics %tmp.281 200 29 37 ];
+        %tmp.281 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.282 200 38 55 ];
+        %tmp.282 = getv %tmp.281 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.274 %tmp.275(%tmp.276, %tmp.277, %tmp.279, %tmp.280, %tmp.282);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 202 12 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_40_208_8_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_40_208_8_stop" ]
+        %hours.9 = local;
+        symbol [ hours %hours.9 202 16 21 ];
+        symbol [ _duration %tmp.284 202 24 33 ];
+        %tmp.284 = getv ? :_duration;
+        %tmp.285 = 3600;
+        %tmp.286 = div %tmp.284 %tmp.285;
+        lputv %hours.9 %tmp.286;
+        symbol [ hours %hours.9 202 16 21 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 203 12 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_40_208_8_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_40_208_8_stop" ]
+        %minutes.10 = local;
+        symbol [ minutes %minutes.10 203 16 23 ];
+        symbol [ _duration %tmp.288 203 27 36 ];
+        %tmp.288 = getv ? :_duration;
+        %tmp.289 = 3600;
+        %tmp.290 = mod %tmp.288 %tmp.289;
+        %tmp.291 = 60;
+        %tmp.292 = div %tmp.290 %tmp.291;
+        lputv %minutes.10 %tmp.292;
+        symbol [ minutes %minutes.10 203 16 23 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 204 12 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_40_208_8_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_40_208_8_stop" ]
+        %timeStr.11 = local;
+        symbol [ timeStr %timeStr.11 204 16 23 ];
+        %tmp.293 = lgetv %hours.9;
+        symbol [ hours %tmp.293 204 26 31 ];
+        symbol [ format %tmp.294 204 32 38 ];
+        %tmp.294 = getv function %tmp.293 :format;
+        %tmp.295 = "%d";
+        %tmp.296 = invoke %tmp.293 %tmp.294(%tmp.295);
+        %tmp.297 = "h ";
+        %tmp.298 = add %tmp.296 %tmp.297;
+        %tmp.299 = lgetv %minutes.10;
+        symbol [ minutes %tmp.299 204 54 61 ];
+        symbol [ format %tmp.300 204 62 68 ];
+        %tmp.300 = getv function %tmp.299 :format;
+        %tmp.301 = "%d";
+        %tmp.302 = invoke %tmp.299 %tmp.300(%tmp.301);
+        %tmp.303 = add %tmp.298 %tmp.302;
+        %tmp.304 = "m";
+        %tmp.305 = add %tmp.303 %tmp.304;
+        lputv %timeStr.11 %tmp.305;
+        symbol [ timeStr %timeStr.11 204 16 23 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 205 12 ]
+        %tmp.306 = lgetv %dc;
+        symbol [ dc %tmp.306 205 12 14 ];
+        symbol [ setColor %tmp.307 205 15 23 ];
+        %tmp.307 = getv function %tmp.306 :setColor;
+        symbol [ Constants %tmp.309 205 24 33 ];
+        %tmp.309 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.310 205 34 44 ];
+        %tmp.310 = getv %tmp.309 :COLOR_TEXT;
+        symbol [ Graphics %tmp.311 205 46 54 ];
+        %tmp.311 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.312 205 55 72 ];
+        %tmp.312 = getv %tmp.311 :COLOR_TRANSPARENT;
+        invoke %tmp.306 %tmp.307(%tmp.310, %tmp.312);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 206 12 ]
+        %tmp.313 = lgetv %dc;
+        symbol [ dc %tmp.313 206 12 14 ];
+        symbol [ drawText %tmp.314 206 15 23 ];
+        %tmp.314 = getv function %tmp.313 :drawText;
+        %tmp.315 = lgetv %rightPad.7;
+        symbol [ rightPad %tmp.315 206 24 32 ];
+        %tmp.316 = lgetv %y.4;
+        symbol [ y %tmp.316 206 34 35 ];
+        symbol [ Graphics %tmp.317 206 37 45 ];
+        %tmp.317 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.318 206 46 56 ];
+        %tmp.318 = getv %tmp.317 :FONT_SMALL;
+        %tmp.319 = lgetv %timeStr.11;
+        symbol [ timeStr %tmp.319 207 16 23 ];
+        symbol [ Graphics %tmp.320 207 25 33 ];
+        %tmp.320 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.321 207 34 52 ];
+        %tmp.321 = getv %tmp.320 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.313 %tmp.314(%tmp.315, %tmp.316, %tmp.318, %tmp.319, %tmp.321);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_40_208_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_8_208_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_197_8_208_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 209 8 ]
+        %tmp.322 = lgetv %y.4;
+        symbol [ y %tmp.322 209 8 9 ];
+        %tmp.323 = lgetv %rowHeight.5;
+        symbol [ rowHeight %tmp.323 209 13 22 ];
+        %tmp.324 = add %tmp.322 %tmp.323;
+        lputv %y.4 %tmp.324;
+        symbol [ y %y.4 209 8 9 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 212 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_8_220_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_12_212_36_begin:
+        %tmp.325 = lgetv %y.4;
+        symbol [ y %tmp.325 212 12 13 ];
+        %tmp.326 = 40;
+        %tmp.327 = gt %tmp.325 %tmp.326;
+        bf %tmp.327 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_8_220_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_22_212_36_true:
+        %tmp.328 = lgetv %y.4;
+        symbol [ y %tmp.328 212 22 23 ];
+        %tmp.329 = lgetv %screenH.2;
+        symbol [ screenH %tmp.329 212 26 33 ];
+        %tmp.330 = 30;
+        %tmp.331 = sub %tmp.329 %tmp.330;
+        %tmp.332 = lt %tmp.328 %tmp.331;
+        push %tmp.332;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_22_212_36_end:
+        %tmp.333 = phi [%tmp.327 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_12_212_36_begin] [%tmp.332 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_22_212_36_true] [%tmp.333 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_22_212_36_end];
+        bf %tmp.333 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_8_220_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_8_220_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_40_220_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 213 12 ]
+        %tmp.334 = lgetv %dc;
+        symbol [ dc %tmp.334 213 12 14 ];
+        symbol [ setColor %tmp.335 213 15 23 ];
+        %tmp.335 = getv function %tmp.334 :setColor;
+        symbol [ Constants %tmp.337 213 24 33 ];
+        %tmp.337 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.338 213 34 45 ];
+        %tmp.338 = getv %tmp.337 :COLOR_MUTED;
+        symbol [ Graphics %tmp.339 213 47 55 ];
+        %tmp.339 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.340 213 56 73 ];
+        %tmp.340 = getv %tmp.339 :COLOR_TRANSPARENT;
+        invoke %tmp.334 %tmp.335(%tmp.338, %tmp.340);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 214 12 ]
+        %tmp.341 = lgetv %dc;
+        symbol [ dc %tmp.341 214 12 14 ];
+        symbol [ drawText %tmp.342 214 15 23 ];
+        %tmp.342 = getv function %tmp.341 :drawText;
+        %tmp.343 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.343 214 24 31 ];
+        %tmp.344 = lgetv %y.4;
+        symbol [ y %tmp.344 214 33 34 ];
+        symbol [ Graphics %tmp.345 214 36 44 ];
+        %tmp.345 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.346 214 45 55 ];
+        %tmp.346 = getv %tmp.345 :FONT_XTINY;
+        %tmp.347 = "Distance";
+        symbol [ Graphics %tmp.348 215 28 36 ];
+        %tmp.348 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.349 215 37 54 ];
+        %tmp.349 = getv %tmp.348 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.341 %tmp.342(%tmp.343, %tmp.344, %tmp.346, %tmp.347, %tmp.349);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 217 12 ]
+        %tmp.350 = lgetv %dc;
+        symbol [ dc %tmp.350 217 12 14 ];
+        symbol [ setColor %tmp.351 217 15 23 ];
+        %tmp.351 = getv function %tmp.350 :setColor;
+        symbol [ Constants %tmp.353 217 24 33 ];
+        %tmp.353 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.354 217 34 44 ];
+        %tmp.354 = getv %tmp.353 :COLOR_TEXT;
+        symbol [ Graphics %tmp.355 217 46 54 ];
+        %tmp.355 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.356 217 55 72 ];
+        %tmp.356 = getv %tmp.355 :COLOR_TRANSPARENT;
+        invoke %tmp.350 %tmp.351(%tmp.354, %tmp.356);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 218 12 ]
+        %tmp.357 = lgetv %dc;
+        symbol [ dc %tmp.357 218 12 14 ];
+        symbol [ drawText %tmp.358 218 15 23 ];
+        %tmp.358 = getv function %tmp.357 :drawText;
+        %tmp.359 = lgetv %rightPad.7;
+        symbol [ rightPad %tmp.359 218 24 32 ];
+        %tmp.360 = lgetv %y.4;
+        symbol [ y %tmp.360 218 34 35 ];
+        symbol [ Graphics %tmp.361 218 37 45 ];
+        %tmp.361 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.362 218 46 56 ];
+        %tmp.362 = getv %tmp.361 :FONT_SMALL;
+        symbol [ Constants %tmp.364 219 16 25 ];
+        %tmp.364 = getv ? :Constants;
+        symbol [ formatStatDistance %tmp.365 219 26 44 ];
+        %tmp.365 = getv function %tmp.364 :formatStatDistance;
+        symbol [ _distanceMiles %tmp.367 219 45 59 ];
+        %tmp.367 = getv ? :_distanceMiles;
+        %tmp.368 = invoke %tmp.364 %tmp.365(%tmp.367);
+        symbol [ Graphics %tmp.369 219 62 70 ];
+        %tmp.369 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.370 219 71 89 ];
+        %tmp.370 = getv %tmp.369 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.357 %tmp.358(%tmp.359, %tmp.360, %tmp.362, %tmp.368, %tmp.370);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_40_220_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_8_220_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_212_8_220_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 221 8 ]
+        %tmp.371 = lgetv %y.4;
+        symbol [ y %tmp.371 221 8 9 ];
+        %tmp.372 = lgetv %rowHeight.5;
+        symbol [ rowHeight %tmp.372 221 13 22 ];
+        %tmp.373 = 10;
+        %tmp.374 = add %tmp.372 %tmp.373;
+        %tmp.375 = add %tmp.371 %tmp.374;
+        lputv %y.4 %tmp.375;
+        symbol [ y %y.4 221 8 9 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 224 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_8_249_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_12_224_68_begin:
+        symbol [ _speciesBreakdown %tmp.377 224 12 29 ];
+        %tmp.377 = getv ? :_speciesBreakdown;
+        %tmp.378 = null;
+        %tmp.379 = ne %tmp.377 %tmp.378;
+        bf %tmp.379 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_8_249_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_41_224_68_true:
+        symbol [ _speciesBreakdown %tmp.381 224 41 58 ];
+        %tmp.381 = getv ? :_speciesBreakdown;
+        %tmp.382 = as %tmp.381 { (!Null) };
+        symbol [ size %tmp.383 224 59 63 ];
+        %tmp.383 = getv function %tmp.382 :size;
+        %tmp.384 = invoke %tmp.382 %tmp.383();
+        %tmp.385 = 0;
+        %tmp.386 = gt %tmp.384 %tmp.385;
+        push %tmp.386;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_41_224_68_end:
+        %tmp.387 = phi [%tmp.379 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_12_224_68_begin] [%tmp.386 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_41_224_68_true] [%tmp.387 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_41_224_68_end];
+        bf %tmp.387 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_8_249_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_8_249_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_71_249_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 225 12 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_12_229_12_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_16_225_40_begin:
+        %tmp.388 = lgetv %y.4;
+        symbol [ y %tmp.388 225 16 17 ];
+        %tmp.389 = 40;
+        %tmp.390 = gt %tmp.388 %tmp.389;
+        bf %tmp.390 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_12_229_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_26_225_40_true:
+        %tmp.391 = lgetv %y.4;
+        symbol [ y %tmp.391 225 26 27 ];
+        %tmp.392 = lgetv %screenH.2;
+        symbol [ screenH %tmp.392 225 30 37 ];
+        %tmp.393 = 30;
+        %tmp.394 = sub %tmp.392 %tmp.393;
+        %tmp.395 = lt %tmp.391 %tmp.394;
+        push %tmp.395;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_26_225_40_end:
+        %tmp.396 = phi [%tmp.390 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_16_225_40_begin] [%tmp.395 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_26_225_40_true] [%tmp.396 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_26_225_40_end];
+        bf %tmp.396 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_12_229_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_12_229_12_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_44_229_12_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 226 16 ]
+        %tmp.397 = lgetv %dc;
+        symbol [ dc %tmp.397 226 16 18 ];
+        symbol [ setColor %tmp.398 226 19 27 ];
+        %tmp.398 = getv function %tmp.397 :setColor;
+        symbol [ Constants %tmp.400 226 28 37 ];
+        %tmp.400 = getv ? :Constants;
+        symbol [ COLOR_PRIMARY %tmp.401 226 38 51 ];
+        %tmp.401 = getv %tmp.400 :COLOR_PRIMARY;
+        symbol [ Graphics %tmp.402 226 53 61 ];
+        %tmp.402 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.403 226 62 79 ];
+        %tmp.403 = getv %tmp.402 :COLOR_TRANSPARENT;
+        invoke %tmp.397 %tmp.398(%tmp.401, %tmp.403);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 227 16 ]
+        %tmp.404 = lgetv %dc;
+        symbol [ dc %tmp.404 227 16 18 ];
+        symbol [ drawText %tmp.405 227 19 27 ];
+        %tmp.405 = getv function %tmp.404 :drawText;
+        %tmp.406 = lgetv %centerX.3;
+        symbol [ centerX %tmp.406 227 28 35 ];
+        %tmp.407 = lgetv %y.4;
+        symbol [ y %tmp.407 227 37 38 ];
+        symbol [ Graphics %tmp.408 227 40 48 ];
+        %tmp.408 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.409 227 49 59 ];
+        %tmp.409 = getv %tmp.408 :FONT_XTINY;
+        %tmp.410 = "— By Species —";
+        symbol [ Graphics %tmp.411 228 38 46 ];
+        %tmp.411 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.412 228 47 66 ];
+        %tmp.412 = getv %tmp.411 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.404 %tmp.405(%tmp.406, %tmp.407, %tmp.409, %tmp.410, %tmp.412);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_44_229_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_12_229_12_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_225_12_229_12_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 230 12 ]
+        %tmp.413 = lgetv %y.4;
+        symbol [ y %tmp.413 230 12 13 ];
+        %tmp.414 = 25;
+        %tmp.415 = add %tmp.413 %tmp.414;
+        lputv %y.4 %tmp.415;
+        symbol [ y %y.4 230 12 13 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 232 12 ]
+        for @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_test @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_incr @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_init:
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_begin" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_end" ]
+        %i.12 = local;
+        symbol [ i %i.12 232 21 22 ];
+        %tmp.416 = 0;
+        lputv %i.12 %tmp.416;
+        symbol [ i %i.12 232 21 22 ];
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_test:
+        %tmp.417 = lgetv %i.12;
+        symbol [ i %tmp.417 232 28 29 ];
+        symbol [ _speciesBreakdown %tmp.419 232 32 49 ];
+        %tmp.419 = getv ? :_speciesBreakdown;
+        symbol [ size %tmp.420 232 50 54 ];
+        %tmp.420 = getv function %tmp.419 :size;
+        %tmp.421 = invoke %tmp.419 %tmp.420();
+        %tmp.422 = lt %tmp.417 %tmp.421;
+        bf %tmp.422 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_begin:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_63_248_12_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 233 16 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_16_246_16_if_stmt:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_20_233_44_begin:
+        %tmp.423 = lgetv %y.4;
+        symbol [ y %tmp.423 233 20 21 ];
+        %tmp.424 = 40;
+        %tmp.425 = gt %tmp.423 %tmp.424;
+        bf %tmp.425 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_16_246_16_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_30_233_44_true:
+        %tmp.426 = lgetv %y.4;
+        symbol [ y %tmp.426 233 30 31 ];
+        %tmp.427 = lgetv %screenH.2;
+        symbol [ screenH %tmp.427 233 34 41 ];
+        %tmp.428 = 30;
+        %tmp.429 = sub %tmp.427 %tmp.428;
+        %tmp.430 = lt %tmp.426 %tmp.429;
+        push %tmp.430;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_30_233_44_end:
+        %tmp.431 = phi [%tmp.425 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_20_233_44_begin] [%tmp.430 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_30_233_44_true] [%tmp.431 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_30_233_44_end];
+        bf %tmp.431 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_16_246_16_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_16_246_16_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 234 20 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_stop" ]
+        %entry.13 = local;
+        symbol [ entry %entry.13 234 24 29 ];
+        symbol [ _speciesBreakdown %tmp.433 234 32 49 ];
+        %tmp.433 = getv ? :_speciesBreakdown;
+        %tmp.434 = lgetv %i.12;
+        symbol [ i %tmp.434 234 50 51 ];
+        %tmp.435 = agetv %tmp.433 %tmp.434;
+        %tmp.436 = as %tmp.435 Dictionary;
+        symbol [ Dictionary %tmp.436 234 56 66 ];
+        lputv %entry.13 %tmp.436;
+        symbol [ entry %entry.13 234 24 29 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 235 20 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_stop" ]
+        %name.14 = local;
+        symbol [ name %name.14 235 24 28 ];
+        symbol [ Constants %tmp.438 235 31 40 ];
+        %tmp.438 = getv ? :Constants;
+        symbol [ getSpeciesName %tmp.439 235 41 55 ];
+        %tmp.439 = getv function %tmp.438 :getSpeciesName;
+        %tmp.440 = lgetv %entry.13;
+        symbol [ entry %tmp.440 235 56 61 ];
+        %tmp.441 = "species";
+        %tmp.442 = agetv %tmp.440 %tmp.441;
+        %tmp.443 = as %tmp.442 Number;
+        symbol [ Number %tmp.443 235 76 82 ];
+        %tmp.444 = invoke %tmp.438 %tmp.439(%tmp.443);
+        lputv %name.14 %tmp.444;
+        symbol [ name %name.14 235 24 28 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 236 20 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_stop" ]
+        %flushed.15 = local;
+        symbol [ flushed %flushed.15 236 24 31 ];
+        %tmp.445 = lgetv %entry.13;
+        symbol [ entry %tmp.445 236 34 39 ];
+        %tmp.446 = "flushed";
+        %tmp.447 = agetv %tmp.445 %tmp.446;
+        %tmp.448 = as %tmp.447 Number;
+        symbol [ Number %tmp.448 236 54 60 ];
+        lputv %flushed.15 %tmp.448;
+        symbol [ flushed %flushed.15 236 24 31 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 237 20 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_stop" ]
+        %downed.16 = local;
+        symbol [ downed %downed.16 237 24 30 ];
+        %tmp.449 = lgetv %entry.13;
+        symbol [ entry %tmp.449 237 33 38 ];
+        %tmp.450 = "downed";
+        %tmp.451 = agetv %tmp.449 %tmp.450;
+        %tmp.452 = as %tmp.451 Number;
+        symbol [ Number %tmp.452 237 52 58 ];
+        lputv %downed.16 %tmp.452;
+        symbol [ downed %downed.16 237 24 30 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 239 20 ]
+        %tmp.453 = lgetv %dc;
+        symbol [ dc %tmp.453 239 20 22 ];
+        symbol [ setColor %tmp.454 239 23 31 ];
+        %tmp.454 = getv function %tmp.453 :setColor;
+        symbol [ Constants %tmp.456 239 32 41 ];
+        %tmp.456 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.457 239 42 52 ];
+        %tmp.457 = getv %tmp.456 :COLOR_TEXT;
+        symbol [ Graphics %tmp.458 239 54 62 ];
+        %tmp.458 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.459 239 63 80 ];
+        %tmp.459 = getv %tmp.458 :COLOR_TRANSPARENT;
+        invoke %tmp.453 %tmp.454(%tmp.457, %tmp.459);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 240 20 ]
+        %tmp.460 = lgetv %dc;
+        symbol [ dc %tmp.460 240 20 22 ];
+        symbol [ drawText %tmp.461 240 23 31 ];
+        %tmp.461 = getv function %tmp.460 :drawText;
+        %tmp.462 = lgetv %leftPad.6;
+        symbol [ leftPad %tmp.462 240 32 39 ];
+        %tmp.463 = lgetv %y.4;
+        symbol [ y %tmp.463 240 41 42 ];
+        symbol [ Graphics %tmp.464 240 44 52 ];
+        %tmp.464 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.465 240 53 63 ];
+        %tmp.465 = getv %tmp.464 :FONT_XTINY;
+        %tmp.466 = lgetv %name.14;
+        symbol [ name %tmp.466 241 24 28 ];
+        symbol [ Graphics %tmp.467 241 30 38 ];
+        %tmp.467 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.468 241 39 56 ];
+        %tmp.468 = getv %tmp.467 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.460 %tmp.461(%tmp.462, %tmp.463, %tmp.465, %tmp.466, %tmp.468);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 242 20 ]
+        %tmp.469 = lgetv %dc;
+        symbol [ dc %tmp.469 242 20 22 ];
+        symbol [ setColor %tmp.470 242 23 31 ];
+        %tmp.470 = getv function %tmp.469 :setColor;
+        symbol [ Constants %tmp.472 242 32 41 ];
+        %tmp.472 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.473 242 42 53 ];
+        %tmp.473 = getv %tmp.472 :COLOR_MUTED;
+        symbol [ Graphics %tmp.474 242 55 63 ];
+        %tmp.474 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.475 242 64 81 ];
+        %tmp.475 = getv %tmp.474 :COLOR_TRANSPARENT;
+        invoke %tmp.469 %tmp.470(%tmp.473, %tmp.475);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 243 20 ]
+        %tmp.476 = lgetv %dc;
+        symbol [ dc %tmp.476 243 20 22 ];
+        symbol [ drawText %tmp.477 243 23 31 ];
+        %tmp.477 = getv function %tmp.476 :drawText;
+        %tmp.478 = lgetv %rightPad.7;
+        symbol [ rightPad %tmp.478 243 32 40 ];
+        %tmp.479 = lgetv %y.4;
+        symbol [ y %tmp.479 243 42 43 ];
+        symbol [ Graphics %tmp.480 243 45 53 ];
+        %tmp.480 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.481 243 54 64 ];
+        %tmp.481 = getv %tmp.480 :FONT_XTINY;
+        %tmp.482 = lgetv %flushed.15;
+        symbol [ flushed %tmp.482 244 24 31 ];
+        symbol [ format %tmp.483 244 32 38 ];
+        %tmp.483 = getv function %tmp.482 :format;
+        %tmp.484 = "%d";
+        %tmp.485 = invoke %tmp.482 %tmp.483(%tmp.484);
+        %tmp.486 = "/";
+        %tmp.487 = add %tmp.485 %tmp.486;
+        %tmp.488 = lgetv %downed.16;
+        symbol [ downed %tmp.488 244 53 59 ];
+        symbol [ format %tmp.489 244 60 66 ];
+        %tmp.489 = getv function %tmp.488 :format;
+        %tmp.490 = "%d";
+        %tmp.491 = invoke %tmp.488 %tmp.489(%tmp.490);
+        %tmp.492 = add %tmp.487 %tmp.491;
+        symbol [ Graphics %tmp.493 245 24 32 ];
+        %tmp.493 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_RIGHT %tmp.494 245 33 51 ];
+        %tmp.494 = getv %tmp.493 :TEXT_JUSTIFY_RIGHT;
+        invoke %tmp.476 %tmp.477(%tmp.478, %tmp.479, %tmp.481, %tmp.492, %tmp.494);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_48_246_16_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_16_246_16_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_233_16_246_16_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 247 16 ]
+        %tmp.495 = lgetv %y.4;
+        symbol [ y %tmp.495 247 16 17 ];
+        %tmp.496 = 25;
+        %tmp.497 = add %tmp.495 %tmp.496;
+        lputv %y.4 %tmp.497;
+        symbol [ y %y.4 247 16 17 ];
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_63_248_12_stop:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 232 ]
+        %tmp.500 = lgetv %i.12;
+        symbol [ i %tmp.500 232 58 59 ];
+        %tmp.501 = add %tmp.500 1;
+        lputv %i.12 %tmp.501;
+        symbol [ i %i.12 232 58 59 ];
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_test;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_232_12_248_12_for_end:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_71_249_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_8_249_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_224_8_249_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 252 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_252_8_256_8_if_stmt:
+        symbol [ _totalFlushes %tmp.503 252 12 25 ];
+        %tmp.503 = getv ? :_totalFlushes;
+        %tmp.504 = 0;
+        %tmp.505 = eq %tmp.503 %tmp.504;
+        bf %tmp.505 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_252_8_256_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_252_8_256_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_252_32_256_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 253 12 ]
+        %tmp.506 = lgetv %dc;
+        symbol [ dc %tmp.506 253 12 14 ];
+        symbol [ setColor %tmp.507 253 15 23 ];
+        %tmp.507 = getv function %tmp.506 :setColor;
+        symbol [ Constants %tmp.509 253 24 33 ];
+        %tmp.509 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.510 253 34 45 ];
+        %tmp.510 = getv %tmp.509 :COLOR_MUTED;
+        symbol [ Graphics %tmp.511 253 47 55 ];
+        %tmp.511 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.512 253 56 73 ];
+        %tmp.512 = getv %tmp.511 :COLOR_TRANSPARENT;
+        invoke %tmp.506 %tmp.507(%tmp.510, %tmp.512);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 254 12 ]
+        %tmp.513 = lgetv %dc;
+        symbol [ dc %tmp.513 254 12 14 ];
+        symbol [ drawText %tmp.514 254 15 23 ];
+        %tmp.514 = getv function %tmp.513 :drawText;
+        %tmp.515 = lgetv %centerX.3;
+        symbol [ centerX %tmp.515 254 24 31 ];
+        %tmp.516 = lgetv %screenH.2;
+        symbol [ screenH %tmp.516 254 33 40 ];
+        %tmp.517 = 2;
+        %tmp.518 = div %tmp.516 %tmp.517;
+        symbol [ Graphics %tmp.519 254 46 54 ];
+        %tmp.519 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.520 254 55 65 ];
+        %tmp.520 = getv %tmp.519 :FONT_SMALL;
+        %tmp.521 = "No flushes yet";
+        symbol [ Graphics %tmp.522 255 34 42 ];
+        %tmp.522 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.523 255 43 62 ];
+        %tmp.523 = getv %tmp.522 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.513 %tmp.514(%tmp.515, %tmp.518, %tmp.520, %tmp.521, %tmp.523);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_252_32_256_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_252_8_256_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_252_8_256_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 259 8 ]
+        %tmp.524 = lgetv %dc;
+        symbol [ dc %tmp.524 259 8 10 ];
+        symbol [ setColor %tmp.525 259 11 19 ];
+        %tmp.525 = getv function %tmp.524 :setColor;
+        symbol [ Constants %tmp.527 259 20 29 ];
+        %tmp.527 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.528 259 30 41 ];
+        %tmp.528 = getv %tmp.527 :COLOR_MUTED;
+        symbol [ Graphics %tmp.529 259 43 51 ];
+        %tmp.529 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.530 259 52 69 ];
+        %tmp.530 = getv %tmp.529 :COLOR_TRANSPARENT;
+        invoke %tmp.524 %tmp.525(%tmp.528, %tmp.530);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 260 8 ]
+        %tmp.531 = lgetv %dc;
+        symbol [ dc %tmp.531 260 8 10 ];
+        symbol [ drawText %tmp.532 260 11 19 ];
+        %tmp.532 = getv function %tmp.531 :drawText;
+        %tmp.533 = lgetv %centerX.3;
+        symbol [ centerX %tmp.533 260 20 27 ];
+        %tmp.534 = lgetv %screenH.2;
+        symbol [ screenH %tmp.534 260 29 36 ];
+        %tmp.535 = 30;
+        %tmp.536 = sub %tmp.534 %tmp.535;
+        symbol [ Graphics %tmp.537 260 43 51 ];
+        %tmp.537 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.538 260 52 62 ];
+        %tmp.538 = getv %tmp.537 :FONT_XTINY;
+        %tmp.539 = "BACK to return";
+        symbol [ Graphics %tmp.540 261 30 38 ];
+        %tmp.540 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.541 261 39 58 ];
+        %tmp.541 = getv %tmp.540 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.531 %tmp.532(%tmp.533, %tmp.536, %tmp.538, %tmp.539, %tmp.541);
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_123_49_262_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 269; @symbol_classdef = [SessionStatsDelegate,269,6,26]; @symbol_extends<0> = [WatchUi,269,35,42]; @symbol_extends<1> = [BehaviorDelegate,269,43,59]; ]
+class SessionStatsDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 269; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 269; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 271; @symbol_functiondef = [initialize,271,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_271_26_273_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 272 8 ]
+        symbol [ BehaviorDelegate %tmp.2 272 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 272 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_271_26_273_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 275; @symbol_functiondef = [onNextPage,275,13,23]; @symbol_return<0> = [Boolean,275,29,36]; ]
+    function onNextPage() as Boolean {
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_275_37_280_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 276 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_275_37_280_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_275_37_280_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 276 12 16 ];
+        symbol [ WatchUi %tmp.1 276 19 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.2 276 27 41 ];
+        %tmp.2 = getv function %tmp.1 :getCurrentView;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = 0;
+        %tmp.5 = agetv %tmp.3 %tmp.4;
+        %tmp.6 = as %tmp.5 SessionStatsView;
+        symbol [ SessionStatsView %tmp.6 276 50 66 ];
+        lputv %view.1 %tmp.6;
+        symbol [ view %view.1 276 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 277 8 ]
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 277 8 12 ];
+        %tmp.10 = lgetv %view.1;
+        symbol [ view %tmp.10 277 8 12 ];
+        symbol [ _scrollOffset %tmp.11 277 13 26 ];
+        %tmp.11 = getv %tmp.10 :_scrollOffset;
+        %tmp.12 = add %tmp.11 1;
+        symbol [ _scrollOffset ? 277 13 26 ];
+        putv %tmp.7 :_scrollOffset dup %tmp.12;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 278 8 ]
+        symbol [ WatchUi %tmp.13 278 8 15 ];
+        %tmp.13 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.14 278 16 29 ];
+        %tmp.14 = getv function %tmp.13 :requestUpdate;
+        invoke %tmp.13 %tmp.14();
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 279 8 ]
+        %tmp.15 = true;
+        ret %tmp.15;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_275_37_280_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 282; @symbol_functiondef = [onPreviousPage,282,13,27]; @symbol_return<0> = [Boolean,282,33,40]; ]
+    function onPreviousPage() as Boolean {
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_282_41_289_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 283 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_282_41_289_4_start" "D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_282_41_289_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 283 12 16 ];
+        symbol [ WatchUi %tmp.1 283 19 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.2 283 27 41 ];
+        %tmp.2 = getv function %tmp.1 :getCurrentView;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = 0;
+        %tmp.5 = agetv %tmp.3 %tmp.4;
+        %tmp.6 = as %tmp.5 SessionStatsView;
+        symbol [ SessionStatsView %tmp.6 283 50 66 ];
+        lputv %view.1 %tmp.6;
+        symbol [ view %view.1 283 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 284 8 ]
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_284_8_287_8_if_stmt:
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 284 12 16 ];
+        symbol [ _scrollOffset %tmp.8 284 17 30 ];
+        %tmp.8 = getv %tmp.7 :_scrollOffset;
+        %tmp.9 = 0;
+        %tmp.10 = gt %tmp.8 %tmp.9;
+        bf %tmp.10 @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_284_8_287_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_284_8_287_8_if_true:
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_284_36_287_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 285 12 ]
+        %tmp.11 = lgetv %view.1;
+        symbol [ view %tmp.11 285 12 16 ];
+        %tmp.14 = lgetv %view.1;
+        symbol [ view %tmp.14 285 12 16 ];
+        symbol [ _scrollOffset %tmp.15 285 17 30 ];
+        %tmp.15 = getv %tmp.14 :_scrollOffset;
+        %tmp.16 = sub %tmp.15 1;
+        symbol [ _scrollOffset ? 285 17 30 ];
+        putv %tmp.11 :_scrollOffset dup %tmp.16;
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 286 12 ]
+        symbol [ WatchUi %tmp.17 286 12 19 ];
+        %tmp.17 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.18 286 20 33 ];
+        %tmp.18 = getv function %tmp.17 :requestUpdate;
+        invoke %tmp.17 %tmp.18();
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_284_36_287_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_284_8_287_8_if_end;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_284_8_287_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 288 8 ]
+        %tmp.19 = true;
+        ret %tmp.19;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_282_41_289_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 291; @symbol_functiondef = [onBack,291,13,19]; @symbol_return<0> = [Boolean,291,25,32]; ]
+    function onBack() as Boolean {
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_291_33_294_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 292 8 ]
+        symbol [ WatchUi %tmp.1 292 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 292 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 292 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_DOWN %tmp.4 292 32 42 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_DOWN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc" 293 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+D__my_project_projects_UplandHunter_source_Stats_SessionStatsView_mc_291_33_294_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\Stats\SessionStatsView.mc"; @line = 1; ]
+<init> {
+}

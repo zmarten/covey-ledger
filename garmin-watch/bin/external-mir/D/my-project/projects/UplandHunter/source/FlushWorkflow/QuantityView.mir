@@ -1,0 +1,687 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Graphics,2,14,22]; ]
+import Toybox.Graphics;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 16; @symbol_classdef = [QuantityView,16,6,18]; @symbol_extends<0> = [WatchUi,16,27,34]; @symbol_extends<1> = [View,16,35,39]; ]
+class QuantityView extends WatchUi.View {
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 16; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 16; ]
+    static
+    <init> {
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 36 15 ]
+        %tmp.1 = newa 5;
+        %tmp.2 = 8;
+        %tmp.3 = dup %tmp.1;
+        %tmp.4 = aputv %tmp.3 0 %tmp.2;
+        %tmp.5 = 12;
+        %tmp.6 = dup %tmp.4;
+        %tmp.7 = aputv %tmp.6 1 %tmp.5;
+        %tmp.8 = 16;
+        %tmp.9 = dup %tmp.7;
+        %tmp.10 = aputv %tmp.9 2 %tmp.8;
+        %tmp.11 = 20;
+        %tmp.12 = dup %tmp.10;
+        %tmp.13 = aputv %tmp.12 3 %tmp.11;
+        %tmp.14 = 25;
+        %tmp.15 = dup %tmp.13;
+        %tmp.16 = aputv %tmp.15 4 %tmp.14;
+        putv self :COVEY_SIZES %tmp.16;
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 19; @position = 8; @symbol_vardef = [_species,19,8,16]; @symbol_type<0> = [Number,19,20,26]; ]
+    var _species as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 20; @position = 8; @symbol_vardef = [_capturedLat,20,8,20]; @symbol_type<0> = [Double,20,24,30]; ]
+    var _capturedLat as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 21; @position = 8; @symbol_vardef = [_capturedLon,21,8,20]; @symbol_type<0> = [Double,21,24,30]; ]
+    var _capturedLon as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 22; @position = 8; @symbol_vardef = [_capturedTime,22,8,21]; @symbol_type<0> = [Number,22,25,31]; ]
+    var _capturedTime as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 25; @position = 8; @symbol_vardef = [_quantity,25,8,17]; @symbol_type<0> = [Number,25,21,27]; ]
+    var _quantity as Number = 1;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 29; @position = 8; @symbol_vardef = [_coveySize,29,8,18]; @symbol_type<0> = [Number,29,22,28]; ]
+    var _coveySize as Number or Null = null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 32; @position = 8; @symbol_vardef = [_isCoveySpecies,32,8,23]; @symbol_type<0> = [Boolean,32,27,34]; ]
+    var _isCoveySpecies as Boolean = false;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 36; @position = 15; @symbol_vardef = [COVEY_SIZES,36,15,26]; ]
+    static
+    var COVEY_SIZES;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 46; @symbol_functiondef = [initialize,46,13,23]; @symbol_param<0> = [species,46,24,31]; @symbol_param<0>_type<0> = [Number,46,35,41]; @symbol_param<1> = [lat,46,43,46]; @symbol_param<1>_type<0> = [Double,46,50,56]; @symbol_param<2> = [lon,46,58,61]; @symbol_param<2>_type<0> = [Double,46,65,71]; @symbol_param<3> = [time,46,73,77]; @symbol_param<3>_type<0> = [Number,46,81,87]; ]
+    function initialize(species as Number, lat as Double, lon as Double, time as Number) as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_46_89_57_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 47 8 ]
+        symbol [ View %tmp.2 47 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 47 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 48 8 ]
+        %tmp.4 = lgetv %species;
+        symbol [ species %tmp.4 48 19 26 ];
+        symbol [ _species ? 48 8 16 ];
+        putv self :_species %tmp.4;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 49 8 ]
+        %tmp.5 = lgetv %lat;
+        symbol [ lat %tmp.5 49 23 26 ];
+        symbol [ _capturedLat ? 49 8 20 ];
+        putv self :_capturedLat %tmp.5;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 50 8 ]
+        %tmp.6 = lgetv %lon;
+        symbol [ lon %tmp.6 50 23 26 ];
+        symbol [ _capturedLon ? 50 8 20 ];
+        putv self :_capturedLon %tmp.6;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 51 8 ]
+        %tmp.7 = lgetv %time;
+        symbol [ time %tmp.7 51 24 28 ];
+        symbol [ _capturedTime ? 51 8 21 ];
+        putv self :_capturedTime %tmp.7;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 55 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_55_27_56_48_begin:
+        %tmp.8 = lgetv %species;
+        symbol [ species %tmp.8 55 27 34 ];
+        symbol [ Constants %tmp.10 55 38 47 ];
+        %tmp.10 = getv ? :Constants;
+        symbol [ SPECIES_QUAIL %tmp.11 55 48 61 ];
+        %tmp.11 = getv %tmp.10 :SPECIES_QUAIL;
+        %tmp.12 = eq %tmp.8 %tmp.11;
+        %tmp.13 = dup %tmp.12;
+        bt %tmp.13 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_56_27_56_48_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_56_27_56_48_false:
+        %tmp.14 = lgetv %species;
+        symbol [ species %tmp.14 56 27 34 ];
+        symbol [ Constants %tmp.16 56 38 47 ];
+        %tmp.16 = getv ? :Constants;
+        symbol [ SPECIES_PARTRIDGE %tmp.17 56 48 65 ];
+        %tmp.17 = getv %tmp.16 :SPECIES_PARTRIDGE;
+        %tmp.18 = eq %tmp.14 %tmp.17;
+        %tmp.19 = or %tmp.12 %tmp.18;
+        push %tmp.19;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_56_27_56_48_end:
+        %tmp.20 = phi [%tmp.13 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_55_27_56_48_begin] [%tmp.19 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_56_27_56_48_false] [%tmp.20 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_56_27_56_48_end];
+        symbol [ _isCoveySpecies ? 55 8 23 ];
+        putv self :_isCoveySpecies %tmp.20;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_46_89_57_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 68; @symbol_functiondef = [onUpdate,68,13,21]; @symbol_param<0> = [dc,68,22,24]; @symbol_param<0>_type<0> = [Graphics,68,28,36]; @symbol_param<0>_type<1> = [Dc,68,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_68_49_110_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 69 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_68_49_110_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_68_49_110_4_stop" ]
+        %screenW.1 = local;
+        symbol [ screenW %screenW.1 69 12 19 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 69 22 24 ];
+        symbol [ getWidth %tmp.2 69 25 33 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %screenW.1 %tmp.3;
+        symbol [ screenW %screenW.1 69 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 70 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_68_49_110_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_68_49_110_4_stop" ]
+        %screenH.2 = local;
+        symbol [ screenH %screenH.2 70 12 19 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 70 22 24 ];
+        symbol [ getHeight %tmp.5 70 25 34 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %screenH.2 %tmp.6;
+        symbol [ screenH %screenH.2 70 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 71 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_68_49_110_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_68_49_110_4_stop" ]
+        %centerX.3 = local;
+        symbol [ centerX %centerX.3 71 12 19 ];
+        %tmp.7 = lgetv %screenW.1;
+        symbol [ screenW %tmp.7 71 22 29 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %centerX.3 %tmp.9;
+        symbol [ centerX %centerX.3 71 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 74 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 74 8 10 ];
+        symbol [ setColor %tmp.11 74 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        symbol [ Constants %tmp.13 74 20 29 ];
+        %tmp.13 = getv ? :Constants;
+        symbol [ getTextColor %tmp.14 74 30 42 ];
+        %tmp.14 = getv function %tmp.13 :getTextColor;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        symbol [ Constants %tmp.17 74 46 55 ];
+        %tmp.17 = getv ? :Constants;
+        symbol [ getBgColor %tmp.18 74 56 66 ];
+        %tmp.18 = getv function %tmp.17 :getBgColor;
+        %tmp.19 = invoke %tmp.17 %tmp.18();
+        invoke %tmp.10 %tmp.11(%tmp.15, %tmp.19);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 75 8 ]
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 75 8 10 ];
+        symbol [ clear %tmp.21 75 11 16 ];
+        %tmp.21 = getv function %tmp.20 :clear;
+        invoke %tmp.20 %tmp.21();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 78 8 ]
+        %tmp.22 = lgetv %dc;
+        symbol [ dc %tmp.22 78 8 10 ];
+        symbol [ setColor %tmp.23 78 11 19 ];
+        %tmp.23 = getv function %tmp.22 :setColor;
+        symbol [ Constants %tmp.25 78 20 29 ];
+        %tmp.25 = getv ? :Constants;
+        symbol [ COLOR_PRIMARY %tmp.26 78 30 43 ];
+        %tmp.26 = getv %tmp.25 :COLOR_PRIMARY;
+        symbol [ Graphics %tmp.27 78 45 53 ];
+        %tmp.27 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.28 78 54 71 ];
+        %tmp.28 = getv %tmp.27 :COLOR_TRANSPARENT;
+        invoke %tmp.22 %tmp.23(%tmp.26, %tmp.28);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 79 8 ]
+        %tmp.29 = lgetv %dc;
+        symbol [ dc %tmp.29 79 8 10 ];
+        symbol [ drawText %tmp.30 79 11 19 ];
+        %tmp.30 = getv function %tmp.29 :drawText;
+        %tmp.31 = lgetv %centerX.3;
+        symbol [ centerX %tmp.31 79 20 27 ];
+        %tmp.32 = 30;
+        symbol [ Graphics %tmp.33 79 33 41 ];
+        %tmp.33 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.34 79 42 52 ];
+        %tmp.34 = getv %tmp.33 :FONT_SMALL;
+        %tmp.35 = "HOW MANY?";
+        symbol [ Graphics %tmp.36 80 25 33 ];
+        %tmp.36 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.37 80 34 53 ];
+        %tmp.37 = getv %tmp.36 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.29 %tmp.30(%tmp.31, %tmp.32, %tmp.34, %tmp.35, %tmp.37);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 82 8 ]
+        %tmp.38 = lgetv %dc;
+        symbol [ dc %tmp.38 82 8 10 ];
+        symbol [ setColor %tmp.39 82 11 19 ];
+        %tmp.39 = getv function %tmp.38 :setColor;
+        symbol [ Constants %tmp.41 82 20 29 ];
+        %tmp.41 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.42 82 30 41 ];
+        %tmp.42 = getv %tmp.41 :COLOR_MUTED;
+        symbol [ Graphics %tmp.43 82 43 51 ];
+        %tmp.43 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.44 82 52 69 ];
+        %tmp.44 = getv %tmp.43 :COLOR_TRANSPARENT;
+        invoke %tmp.38 %tmp.39(%tmp.42, %tmp.44);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 83 8 ]
+        %tmp.45 = lgetv %dc;
+        symbol [ dc %tmp.45 83 8 10 ];
+        symbol [ drawText %tmp.46 83 11 19 ];
+        %tmp.46 = getv function %tmp.45 :drawText;
+        %tmp.47 = lgetv %centerX.3;
+        symbol [ centerX %tmp.47 83 20 27 ];
+        %tmp.48 = 55;
+        symbol [ Graphics %tmp.49 83 33 41 ];
+        %tmp.49 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.50 83 42 52 ];
+        %tmp.50 = getv %tmp.49 :FONT_XTINY;
+        symbol [ Constants %tmp.52 84 12 21 ];
+        %tmp.52 = getv ? :Constants;
+        symbol [ getSpeciesName %tmp.53 84 22 36 ];
+        %tmp.53 = getv function %tmp.52 :getSpeciesName;
+        symbol [ _species %tmp.55 84 37 45 ];
+        %tmp.55 = getv ? :_species;
+        %tmp.56 = invoke %tmp.52 %tmp.53(%tmp.55);
+        symbol [ Graphics %tmp.57 84 48 56 ];
+        %tmp.57 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.58 84 57 76 ];
+        %tmp.58 = getv %tmp.57 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.45 %tmp.46(%tmp.47, %tmp.48, %tmp.50, %tmp.56, %tmp.58);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 87 8 ]
+        %tmp.59 = lgetv %dc;
+        symbol [ dc %tmp.59 87 8 10 ];
+        symbol [ setColor %tmp.60 87 11 19 ];
+        %tmp.60 = getv function %tmp.59 :setColor;
+        symbol [ Constants %tmp.62 87 20 29 ];
+        %tmp.62 = getv ? :Constants;
+        symbol [ COLOR_TEXT %tmp.63 87 30 40 ];
+        %tmp.63 = getv %tmp.62 :COLOR_TEXT;
+        symbol [ Graphics %tmp.64 87 42 50 ];
+        %tmp.64 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.65 87 51 68 ];
+        %tmp.65 = getv %tmp.64 :COLOR_TRANSPARENT;
+        invoke %tmp.59 %tmp.60(%tmp.63, %tmp.65);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 88 8 ]
+        %tmp.66 = lgetv %dc;
+        symbol [ dc %tmp.66 88 8 10 ];
+        symbol [ drawText %tmp.67 88 11 19 ];
+        %tmp.67 = getv function %tmp.66 :drawText;
+        %tmp.68 = lgetv %centerX.3;
+        symbol [ centerX %tmp.68 88 20 27 ];
+        %tmp.69 = lgetv %screenH.2;
+        symbol [ screenH %tmp.69 88 29 36 ];
+        %tmp.70 = 2;
+        %tmp.71 = div %tmp.69 %tmp.70;
+        %tmp.72 = 40;
+        %tmp.73 = sub %tmp.71 %tmp.72;
+        symbol [ Graphics %tmp.74 88 47 55 ];
+        %tmp.74 = getm $.Toybox.Graphics;
+        symbol [ FONT_NUMBER_THAI_HOT %tmp.75 88 56 76 ];
+        %tmp.75 = getv %tmp.74 :FONT_NUMBER_THAI_HOT;
+        symbol [ _quantity %tmp.77 89 12 21 ];
+        %tmp.77 = getv ? :_quantity;
+        symbol [ format %tmp.78 89 22 28 ];
+        %tmp.78 = getv function %tmp.77 :format;
+        %tmp.79 = "%d";
+        %tmp.80 = invoke %tmp.77 %tmp.78(%tmp.79);
+        symbol [ Graphics %tmp.81 89 36 44 ];
+        %tmp.81 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.82 89 45 64 ];
+        %tmp.82 = getv %tmp.81 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.66 %tmp.67(%tmp.68, %tmp.73, %tmp.75, %tmp.80, %tmp.82);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 92 8 ]
+        %tmp.83 = lgetv %dc;
+        symbol [ dc %tmp.83 92 8 10 ];
+        symbol [ setColor %tmp.84 92 11 19 ];
+        %tmp.84 = getv function %tmp.83 :setColor;
+        symbol [ Constants %tmp.86 92 20 29 ];
+        %tmp.86 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.87 92 30 41 ];
+        %tmp.87 = getv %tmp.86 :COLOR_MUTED;
+        symbol [ Graphics %tmp.88 92 43 51 ];
+        %tmp.88 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.89 92 52 69 ];
+        %tmp.89 = getv %tmp.88 :COLOR_TRANSPARENT;
+        invoke %tmp.83 %tmp.84(%tmp.87, %tmp.89);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 93 8 ]
+        %tmp.90 = lgetv %dc;
+        symbol [ dc %tmp.90 93 8 10 ];
+        symbol [ drawText %tmp.91 93 11 19 ];
+        %tmp.91 = getv function %tmp.90 :drawText;
+        %tmp.92 = lgetv %centerX.3;
+        symbol [ centerX %tmp.92 93 20 27 ];
+        %tmp.93 = lgetv %screenH.2;
+        symbol [ screenH %tmp.93 93 29 36 ];
+        %tmp.94 = 2;
+        %tmp.95 = div %tmp.93 %tmp.94;
+        %tmp.96 = 85;
+        %tmp.97 = sub %tmp.95 %tmp.96;
+        symbol [ Graphics %tmp.98 93 47 55 ];
+        %tmp.98 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.99 93 56 67 ];
+        %tmp.99 = getv %tmp.98 :FONT_MEDIUM;
+        %tmp.100 = "+";
+        symbol [ Graphics %tmp.101 94 17 25 ];
+        %tmp.101 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.102 94 26 45 ];
+        %tmp.102 = getv %tmp.101 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.90 %tmp.91(%tmp.92, %tmp.97, %tmp.99, %tmp.100, %tmp.102);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 95 8 ]
+        %tmp.103 = lgetv %dc;
+        symbol [ dc %tmp.103 95 8 10 ];
+        symbol [ drawText %tmp.104 95 11 19 ];
+        %tmp.104 = getv function %tmp.103 :drawText;
+        %tmp.105 = lgetv %centerX.3;
+        symbol [ centerX %tmp.105 95 20 27 ];
+        %tmp.106 = lgetv %screenH.2;
+        symbol [ screenH %tmp.106 95 29 36 ];
+        %tmp.107 = 2;
+        %tmp.108 = div %tmp.106 %tmp.107;
+        %tmp.109 = 30;
+        %tmp.110 = add %tmp.108 %tmp.109;
+        symbol [ Graphics %tmp.111 95 47 55 ];
+        %tmp.111 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.112 95 56 67 ];
+        %tmp.112 = getv %tmp.111 :FONT_MEDIUM;
+        %tmp.113 = "-";
+        symbol [ Graphics %tmp.114 96 17 25 ];
+        %tmp.114 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.115 96 26 45 ];
+        %tmp.115 = getv %tmp.114 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.103 %tmp.104(%tmp.105, %tmp.110, %tmp.112, %tmp.113, %tmp.115);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 99 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_99_8_104_8_if_stmt:
+        symbol [ _isCoveySpecies %tmp.117 99 12 27 ];
+        %tmp.117 = getv ? :_isCoveySpecies;
+        bf %tmp.117 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_99_8_104_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_99_8_104_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_99_29_104_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 100 12 ]
+        %tmp.118 = lgetv %dc;
+        symbol [ dc %tmp.118 100 12 14 ];
+        symbol [ setColor %tmp.119 100 15 23 ];
+        %tmp.119 = getv function %tmp.118 :setColor;
+        symbol [ Constants %tmp.121 100 24 33 ];
+        %tmp.121 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.122 100 34 45 ];
+        %tmp.122 = getv %tmp.121 :COLOR_MUTED;
+        symbol [ Graphics %tmp.123 100 47 55 ];
+        %tmp.123 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.124 100 56 73 ];
+        %tmp.124 = getv %tmp.123 :COLOR_TRANSPARENT;
+        invoke %tmp.118 %tmp.119(%tmp.122, %tmp.124);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 101 12 ]
+        %tmp.125 = lgetv %dc;
+        symbol [ dc %tmp.125 101 12 14 ];
+        symbol [ drawText %tmp.126 101 15 23 ];
+        %tmp.126 = getv function %tmp.125 :drawText;
+        %tmp.127 = lgetv %centerX.3;
+        symbol [ centerX %tmp.127 101 24 31 ];
+        %tmp.128 = lgetv %screenH.2;
+        symbol [ screenH %tmp.128 101 33 40 ];
+        %tmp.129 = 80;
+        %tmp.130 = sub %tmp.128 %tmp.129;
+        symbol [ Graphics %tmp.131 101 47 55 ];
+        %tmp.131 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.132 101 56 66 ];
+        %tmp.132 = getv %tmp.131 :FONT_XTINY;
+        %tmp.133 = "Covey: ";
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_begin:
+        symbol [ _coveySize %tmp.135 102 29 39 ];
+        %tmp.135 = getv ? :_coveySize;
+        %tmp.136 = null;
+        %tmp.137 = ne %tmp.135 %tmp.136;
+        bf %tmp.137 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_else_false;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_true:
+        symbol [ _coveySize %tmp.139 102 50 60 ];
+        %tmp.139 = getv ? :_coveySize;
+        %tmp.140 = as %tmp.139 { (!Null) };
+        symbol [ format %tmp.141 102 61 67 ];
+        %tmp.141 = getv function %tmp.140 :format;
+        %tmp.142 = "%d";
+        %tmp.143 = invoke %tmp.140 %tmp.141(%tmp.142);
+        push %tmp.143;
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_else_false:
+        %tmp.144 = "N/A";
+        push %tmp.144;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_end:
+        %tmp.145 = phi [%tmp.137 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_begin] [%tmp.143 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_true] [%tmp.144 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_else_false] [%tmp.145 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_102_29_102_76_end];
+        %tmp.146 = add %tmp.133 %tmp.145;
+        symbol [ Graphics %tmp.147 103 16 24 ];
+        %tmp.147 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.148 103 25 44 ];
+        %tmp.148 = getv %tmp.147 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.125 %tmp.126(%tmp.127, %tmp.130, %tmp.132, %tmp.146, %tmp.148);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_99_29_104_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_99_8_104_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_99_8_104_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 107 8 ]
+        %tmp.149 = lgetv %dc;
+        symbol [ dc %tmp.149 107 8 10 ];
+        symbol [ setColor %tmp.150 107 11 19 ];
+        %tmp.150 = getv function %tmp.149 :setColor;
+        symbol [ Constants %tmp.152 107 20 29 ];
+        %tmp.152 = getv ? :Constants;
+        symbol [ COLOR_MUTED %tmp.153 107 30 41 ];
+        %tmp.153 = getv %tmp.152 :COLOR_MUTED;
+        symbol [ Graphics %tmp.154 107 43 51 ];
+        %tmp.154 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.155 107 52 69 ];
+        %tmp.155 = getv %tmp.154 :COLOR_TRANSPARENT;
+        invoke %tmp.149 %tmp.150(%tmp.153, %tmp.155);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 108 8 ]
+        %tmp.156 = lgetv %dc;
+        symbol [ dc %tmp.156 108 8 10 ];
+        symbol [ drawText %tmp.157 108 11 19 ];
+        %tmp.157 = getv function %tmp.156 :drawText;
+        %tmp.158 = lgetv %centerX.3;
+        symbol [ centerX %tmp.158 108 20 27 ];
+        %tmp.159 = lgetv %screenH.2;
+        symbol [ screenH %tmp.159 108 29 36 ];
+        %tmp.160 = 35;
+        %tmp.161 = sub %tmp.159 %tmp.160;
+        symbol [ Graphics %tmp.162 108 43 51 ];
+        %tmp.162 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.163 108 52 62 ];
+        %tmp.163 = getv %tmp.162 :FONT_XTINY;
+        %tmp.164 = "UP/DOWN: +/-  SELECT: Next";
+        symbol [ Graphics %tmp.165 109 42 50 ];
+        %tmp.165 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.166 109 51 70 ];
+        %tmp.166 = getv %tmp.165 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.156 %tmp.157(%tmp.158, %tmp.161, %tmp.163, %tmp.164, %tmp.166);
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_68_49_110_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 113; @symbol_functiondef = [increment,113,13,22]; ]
+    function increment() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_113_33_119_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 115 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_115_8_118_8_if_stmt:
+        symbol [ _quantity %tmp.2 115 12 21 ];
+        %tmp.2 = getv ? :_quantity;
+        %tmp.3 = 99;
+        %tmp.4 = lt %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_115_8_118_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_115_8_118_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_115_28_118_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 116 12 ]
+        symbol [ _quantity %tmp.7 116 12 21 ];
+        %tmp.7 = getv ? :_quantity;
+        %tmp.8 = add %tmp.7 1;
+        symbol [ _quantity ? 116 12 21 ];
+        putv self :_quantity dup %tmp.8;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 117 12 ]
+        symbol [ WatchUi %tmp.9 117 12 19 ];
+        %tmp.9 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.10 117 20 33 ];
+        %tmp.10 = getv function %tmp.9 :requestUpdate;
+        invoke %tmp.9 %tmp.10();
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_115_28_118_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_115_8_118_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_115_8_118_8_if_end:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_113_33_119_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 122; @symbol_functiondef = [decrement,122,13,22]; ]
+    function decrement() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_122_33_127_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 123 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_123_8_126_8_if_stmt:
+        symbol [ _quantity %tmp.2 123 12 21 ];
+        %tmp.2 = getv ? :_quantity;
+        %tmp.3 = 1;
+        %tmp.4 = gt %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_123_8_126_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_123_8_126_8_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_123_27_126_8_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 124 12 ]
+        symbol [ _quantity %tmp.7 124 12 21 ];
+        %tmp.7 = getv ? :_quantity;
+        %tmp.8 = sub %tmp.7 1;
+        symbol [ _quantity ? 124 12 21 ];
+        putv self :_quantity dup %tmp.8;
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 125 12 ]
+        symbol [ WatchUi %tmp.9 125 12 19 ];
+        %tmp.9 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.10 125 20 33 ];
+        %tmp.10 = getv function %tmp.9 :requestUpdate;
+        invoke %tmp.9 %tmp.10();
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_123_27_126_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_123_8_126_8_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_123_8_126_8_if_end:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_122_33_127_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 135; @symbol_classdef = [QuantityDelegate,135,6,22]; @symbol_extends<0> = [WatchUi,135,31,38]; @symbol_extends<1> = [BehaviorDelegate,135,39,55]; ]
+class QuantityDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 135; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 135; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 137; @position = 8; @symbol_vardef = [_debouncer,137,8,18]; @symbol_type<0> = [DebounceHelper,137,22,36]; ]
+    var _debouncer as DebounceHelper;
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 139; @symbol_functiondef = [initialize,139,13,23]; ]
+    function initialize() as Void {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_139_26_142_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 140 8 ]
+        symbol [ BehaviorDelegate %tmp.2 140 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 140 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 141 8 ]
+        symbol [ DebounceHelper %tmp.7 141 25 39 ];
+        %tmp.7 = getv ? :DebounceHelper;
+        %tmp.8 = null;
+        %tmp.4 = newc %tmp.7 (%tmp.8);
+        symbol [ _debouncer ? 141 8 18 ];
+        putv self :_debouncer %tmp.4;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_139_26_142_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 147; @symbol_functiondef = [onSelect,147,13,21]; @symbol_return<0> = [Boolean,147,27,34]; ]
+    function onSelect() as Boolean {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_147_35_161_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 148 8 ]
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_148_8_148_53_if_stmt:
+        symbol [ _debouncer %tmp.2 148 13 23 ];
+        %tmp.2 = getv ? :_debouncer;
+        symbol [ canProcess %tmp.3 148 24 34 ];
+        %tmp.3 = getv function %tmp.2 :canProcess;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = not %tmp.4;
+        bf %tmp.5 @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_148_8_148_53_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_148_8_148_53_if_true:
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_148_38_148_53_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 148 40 ]
+        %tmp.6 = true;
+        ret %tmp.6;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_148_38_148_53_stop:
+        goto @D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_148_8_148_53_if_end;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_148_8_148_53_if_end:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 150 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_147_35_161_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_147_35_161_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 150 12 16 ];
+        symbol [ WatchUi %tmp.7 150 19 26 ];
+        %tmp.7 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.8 150 27 41 ];
+        %tmp.8 = getv function %tmp.7 :getCurrentView;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        %tmp.10 = 0;
+        %tmp.11 = agetv %tmp.9 %tmp.10;
+        %tmp.12 = as %tmp.11 QuantityView;
+        symbol [ QuantityView %tmp.12 150 50 62 ];
+        lputv %view.1 %tmp.12;
+        symbol [ view %view.1 150 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 152 8 ]
+        symbol [ WatchUi %tmp.13 152 8 15 ];
+        %tmp.13 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.14 152 16 24 ];
+        %tmp.14 = getv function %tmp.13 :pushView;
+        symbol [ ShotResultView %tmp.18 153 16 30 ];
+        %tmp.18 = getv ? :ShotResultView;
+        %tmp.19 = lgetv %view.1;
+        symbol [ view %tmp.19 154 16 20 ];
+        symbol [ _species %tmp.20 154 21 29 ];
+        %tmp.20 = getv %tmp.19 :_species;
+        %tmp.21 = lgetv %view.1;
+        symbol [ view %tmp.21 154 31 35 ];
+        symbol [ _quantity %tmp.22 154 36 45 ];
+        %tmp.22 = getv %tmp.21 :_quantity;
+        %tmp.23 = lgetv %view.1;
+        symbol [ view %tmp.23 154 47 51 ];
+        symbol [ _coveySize %tmp.24 154 52 62 ];
+        %tmp.24 = getv %tmp.23 :_coveySize;
+        %tmp.25 = lgetv %view.1;
+        symbol [ view %tmp.25 155 16 20 ];
+        symbol [ _capturedLat %tmp.26 155 21 33 ];
+        %tmp.26 = getv %tmp.25 :_capturedLat;
+        %tmp.27 = lgetv %view.1;
+        symbol [ view %tmp.27 155 35 39 ];
+        symbol [ _capturedLon %tmp.28 155 40 52 ];
+        %tmp.28 = getv %tmp.27 :_capturedLon;
+        %tmp.29 = lgetv %view.1;
+        symbol [ view %tmp.29 155 54 58 ];
+        symbol [ _capturedTime %tmp.30 155 59 72 ];
+        %tmp.30 = getv %tmp.29 :_capturedTime;
+        %tmp.15 = newc %tmp.18 (%tmp.20, %tmp.22, %tmp.24, %tmp.26, %tmp.28, %tmp.30);
+        symbol [ ShotResultDelegate %tmp.34 157 16 34 ];
+        %tmp.34 = getv ? :ShotResultDelegate;
+        %tmp.31 = newc %tmp.34 ();
+        symbol [ WatchUi %tmp.35 158 12 19 ];
+        %tmp.35 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.36 158 20 30 ];
+        %tmp.36 = getv %tmp.35 :SLIDE_LEFT;
+        invoke %tmp.13 %tmp.14(%tmp.15, %tmp.31, %tmp.36);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 160 8 ]
+        %tmp.37 = true;
+        ret %tmp.37;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_147_35_161_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 167; @symbol_functiondef = [onNextPage,167,13,23]; @symbol_return<0> = [Boolean,167,29,36]; ]
+    function onNextPage() as Boolean {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_167_37_171_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 168 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_167_37_171_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_167_37_171_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 168 12 16 ];
+        symbol [ WatchUi %tmp.1 168 19 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.2 168 27 41 ];
+        %tmp.2 = getv function %tmp.1 :getCurrentView;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = 0;
+        %tmp.5 = agetv %tmp.3 %tmp.4;
+        %tmp.6 = as %tmp.5 QuantityView;
+        symbol [ QuantityView %tmp.6 168 50 62 ];
+        lputv %view.1 %tmp.6;
+        symbol [ view %view.1 168 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 169 8 ]
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 169 8 12 ];
+        symbol [ decrement %tmp.8 169 13 22 ];
+        %tmp.8 = getv function %tmp.7 :decrement;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 170 8 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_167_37_171_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 176; @symbol_functiondef = [onPreviousPage,176,13,27]; @symbol_return<0> = [Boolean,176,33,40]; ]
+    function onPreviousPage() as Boolean {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_176_41_180_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 177 8 ]
+        [ "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_176_41_180_4_start" "D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_176_41_180_4_stop" ]
+        %view.1 = local;
+        symbol [ view %view.1 177 12 16 ];
+        symbol [ WatchUi %tmp.1 177 19 26 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ getCurrentView %tmp.2 177 27 41 ];
+        %tmp.2 = getv function %tmp.1 :getCurrentView;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = 0;
+        %tmp.5 = agetv %tmp.3 %tmp.4;
+        %tmp.6 = as %tmp.5 QuantityView;
+        symbol [ QuantityView %tmp.6 177 50 62 ];
+        lputv %view.1 %tmp.6;
+        symbol [ view %view.1 177 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 178 8 ]
+        %tmp.7 = lgetv %view.1;
+        symbol [ view %tmp.7 178 8 12 ];
+        symbol [ increment %tmp.8 178 13 22 ];
+        %tmp.8 = getv function %tmp.7 :increment;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 179 8 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_176_41_180_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 185; @symbol_functiondef = [onBack,185,13,19]; @symbol_return<0> = [Boolean,185,25,32]; ]
+    function onBack() as Boolean {
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_185_33_188_4_start:
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 186 8 ]
+        symbol [ WatchUi %tmp.1 186 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ popView %tmp.2 186 16 23 ];
+        %tmp.2 = getv function %tmp.1 :popView;
+        symbol [ WatchUi %tmp.3 186 24 31 ];
+        %tmp.3 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.4 186 32 43 ];
+        %tmp.4 = getv %tmp.3 :SLIDE_RIGHT;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc" 187 8 ]
+        %tmp.5 = true;
+        ret %tmp.5;
+D__my_project_projects_UplandHunter_source_FlushWorkflow_QuantityView_mc_185_33_188_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\FlushWorkflow\QuantityView.mc"; @line = 1; ]
+<init> {
+}

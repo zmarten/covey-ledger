@@ -1,0 +1,464 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 18; @symbol_classdef = [Waypoint,18,6,14]; ]
+class Waypoint {
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 18; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 18; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 21; @position = 8; @symbol_vardef = [latitude,21,8,16]; @symbol_type<0> = [Double,21,20,26]; ]
+    var latitude as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 22; @position = 8; @symbol_vardef = [longitude,22,8,17]; @symbol_type<0> = [Double,22,21,27]; ]
+    var longitude as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 25; @position = 8; @symbol_vardef = [timestamp,25,8,17]; @symbol_type<0> = [Number,25,21,27]; ]
+    var timestamp as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 28; @position = 8; @symbol_vardef = [species,28,8,15]; @symbol_type<0> = [Number,28,19,25]; ]
+    var species as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 31; @position = 8; @symbol_vardef = [quantityFlushed,31,8,23]; @symbol_type<0> = [Number,31,27,33]; ]
+    var quantityFlushed as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 34; @position = 8; @symbol_vardef = [birdsDown,34,8,17]; @symbol_type<0> = [Number,34,21,27]; ]
+    var birdsDown as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 37; @position = 8; @symbol_vardef = [shotResult,37,8,18]; @symbol_type<0> = [Number,37,22,28]; ]
+    var shotResult as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 40; @position = 8; @symbol_vardef = [coveySize,40,8,17]; @symbol_type<0> = [Number,40,21,27]; ]
+    var coveySize as Number or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 44; @position = 8; @symbol_vardef = [dogOnPoint,44,8,18]; @symbol_type<0> = [Boolean,44,22,29]; ]
+    var dogOnPoint as Boolean;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 47; @position = 8; @symbol_vardef = [dogName,47,8,15]; @symbol_type<0> = [String,47,19,25]; ]
+    var dogName as String or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 51; @position = 8; @symbol_vardef = [id,51,8,10]; @symbol_type<0> = [Number,51,14,20]; ]
+    var id as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 64; @symbol_functiondef = [initialize,64,13,23]; @symbol_param<0> = [lat,64,24,27]; @symbol_param<0>_type<0> = [Double,64,31,37]; @symbol_param<1> = [lon,64,39,42]; @symbol_param<1>_type<0> = [Double,64,46,52]; @symbol_param<2> = [time,64,54,58]; @symbol_param<2>_type<0> = [Number,64,62,68]; @symbol_param<3> = [spec,65,25,29]; @symbol_param<3>_type<0> = [Number,65,33,39]; @symbol_param<4> = [flushed,65,41,48]; @symbol_param<4>_type<0> = [Number,65,52,58]; @symbol_param<5> = [down,65,60,64]; @symbol_param<5>_type<0> = [Number,65,68,74]; @symbol_param<6> = [shot,66,25,29]; @symbol_param<6>_type<0> = [Number,66,33,39]; ]
+    function initialize(lat as Double, lon as Double, time as Number, spec as Number, flushed as Number, down as Number, shot as Number) as Void {
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_66_41_80_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 67 8 ]
+        %tmp.1 = lgetv %lat;
+        symbol [ lat %tmp.1 67 19 22 ];
+        symbol [ latitude ? 67 8 16 ];
+        putv self :latitude %tmp.1;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 68 8 ]
+        %tmp.2 = lgetv %lon;
+        symbol [ lon %tmp.2 68 20 23 ];
+        symbol [ longitude ? 68 8 17 ];
+        putv self :longitude %tmp.2;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 69 8 ]
+        %tmp.3 = lgetv %time;
+        symbol [ time %tmp.3 69 20 24 ];
+        symbol [ timestamp ? 69 8 17 ];
+        putv self :timestamp %tmp.3;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 70 8 ]
+        %tmp.4 = lgetv %spec;
+        symbol [ spec %tmp.4 70 18 22 ];
+        symbol [ species ? 70 8 15 ];
+        putv self :species %tmp.4;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 71 8 ]
+        %tmp.5 = lgetv %flushed;
+        symbol [ flushed %tmp.5 71 26 33 ];
+        symbol [ quantityFlushed ? 71 8 23 ];
+        putv self :quantityFlushed %tmp.5;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 72 8 ]
+        %tmp.6 = lgetv %down;
+        symbol [ down %tmp.6 72 20 24 ];
+        symbol [ birdsDown ? 72 8 17 ];
+        putv self :birdsDown %tmp.6;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 73 8 ]
+        %tmp.7 = lgetv %shot;
+        symbol [ shot %tmp.7 73 21 25 ];
+        symbol [ shotResult ? 73 8 18 ];
+        putv self :shotResult %tmp.7;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 74 8 ]
+        %tmp.8 = null;
+        symbol [ coveySize ? 74 8 17 ];
+        putv self :coveySize %tmp.8;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 75 8 ]
+        %tmp.9 = false;
+        symbol [ dogOnPoint ? 75 8 18 ];
+        putv self :dogOnPoint %tmp.9;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 76 8 ]
+        %tmp.10 = null;
+        symbol [ dogName ? 76 8 15 ];
+        putv self :dogName %tmp.10;
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 79 8 ]
+        %tmp.11 = lgetv %time;
+        symbol [ time %tmp.11 79 13 17 ];
+        symbol [ id ? 79 8 10 ];
+        putv self :id %tmp.11;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_66_41_80_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 91; @symbol_functiondef = [toDictionary,91,13,25]; @symbol_return<0> = [Dictionary,91,31,41]; ]
+    function toDictionary() as Dictionary {
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_91_42_105_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 92 8 ]
+        %tmp.1 = newd 11;
+        %tmp.2 = "id";
+        symbol [ id %tmp.4 93 20 22 ];
+        %tmp.4 = getv ? :id;
+        %tmp.5 = dup %tmp.1;
+        %tmp.6 = aputv %tmp.5 %tmp.2 %tmp.4;
+        %tmp.7 = "lat";
+        symbol [ latitude %tmp.9 94 21 29 ];
+        %tmp.9 = getv ? :latitude;
+        %tmp.10 = dup %tmp.6;
+        %tmp.11 = aputv %tmp.10 %tmp.7 %tmp.9;
+        %tmp.12 = "lon";
+        symbol [ longitude %tmp.14 95 21 30 ];
+        %tmp.14 = getv ? :longitude;
+        %tmp.15 = dup %tmp.11;
+        %tmp.16 = aputv %tmp.15 %tmp.12 %tmp.14;
+        %tmp.17 = "time";
+        symbol [ timestamp %tmp.19 96 22 31 ];
+        %tmp.19 = getv ? :timestamp;
+        %tmp.20 = dup %tmp.16;
+        %tmp.21 = aputv %tmp.20 %tmp.17 %tmp.19;
+        %tmp.22 = "species";
+        symbol [ species %tmp.24 97 25 32 ];
+        %tmp.24 = getv ? :species;
+        %tmp.25 = dup %tmp.21;
+        %tmp.26 = aputv %tmp.25 %tmp.22 %tmp.24;
+        %tmp.27 = "flushed";
+        symbol [ quantityFlushed %tmp.29 98 25 40 ];
+        %tmp.29 = getv ? :quantityFlushed;
+        %tmp.30 = dup %tmp.26;
+        %tmp.31 = aputv %tmp.30 %tmp.27 %tmp.29;
+        %tmp.32 = "down";
+        symbol [ birdsDown %tmp.34 99 22 31 ];
+        %tmp.34 = getv ? :birdsDown;
+        %tmp.35 = dup %tmp.31;
+        %tmp.36 = aputv %tmp.35 %tmp.32 %tmp.34;
+        %tmp.37 = "shot";
+        symbol [ shotResult %tmp.39 100 22 32 ];
+        %tmp.39 = getv ? :shotResult;
+        %tmp.40 = dup %tmp.36;
+        %tmp.41 = aputv %tmp.40 %tmp.37 %tmp.39;
+        %tmp.42 = "covey";
+        symbol [ coveySize %tmp.44 101 23 32 ];
+        %tmp.44 = getv ? :coveySize;
+        %tmp.45 = dup %tmp.41;
+        %tmp.46 = aputv %tmp.45 %tmp.42 %tmp.44;
+        %tmp.47 = "dogPt";
+        symbol [ dogOnPoint %tmp.49 102 23 33 ];
+        %tmp.49 = getv ? :dogOnPoint;
+        %tmp.50 = dup %tmp.46;
+        %tmp.51 = aputv %tmp.50 %tmp.47 %tmp.49;
+        %tmp.52 = "dogNm";
+        symbol [ dogName %tmp.54 103 23 30 ];
+        %tmp.54 = getv ? :dogName;
+        %tmp.55 = dup %tmp.51;
+        %tmp.56 = aputv %tmp.55 %tmp.52 %tmp.54;
+        ret %tmp.56;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_91_42_105_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 116; @symbol_functiondef = [fromDictionary,116,20,34]; @symbol_param<0> = [dict,116,35,39]; @symbol_param<0>_type<0> = [Dictionary,116,43,53]; @symbol_return<0> = [Waypoint,116,58,66]; ]
+    static
+    function fromDictionary(dict as Dictionary) as Waypoint or Null {
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_116_68_149_4_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 118 8 ]
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_8_122_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_12_120_58_begin:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_12_120_31_begin:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_12_119_53_begin:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_12_119_30_begin:
+        %tmp.1 = lgetv %dict;
+        symbol [ dict %tmp.1 118 12 16 ];
+        %tmp.2 = null;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bt %tmp.3 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_8_122_8_if_true;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_119_12_119_30_false:
+        %tmp.4 = lgetv %dict;
+        symbol [ dict %tmp.4 119 13 17 ];
+        %tmp.5 = as %tmp.4 { (!Null) };
+        symbol [ hasKey %tmp.6 119 18 24 ];
+        %tmp.6 = getv function %tmp.5 :hasKey;
+        %tmp.7 = "lat";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        %tmp.9 = not %tmp.8;
+        push %tmp.9;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_119_12_119_30_end:
+        %tmp.10 = phi [%tmp.3 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_12_119_30_begin] [%tmp.9 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_119_12_119_30_false] [%tmp.10 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_119_12_119_30_end];
+        bt %tmp.10 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_8_122_8_if_true;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_119_35_119_53_false:
+        %tmp.11 = lgetv %dict;
+        symbol [ dict %tmp.11 119 36 40 ];
+        %tmp.12 = as %tmp.11 { (!Null) };
+        symbol [ hasKey %tmp.13 119 41 47 ];
+        %tmp.13 = getv function %tmp.12 :hasKey;
+        %tmp.14 = "lon";
+        %tmp.15 = invoke %tmp.12 %tmp.13(%tmp.14);
+        %tmp.16 = not %tmp.15;
+        push %tmp.16;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_119_35_119_53_end:
+        %tmp.17 = phi [%tmp.10 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_12_119_53_begin] [%tmp.16 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_119_35_119_53_false] [%tmp.17 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_119_35_119_53_end];
+        bt %tmp.17 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_8_122_8_if_true;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_12_120_31_false:
+        %tmp.18 = lgetv %dict;
+        symbol [ dict %tmp.18 120 13 17 ];
+        %tmp.19 = as %tmp.18 { (!Null) };
+        symbol [ hasKey %tmp.20 120 18 24 ];
+        %tmp.20 = getv function %tmp.19 :hasKey;
+        %tmp.21 = "time";
+        %tmp.22 = invoke %tmp.19 %tmp.20(%tmp.21);
+        %tmp.23 = not %tmp.22;
+        push %tmp.23;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_12_120_31_end:
+        %tmp.24 = phi [%tmp.17 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_12_120_31_begin] [%tmp.23 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_12_120_31_false] [%tmp.24 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_12_120_31_end];
+        bt %tmp.24 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_8_122_8_if_true;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_36_120_58_false:
+        %tmp.25 = lgetv %dict;
+        symbol [ dict %tmp.25 120 37 41 ];
+        %tmp.26 = as %tmp.25 { (!Null) };
+        symbol [ hasKey %tmp.27 120 42 48 ];
+        %tmp.27 = getv function %tmp.26 :hasKey;
+        %tmp.28 = "species";
+        %tmp.29 = invoke %tmp.26 %tmp.27(%tmp.28);
+        %tmp.30 = not %tmp.29;
+        push %tmp.30;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_36_120_58_end:
+        %tmp.31 = phi [%tmp.24 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_12_120_58_begin] [%tmp.30 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_36_120_58_false] [%tmp.31 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_36_120_58_end];
+        bf %tmp.31 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_8_122_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_8_122_8_if_true:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_61_122_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 121 12 ]
+        %tmp.32 = null;
+        ret %tmp.32;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_120_61_122_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_8_122_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_118_8_122_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 124 8 ]
+        [ "D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_116_68_149_4_start" "D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_116_68_149_4_stop" ]
+        %wp.1 = local;
+        symbol [ wp %wp.1 124 12 14 ];
+        symbol [ Waypoint %tmp.36 124 21 29 ];
+        %tmp.36 = getv ? :Waypoint;
+        %tmp.37 = lgetv %dict;
+        symbol [ dict %tmp.37 125 12 16 ];
+        %tmp.38 = "lat";
+        %tmp.39 = agetv %tmp.37 %tmp.38;
+        %tmp.40 = as %tmp.39 Double;
+        symbol [ Double %tmp.40 125 27 33 ];
+        %tmp.41 = lgetv %dict;
+        symbol [ dict %tmp.41 126 12 16 ];
+        %tmp.42 = "lon";
+        %tmp.43 = agetv %tmp.41 %tmp.42;
+        %tmp.44 = as %tmp.43 Double;
+        symbol [ Double %tmp.44 126 27 33 ];
+        %tmp.45 = lgetv %dict;
+        symbol [ dict %tmp.45 127 12 16 ];
+        %tmp.46 = "time";
+        %tmp.47 = agetv %tmp.45 %tmp.46;
+        %tmp.48 = as %tmp.47 Number;
+        symbol [ Number %tmp.48 127 28 34 ];
+        %tmp.49 = lgetv %dict;
+        symbol [ dict %tmp.49 128 12 16 ];
+        %tmp.50 = "species";
+        %tmp.51 = agetv %tmp.49 %tmp.50;
+        %tmp.52 = as %tmp.51 Number;
+        symbol [ Number %tmp.52 128 31 37 ];
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_begin:
+        %tmp.53 = lgetv %dict;
+        symbol [ dict %tmp.53 129 12 16 ];
+        symbol [ hasKey %tmp.54 129 17 23 ];
+        %tmp.54 = getv function %tmp.53 :hasKey;
+        %tmp.55 = "flushed";
+        %tmp.56 = invoke %tmp.53 %tmp.54(%tmp.55);
+        bf %tmp.56 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_else_false;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_true:
+        %tmp.57 = lgetv %dict;
+        symbol [ dict %tmp.57 129 37 41 ];
+        %tmp.58 = "flushed";
+        %tmp.59 = agetv %tmp.57 %tmp.58;
+        %tmp.60 = as %tmp.59 Number;
+        symbol [ Number %tmp.60 129 56 62 ];
+        push %tmp.60;
+        goto @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_else_false:
+        %tmp.61 = 1;
+        push %tmp.61;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_end:
+        %tmp.62 = phi [%tmp.56 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_begin] [%tmp.60 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_true] [%tmp.61 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_else_false] [%tmp.62 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_129_12_129_65_end];
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_begin:
+        %tmp.63 = lgetv %dict;
+        symbol [ dict %tmp.63 130 12 16 ];
+        symbol [ hasKey %tmp.64 130 17 23 ];
+        %tmp.64 = getv function %tmp.63 :hasKey;
+        %tmp.65 = "down";
+        %tmp.66 = invoke %tmp.63 %tmp.64(%tmp.65);
+        bf %tmp.66 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_else_false;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_true:
+        %tmp.67 = lgetv %dict;
+        symbol [ dict %tmp.67 130 34 38 ];
+        %tmp.68 = "down";
+        %tmp.69 = agetv %tmp.67 %tmp.68;
+        %tmp.70 = as %tmp.69 Number;
+        symbol [ Number %tmp.70 130 50 56 ];
+        push %tmp.70;
+        goto @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_else_false:
+        %tmp.71 = 0;
+        push %tmp.71;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_end:
+        %tmp.72 = phi [%tmp.66 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_begin] [%tmp.70 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_true] [%tmp.71 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_else_false] [%tmp.72 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_130_12_130_59_end];
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_begin:
+        %tmp.73 = lgetv %dict;
+        symbol [ dict %tmp.73 131 12 16 ];
+        symbol [ hasKey %tmp.74 131 17 23 ];
+        %tmp.74 = getv function %tmp.73 :hasKey;
+        %tmp.75 = "shot";
+        %tmp.76 = invoke %tmp.73 %tmp.74(%tmp.75);
+        bf %tmp.76 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_else_false;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_true:
+        %tmp.77 = lgetv %dict;
+        symbol [ dict %tmp.77 131 34 38 ];
+        %tmp.78 = "shot";
+        %tmp.79 = agetv %tmp.77 %tmp.78;
+        %tmp.80 = as %tmp.79 Number;
+        symbol [ Number %tmp.80 131 50 56 ];
+        push %tmp.80;
+        goto @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_else_false:
+        symbol [ Constants %tmp.82 131 59 68 ];
+        %tmp.82 = getv ? :Constants;
+        symbol [ SHOT_NO_SHOT %tmp.83 131 69 81 ];
+        %tmp.83 = getv %tmp.82 :SHOT_NO_SHOT;
+        push %tmp.83;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_end:
+        %tmp.84 = phi [%tmp.76 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_begin] [%tmp.80 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_true] [%tmp.83 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_else_false] [%tmp.84 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_131_12_131_69_end];
+        %tmp.33 = newc %tmp.36 (%tmp.40, %tmp.44, %tmp.48, %tmp.52, %tmp.62, %tmp.72, %tmp.84);
+        lputv %wp.1 %tmp.33;
+        symbol [ wp %wp.1 124 12 14 ];
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 135 8 ]
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_8_137_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_12_135_53_begin:
+        %tmp.85 = lgetv %dict;
+        symbol [ dict %tmp.85 135 12 16 ];
+        symbol [ hasKey %tmp.86 135 17 23 ];
+        %tmp.86 = getv function %tmp.85 :hasKey;
+        %tmp.87 = "covey";
+        %tmp.88 = invoke %tmp.85 %tmp.86(%tmp.87);
+        bf %tmp.88 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_8_137_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_36_135_53_true:
+        %tmp.89 = lgetv %dict;
+        symbol [ dict %tmp.89 135 36 40 ];
+        %tmp.90 = "covey";
+        %tmp.91 = agetv %tmp.89 %tmp.90;
+        %tmp.92 = null;
+        %tmp.93 = ne %tmp.91 %tmp.92;
+        push %tmp.93;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_36_135_53_end:
+        %tmp.94 = phi [%tmp.88 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_12_135_53_begin] [%tmp.93 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_36_135_53_true] [%tmp.94 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_36_135_53_end];
+        bf %tmp.94 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_8_137_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_8_137_8_if_true:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_59_137_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 136 12 ]
+        %tmp.95 = lgetv %wp.1;
+        symbol [ wp %tmp.95 136 12 14 ];
+        %tmp.96 = lgetv %dict;
+        symbol [ dict %tmp.96 136 27 31 ];
+        %tmp.97 = "covey";
+        %tmp.98 = agetv %tmp.96 %tmp.97;
+        %tmp.99 = as %tmp.98 Number;
+        symbol [ Number %tmp.99 136 44 50 ];
+        symbol [ coveySize ? 136 15 24 ];
+        putv %tmp.95 :coveySize %tmp.99;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_59_137_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_8_137_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_135_8_137_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 138 8 ]
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_138_8_140_8_if_stmt:
+        %tmp.100 = lgetv %dict;
+        symbol [ dict %tmp.100 138 12 16 ];
+        symbol [ hasKey %tmp.101 138 17 23 ];
+        %tmp.101 = getv function %tmp.100 :hasKey;
+        %tmp.102 = "dogPt";
+        %tmp.103 = invoke %tmp.100 %tmp.101(%tmp.102);
+        bf %tmp.103 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_138_8_140_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_138_8_140_8_if_true:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_138_34_140_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 139 12 ]
+        %tmp.104 = lgetv %wp.1;
+        symbol [ wp %tmp.104 139 12 14 ];
+        %tmp.105 = lgetv %dict;
+        symbol [ dict %tmp.105 139 28 32 ];
+        %tmp.106 = "dogPt";
+        %tmp.107 = agetv %tmp.105 %tmp.106;
+        %tmp.108 = as %tmp.107 Boolean;
+        symbol [ Boolean %tmp.108 139 45 52 ];
+        symbol [ dogOnPoint ? 139 15 25 ];
+        putv %tmp.104 :dogOnPoint %tmp.108;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_138_34_140_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_138_8_140_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_138_8_140_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 141 8 ]
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_8_143_8_if_stmt:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_12_141_53_begin:
+        %tmp.109 = lgetv %dict;
+        symbol [ dict %tmp.109 141 12 16 ];
+        symbol [ hasKey %tmp.110 141 17 23 ];
+        %tmp.110 = getv function %tmp.109 :hasKey;
+        %tmp.111 = "dogNm";
+        %tmp.112 = invoke %tmp.109 %tmp.110(%tmp.111);
+        bf %tmp.112 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_8_143_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_36_141_53_true:
+        %tmp.113 = lgetv %dict;
+        symbol [ dict %tmp.113 141 36 40 ];
+        %tmp.114 = "dogNm";
+        %tmp.115 = agetv %tmp.113 %tmp.114;
+        %tmp.116 = null;
+        %tmp.117 = ne %tmp.115 %tmp.116;
+        push %tmp.117;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_36_141_53_end:
+        %tmp.118 = phi [%tmp.112 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_12_141_53_begin] [%tmp.117 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_36_141_53_true] [%tmp.118 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_36_141_53_end];
+        bf %tmp.118 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_8_143_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_8_143_8_if_true:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_59_143_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 142 12 ]
+        %tmp.119 = lgetv %wp.1;
+        symbol [ wp %tmp.119 142 12 14 ];
+        %tmp.120 = lgetv %dict;
+        symbol [ dict %tmp.120 142 25 29 ];
+        %tmp.121 = "dogNm";
+        %tmp.122 = agetv %tmp.120 %tmp.121;
+        %tmp.123 = as %tmp.122 String;
+        symbol [ String %tmp.123 142 42 48 ];
+        symbol [ dogName ? 142 15 22 ];
+        putv %tmp.119 :dogName %tmp.123;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_59_143_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_8_143_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_141_8_143_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 144 8 ]
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_144_8_146_8_if_stmt:
+        %tmp.124 = lgetv %dict;
+        symbol [ dict %tmp.124 144 12 16 ];
+        symbol [ hasKey %tmp.125 144 17 23 ];
+        %tmp.125 = getv function %tmp.124 :hasKey;
+        %tmp.126 = "id";
+        %tmp.127 = invoke %tmp.124 %tmp.125(%tmp.126);
+        bf %tmp.127 @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_144_8_146_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_144_8_146_8_if_true:
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_144_31_146_8_start:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 145 12 ]
+        %tmp.128 = lgetv %wp.1;
+        symbol [ wp %tmp.128 145 12 14 ];
+        %tmp.129 = lgetv %dict;
+        symbol [ dict %tmp.129 145 20 24 ];
+        %tmp.130 = "id";
+        %tmp.131 = agetv %tmp.129 %tmp.130;
+        %tmp.132 = as %tmp.131 Number;
+        symbol [ Number %tmp.132 145 34 40 ];
+        symbol [ id ? 145 15 17 ];
+        putv %tmp.128 :id %tmp.132;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_144_31_146_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_144_8_146_8_if_end;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_144_8_146_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc" 148 8 ]
+        %tmp.133 = lgetv %wp.1;
+        symbol [ wp %tmp.133 148 15 17 ];
+        ret %tmp.133;
+D__my_project_projects_UplandHunter_source_Models_Waypoint_mc_116_68_149_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\Models\Waypoint.mc"; @line = 1; ]
+<init> {
+}

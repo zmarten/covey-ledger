@@ -1,0 +1,873 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Timer,2,14,19]; ]
+import Toybox.Timer;
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Time,3,14,18]; ]
+import Toybox.Time;
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [Math,4,14,18]; ]
+import Toybox.Math;
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [System,5,14,20]; ]
+import Toybox.System;
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 33; @symbol_moduledef = [DogTrackerMock,33,7,21]; ]
+module DogTrackerMock {
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 33; ]
+    <init> {
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 37 8 ]
+        %tmp.1 = newa 0 Array<DogData>;
+        symbol [ Array %tmp.1 37 40 45 ];
+        symbol [ DogData %tmp.1 37 46 53 ];
+        putv self :_dogs %tmp.1;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 50 8 ]
+        symbol [ Constants %tmp.3 50 37 46 ];
+        %tmp.3 = getv ? :Constants;
+        symbol [ ANT_STATE_IDLE %tmp.4 50 47 61 ];
+        %tmp.4 = getv %tmp.3 :ANT_STATE_IDLE;
+        putv self :_connectionState %tmp.4;
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 37; @position = 8; @symbol_vardef = [_dogs,37,8,13]; @symbol_type<0> = [Array,37,17,22]; @symbol_type<1> = [DogData,37,23,30]; ]
+    var _dogs as Array<DogData>;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 41; @position = 8; @symbol_vardef = [_timerHelper,41,8,20]; @symbol_type<0> = [DogMockTimerHelper,41,24,42]; ]
+    var _timerHelper as DogMockTimerHelper or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 44; @position = 8; @symbol_vardef = [_tickCount,44,8,18]; @symbol_type<0> = [Number,44,22,28]; ]
+    var _tickCount as Number = 0;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 47; @position = 8; @symbol_vardef = [_isActive,47,8,17]; @symbol_type<0> = [Boolean,47,21,28]; ]
+    var _isActive as Boolean = false;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 50; @position = 8; @symbol_vardef = [_connectionState,50,8,24]; @symbol_type<0> = [Number,50,28,34]; ]
+    var _connectionState as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 59; @symbol_functiondef = [start,59,13,18]; ]
+    function start() as Void {
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_59_29_106_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 60 8 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_60_8_60_33_if_stmt:
+        symbol [ _isActive %tmp.2 60 12 21 ];
+        %tmp.2 = getv ? :_isActive;
+        bf %tmp.2 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_60_8_60_33_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_60_8_60_33_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_60_23_60_33_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 60 25 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_60_23_60_33_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_60_8_60_33_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_60_8_60_33_if_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 61 8 ]
+        %tmp.3 = true;
+        symbol [ _isActive ? 61 8 17 ];
+        putv self :_isActive %tmp.3;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 62 8 ]
+        %tmp.4 = 0;
+        symbol [ _tickCount ? 62 8 18 ];
+        putv self :_tickCount %tmp.4;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 65 8 ]
+        symbol [ Constants %tmp.6 65 27 36 ];
+        %tmp.6 = getv ? :Constants;
+        symbol [ ANT_STATE_SEARCHING %tmp.7 65 37 56 ];
+        %tmp.7 = getv %tmp.6 :ANT_STATE_SEARCHING;
+        symbol [ _connectionState ? 65 8 24 ];
+        putv self :_connectionState %tmp.7;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 68 8 ]
+        %tmp.8 = newa 0 Array<DogData>;
+        symbol [ Array %tmp.8 68 22 27 ];
+        symbol [ DogData %tmp.8 68 28 35 ];
+        symbol [ _dogs ? 68 8 13 ];
+        putv self :_dogs %tmp.8;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 71 8 ]
+        [ "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_59_29_106_4_start" "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_59_29_106_4_stop" ]
+        %rex.1 = local;
+        symbol [ rex %rex.1 71 12 15 ];
+        symbol [ DogData %tmp.12 71 22 29 ];
+        %tmp.12 = getv ? :DogData;
+        %tmp.13 = "Rex";
+        %tmp.14 = 1;
+        %tmp.9 = newc %tmp.12 (%tmp.13, %tmp.14);
+        lputv %rex.1 %tmp.9;
+        symbol [ rex %rex.1 71 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 72 8 ]
+        %tmp.15 = lgetv %rex.1;
+        symbol [ rex %tmp.15 72 8 11 ];
+        %tmp.16 = 45;
+        symbol [ distanceYards ? 72 12 25 ];
+        putv %tmp.15 :distanceYards %tmp.16;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 73 8 ]
+        %tmp.17 = lgetv %rex.1;
+        symbol [ rex %tmp.17 73 8 11 ];
+        %tmp.18 = 90.0d;
+        symbol [ direction ? 73 12 21 ];
+        putv %tmp.17 :direction %tmp.18;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 74 8 ]
+        %tmp.19 = lgetv %rex.1;
+        symbol [ rex %tmp.19 74 8 11 ];
+        symbol [ Constants %tmp.21 74 21 30 ];
+        %tmp.21 = getv ? :Constants;
+        symbol [ DOG_STATUS_MOVING %tmp.22 74 31 48 ];
+        %tmp.22 = getv %tmp.21 :DOG_STATUS_MOVING;
+        symbol [ status ? 74 12 18 ];
+        putv %tmp.19 :status %tmp.22;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 75 8 ]
+        %tmp.23 = lgetv %rex.1;
+        symbol [ rex %tmp.23 75 8 11 ];
+        %tmp.24 = 85;
+        symbol [ batteryPercent ? 75 12 26 ];
+        putv %tmp.23 :batteryPercent %tmp.24;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 76 8 ]
+        %tmp.25 = lgetv %rex.1;
+        symbol [ rex %tmp.25 76 8 11 ];
+        %tmp.26 = 90;
+        symbol [ signalQuality ? 76 12 25 ];
+        putv %tmp.25 :signalQuality %tmp.26;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 77 8 ]
+        %tmp.27 = lgetv %rex.1;
+        symbol [ rex %tmp.27 77 8 11 ];
+        symbol [ Time %tmp.28 77 29 33 ];
+        %tmp.28 = getm $.Toybox.Time;
+        symbol [ now %tmp.29 77 34 37 ];
+        %tmp.29 = getv function %tmp.28 :now;
+        %tmp.30 = invoke %tmp.28 %tmp.29();
+        symbol [ value %tmp.31 77 40 45 ];
+        %tmp.31 = getv function %tmp.30 :value;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        symbol [ lastUpdateTime ? 77 12 26 ];
+        putv %tmp.27 :lastUpdateTime %tmp.32;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 78 8 ]
+        symbol [ _dogs %tmp.34 78 8 13 ];
+        %tmp.34 = getv ? :_dogs;
+        symbol [ add %tmp.35 78 14 17 ];
+        %tmp.35 = getv function %tmp.34 :add;
+        %tmp.36 = lgetv %rex.1;
+        symbol [ rex %tmp.36 78 18 21 ];
+        invoke %tmp.34 %tmp.35(%tmp.36);
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 81 8 ]
+        [ "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_59_29_106_4_start" "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_59_29_106_4_stop" ]
+        %belle.2 = local;
+        symbol [ belle %belle.2 81 12 17 ];
+        symbol [ DogData %tmp.40 81 24 31 ];
+        %tmp.40 = getv ? :DogData;
+        %tmp.41 = "Belle";
+        %tmp.42 = 2;
+        %tmp.37 = newc %tmp.40 (%tmp.41, %tmp.42);
+        lputv %belle.2 %tmp.37;
+        symbol [ belle %belle.2 81 12 17 ];
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 82 8 ]
+        %tmp.43 = lgetv %belle.2;
+        symbol [ belle %tmp.43 82 8 13 ];
+        %tmp.44 = 120;
+        symbol [ distanceYards ? 82 14 27 ];
+        putv %tmp.43 :distanceYards %tmp.44;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 83 8 ]
+        %tmp.45 = lgetv %belle.2;
+        symbol [ belle %tmp.45 83 8 13 ];
+        %tmp.46 = 45.0d;
+        symbol [ direction ? 83 14 23 ];
+        putv %tmp.45 :direction %tmp.46;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 84 8 ]
+        %tmp.47 = lgetv %belle.2;
+        symbol [ belle %tmp.47 84 8 13 ];
+        symbol [ Constants %tmp.49 84 23 32 ];
+        %tmp.49 = getv ? :Constants;
+        symbol [ DOG_STATUS_STATIONARY %tmp.50 84 33 54 ];
+        %tmp.50 = getv %tmp.49 :DOG_STATUS_STATIONARY;
+        symbol [ status ? 84 14 20 ];
+        putv %tmp.47 :status %tmp.50;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 85 8 ]
+        %tmp.51 = lgetv %belle.2;
+        symbol [ belle %tmp.51 85 8 13 ];
+        %tmp.52 = 72;
+        symbol [ batteryPercent ? 85 14 28 ];
+        putv %tmp.51 :batteryPercent %tmp.52;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 86 8 ]
+        %tmp.53 = lgetv %belle.2;
+        symbol [ belle %tmp.53 86 8 13 ];
+        %tmp.54 = 75;
+        symbol [ signalQuality ? 86 14 27 ];
+        putv %tmp.53 :signalQuality %tmp.54;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 87 8 ]
+        %tmp.55 = lgetv %belle.2;
+        symbol [ belle %tmp.55 87 8 13 ];
+        symbol [ Time %tmp.56 87 31 35 ];
+        %tmp.56 = getm $.Toybox.Time;
+        symbol [ now %tmp.57 87 36 39 ];
+        %tmp.57 = getv function %tmp.56 :now;
+        %tmp.58 = invoke %tmp.56 %tmp.57();
+        symbol [ value %tmp.59 87 42 47 ];
+        %tmp.59 = getv function %tmp.58 :value;
+        %tmp.60 = invoke %tmp.58 %tmp.59();
+        symbol [ lastUpdateTime ? 87 14 28 ];
+        putv %tmp.55 :lastUpdateTime %tmp.60;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 88 8 ]
+        symbol [ _dogs %tmp.62 88 8 13 ];
+        %tmp.62 = getv ? :_dogs;
+        symbol [ add %tmp.63 88 14 17 ];
+        %tmp.63 = getv function %tmp.62 :add;
+        %tmp.64 = lgetv %belle.2;
+        symbol [ belle %tmp.64 88 18 23 ];
+        invoke %tmp.62 %tmp.63(%tmp.64);
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 91 8 ]
+        [ "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_59_29_106_4_start" "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_59_29_106_4_stop" ]
+        %duke.3 = local;
+        symbol [ duke %duke.3 91 12 16 ];
+        symbol [ DogData %tmp.68 91 23 30 ];
+        %tmp.68 = getv ? :DogData;
+        %tmp.69 = "Duke";
+        %tmp.70 = 3;
+        %tmp.65 = newc %tmp.68 (%tmp.69, %tmp.70);
+        lputv %duke.3 %tmp.65;
+        symbol [ duke %duke.3 91 12 16 ];
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 92 8 ]
+        %tmp.71 = lgetv %duke.3;
+        symbol [ duke %tmp.71 92 8 12 ];
+        %tmp.72 = 25;
+        symbol [ distanceYards ? 92 13 26 ];
+        putv %tmp.71 :distanceYards %tmp.72;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 93 8 ]
+        %tmp.73 = lgetv %duke.3;
+        symbol [ duke %tmp.73 93 8 12 ];
+        %tmp.74 = 180.0d;
+        symbol [ direction ? 93 13 22 ];
+        putv %tmp.73 :direction %tmp.74;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 94 8 ]
+        %tmp.75 = lgetv %duke.3;
+        symbol [ duke %tmp.75 94 8 12 ];
+        symbol [ Constants %tmp.77 94 22 31 ];
+        %tmp.77 = getv ? :Constants;
+        symbol [ DOG_STATUS_MOVING %tmp.78 94 32 49 ];
+        %tmp.78 = getv %tmp.77 :DOG_STATUS_MOVING;
+        symbol [ status ? 94 13 19 ];
+        putv %tmp.75 :status %tmp.78;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 95 8 ]
+        %tmp.79 = lgetv %duke.3;
+        symbol [ duke %tmp.79 95 8 12 ];
+        %tmp.80 = 93;
+        symbol [ batteryPercent ? 95 13 27 ];
+        putv %tmp.79 :batteryPercent %tmp.80;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 96 8 ]
+        %tmp.81 = lgetv %duke.3;
+        symbol [ duke %tmp.81 96 8 12 ];
+        %tmp.82 = 95;
+        symbol [ signalQuality ? 96 13 26 ];
+        putv %tmp.81 :signalQuality %tmp.82;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 97 8 ]
+        %tmp.83 = lgetv %duke.3;
+        symbol [ duke %tmp.83 97 8 12 ];
+        symbol [ Time %tmp.84 97 30 34 ];
+        %tmp.84 = getm $.Toybox.Time;
+        symbol [ now %tmp.85 97 35 38 ];
+        %tmp.85 = getv function %tmp.84 :now;
+        %tmp.86 = invoke %tmp.84 %tmp.85();
+        symbol [ value %tmp.87 97 41 46 ];
+        %tmp.87 = getv function %tmp.86 :value;
+        %tmp.88 = invoke %tmp.86 %tmp.87();
+        symbol [ lastUpdateTime ? 97 13 27 ];
+        putv %tmp.83 :lastUpdateTime %tmp.88;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 98 8 ]
+        symbol [ _dogs %tmp.90 98 8 13 ];
+        %tmp.90 = getv ? :_dogs;
+        symbol [ add %tmp.91 98 14 17 ];
+        %tmp.91 = getv function %tmp.90 :add;
+        %tmp.92 = lgetv %duke.3;
+        symbol [ duke %tmp.92 98 18 22 ];
+        invoke %tmp.90 %tmp.91(%tmp.92);
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 102 8 ]
+        symbol [ DogMockTimerHelper %tmp.96 102 27 45 ];
+        %tmp.96 = getv ? :DogMockTimerHelper;
+        %tmp.93 = newc %tmp.96 ();
+        symbol [ _timerHelper ? 102 8 20 ];
+        putv self :_timerHelper %tmp.93;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 103 8 ]
+        symbol [ _timerHelper %tmp.98 103 8 20 ];
+        %tmp.98 = getv ? :_timerHelper;
+        symbol [ start %tmp.99 103 21 26 ];
+        %tmp.99 = getv function %tmp.98 :start;
+        invoke %tmp.98 %tmp.99();
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 105 8 ]
+        symbol [ System %tmp.100 105 8 14 ];
+        %tmp.100 = getm $.Toybox.System;
+        symbol [ println %tmp.101 105 15 22 ];
+        %tmp.101 = getv function %tmp.100 :println;
+        %tmp.102 = "DogTrackerMock started with 3 mock dogs";
+        invoke %tmp.100 %tmp.101(%tmp.102);
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_59_29_106_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 111; @symbol_functiondef = [stop,111,13,17]; ]
+    function stop() as Void {
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_111_28_119_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 112 8 ]
+        %tmp.1 = false;
+        symbol [ _isActive ? 112 8 17 ];
+        putv self :_isActive %tmp.1;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 113 8 ]
+        symbol [ Constants %tmp.3 113 27 36 ];
+        %tmp.3 = getv ? :Constants;
+        symbol [ ANT_STATE_IDLE %tmp.4 113 37 51 ];
+        %tmp.4 = getv %tmp.3 :ANT_STATE_IDLE;
+        symbol [ _connectionState ? 113 8 24 ];
+        putv self :_connectionState %tmp.4;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 114 8 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_114_8_117_8_if_stmt:
+        symbol [ _timerHelper %tmp.6 114 12 24 ];
+        %tmp.6 = getv ? :_timerHelper;
+        %tmp.7 = null;
+        %tmp.8 = ne %tmp.6 %tmp.7;
+        bf %tmp.8 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_114_8_117_8_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_114_8_117_8_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_114_34_117_8_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 115 12 ]
+        symbol [ _timerHelper %tmp.10 115 12 24 ];
+        %tmp.10 = getv ? :_timerHelper;
+        %tmp.11 = as %tmp.10 { (!Null) };
+        symbol [ stop %tmp.12 115 25 29 ];
+        %tmp.12 = getv function %tmp.11 :stop;
+        invoke %tmp.11 %tmp.12();
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 116 12 ]
+        %tmp.13 = null;
+        symbol [ _timerHelper ? 116 12 24 ];
+        putv self :_timerHelper %tmp.13;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_114_34_117_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_114_8_117_8_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_114_8_117_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 118 8 ]
+        symbol [ System %tmp.14 118 8 14 ];
+        %tmp.14 = getm $.Toybox.System;
+        symbol [ println %tmp.15 118 15 22 ];
+        %tmp.15 = getv function %tmp.14 :println;
+        %tmp.16 = "DogTrackerMock stopped";
+        invoke %tmp.14 %tmp.15(%tmp.16);
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_111_28_119_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 126; @symbol_functiondef = [getDogs,126,13,20]; @symbol_return<0> = [Array,126,26,31]; @symbol_return<1> = [DogData,126,32,39]; ]
+    function getDogs() as Array<DogData> {
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_126_41_128_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 127 8 ]
+        symbol [ _dogs %tmp.2 127 15 20 ];
+        %tmp.2 = getv ? :_dogs;
+        ret %tmp.2;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_126_41_128_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 135; @symbol_functiondef = [getConnectionState,135,13,31]; @symbol_return<0> = [Number,135,37,43]; ]
+    function getConnectionState() as Number {
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_135_44_137_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 136 8 ]
+        symbol [ _connectionState %tmp.2 136 15 31 ];
+        %tmp.2 = getv ? :_connectionState;
+        ret %tmp.2;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_135_44_137_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 142; @symbol_functiondef = [isActive,142,13,21]; @symbol_return<0> = [Boolean,142,27,34]; ]
+    function isActive() as Boolean {
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_142_35_144_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 143 8 ]
+        symbol [ _isActive %tmp.2 143 15 24 ];
+        %tmp.2 = getv ? :_isActive;
+        ret %tmp.2;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_142_35_144_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 156; @symbol_functiondef = [onMockUpdate,156,13,25]; ]
+    function onMockUpdate() as Void {
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_156_36_223_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 157 8 ]
+        symbol [ _tickCount %tmp.3 157 8 18 ];
+        %tmp.3 = getv ? :_tickCount;
+        %tmp.4 = add %tmp.3 1;
+        symbol [ _tickCount ? 157 8 18 ];
+        putv self :_tickCount dup %tmp.4;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 158 8 ]
+        [ "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_156_36_223_4_start" "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_156_36_223_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 158 12 15 ];
+        symbol [ Time %tmp.5 158 18 22 ];
+        %tmp.5 = getm $.Toybox.Time;
+        symbol [ now %tmp.6 158 23 26 ];
+        %tmp.6 = getv function %tmp.5 :now;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ value %tmp.8 158 29 34 ];
+        %tmp.8 = getv function %tmp.7 :value;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        lputv %now.1 %tmp.9;
+        symbol [ now %now.1 158 12 15 ];
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 161 8 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_8_164_8_if_stmt:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_12_161_79_begin:
+        symbol [ _connectionState %tmp.11 161 12 28 ];
+        %tmp.11 = getv ? :_connectionState;
+        symbol [ Constants %tmp.13 161 32 41 ];
+        %tmp.13 = getv ? :Constants;
+        symbol [ ANT_STATE_SEARCHING %tmp.14 161 42 61 ];
+        %tmp.14 = getv %tmp.13 :ANT_STATE_SEARCHING;
+        %tmp.15 = eq %tmp.11 %tmp.14;
+        bf %tmp.15 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_8_164_8_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_65_161_79_true:
+        symbol [ _tickCount %tmp.17 161 65 75 ];
+        %tmp.17 = getv ? :_tickCount;
+        %tmp.18 = 3;
+        %tmp.19 = gte %tmp.17 %tmp.18;
+        push %tmp.19;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_65_161_79_end:
+        %tmp.20 = phi [%tmp.15 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_12_161_79_begin] [%tmp.19 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_65_161_79_true] [%tmp.20 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_65_161_79_end];
+        bf %tmp.20 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_8_164_8_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_8_164_8_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_82_164_8_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 162 12 ]
+        symbol [ Constants %tmp.22 162 31 40 ];
+        %tmp.22 = getv ? :Constants;
+        symbol [ ANT_STATE_CONNECTED %tmp.23 162 41 60 ];
+        %tmp.23 = getv %tmp.22 :ANT_STATE_CONNECTED;
+        symbol [ _connectionState ? 162 12 28 ];
+        putv self :_connectionState %tmp.23;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 163 12 ]
+        symbol [ System %tmp.24 163 12 18 ];
+        %tmp.24 = getm $.Toybox.System;
+        symbol [ println %tmp.25 163 19 26 ];
+        %tmp.25 = getv function %tmp.24 :println;
+        %tmp.26 = "DogTrackerMock: Connected to mock handheld";
+        invoke %tmp.24 %tmp.25(%tmp.26);
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_82_164_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_8_164_8_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_161_8_164_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 167 8 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_167_8_169_8_if_stmt:
+        symbol [ _connectionState %tmp.28 167 12 28 ];
+        %tmp.28 = getv ? :_connectionState;
+        symbol [ Constants %tmp.30 167 32 41 ];
+        %tmp.30 = getv ? :Constants;
+        symbol [ ANT_STATE_CONNECTED %tmp.31 167 42 61 ];
+        %tmp.31 = getv %tmp.30 :ANT_STATE_CONNECTED;
+        %tmp.32 = ne %tmp.28 %tmp.31;
+        bf %tmp.32 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_167_8_169_8_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_167_8_169_8_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_167_63_169_8_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 168 12 ]
+        ret ?;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_167_63_169_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_167_8_169_8_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_167_8_169_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 171 8 ]
+        for @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_test @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_incr @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_begin" "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 171 17 18 ];
+        %tmp.33 = 0;
+        lputv %i.2 %tmp.33;
+        symbol [ i %i.2 171 17 18 ];
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_test:
+        %tmp.34 = lgetv %i.2;
+        symbol [ i %tmp.34 171 24 25 ];
+        symbol [ _dogs %tmp.36 171 28 33 ];
+        %tmp.36 = getv ? :_dogs;
+        symbol [ size %tmp.37 171 34 38 ];
+        %tmp.37 = getv function %tmp.36 :size;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        %tmp.39 = lt %tmp.34 %tmp.38;
+        bf %tmp.39 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_begin:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_47_222_8_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 172 12 ]
+        [ "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_47_222_8_start" "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_47_222_8_stop" ]
+        %dog.3 = local;
+        symbol [ dog %dog.3 172 16 19 ];
+        symbol [ _dogs %tmp.41 172 22 27 ];
+        %tmp.41 = getv ? :_dogs;
+        %tmp.42 = lgetv %i.2;
+        symbol [ i %tmp.42 172 28 29 ];
+        %tmp.43 = agetv %tmp.41 %tmp.42;
+        lputv %dog.3 %tmp.43;
+        symbol [ dog %dog.3 172 16 19 ];
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 173 12 ]
+        %tmp.44 = lgetv %dog.3;
+        symbol [ dog %tmp.44 173 12 15 ];
+        %tmp.45 = lgetv %now.1;
+        symbol [ now %tmp.45 173 33 36 ];
+        symbol [ lastUpdateTime ? 173 16 30 ];
+        putv %tmp.44 :lastUpdateTime %tmp.45;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 178 12 ]
+        [ "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_47_222_8_start" "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_47_222_8_stop" ]
+        %distChange.4 = local;
+        symbol [ distChange %distChange.4 178 16 26 ];
+        symbol [ Math %tmp.46 178 30 34 ];
+        %tmp.46 = getm $.Toybox.Math;
+        symbol [ rand %tmp.47 178 35 39 ];
+        %tmp.47 = getv function %tmp.46 :rand;
+        %tmp.48 = invoke %tmp.46 %tmp.47();
+        %tmp.49 = 11;
+        %tmp.50 = mod %tmp.48 %tmp.49;
+        %tmp.51 = 5;
+        %tmp.52 = sub %tmp.50 %tmp.51;
+        lputv %distChange.4 %tmp.52;
+        symbol [ distChange %distChange.4 178 16 26 ];
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 179 12 ]
+        %tmp.53 = lgetv %dog.3;
+        symbol [ dog %tmp.53 179 12 15 ];
+        %tmp.54 = lgetv %dog.3;
+        symbol [ dog %tmp.54 179 32 35 ];
+        symbol [ distanceYards %tmp.55 179 36 49 ];
+        %tmp.55 = getv %tmp.54 :distanceYards;
+        %tmp.56 = lgetv %distChange.4;
+        symbol [ distChange %tmp.56 179 52 62 ];
+        %tmp.57 = add %tmp.55 %tmp.56;
+        symbol [ distanceYards ? 179 16 29 ];
+        putv %tmp.53 :distanceYards %tmp.57;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 182 12 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_182_12_182_64_if_stmt:
+        %tmp.58 = lgetv %dog.3;
+        symbol [ dog %tmp.58 182 16 19 ];
+        symbol [ distanceYards %tmp.59 182 20 33 ];
+        %tmp.59 = getv %tmp.58 :distanceYards;
+        %tmp.60 = 5;
+        %tmp.61 = lt %tmp.59 %tmp.60;
+        bf %tmp.61 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_182_12_182_64_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_182_12_182_64_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_182_39_182_64_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 182 41 ]
+        %tmp.62 = lgetv %dog.3;
+        symbol [ dog %tmp.62 182 41 44 ];
+        %tmp.63 = 5;
+        symbol [ distanceYards ? 182 45 58 ];
+        putv %tmp.62 :distanceYards %tmp.63;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_182_39_182_64_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_182_12_182_64_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_182_12_182_64_if_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 183 12 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_183_12_183_68_if_stmt:
+        %tmp.64 = lgetv %dog.3;
+        symbol [ dog %tmp.64 183 16 19 ];
+        symbol [ distanceYards %tmp.65 183 20 33 ];
+        %tmp.65 = getv %tmp.64 :distanceYards;
+        %tmp.66 = 300;
+        %tmp.67 = gt %tmp.65 %tmp.66;
+        bf %tmp.67 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_183_12_183_68_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_183_12_183_68_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_183_41_183_68_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 183 43 ]
+        %tmp.68 = lgetv %dog.3;
+        symbol [ dog %tmp.68 183 43 46 ];
+        %tmp.69 = 300;
+        symbol [ distanceYards ? 183 47 60 ];
+        putv %tmp.68 :distanceYards %tmp.69;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_183_41_183_68_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_183_12_183_68_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_183_12_183_68_if_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 187 12 ]
+        [ "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_47_222_8_start" "D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_47_222_8_stop" ]
+        %dirChange.5 = local;
+        symbol [ dirChange %dirChange.5 187 16 25 ];
+        symbol [ Math %tmp.70 187 30 34 ];
+        %tmp.70 = getm $.Toybox.Math;
+        symbol [ rand %tmp.71 187 35 39 ];
+        %tmp.71 = getv function %tmp.70 :rand;
+        %tmp.72 = invoke %tmp.70 %tmp.71();
+        %tmp.73 = 21;
+        %tmp.74 = mod %tmp.72 %tmp.73;
+        %tmp.75 = 10;
+        %tmp.76 = sub %tmp.74 %tmp.75;
+        symbol [ toDouble %tmp.77 187 54 62 ];
+        %tmp.77 = getv function %tmp.76 :toDouble;
+        %tmp.78 = invoke %tmp.76 %tmp.77();
+        lputv %dirChange.5 %tmp.78;
+        symbol [ dirChange %dirChange.5 187 16 25 ];
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 188 12 ]
+        %tmp.79 = lgetv %dog.3;
+        symbol [ dog %tmp.79 188 12 15 ];
+        %tmp.80 = lgetv %dog.3;
+        symbol [ dog %tmp.80 188 28 31 ];
+        symbol [ direction %tmp.81 188 32 41 ];
+        %tmp.81 = getv %tmp.80 :direction;
+        %tmp.82 = lgetv %dirChange.5;
+        symbol [ dirChange %tmp.82 188 44 53 ];
+        %tmp.83 = add %tmp.81 %tmp.82;
+        symbol [ direction ? 188 16 25 ];
+        putv %tmp.79 :direction %tmp.83;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 191 12 ]
+        while @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_191_12_191_86_while_test @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_191_12_191_86_while_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_191_12_191_86_while_test:
+        %tmp.84 = lgetv %dog.3;
+        symbol [ dog %tmp.84 191 19 22 ];
+        symbol [ direction %tmp.85 191 23 32 ];
+        %tmp.85 = getv %tmp.84 :direction;
+        %tmp.86 = 360.0d;
+        %tmp.87 = gte %tmp.85 %tmp.86;
+        bf %tmp.87 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_191_12_191_86_while_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_191_12_191_86_while_begin:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_191_44_191_86_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 191 46 ]
+        %tmp.88 = lgetv %dog.3;
+        symbol [ dog %tmp.88 191 46 49 ];
+        %tmp.89 = lgetv %dog.3;
+        symbol [ dog %tmp.89 191 62 65 ];
+        symbol [ direction %tmp.90 191 66 75 ];
+        %tmp.90 = getv %tmp.89 :direction;
+        %tmp.91 = 360.0d;
+        %tmp.92 = sub %tmp.90 %tmp.91;
+        symbol [ direction ? 191 50 59 ];
+        putv %tmp.88 :direction %tmp.92;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_191_44_191_86_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_191_12_191_86_while_test;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_191_12_191_86_while_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 192 12 ]
+        while @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_192_12_192_83_while_test @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_192_12_192_83_while_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_192_12_192_83_while_test:
+        %tmp.93 = lgetv %dog.3;
+        symbol [ dog %tmp.93 192 19 22 ];
+        symbol [ direction %tmp.94 192 23 32 ];
+        %tmp.94 = getv %tmp.93 :direction;
+        %tmp.95 = 0.0d;
+        %tmp.96 = lt %tmp.94 %tmp.95;
+        bf %tmp.96 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_192_12_192_83_while_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_192_12_192_83_while_begin:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_192_41_192_83_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 192 43 ]
+        %tmp.97 = lgetv %dog.3;
+        symbol [ dog %tmp.97 192 43 46 ];
+        %tmp.98 = lgetv %dog.3;
+        symbol [ dog %tmp.98 192 59 62 ];
+        symbol [ direction %tmp.99 192 63 72 ];
+        %tmp.99 = getv %tmp.98 :direction;
+        %tmp.100 = 360.0d;
+        %tmp.101 = add %tmp.99 %tmp.100;
+        symbol [ direction ? 192 47 56 ];
+        putv %tmp.97 :direction %tmp.101;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_192_41_192_83_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_192_12_192_83_while_test;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_192_12_192_83_while_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 197 12 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_197_12_206_12_if_stmt:
+        %tmp.102 = lgetv %i.2;
+        symbol [ i %tmp.102 197 16 17 ];
+        %tmp.103 = 2;
+        %tmp.104 = eq %tmp.102 %tmp.103;
+        bf %tmp.104 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_197_12_206_12_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_197_12_206_12_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_197_24_206_12_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 199 16 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_199_16_205_16_if_stmt:
+        symbol [ _tickCount %tmp.106 199 20 30 ];
+        %tmp.106 = getv ? :_tickCount;
+        %tmp.107 = 30;
+        %tmp.108 = mod %tmp.106 %tmp.107;
+        %tmp.109 = 15;
+        %tmp.110 = eq %tmp.108 %tmp.109;
+        bf %tmp.110 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_199_16_205_16_if_false;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_199_16_205_16_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_199_43_202_16_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 200 20 ]
+        %tmp.111 = lgetv %dog.3;
+        symbol [ dog %tmp.111 200 20 23 ];
+        symbol [ Constants %tmp.113 200 33 42 ];
+        %tmp.113 = getv ? :Constants;
+        symbol [ DOG_STATUS_ON_POINT %tmp.114 200 43 62 ];
+        %tmp.114 = getv %tmp.113 :DOG_STATUS_ON_POINT;
+        symbol [ status ? 200 24 30 ];
+        putv %tmp.111 :status %tmp.114;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 201 20 ]
+        %tmp.115 = lgetv %dog.3;
+        symbol [ dog %tmp.115 201 20 23 ];
+        %tmp.116 = 60;
+        symbol [ distanceYards ? 201 24 37 ];
+        putv %tmp.115 :distanceYards %tmp.116;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_199_43_202_16_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_199_16_205_16_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_199_16_205_16_if_false:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 202 23 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_202_23_205_16_if_stmt:
+        symbol [ _tickCount %tmp.118 202 27 37 ];
+        %tmp.118 = getv ? :_tickCount;
+        %tmp.119 = 30;
+        %tmp.120 = mod %tmp.118 %tmp.119;
+        %tmp.121 = 20;
+        %tmp.122 = eq %tmp.120 %tmp.121;
+        bf %tmp.122 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_202_23_205_16_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_202_23_205_16_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_202_50_205_16_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 204 20 ]
+        %tmp.123 = lgetv %dog.3;
+        symbol [ dog %tmp.123 204 20 23 ];
+        symbol [ Constants %tmp.125 204 33 42 ];
+        %tmp.125 = getv ? :Constants;
+        symbol [ DOG_STATUS_MOVING %tmp.126 204 43 60 ];
+        %tmp.126 = getv %tmp.125 :DOG_STATUS_MOVING;
+        symbol [ status ? 204 24 30 ];
+        putv %tmp.123 :status %tmp.126;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_202_50_205_16_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_202_23_205_16_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_202_23_205_16_if_end:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_199_16_205_16_if_end:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_197_24_206_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_197_12_206_12_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_197_12_206_12_if_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 209 12 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_209_12_215_12_if_stmt:
+        %tmp.127 = lgetv %i.2;
+        symbol [ i %tmp.127 209 16 17 ];
+        %tmp.128 = 1;
+        %tmp.129 = eq %tmp.127 %tmp.128;
+        bf %tmp.129 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_209_12_215_12_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_209_12_215_12_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_209_24_215_12_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 210 16 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_210_16_214_16_if_stmt:
+        symbol [ _tickCount %tmp.131 210 20 30 ];
+        %tmp.131 = getv ? :_tickCount;
+        %tmp.132 = 20;
+        %tmp.133 = mod %tmp.131 %tmp.132;
+        %tmp.134 = 10;
+        %tmp.135 = lt %tmp.133 %tmp.134;
+        bf %tmp.135 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_210_16_214_16_if_else_false;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_210_16_214_16_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_210_42_212_16_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 211 20 ]
+        %tmp.136 = lgetv %dog.3;
+        symbol [ dog %tmp.136 211 20 23 ];
+        symbol [ Constants %tmp.138 211 33 42 ];
+        %tmp.138 = getv ? :Constants;
+        symbol [ DOG_STATUS_STATIONARY %tmp.139 211 43 64 ];
+        %tmp.139 = getv %tmp.138 :DOG_STATUS_STATIONARY;
+        symbol [ status ? 211 24 30 ];
+        putv %tmp.136 :status %tmp.139;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_210_42_212_16_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_210_16_214_16_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_210_16_214_16_if_else_false:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_212_23_214_16_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 213 20 ]
+        %tmp.140 = lgetv %dog.3;
+        symbol [ dog %tmp.140 213 20 23 ];
+        symbol [ Constants %tmp.142 213 33 42 ];
+        %tmp.142 = getv ? :Constants;
+        symbol [ DOG_STATUS_MOVING %tmp.143 213 43 60 ];
+        %tmp.143 = getv %tmp.142 :DOG_STATUS_MOVING;
+        symbol [ status ? 213 24 30 ];
+        putv %tmp.140 :status %tmp.143;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_212_23_214_16_stop:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_210_16_214_16_if_end:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_209_24_215_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_209_12_215_12_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_209_12_215_12_if_end:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 219 12 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_12_221_12_if_stmt:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_16_219_61_begin:
+        symbol [ _tickCount %tmp.145 219 16 26 ];
+        %tmp.145 = getv ? :_tickCount;
+        %tmp.146 = 60;
+        %tmp.147 = mod %tmp.145 %tmp.146;
+        %tmp.148 = 0;
+        %tmp.149 = eq %tmp.147 %tmp.148;
+        bf %tmp.149 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_12_221_12_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_40_219_61_true:
+        %tmp.150 = lgetv %dog.3;
+        symbol [ dog %tmp.150 219 40 43 ];
+        symbol [ batteryPercent %tmp.151 219 44 58 ];
+        %tmp.151 = getv %tmp.150 :batteryPercent;
+        %tmp.152 = 0;
+        %tmp.153 = gt %tmp.151 %tmp.152;
+        push %tmp.153;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_40_219_61_end:
+        %tmp.154 = phi [%tmp.149 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_16_219_61_begin] [%tmp.153 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_40_219_61_true] [%tmp.154 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_40_219_61_end];
+        bf %tmp.154 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_12_221_12_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_12_221_12_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_64_221_12_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 220 16 ]
+        %tmp.155 = lgetv %dog.3;
+        symbol [ dog %tmp.155 220 16 19 ];
+        %tmp.158 = lgetv %dog.3;
+        symbol [ dog %tmp.158 220 16 19 ];
+        symbol [ batteryPercent %tmp.159 220 20 34 ];
+        %tmp.159 = getv %tmp.158 :batteryPercent;
+        %tmp.160 = sub %tmp.159 1;
+        symbol [ batteryPercent ? 220 20 34 ];
+        putv %tmp.155 :batteryPercent dup %tmp.160;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_64_221_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_12_221_12_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_219_12_221_12_if_end:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_47_222_8_stop:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 171 ]
+        %tmp.163 = lgetv %i.2;
+        symbol [ i %tmp.163 171 42 43 ];
+        %tmp.164 = add %tmp.163 1;
+        lputv %i.2 %tmp.164;
+        symbol [ i %i.2 171 42 43 ];
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_test;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_171_8_222_8_for_end:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_156_36_223_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 233; @symbol_classdef = [DogMockTimerHelper,233,6,24]; ]
+class DogMockTimerHelper {
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 233; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 233; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 235; @position = 8; @symbol_vardef = [_timer,235,8,14]; @symbol_type<0> = [Timer,235,18,23]; @symbol_type<1> = [Timer,235,24,29]; ]
+    var _timer as Timer.Timer or Null;
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 237; @symbol_functiondef = [initialize,237,13,23]; ]
+    function initialize() as Void {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 243; @symbol_functiondef = [start,243,13,18]; ]
+    function start() as Void {
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_243_29_246_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 244 8 ]
+        symbol [ Timer %tmp.3 244 21 26 ];
+        %tmp.3 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.4 244 27 32 ];
+        %tmp.4 = getv function ? %tmp.3 :Timer;
+        %tmp.1 = newc %tmp.4 ();
+        symbol [ _timer ? 244 8 14 ];
+        putv self :_timer %tmp.1;
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 245 8 ]
+        symbol [ _timer %tmp.6 245 8 14 ];
+        %tmp.6 = getv ? :_timer;
+        symbol [ start %tmp.7 245 15 20 ];
+        %tmp.7 = getv function %tmp.6 :start;
+        %tmp.8 = self;
+        symbol [ method %tmp.9 245 21 27 ];
+        %tmp.9 = getv function %tmp.8 :method;
+        %tmp.11 = const :onTick;
+        symbol [ onTick %tmp.11 245 29 35 const ];
+        %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.11);
+        %tmp.13 = 1000;
+        %tmp.14 = true;
+        invoke %tmp.6 %tmp.7(%tmp.12, %tmp.13, %tmp.14);
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_243_29_246_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 251; @symbol_functiondef = [stop,251,13,17]; ]
+    function stop() as Void {
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_251_28_256_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 252 8 ]
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_252_8_255_8_if_stmt:
+        symbol [ _timer %tmp.2 252 12 18 ];
+        %tmp.2 = getv ? :_timer;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_252_8_255_8_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_252_8_255_8_if_true:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_252_28_255_8_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 253 12 ]
+        symbol [ _timer %tmp.6 253 12 18 ];
+        %tmp.6 = getv ? :_timer;
+        %tmp.7 = as %tmp.6 { (!Null) };
+        symbol [ stop %tmp.8 253 19 23 ];
+        %tmp.8 = getv function %tmp.7 :stop;
+        invoke %tmp.7 %tmp.8();
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 254 12 ]
+        %tmp.9 = null;
+        symbol [ _timer ? 254 12 18 ];
+        putv self :_timer %tmp.9;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_252_28_255_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_252_8_255_8_if_end;
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_252_8_255_8_if_end:
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_251_28_256_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 261; @symbol_functiondef = [onTick,261,13,19]; ]
+    function onTick() as Void {
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_261_30_263_4_start:
+[ "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc" 262 8 ]
+        symbol [ DogTrackerMock %tmp.2 262 8 22 ];
+        %tmp.2 = getv ? :DogTrackerMock;
+        symbol [ onMockUpdate %tmp.3 262 23 35 ];
+        %tmp.3 = getv function %tmp.2 :onMockUpdate;
+        invoke %tmp.2 %tmp.3();
+D__my_project_projects_UplandHunter_source_DogTracker_DogTrackerMock_mc_261_30_263_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\DogTracker\DogTrackerMock.mc"; @line = 1; ]
+<init> {
+}

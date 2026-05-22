@@ -1,0 +1,337 @@
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [System,2,14,20]; ]
+import Toybox.System;
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Time,3,14,18]; ]
+import Toybox.Time;
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 18; @symbol_classdef = [BirdMarker,18,6,16]; ]
+class BirdMarker {
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 18; ]
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 18; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 21; @position = 8; @symbol_vardef = [targetLat,21,8,17]; @symbol_type<0> = [Double,21,21,27]; ]
+    var targetLat as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 22; @position = 8; @symbol_vardef = [targetLon,22,8,17]; @symbol_type<0> = [Double,22,21,27]; ]
+    var targetLon as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 25; @position = 8; @symbol_vardef = [originLat,25,8,17]; @symbol_type<0> = [Double,25,21,27]; ]
+    var originLat as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 26; @position = 8; @symbol_vardef = [originLon,26,8,17]; @symbol_type<0> = [Double,26,21,27]; ]
+    var originLon as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 29; @position = 8; @symbol_vardef = [bearing,29,8,15]; @symbol_type<0> = [Double,29,19,25]; ]
+    var bearing as Double;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 32; @position = 8; @symbol_vardef = [distanceYards,32,8,21]; @symbol_type<0> = [Number,32,25,31]; ]
+    var distanceYards as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 35; @position = 8; @symbol_vardef = [timestamp,35,8,17]; @symbol_type<0> = [Number,35,21,27]; ]
+    var timestamp as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 38; @position = 8; @symbol_vardef = [id,38,8,10]; @symbol_type<0> = [Number,38,14,20]; ]
+    var id as Number;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 41; @position = 8; @symbol_vardef = [isRetrieved,41,8,19]; @symbol_type<0> = [Boolean,41,23,30]; ]
+    var isRetrieved as Boolean = false;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 53; @symbol_functiondef = [initialize,53,13,23]; @symbol_param<0> = [tLat,53,24,28]; @symbol_param<0>_type<0> = [Double,53,32,38]; @symbol_param<1> = [tLon,53,40,44]; @symbol_param<1>_type<0> = [Double,53,48,54]; @symbol_param<2> = [oLat,54,25,29]; @symbol_param<2>_type<0> = [Double,54,33,39]; @symbol_param<3> = [oLon,54,41,45]; @symbol_param<3>_type<0> = [Double,54,49,55]; @symbol_param<4> = [bear,55,25,29]; @symbol_param<4>_type<0> = [Double,55,33,39]; @symbol_param<5> = [dist,55,41,45]; @symbol_param<5>_type<0> = [Number,55,49,55]; ]
+    function initialize(tLat as Double, tLon as Double, oLat as Double, oLon as Double, bear as Double, dist as Number) as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_55_57_65_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 56 8 ]
+        %tmp.1 = lgetv %tLat;
+        symbol [ tLat %tmp.1 56 20 24 ];
+        symbol [ targetLat ? 56 8 17 ];
+        putv self :targetLat %tmp.1;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 57 8 ]
+        %tmp.2 = lgetv %tLon;
+        symbol [ tLon %tmp.2 57 20 24 ];
+        symbol [ targetLon ? 57 8 17 ];
+        putv self :targetLon %tmp.2;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 58 8 ]
+        %tmp.3 = lgetv %oLat;
+        symbol [ oLat %tmp.3 58 20 24 ];
+        symbol [ originLat ? 58 8 17 ];
+        putv self :originLat %tmp.3;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 59 8 ]
+        %tmp.4 = lgetv %oLon;
+        symbol [ oLon %tmp.4 59 20 24 ];
+        symbol [ originLon ? 59 8 17 ];
+        putv self :originLon %tmp.4;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 60 8 ]
+        %tmp.5 = lgetv %bear;
+        symbol [ bear %tmp.5 60 18 22 ];
+        symbol [ bearing ? 60 8 15 ];
+        putv self :bearing %tmp.5;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 61 8 ]
+        %tmp.6 = lgetv %dist;
+        symbol [ dist %tmp.6 61 24 28 ];
+        symbol [ distanceYards ? 61 8 21 ];
+        putv self :distanceYards %tmp.6;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 62 8 ]
+        symbol [ Time %tmp.7 62 20 24 ];
+        %tmp.7 = getm $.Toybox.Time;
+        symbol [ now %tmp.8 62 25 28 ];
+        %tmp.8 = getv function %tmp.7 :now;
+        %tmp.9 = invoke %tmp.7 %tmp.8();
+        symbol [ value %tmp.10 62 31 36 ];
+        %tmp.10 = getv function %tmp.9 :value;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        symbol [ timestamp ? 62 8 17 ];
+        putv self :timestamp %tmp.11;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 63 8 ]
+        symbol [ timestamp %tmp.13 63 13 22 ];
+        %tmp.13 = getv ? :timestamp;
+        symbol [ id ? 63 8 10 ];
+        putv self :id %tmp.13;
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 64 8 ]
+        %tmp.14 = false;
+        symbol [ isRetrieved ? 64 8 19 ];
+        putv self :isRetrieved %tmp.14;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_55_57_65_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 79; @symbol_moduledef = [BirdMarkerManager,79,7,24]; ]
+module BirdMarkerManager {
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 79; ]
+    <init> {
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 83 8 ]
+        %tmp.15 = newa 0 Array<BirdMarker>;
+        symbol [ Array %tmp.15 83 46 51 ];
+        symbol [ BirdMarker %tmp.15 83 52 62 ];
+        putv self :_markers %tmp.15;
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 83; @position = 8; @symbol_vardef = [_markers,83,8,16]; @symbol_type<0> = [Array,83,20,25]; @symbol_type<1> = [BirdMarker,83,26,36]; ]
+    var _markers as Array<BirdMarker>;
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 93; @symbol_functiondef = [addMarker,93,13,22]; @symbol_param<0> = [marker,93,23,29]; @symbol_param<0>_type<0> = [BirdMarker,93,33,43]; ]
+    function addMarker(marker as BirdMarker) as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_93_53_100_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 95 8 ]
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_95_8_97_8_if_stmt:
+        symbol [ _markers %tmp.2 95 12 20 ];
+        %tmp.2 = getv ? :_markers;
+        symbol [ size %tmp.3 95 21 25 ];
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        symbol [ Constants %tmp.6 95 31 40 ];
+        %tmp.6 = getv ? :Constants;
+        symbol [ MAX_BIRD_MARKERS %tmp.7 95 41 57 ];
+        %tmp.7 = getv %tmp.6 :MAX_BIRD_MARKERS;
+        %tmp.8 = gte %tmp.4 %tmp.7;
+        bf %tmp.8 @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_95_8_97_8_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_95_8_97_8_if_true:
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_95_59_97_8_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 96 12 ]
+        symbol [ _markers %tmp.10 96 23 31 ];
+        %tmp.10 = getv ? :_markers;
+        symbol [ slice %tmp.11 96 32 37 ];
+        %tmp.11 = getv function %tmp.10 :slice;
+        %tmp.12 = 1;
+        %tmp.13 = null;
+        %tmp.14 = invoke %tmp.10 %tmp.11(%tmp.12, %tmp.13);
+        %tmp.15 = as %tmp.14 Array<BirdMarker>;
+        symbol [ Array %tmp.15 96 50 55 ];
+        symbol [ BirdMarker %tmp.15 96 56 66 ];
+        symbol [ _markers ? 96 12 20 ];
+        putv self :_markers %tmp.15;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_95_59_97_8_stop:
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_95_8_97_8_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_95_8_97_8_if_end:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 98 8 ]
+        symbol [ _markers %tmp.17 98 8 16 ];
+        %tmp.17 = getv ? :_markers;
+        symbol [ add %tmp.18 98 17 20 ];
+        %tmp.18 = getv function %tmp.17 :add;
+        %tmp.19 = lgetv %marker;
+        symbol [ marker %tmp.19 98 21 27 ];
+        invoke %tmp.17 %tmp.18(%tmp.19);
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 99 8 ]
+        symbol [ System %tmp.20 99 8 14 ];
+        %tmp.20 = getm $.Toybox.System;
+        symbol [ println %tmp.21 99 15 22 ];
+        %tmp.21 = getv function %tmp.20 :println;
+        %tmp.22 = "Bird marker added. Total: ";
+        symbol [ _markers %tmp.24 99 54 62 ];
+        %tmp.24 = getv ? :_markers;
+        symbol [ size %tmp.25 99 63 67 ];
+        %tmp.25 = getv function %tmp.24 :size;
+        %tmp.26 = invoke %tmp.24 %tmp.25();
+        %tmp.27 = add %tmp.22 %tmp.26;
+        invoke %tmp.20 %tmp.21(%tmp.27);
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_93_53_100_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 109; @symbol_functiondef = [removeMarker,109,13,25]; @symbol_param<0> = [id,109,26,28]; @symbol_param<0>_type<0> = [Number,109,32,38]; ]
+    function removeMarker(id as Number) as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_109_48_117_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 110 8 ]
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_109_48_117_4_start" "D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_109_48_117_4_stop" ]
+        %newList.1 = local;
+        symbol [ newList %newList.1 110 12 19 ];
+        %tmp.1 = newa 0 Array<BirdMarker>;
+        symbol [ Array %tmp.1 110 28 33 ];
+        symbol [ BirdMarker %tmp.1 110 34 44 ];
+        lputv %newList.1 %tmp.1;
+        symbol [ newList %newList.1 110 12 19 ];
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 111 8 ]
+        for @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_test @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_incr @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_begin" "D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 111 17 18 ];
+        %tmp.2 = 0;
+        lputv %i.2 %tmp.2;
+        symbol [ i %i.2 111 17 18 ];
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_test:
+        %tmp.3 = lgetv %i.2;
+        symbol [ i %tmp.3 111 24 25 ];
+        symbol [ _markers %tmp.5 111 28 36 ];
+        %tmp.5 = getv ? :_markers;
+        symbol [ size %tmp.6 111 37 41 ];
+        %tmp.6 = getv function %tmp.5 :size;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        %tmp.8 = lt %tmp.3 %tmp.7;
+        bf %tmp.8 @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_begin:
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_50_115_8_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 112 12 ]
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_112_12_114_12_if_stmt:
+        symbol [ _markers %tmp.10 112 16 24 ];
+        %tmp.10 = getv ? :_markers;
+        %tmp.11 = lgetv %i.2;
+        symbol [ i %tmp.11 112 25 26 ];
+        %tmp.12 = agetv %tmp.10 %tmp.11;
+        symbol [ id %tmp.13 112 28 30 ];
+        %tmp.13 = getv %tmp.12 :id;
+        %tmp.14 = lgetv %id;
+        symbol [ id %tmp.14 112 34 36 ];
+        %tmp.15 = ne %tmp.13 %tmp.14;
+        bf %tmp.15 @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_112_12_114_12_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_112_12_114_12_if_true:
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_112_38_114_12_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 113 16 ]
+        %tmp.16 = lgetv %newList.1;
+        symbol [ newList %tmp.16 113 16 23 ];
+        symbol [ add %tmp.17 113 24 27 ];
+        %tmp.17 = getv function %tmp.16 :add;
+        symbol [ _markers %tmp.19 113 28 36 ];
+        %tmp.19 = getv ? :_markers;
+        %tmp.20 = lgetv %i.2;
+        symbol [ i %tmp.20 113 37 38 ];
+        %tmp.21 = agetv %tmp.19 %tmp.20;
+        invoke %tmp.16 %tmp.17(%tmp.21);
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_112_38_114_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_112_12_114_12_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_112_12_114_12_if_end:
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_50_115_8_stop:
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 111 ]
+        %tmp.24 = lgetv %i.2;
+        symbol [ i %tmp.24 111 45 46 ];
+        %tmp.25 = add %tmp.24 1;
+        lputv %i.2 %tmp.25;
+        symbol [ i %i.2 111 45 46 ];
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_test;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_111_8_115_8_for_end:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 116 8 ]
+        %tmp.26 = lgetv %newList.1;
+        symbol [ newList %tmp.26 116 19 26 ];
+        symbol [ _markers ? 116 8 16 ];
+        putv self :_markers %tmp.26;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_109_48_117_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 124; @symbol_functiondef = [getMarkers,124,13,23]; @symbol_return<0> = [Array,124,29,34]; @symbol_return<1> = [BirdMarker,124,35,45]; ]
+    function getMarkers() as Array<BirdMarker> {
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_124_47_126_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 125 8 ]
+        symbol [ _markers %tmp.2 125 15 23 ];
+        %tmp.2 = getv ? :_markers;
+        ret %tmp.2;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_124_47_126_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 131; @symbol_functiondef = [getMarkerCount,131,13,27]; @symbol_return<0> = [Number,131,33,39]; ]
+    function getMarkerCount() as Number {
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_131_40_133_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 132 8 ]
+        symbol [ _markers %tmp.2 132 15 23 ];
+        %tmp.2 = getv ? :_markers;
+        symbol [ size %tmp.3 132 24 28 ];
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        ret %tmp.4;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_131_40_133_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 141; @symbol_functiondef = [getMarkerById,141,13,26]; @symbol_param<0> = [id,141,27,29]; @symbol_param<0>_type<0> = [Number,141,33,39]; @symbol_return<0> = [BirdMarker,141,44,54]; ]
+    function getMarkerById(id as Number) as BirdMarker or Null {
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_141_56_148_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 142 8 ]
+        for @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_test @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_incr @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_init:
+        [ "D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_begin" "D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_end" ]
+        %i.1 = local;
+        symbol [ i %i.1 142 17 18 ];
+        %tmp.1 = 0;
+        lputv %i.1 %tmp.1;
+        symbol [ i %i.1 142 17 18 ];
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_test:
+        %tmp.2 = lgetv %i.1;
+        symbol [ i %tmp.2 142 24 25 ];
+        symbol [ _markers %tmp.4 142 28 36 ];
+        %tmp.4 = getv ? :_markers;
+        symbol [ size %tmp.5 142 37 41 ];
+        %tmp.5 = getv function %tmp.4 :size;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        %tmp.7 = lt %tmp.2 %tmp.6;
+        bf %tmp.7 @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_begin:
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_50_146_8_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 143 12 ]
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_143_12_145_12_if_stmt:
+        symbol [ _markers %tmp.9 143 16 24 ];
+        %tmp.9 = getv ? :_markers;
+        %tmp.10 = lgetv %i.1;
+        symbol [ i %tmp.10 143 25 26 ];
+        %tmp.11 = agetv %tmp.9 %tmp.10;
+        symbol [ id %tmp.12 143 28 30 ];
+        %tmp.12 = getv %tmp.11 :id;
+        %tmp.13 = lgetv %id;
+        symbol [ id %tmp.13 143 34 36 ];
+        %tmp.14 = eq %tmp.12 %tmp.13;
+        bf %tmp.14 @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_143_12_145_12_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_143_12_145_12_if_true:
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_143_38_145_12_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 144 16 ]
+        symbol [ _markers %tmp.16 144 23 31 ];
+        %tmp.16 = getv ? :_markers;
+        %tmp.17 = lgetv %i.1;
+        symbol [ i %tmp.17 144 32 33 ];
+        %tmp.18 = agetv %tmp.16 %tmp.17;
+        ret %tmp.18;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_143_38_145_12_stop:
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_143_12_145_12_if_end;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_143_12_145_12_if_end:
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_50_146_8_stop:
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_incr:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 142 ]
+        %tmp.21 = lgetv %i.1;
+        symbol [ i %tmp.21 142 45 46 ];
+        %tmp.22 = add %tmp.21 1;
+        lputv %i.1 %tmp.22;
+        symbol [ i %i.1 142 45 46 ];
+        goto @D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_test;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_142_8_146_8_for_end:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 147 8 ]
+        %tmp.23 = null;
+        ret %tmp.23;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_141_56_148_4_stop:
+    }
+    [ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 154; @symbol_functiondef = [clearAll,154,13,21]; ]
+    function clearAll() as Void {
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_154_32_156_4_start:
+[ "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc" 155 8 ]
+        %tmp.1 = newa 0 Array<BirdMarker>;
+        symbol [ Array %tmp.1 155 25 30 ];
+        symbol [ BirdMarker %tmp.1 155 31 41 ];
+        symbol [ _markers ? 155 8 16 ];
+        putv self :_markers %tmp.1;
+D__my_project_projects_UplandHunter_source_BirdLocator_BirdMarker_mc_154_32_156_4_stop:
+    }
+}
+[ @file = "D:\my-project\projects\UplandHunter\source\BirdLocator\BirdMarker.mc"; @line = 1; ]
+<init> {
+}

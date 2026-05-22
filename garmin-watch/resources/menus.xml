@@ -1,0 +1,11 @@
+<menus>
+    <!--
+        Main menu — accessible from the main screen via the menu button.
+        Using 'label' attribute per SDK 8.x requirements.
+    -->
+    <menu id="MainMenu" title="@Strings.AppName">
+        <menu-item id="MenuStartHunt" label="@Strings.StartHunt"/>
+        <menu-item id="MenuStats" label="@Strings.Stats"/>
+        <menu-item id="MenuEndHunt" label="@Strings.EndHunt"/>
+    </menu>
+</menus>

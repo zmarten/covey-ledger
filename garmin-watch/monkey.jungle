@@ -1,0 +1,3 @@
+project.manifest = manifest.xml
+base.sourcePath = source;source/FlushWorkflow;source/BirdLocator;source/DogTracker;source/MapView;source/Stats;source/Models;source/Utils
+base.resourcePath = resources
