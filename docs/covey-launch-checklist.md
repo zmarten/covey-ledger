@@ -74,6 +74,11 @@ Check:
 
 ## 6. First validation push
 
+Use the launch package docs added in this branch:
+
+- `docs/covey-launch-copy.md` — pitch, public post drafts, DM, and email reply copy
+- `docs/covey-validation-plan.md` — audience list, interview questions, and first-week metrics
+
 Share as an early-access/free-tool project, not a polished SaaS pitch:
 
 - Garmin hunting/watch groups
@@ -87,3 +92,5 @@ Track:
 - waitlist signups
 - replies about the strongest pain point
 - whether WaypointBridge or the field-to-freezer ledger gets more interest
+
+Do not post publicly under Zach's identity until he approves the specific draft/channel.

@@ -57,6 +57,8 @@ export default function Landing() {
     }
   }
 
+  const isSubmitting = submitState === 'submitting'
+
   return (
     <main className="min-h-screen bg-canvas text-olive">
       <section className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
@@ -202,6 +204,9 @@ export default function Landing() {
               <input
                 required
                 type="email"
+                autoComplete="email"
+                inputMode="email"
+                maxLength={254}
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder="hunter@example.com"
@@ -214,6 +219,7 @@ export default function Landing() {
                 value={statesHunted}
                 onChange={(event) => setStatesHunted(event.target.value)}
                 placeholder="Montana, South Dakota, Kansas..."
+                maxLength={160}
                 className="rounded border border-olive/20 bg-white px-3 py-2 text-sm font-normal outline-none transition focus:border-burnt"
               />
             </label>
@@ -223,6 +229,7 @@ export default function Landing() {
                 value={toolsUsed}
                 onChange={(event) => setToolsUsed(event.target.value)}
                 placeholder="Garmin watch, Alpha/Astro, onX, paper log..."
+                maxLength={200}
                 className="rounded border border-olive/20 bg-white px-3 py-2 text-sm font-normal outline-none transition focus:border-burnt"
               />
             </label>
@@ -233,18 +240,22 @@ export default function Landing() {
                 onChange={(event) => setBiggestPain(event.target.value)}
                 placeholder="Field logging, waypoints, possession limits, freezer inventory, party splits..."
                 rows={3}
+                maxLength={500}
                 className="rounded border border-olive/20 bg-white px-3 py-2 text-sm font-normal outline-none transition focus:border-burnt"
               />
             </label>
             <button
               type="submit"
-              disabled={submitState === 'submitting'}
+              disabled={isSubmitting}
               className="inline-flex items-center justify-center gap-2 rounded bg-burnt px-5 py-3 text-sm font-bold text-white transition hover:bg-burnt-dark disabled:cursor-not-allowed disabled:opacity-70"
             >
-              {submitState === 'submitting' ? 'Joining...' : 'Request early access'} <ArrowRight size={16} />
+              {isSubmitting ? 'Joining...' : 'Request early access'} <ArrowRight size={16} />
             </button>
+            <p className="text-xs leading-5 text-olive/55">
+              No spam or resale. I will only use this to validate the Covey workflow and invite early testers.
+            </p>
             {message && (
-              <p className={submitState === 'error' ? 'text-sm text-rust' : 'text-sm text-forest'}>
+              <p aria-live="polite" className={submitState === 'error' ? 'text-sm text-rust' : 'text-sm text-forest'}>
                 {message}
               </p>
             )}
