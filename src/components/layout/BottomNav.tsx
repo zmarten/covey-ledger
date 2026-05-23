@@ -3,12 +3,12 @@ import { LayoutDashboard, BookOpen, Scroll, Users, Package, Clock } from 'lucide
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { to: '/', label: 'Dashboard', icon: LayoutDashboard, end: true },
-  { to: '/harvest', label: 'Log', icon: BookOpen },
-  { to: '/freezer', label: 'Freezer', icon: Package },
-  { to: '/split', label: 'Split', icon: Users },
-  { to: '/regulations', label: 'Regs', icon: Scroll },
-  { to: '/history', label: 'History', icon: Clock },
+  { to: '/app', label: 'Dashboard', icon: LayoutDashboard, end: true },
+  { to: '/app/harvest', label: 'Log', icon: BookOpen },
+  { to: '/app/freezer', label: 'Freezer', icon: Package },
+  { to: '/app/split', label: 'Split', icon: Users },
+  { to: '/app/regulations', label: 'Regs', icon: Scroll },
+  { to: '/app/history', label: 'History', icon: Clock },
 ]
 
 export function BottomNav() {

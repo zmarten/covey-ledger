@@ -118,7 +118,7 @@ export default function Dashboard() {
             <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
           </button>
           <Button asChild variant="accent" size="md">
-            <Link to="/harvest"><BookOpen size={15} /> Log Birds</Link>
+            <Link to="/app/harvest"><BookOpen size={15} /> Log Birds</Link>
           </Button>
         </div>
       </div>
@@ -130,7 +130,7 @@ export default function Dashboard() {
 
           {speciesRows.length === 0 ? (
             <Card className="text-center py-8 text-gray-400 text-sm">
-              No harvest recorded for {activeStateName} today. <Link to="/harvest" className="text-burnt hover:underline">Log birds.</Link>
+              No harvest recorded for {activeStateName} today. <Link to="/app/harvest" className="text-burnt hover:underline">Log birds.</Link>
             </Card>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

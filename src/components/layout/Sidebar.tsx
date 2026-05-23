@@ -12,12 +12,12 @@ import { cn } from '@/lib/utils'
 import { useAuth } from '@/hooks/useAuth'
 
 const navItems = [
-  { to: '/', label: 'Dashboard', icon: LayoutDashboard, end: true },
-  { to: '/harvest', label: 'Log Harvest', icon: BookOpen },
-  { to: '/regulations', label: 'Regulations', icon: Scroll },
-  { to: '/split', label: 'Split Tool', icon: Users },
-  { to: '/freezer', label: 'Freezer', icon: Package },
-  { to: '/history', label: 'History', icon: Clock },
+  { to: '/app', label: 'Dashboard', icon: LayoutDashboard, end: true },
+  { to: '/app/harvest', label: 'Log Harvest', icon: BookOpen },
+  { to: '/app/regulations', label: 'Regulations', icon: Scroll },
+  { to: '/app/split', label: 'Split Tool', icon: Users },
+  { to: '/app/freezer', label: 'Freezer', icon: Package },
+  { to: '/app/history', label: 'History', icon: Clock },
 ]
 
 export function Sidebar() {

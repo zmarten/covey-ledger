@@ -26,7 +26,7 @@ export default function Login() {
       if (err) {
         setError(err.message)
       } else {
-        navigate('/')
+        navigate('/app')
       }
     } else {
       const err = await signUp(email, password)
