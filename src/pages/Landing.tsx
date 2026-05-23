@@ -1,11 +1,6 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Binoculars, CheckCircle2, MapPinned, ShieldCheck, Snowflake, Watch } from 'lucide-react'
-
-const waitlistSubject = encodeURIComponent('Covey Ledger waitlist')
-const waitlistBody = encodeURIComponent(
-  'I want early access to Covey Ledger.\n\nPrimary use case: Garmin field log / freezer ledger / compliance checks\nState(s) I hunt:\nGarmin/onX tools I use:'
-)
-const waitlistHref = `mailto:zachdmartens@gmail.com?subject=${waitlistSubject}&body=${waitlistBody}`
 
 const workflow = [
   {
@@ -32,7 +27,36 @@ const bullets = [
   'Freezer inventory by state and species',
 ]
 
+type SubmitState = 'idle' | 'submitting' | 'success' | 'error'
+
 export default function Landing() {
+  const [email, setEmail] = useState('')
+  const [statesHunted, setStatesHunted] = useState('')
+  const [toolsUsed, setToolsUsed] = useState('')
+  const [biggestPain, setBiggestPain] = useState('')
+  const [submitState, setSubmitState] = useState<SubmitState>('idle')
+  const [message, setMessage] = useState('')
+
+  async function handleWaitlistSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setSubmitState('submitting')
+    setMessage('')
+
+    try {
+      const { joinWaitlist } = await import('@/lib/waitlist')
+      await joinWaitlist({ email, statesHunted, toolsUsed, biggestPain, source: 'covey-landing' })
+      setSubmitState('success')
+      setMessage('You are on the early-access list. I will reach out when the next Covey test build is ready.')
+      setEmail('')
+      setStatesHunted('')
+      setToolsUsed('')
+      setBiggestPain('')
+    } catch (error) {
+      setSubmitState('error')
+      setMessage(error instanceof Error ? error.message : 'Could not join the waitlist. Please try again or email zachdmartens@gmail.com.')
+    }
+  }
+
   return (
     <main className="min-h-screen bg-canvas text-olive">
       <section className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
@@ -68,7 +92,7 @@ export default function Landing() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
-                href={waitlistHref}
+                href="#waitlist"
                 className="inline-flex items-center justify-center gap-2 rounded bg-burnt px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-burnt-dark"
               >
                 Join the waitlist <ArrowRight size={16} />
@@ -159,21 +183,72 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="rounded-xl bg-olive p-6 text-canvas sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-8">
+      <section id="waitlist" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-6 rounded-xl bg-olive p-6 text-canvas sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-canvas/50">Early access</p>
             <h2 className="mt-2 text-2xl font-bold text-canvas sm:text-3xl">Help shape the Garmin-to-ledger workflow.</h2>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-canvas/70">
               The first validation goal is simple: confirm hunters want a field capture + freezer/compliance workflow before building deeper automation.
             </p>
+            <p className="mt-4 text-xs leading-5 text-canvas/50">
+              Prefer email? Send notes to <a className="underline" href="mailto:zachdmartens@gmail.com">zachdmartens@gmail.com</a>.
+            </p>
           </div>
-          <a
-            href={waitlistHref}
-            className="mt-6 inline-flex shrink-0 items-center justify-center gap-2 rounded bg-burnt px-5 py-3 text-sm font-bold text-white transition hover:bg-burnt-light lg:mt-0"
-          >
-            Request early access <ArrowRight size={16} />
-          </a>
+
+          <form onSubmit={handleWaitlistSubmit} className="grid gap-3 rounded-lg bg-canvas p-4 text-olive shadow-lg sm:p-5">
+            <label className="grid gap-1 text-sm font-semibold">
+              Email
+              <input
+                required
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="hunter@example.com"
+                className="rounded border border-olive/20 bg-white px-3 py-2 text-sm font-normal outline-none transition focus:border-burnt"
+              />
+            </label>
+            <label className="grid gap-1 text-sm font-semibold">
+              State(s) you hunt
+              <input
+                value={statesHunted}
+                onChange={(event) => setStatesHunted(event.target.value)}
+                placeholder="Montana, South Dakota, Kansas..."
+                className="rounded border border-olive/20 bg-white px-3 py-2 text-sm font-normal outline-none transition focus:border-burnt"
+              />
+            </label>
+            <label className="grid gap-1 text-sm font-semibold">
+              Tools you already use
+              <input
+                value={toolsUsed}
+                onChange={(event) => setToolsUsed(event.target.value)}
+                placeholder="Garmin watch, Alpha/Astro, onX, paper log..."
+                className="rounded border border-olive/20 bg-white px-3 py-2 text-sm font-normal outline-none transition focus:border-burnt"
+              />
+            </label>
+            <label className="grid gap-1 text-sm font-semibold">
+              Biggest pain today
+              <textarea
+                value={biggestPain}
+                onChange={(event) => setBiggestPain(event.target.value)}
+                placeholder="Field logging, waypoints, possession limits, freezer inventory, party splits..."
+                rows={3}
+                className="rounded border border-olive/20 bg-white px-3 py-2 text-sm font-normal outline-none transition focus:border-burnt"
+              />
+            </label>
+            <button
+              type="submit"
+              disabled={submitState === 'submitting'}
+              className="inline-flex items-center justify-center gap-2 rounded bg-burnt px-5 py-3 text-sm font-bold text-white transition hover:bg-burnt-dark disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              {submitState === 'submitting' ? 'Joining...' : 'Request early access'} <ArrowRight size={16} />
+            </button>
+            {message && (
+              <p className={submitState === 'error' ? 'text-sm text-rust' : 'text-sm text-forest'}>
+                {message}
+              </p>
+            )}
+          </form>
         </div>
       </section>
     </main>

@@ -110,6 +110,36 @@ export type Database = {
           notes?: string | null
         }
       }
+      waitlist_signups: {
+        Row: {
+          id: string
+          email: string
+          states_hunted: string | null
+          tools_used: string | null
+          biggest_pain: string | null
+          source: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          email: string
+          states_hunted?: string | null
+          tools_used?: string | null
+          biggest_pain?: string | null
+          source?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          email?: string
+          states_hunted?: string | null
+          tools_used?: string | null
+          biggest_pain?: string | null
+          source?: string
+          updated_at?: string
+        }
+      }
     }
     Functions: {
       validate_harvest_entry: {
