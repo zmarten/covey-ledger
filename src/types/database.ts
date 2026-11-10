@@ -15,6 +15,7 @@ export type Database = {
       regulations: {
         Row: {
           id: string
+          user_id: string
           state_id: string
           species_id: string
           daily_limit: number
@@ -26,6 +27,7 @@ export type Database = {
         }
         Insert: {
           id?: string
+          user_id?: string
           state_id: string
           species_id: string
           daily_limit: number

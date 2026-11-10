@@ -60,15 +60,15 @@ BEGIN
   --   Gray Partridge (Hun): Sep 6, 2025 – Jan 4, 2026 (daily 5, possession 15)
   --     Opens 1st Saturday of September
   --
-  INSERT INTO regulations (state_id, species_id, daily_limit, possession_limit, season_start, season_end)
+  INSERT INTO regulations (user_id, state_id, species_id, daily_limit, possession_limit, season_start, season_end)
   VALUES
-    (v_ks_id, v_pheasant_id,  4,  12, '2025-11-15', '2026-01-31'),
-    (v_ks_id, v_quail_id,     8,  24, '2025-11-15', '2026-01-31'),
-    (v_sd_id, v_pheasant_id,  3,   9, '2025-10-18', '2026-01-07'),
-    (v_sd_id, v_grouse_id,    3,   9, '2025-09-27', '2025-12-31'),
-    (v_nd_id, v_pheasant_id,  3,   9, '2025-10-11', '2026-01-04'),
-    (v_nd_id, v_partridge_id, 5,  15, '2025-09-06', '2026-01-04')
-  ON CONFLICT (state_id, species_id) DO NOTHING;
+    (v_user_id, v_ks_id, v_pheasant_id,  4,  12, '2025-11-15', '2026-01-31'),
+    (v_user_id, v_ks_id, v_quail_id,     8,  24, '2025-11-15', '2026-01-31'),
+    (v_user_id, v_sd_id, v_pheasant_id,  3,   9, '2025-10-18', '2026-01-07'),
+    (v_user_id, v_sd_id, v_grouse_id,    3,   9, '2025-09-27', '2025-12-31'),
+    (v_user_id, v_nd_id, v_pheasant_id,  3,   9, '2025-10-11', '2026-01-04'),
+    (v_user_id, v_nd_id, v_partridge_id, 5,  15, '2025-09-06', '2026-01-04')
+  ON CONFLICT (user_id, state_id, species_id) DO NOTHING;
 
   -- ----------------------------------------------------------------
   -- HARVEST ENTRIES (all within open seasons)

@@ -16,9 +16,9 @@ INSERT INTO auth.users (id, email) VALUES
   ('00000000-0000-0000-0000-00000000000b', 'b@example.test'),
   ('00000000-0000-0000-0000-00000000000c', 'c@example.test');
 
--- Pheasant in every state: daily limit 3, possession limit 9.
-INSERT INTO regulations (state_id, species_id, daily_limit, possession_limit)
-SELECT s.id, sp.id, 3, 9 FROM states s, species sp WHERE sp.name = 'Pheasant';
+-- Every user's own regulations: pheasant in every state, daily 3, possession 9.
+INSERT INTO regulations (user_id, state_id, species_id, daily_limit, possession_limit)
+SELECT u.id, s.id, sp.id, 3, 9 FROM auth.users u, states s, species sp WHERE sp.name = 'Pheasant';
 
 CREATE FUNCTION t.st(abbr text) RETURNS uuid LANGUAGE sql AS
   $$ SELECT id FROM public.states WHERE abbreviation = abbr $$;
@@ -139,6 +139,29 @@ SELECT t.try('rls: distribute against someone else''s entry', 'b', 'blocked',
 SELECT t.try('rls: log a harvest under someone else''s id', 'b', 'blocked',
   $$INSERT INTO public.harvest_entries (user_id, state_id, species_id, quantity, date)
     VALUES ('00000000-0000-0000-0000-00000000000a', t.st('TX'), t.ph(), 1, '2026-11-01')$$);
+
+-- ---------- Regulations belong to one user ----------
+SELECT t.try('regs: see another user''s regulations', 'b', 'blocked',
+  $$SELECT 1 FROM public.regulations WHERE user_id = '00000000-0000-0000-0000-00000000000a'$$);
+SELECT t.try('regs: edit another user''s limits', 'b', 'blocked',
+  $$UPDATE public.regulations SET daily_limit = 1000 WHERE user_id = '00000000-0000-0000-0000-00000000000a'$$);
+SELECT t.try('regs: delete another user''s limits', 'b', 'blocked',
+  $$DELETE FROM public.regulations WHERE user_id = '00000000-0000-0000-0000-00000000000a'$$);
+SELECT t.try('regs: file a regulation under someone else''s id', 'b', 'blocked',
+  $$INSERT INTO public.regulations (user_id, state_id, species_id, daily_limit, possession_limit)
+    SELECT '00000000-0000-0000-0000-00000000000a', t.st('TX'), id, 8, 24 FROM public.species WHERE name = 'Quail'$$);
+SELECT t.try('ok: add your own regulation', 'b', 'allowed',
+  $$INSERT INTO public.regulations (state_id, species_id, daily_limit, possession_limit)
+    SELECT t.st('TX'), id, 8, 24 FROM public.species WHERE name = 'Quail'$$);
+SELECT t.try('regs: hand your regulation to another user', 'b', 'blocked',
+  $$UPDATE public.regulations SET user_id = '00000000-0000-0000-0000-00000000000a'
+    WHERE species_id = (SELECT id FROM public.species WHERE name = 'Quail')$$);
+SELECT t.try('ok: raise your own limit', 'b', 'allowed',
+  $$UPDATE public.regulations SET daily_limit = 5 WHERE state_id = t.st('WA')$$);
+SELECT t.try('ok: your raised limit applies to you', 'b', 'allowed', $$SELECT t.harvest('WA', 5, '2026-11-01')$$);
+SELECT t.try('regs: another user''s raised limit does not apply to you', 'a', 'blocked', $$SELECT t.harvest('WA', 4, '2026-11-01')$$);
+SELECT t.try('ok: the preview check uses your own limit', 'a', 'allowed',
+  $$SELECT 1 WHERE (public.validate_harvest_entry(t.st('WA'), t.ph(), 4, '2026-11-01') ->> 'dailyLimit') = '3'$$);
 
 -- ---------- Over the limit already (a regulation was lowered) ----------
 RESET ROLE;
